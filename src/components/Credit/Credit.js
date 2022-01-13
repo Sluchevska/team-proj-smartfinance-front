@@ -5,7 +5,7 @@ import { Title } from './Credit.styled';
 const Credit = () => (
     <div>
         <Container>
-            <Title>Расходы</Title>
+            <Title>Расход</Title>
         </Container>
     </div>
     

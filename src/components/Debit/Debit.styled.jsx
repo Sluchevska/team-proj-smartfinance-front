@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 
-// export const Wrapper = styled.div`
-//   margin-bottom: 40px;
-//   `
+export const Title = styled.div`
+  color: green;
+  border: solid 1px red;
+  `
