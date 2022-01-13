@@ -18,11 +18,12 @@ export const StyledLink = styled(NavLink)`
 
 
     color: #000000;
-    background-color: #FF751D;
+    background-color: #FFFFFF;
     text-decoration:none;
 
     &.active {
     color: #FFFFFF;
+    background-color: #FF751D;
   }
   `
 
