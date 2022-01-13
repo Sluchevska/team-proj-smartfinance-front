@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
 
 export const NavigationStyle = styled.div`
   display: inline-block;
@@ -13,12 +12,3 @@ export const Span = styled.span`
   margin-left: 5px;
 `;
 
-export const NavigationLink = styled(NavLink)`
- color: #383764;
-  &.active{
-   color: #100de0;
- };
- &:hover{
-   color: #100de0
- }
-`;
