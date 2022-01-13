@@ -4,16 +4,10 @@ import {  NavigationLink,
   Span, } from './Navigation.styled';
 
 const Navigation = () => (
-<nav>
+    <nav>
       <NavigationStyle>
-     
-          
-           
-            <Span>My Wallet</Span>
-       
-        
+          <Span>WiseMoney</Span>
       </NavigationStyle>
-      
     </nav>
 );
 
