@@ -1,9 +1,12 @@
 
 import Navigation from './views/Navigation/Navigation';
+import Credit from './components/Credit';
 function App() {
   return (
-   <Navigation /> 
-  
+    <div>
+      <Navigation />
+      <Credit /> 
+    </div>
   );
 }
 
