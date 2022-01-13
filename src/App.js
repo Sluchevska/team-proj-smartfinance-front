@@ -13,8 +13,11 @@ function App() {
       <Navigation />
       <BalanceBar /> 
       <Routes>
+        {/* <Route exact path="/" element={<HomeView />} /> */}
+        {/* <Route exact path="/" element={<BalanceView />} /> */}
         <Route exact path="/credit" element={<Credit />} />
         <Route exact path="/debit" element={<Debit />} />
+        {/* <Route exact path="/" element={<ReportsView />} /> */}
         {/* <Route path="*" element = {<Error/>} / > */}
       </Routes>                     
     </div>

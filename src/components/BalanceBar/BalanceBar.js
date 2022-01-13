@@ -1,11 +1,12 @@
 import React from 'react';
-import Container from './Container';
-import {Wrapper, StyledLink} from './BalanceBar.styled';
+import {Wrapper, Container, StyledLink} from './BalanceBar.styled';
 
 const BalanceBar = () => (
     <Wrapper>
-        <StyledLink to="/debit">Доход</StyledLink>
-        <StyledLink to="/credit">Расход</StyledLink>
+        <Container>
+            <StyledLink to="/debit">Доход</StyledLink>
+            <StyledLink to="/credit">Расход</StyledLink>
+        </Container>
     </Wrapper>
 )
 

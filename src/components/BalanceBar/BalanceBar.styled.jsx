@@ -2,9 +2,6 @@ import styled from '@emotion/styled'
 import { NavLink } from 'react-router-dom'
 
 export const StyledLink = styled(NavLink)`
-    /* position:absolute;
-    top:100;
-    left:0; */
     display:flex;
     justify-content:center;
     align-items: center;
@@ -30,12 +27,16 @@ export const StyledLink = styled(NavLink)`
   `
 
   export const Wrapper = styled.div`
-   
+    position:absolute;
+    top:100%;
+    left:0;
+  `
+
+export const Container = styled.div`
   display:flex;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  
   width: 320px;
 
   @media screen and (min-width: 768px) {
@@ -49,8 +50,6 @@ export const StyledLink = styled(NavLink)`
     padding-right: 110px;
     width: 1280px;
   }
-    
-  
   `
  
 
