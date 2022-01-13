@@ -1,8 +1,16 @@
 import React from 'react';
-import Reports from '../components/Reports';
+import CreditReports from '../components/CreditReports';
+import DebitReports from '../components/DebitReports';
+import Charts from '../components/Charts';
 
 export default function ReportsView() {
-    return <Reports />;
+    return (
+        <div>
+            <CreditReports />;
+            <DebitReports />;
+            <Charts />;
+        </div>
+    )
 }
     
         

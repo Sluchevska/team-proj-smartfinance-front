@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Wrapper, Name, NameInfo, Date, Type, Sum } from './CreditItem.styled';
-import IconButton from '../IconButton/IconButton';
-import { ReactComponent as SearchIcon } from '../../icons/search.svg';
+// import IconButton from '../../IconButton';
+import { ReactComponent as DeleteIcon } from '../../../icons/delete.svg';
 
 const CreditItem = () => (
     <Container>

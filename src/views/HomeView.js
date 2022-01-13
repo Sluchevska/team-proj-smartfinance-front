@@ -1,8 +1,14 @@
 import React from 'react';
-import HomePage from '../components/HomePage';
+// import Authorization from '../components/Authorization';
+// import Registration from '../components/Registration';
 
 export default function HomeView() {
-    return <HomePage />;
+    return (
+        <div>Home Page
+            {/* <Authorization />;
+            <Registration />; */}
+        </div>
+    )
 }
     
         
