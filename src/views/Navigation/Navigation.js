@@ -1,6 +1,5 @@
 import React from 'react';
-import {  NavigationLink,
-  NavigationStyle,
+import {  NavigationStyle,
   Span, } from './Navigation.styled';
 
 const Navigation = () => (
