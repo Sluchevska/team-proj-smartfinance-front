@@ -27,6 +27,7 @@ export const Container = styled.div`
   }
   `
 export const Wrapper = styled.div`
+width:606px;
 display:flex;
 padding-top:10px;
 padding-bottom:10px;
