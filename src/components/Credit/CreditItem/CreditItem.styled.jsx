@@ -12,8 +12,8 @@ export const Container = styled.div`
   border-bottom: solid 1px #F5F6FB;
   
   @media screen and (min-width: 768px) {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 81px;
+    padding-right: 81px;
     padding-bottom:0;
     width: 768px;
     border-bottom: none;
@@ -28,8 +28,9 @@ export const Container = styled.div`
   `
 export const Wrapper = styled.div`
 display:flex;
-padding-bottom:16px;
-  border-bottom: solid 1px #F5F6FB;
+padding-top:10px;
+padding-bottom:10px;
+  border: solid 1px #F5F6FB;
   `
 export const WrapperInfo = styled.div`
   display:flex;
@@ -83,6 +84,7 @@ export const Date = styled.span`
 
    @media screen and (min-width: 768px) {
      margin-right:0;
+     margin-left:22px;
      width:105px;
     font-size: 12px;
   line-height: 1.167;
@@ -125,7 +127,7 @@ export const Sum = styled.span`
   letter-spacing: 0.04em;
 
   @media screen and (min-width: 768px) {
-     margin-right:0;
+     margin-right:40px;
      width:130px;
      text-align:right;
     

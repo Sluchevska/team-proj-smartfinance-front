@@ -27,13 +27,11 @@ function CreditItem ({ transactions }) {
 return (
     <Container >
         <Wrapper>
-            
-                <Date >13.01.22</Date>
-                <Name >Метро</Name>
-                <Type >Транспорт</Type>
-                <Sum >100000</Sum>
-            
-            <DeleteIcon width="18" height="18" fill="black" />
+            <Date >13.01.22</Date>
+            <Name >Метро</Name>
+            <Type >Транспорт</Type>
+            <Sum >100000</Sum>
+            <DeleteIcon width="36" height="18" fill="black" />
         </Wrapper>
     </Container> 
 )
