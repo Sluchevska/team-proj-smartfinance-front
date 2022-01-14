@@ -11,6 +11,7 @@ import {
     Sum
 } from './Credit.styled';
 import CreditItem from './CreditItem';
+import Summary from '../Summary';
 
 const Credit = () => (
     <div>
@@ -28,6 +29,7 @@ const Credit = () => (
                     <CreditItem/>
                 </Container2>
             </Box>
+            <Summary/>
         </Container>
     </div>
     
