@@ -55,7 +55,7 @@ export const Container = styled.div`
     padding-right: 30px;
     padding-bottom:0;
     padding-top:194px;
-    width: 768px;
+    width: 665px;
     border-bottom: none;
     
     
