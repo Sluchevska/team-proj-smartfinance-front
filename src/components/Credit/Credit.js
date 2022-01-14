@@ -4,7 +4,11 @@ import {
     Box,
     Container,
     Container2,
-    Header
+    Header,
+    Name,
+    Date,
+    Type,
+    Sum
 } from './Credit.styled';
 import CreditItem from './CreditItem';
 
@@ -13,7 +17,12 @@ const Credit = () => (
         <Container>
             <Box>
                 <Container2>
-                    <Header/>
+                    <Header>
+                        <Date >ДАТА</Date>
+                        <Name >ОПИСАНИЕ</Name>
+                        <Type >КАТЕГОРИЯ</Type>
+                        <Sum >СУММА</Sum>
+                    </Header>
                     <CreditItem />
                     <CreditItem />
                     <CreditItem/>

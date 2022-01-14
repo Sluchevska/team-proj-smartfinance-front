@@ -8,7 +8,7 @@ export const Box = styled.div`
   flex-direction:column; */
   width:665px;
   height:626px;
-  background-color: grey;
+  background-color: #dfdbdb;
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   border-radius: 0px 30px 30px 30px;
   `
@@ -54,6 +54,7 @@ export const Container = styled.div`
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom:0;
+    padding-top:194px;
     width: 768px;
     border-bottom: none;
     
@@ -68,10 +69,61 @@ export const Container = styled.div`
   `
 
 export const Header = styled.div`
+display:flex;
+padding-top:10px;
+padding-bottom:10px;
 width:606px;
 height:38px;
   background-color: #F5F6FB;
   border-radius: 20px 20px 0 0;
+  `
+
+  export const Name = styled.span`
+    color: #000000;
+  @media screen and (min-width: 768px) {
+    margin-bottom:0;
+     width:200px;
+    font-size: 12px;
+    line-height: 1.167;
+    font-weight:700;
+    letter-spacing: 0.04em;
+  }
+  `
+  export const Date = styled.span`
+    color: #000000;
+  @media screen and (min-width: 768px) {
+    margin-left:22px;
+    margin-bottom:0;
+     width:105px;
+    font-size: 12px;
+    line-height: 1.167;
+    font-weight:700;
+    letter-spacing: 0.04em;
+  }
+  `
+  export const Type = styled.span`
+    color: #000000;
+  @media screen and (min-width: 768px) {
+    margin-bottom:0;
+     width:70px;
+    font-size: 12px;
+    line-height: 1.167;
+    font-weight:700;
+    letter-spacing: 0.04em;
+  }
+  `
+  export const Sum = styled.span`
+    color: #000000;
+  @media screen and (min-width: 768px) {
+    margin-left:3px;
+    text-align:right;
+   
+     width:130px;
+    font-size: 12px;
+    line-height: 1.167;
+    font-weight:700;
+    letter-spacing: 0.04em;
+  }
   `
   
   
