@@ -5,5 +5,6 @@ export const RegistrationPageWrapper = styled.div`
     display: flex;
     align-items: center;
     margin-top: 117px;
+    margin-left: auto;
   }
 `;

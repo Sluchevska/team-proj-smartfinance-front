@@ -3,15 +3,15 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { authOperations } from '../../redux/auth';
 import {
-  Container,
+  
   Forma,
   Title,
-  NoticeText,
+  
   Button,
   Span,
   InputDescr,
   BtnContainer,
-  LabelGroup,
+ 
   Label,
   FormInput,
 } from './Registration.styled';

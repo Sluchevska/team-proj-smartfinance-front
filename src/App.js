@@ -1,13 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
 import React, { lazy, Suspense } from 'react';
 
-import Navigation from './components/Navigation/Navigation';
+
 import HomeView from './views/HomeView';
 // import BalanceView from './views/BalanceView';
 // import ReportsView from './views/ReportsView';
 import Credit from './components/Credit';
 import Debit from './components/Debit';
 import BalanceBar from './components/BalanceBar';
+import { BgGrey } from './App.styled';
+
 
 
 
@@ -15,7 +17,7 @@ import BalanceBar from './components/BalanceBar';
 function App() {
   return (
     <div>
-      <Navigation />
+     <BgGrey/>
       <BalanceBar /> 
       <Routes>
       
