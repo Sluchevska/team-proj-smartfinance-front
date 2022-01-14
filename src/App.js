@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 
 
 import HomeView from './views/HomeView';
@@ -9,15 +9,26 @@ import Credit from './components/Credit';
 import Debit from './components/Debit';
 import BalanceBar from './components/BalanceBar';
 import { BgGrey } from './App.styled';
+import Header from './components/Header/Header';
+import { useDispatch } from 'react-redux';
+import { authOperations, authSelectors } from './redux/auth';
+import { useStore } from 'react-redux';
 
 
 
 
 
 function App() {
+  // const dispatch = useDispatch;
+
+  //   useEffect(() => {
+  //       dispatch(authOperations.fetchCurrentUser());
+  //   }, [dispatch]);
+  //   const isLoggedIn = useStore(authSelectors.getIsLoggedIn);
   return (
     <div>
-     <BgGrey/>
+      <BgGrey />
+      <Header/>
       <BalanceBar /> 
       <Routes>
       

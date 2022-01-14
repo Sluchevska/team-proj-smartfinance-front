@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import logo from "../../icons/euro-795.svg";
+// import logo from "../../icons/euro-795.svg";
 
 export const HeroLogo = styled.div`
 width: 183px;
