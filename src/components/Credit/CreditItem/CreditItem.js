@@ -25,7 +25,7 @@ import data from '../../../data/data.json';
 function CreditItem ({ transactions }) {
     // const dispatch = useDispatch();
 return (
-    <Container >
+    // <Container >
         <Wrapper>
             <Date >13.01.22</Date>
             <Name >Метро</Name>
@@ -33,7 +33,7 @@ return (
             <Sum >100000</Sum>
             <DeleteIcon width="36" height="18" fill="black" />
         </Wrapper>
-    </Container> 
+    // </Container> 
 )
     
 }
