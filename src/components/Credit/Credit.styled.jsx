@@ -3,9 +3,10 @@ import styled from '@emotion/styled'
 export const Box = styled.div`
   /* margin-left: auto;
   margin-right: auto; */
-  /* display:flex;
+  /* 
   justify-content:center;
   flex-direction:column; */
+  display:flex;
   width:665px;
   height:626px;
   background-color: #dfdbdb;
@@ -13,12 +14,12 @@ export const Box = styled.div`
   border-radius: 0px 30px 30px 30px;
 
    @media screen and (min-width: 1280px) {
-    width:1069px;
+    width:1060px;
   height:579px;
   }
   `
 export const Container = styled.div`
-  //display:flex;
+  /* //display:flex; */
   //justify-content:space-between;
   margin-left: auto;
   margin-right: auto;
@@ -55,39 +56,37 @@ export const Container = styled.div`
   border-bottom: solid 1px #F5F6FB;
   
   @media screen and (min-width: 768px) {
-    
     margin-left: 30px;
     margin-right: 30px;
     padding:0;
     padding-top:194px;
     width: 665px;
     border-bottom: none;
-    
-    
   }
 
   @media screen and (min-width: 1280px) {
-    margin-left: 20px;
+    margin:0;
+    margin-right:30px;
+    padding:0;
+    padding-left: 20px;
     padding-top:136px;
-    padding-left: 0;
-    padding-right: 0;
-    /* padding-right: 280px; */
-    width: 996px;
+    width: 780px;
   }
   `
 
 export const Header = styled.div`
-display:flex;
-padding-top:10px;
-padding-bottom:10px;
-width:606px;
-height:38px;
+  margin:0;
+  display:inline-flex;
+  padding-top:10px;
+  padding-bottom:10px;
+  width:606px;
+  height:38px;
   background-color: #F5F6FB;
   border-radius: 20px 20px 0 0;
 
   @media screen and (min-width: 1280px) {
     width:760px;
-height:40px;
+    height:40px;
   }
   `
 

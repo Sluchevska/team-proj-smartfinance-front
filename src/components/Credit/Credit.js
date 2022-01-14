@@ -28,8 +28,9 @@ const Credit = () => (
                     <CreditItem />
                     <CreditItem/>
                 </Container2>
+                <Summary/>
             </Box>
-            <Summary/>
+            
         </Container>
     </div>
     

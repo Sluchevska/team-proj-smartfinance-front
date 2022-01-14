@@ -1,7 +1,7 @@
 import React from 'react';
 // import Container from './Container';
 import {
-    Container,
+    Wrapper,
     Title,
     List,
     ListItem,
@@ -11,8 +11,7 @@ import {
 
 
 const Summary = () => (
-    <div>
-        <Container>
+        <Wrapper>
             <Title>СВОДКА</Title>
             <List>
                 <ListItem >
@@ -40,9 +39,7 @@ const Summary = () => (
                     <Sum >10000</Sum>
                 </ListItem>
             </List>
-        </Container>
-    </div>
-    
+        </Wrapper>
 );
 
 export default Summary;
