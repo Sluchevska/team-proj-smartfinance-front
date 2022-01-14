@@ -7,67 +7,74 @@ import {
     NameInfo,
     Date,
     Type,
-    Sum
+    Sum,
+    Transaction,
+    Wrapper
 } from './CreditItem.styled';
 import IconButton from '../../IconButton';
 import { ReactComponent as DeleteIcon } from '../../../icons/delete.svg';
 
-import { DataGrid } from '@mui/x-data-grid';
-import data from '../../../data/data.json'
 
-const columns = [
-    { field: 'id', headerName: 'ДАТА' },
-    { field: 'name', headerName: 'ОПИСАНИЕ', width:300 },
-    { field: 'body', headerName: 'КАТЕГОРИЯ', width: 300 },
-    {field: "actions",headerName: "Actions",
-                        sortable: false,
-                        width: 100,
-                        disableClickEventBubbling: true,
-                        renderCell: (params) => {
-                            return (
-                                <div style={{ cursor: "pointer" }}>
-                                    <DeleteIcon index={params.row.id} width="18" height="18" fill="black" />
-                                 </div>
-                            );
-                         }
-                      }
-]
+import data from '../../../data/data.json';
 
-const CreditItem = () => {
-    const [tableData, setTableData] = useState([])
+// import { useDispatch } from 'react-redux';
+// import * as actions from '../../redux/contacts/contacts-action';
+
+
+
+function CreditItem ({ transactions }) {
+    // const dispatch = useDispatch();
+return (
+    <Container >
+        <Wrapper>
+            
+                <Date >13.01.22</Date>
+                <Name >Метро</Name>
+                <Type >Транспорт</Type>
+                <Sum >100000</Sum>
+            
+            <DeleteIcon width="18" height="18" fill="black" />
+        </Wrapper>
+    </Container> 
+)
     
-    useEffect(() => {
-        setTableData(data);
-    },[])
-    return (
-        <div style={{height:300, width:'100%'}}>
-            <DataGrid
-                rows={tableData}
-                columns={columns}
-                pageSize ={4}
-            />
-        </div>
-        // <Container>
-        //     <WrapperInfo>
-        //         <Name>Метро</Name>
-        //         <NameInfo>
-        //             <Date>13.01.22</Date>
-        //             <Type>Транспорт</Type>
-        //         </NameInfo>
-        //     </WrapperInfo>
-        //     <WrapperSum>
-        //         <Sum>-10</Sum>
-        //         <DeleteIcon width="18" height="18" fill="black" />
-        //     </WrapperSum>
-        
-        //     {/* <IconButton>
-        //         <DeleteIcon width="40" height="40" fill = "black"/>
-        // </IconButton> */}
-        // </Container>
-    
-    );
 }
 
 export default CreditItem;
 
-// onClick={onSubmit}
+//вариант мобилки
+/* <Container>
+            <WrapperInfo>
+                <Name>Метро</Name>
+                <NameInfo>
+                    <Date>13.01.22</Date>
+                    <Type>Транспорт</Type>
+                </NameInfo>
+            </WrapperInfo>
+            <WrapperSum>
+                <Sum>-10</Sum>
+                <DeleteIcon width="18" height="18" fill="black" />
+            </WrapperSum>
+        
+            {/* <IconButton onClick={onSubmit}>
+                <DeleteIcon onClick={onSubmit} width="40" height="40" fill = "black"/>
+        </IconButton> */
+        // </Container> */}
+
+        //<button onClick={() => dispatch(actions.deleteContact(contacts.id))}>Delete</button>
+
+        //function CreditItem ({ transactions }) {
+    // const dispatch = useDispatch();
+// return (
+//     <div >
+//         <p >
+//             <span >{transactions.date}</span>
+//             <span >{transactions.name}</span>
+//             <span >{transactions.type}</span>
+//             <span >{transactions.sum}</span>
+//         </p>
+//         <DeleteIcon width="40" height="40" fill = "black"/>
+//     </div> 
+// )
+    
+// }

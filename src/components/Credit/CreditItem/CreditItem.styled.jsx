@@ -14,7 +14,10 @@ export const Container = styled.div`
   @media screen and (min-width: 768px) {
     padding-left: 50px;
     padding-right: 50px;
+    padding-bottom:0;
     width: 768px;
+    border-bottom: none;
+    
   }
 
   @media screen and (min-width: 1280px) {
@@ -23,13 +26,26 @@ export const Container = styled.div`
     width: 1280px;
   }
   `
-
 export const Wrapper = styled.div`
+display:flex;
+padding-bottom:16px;
+  border-bottom: solid 1px #F5F6FB;
+  `
+export const WrapperInfo = styled.div`
   display:flex;
   flex-direction:column;
   `
+export const Transaction = styled.p`
+display:flex;
+  
+ 
+  `
+  export const WrapperSum= styled.div`
+  display:flex;
+ 
+  `
 
-export const Name = styled.p`
+export const Name = styled.span`
   margin:0;
   margin-bottom:8px;
   width:100px;
@@ -40,13 +56,22 @@ export const Name = styled.p`
   font-weight:700;
   line-height: 1.167;
   letter-spacing: 0.04em;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom:0;
+     width:200px;
+    font-size: 12px;
+  line-height: 1.167;
+  font-weight:400;
+  
+  }
   `
 
   export const NameInfo = styled.div`
   display:flex;
   `
 
-export const Date = styled.p`
+export const Date = styled.span`
   margin:0;
   margin-right:20px;
   display:block;
@@ -55,8 +80,22 @@ export const Date = styled.p`
   font-size: 8px;
   line-height: 1.125;
   letter-spacing: 0.04em;
+
+   @media screen and (min-width: 768px) {
+     margin-right:0;
+     width:105px;
+    font-size: 12px;
+  line-height: 1.167;
+  
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-left: 110px;
+    padding-right: 110px;
+    width: 1280px;
+  }
   `
-export const Type = styled.p`
+export const Type = styled.span`
   margin:0;
   display:block;
 
@@ -64,9 +103,18 @@ export const Type = styled.p`
   font-size: 8px;
   line-height: 1.125;
   letter-spacing: 0.04em;
+
+  @media screen and (min-width: 768px) {
+     margin-right:0;
+     width:70px;
+     text-align:center;
+    font-size: 12px;
+  line-height: 1.167;
+  
+  }
     `
 
-export const Sum = styled.p`
+export const Sum = styled.span`
   margin:0;
   margin-right:23px;
   color: #E7192E;
@@ -75,4 +123,12 @@ export const Sum = styled.p`
   font-weight:700;
   line-height: 1.167;
   letter-spacing: 0.04em;
+
+  @media screen and (min-width: 768px) {
+     margin-right:0;
+     width:130px;
+     text-align:right;
+    
+  
+  }
     `
