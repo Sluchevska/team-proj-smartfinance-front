@@ -9,13 +9,18 @@ import Credit from './components/Credit';
 import Debit from './components/Debit';
 import BalanceBar from './components/BalanceBar';
 
+
+
+
 function App() {
   return (
     <div>
       <Navigation />
       <BalanceBar /> 
       <Routes>
+      
         <Route exact path="/" element={<HomeView />} />
+        
         {/* <Route exact path="/balance" element={<BalanceView />} /> */}
         <Route exact path="/credit" element={<Credit />} />
         <Route exact path="/debit" element={<Debit />} />
