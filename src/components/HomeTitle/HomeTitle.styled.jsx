@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
-// import logo from "../../icons/euro-795.svg";
+import logo from "../../icons/kapustaLogoHPM.svg";
+import logoTab from "../../icons/kapustaLogoHPT.svg";
+import logoDesc from "../../icons/kapustaLogoHPD.svg";
 
 export const HeroLogo = styled.div`
 width: 183px;
@@ -14,42 +16,23 @@ height: 139px;
   }
 `;
 
-// export const HeroTitle = styled.svg`
-// width: 183px;
-// height: 46px;
-// background-image: url(${logo});
-// background-repeat: no-repeat;
-// @media screen and (min-width: 768px) {
-//     width: 306px;
-//     height: 77px;
-//     background-image: url(${logo});
-//   }
-// @media screen and (min-width: 1280px) {
-//     width: 377px;
-//     height: 120px;
-//     background-image: url(${logo});
-//   }
-  
-// `;
-export const HeroTitle = styled.h1`
-font-weight: bold;
-
-padding-left: 49px;
-font-size: 16px;
-line-height: 19px;
-letter-spacing: 0.18em;
-
-color: #000;
-
+export const HeroTitle = styled.svg`
+width: 183px;
+height: 46px;
+background-image: url(${logo});
+background-repeat: no-repeat;
 @media screen and (min-width: 768px) {
-font-size: 102px;
-line-height: 120px;
-padding-left: 161px;
-}
+    width: 306px;
+    height: 77px;
+    background-image: url(${logoTab});
+  }
 @media screen and (min-width: 1280px) {
-padding-left: 230px;
+    width: 377px;
+    height: 120px;
+    background-image: url(${logoDesc});
   }
 `;
+
 
 export const HeroText = styled.h3`
 font-weight: bold;
@@ -59,6 +42,7 @@ letter-spacing: 0.15em;
 text-transform: uppercase;
 color: #52555F;
 padding-left: 12px;
+
 @media screen and (min-width: 768px) {
 font-size: 16px;
 line-height: 19px;

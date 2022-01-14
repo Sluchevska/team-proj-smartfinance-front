@@ -1,11 +1,13 @@
 import React from 'react';
-import BcgAuth from '../components/BcgAuth/BcgAuth';
+import BcgAuth from '../../components/BcgAuth/BcgAuth';
 // import BcgAuthBottom from '../components/BcgAuthBottom/';
-import FormContainer from '../components/FormContainer/FormContainer';
-import HomeTitle from '../components/HomeTitle';
+import FormContainer from '../../components/FormContainer/FormContainer';
+
+import HomeTitle from '../../components/HomeTitle';
 // import Authorization from '../components/Authorization';
-import Registration from '../components/Registration/Registration';
-import RegistrationPageContainer from '../components/RegistrationPageContainer/RegistrationPage';
+import Registration from '../../components/Registration/Registration';
+import RegistrationPageContainer from '../../components/RegistrationPageContainer/RegistrationPage';
+import { BcgImg, Container, HomeContainer } from './HomeView.styled';
 
 export default function HomeView() {
     return (
@@ -15,14 +17,18 @@ export default function HomeView() {
         //     <Registration/>
         //            </div>
         // <RegistrationPageContainer>
-        <div>
-            <HomeTitle />
-            <BcgAuth />
+        
+        <Container>
+            <HomeContainer>
+                <HomeTitle />
+                <BcgImg/>
+           </HomeContainer>
            <FormContainer>
                 <Registration/>
             </FormContainer>
-            </div>
-            // {/* <BcgAuthBottom/> */}
+          </Container>
+            
+           
             
         // </RegistrationPageContainer>
     )

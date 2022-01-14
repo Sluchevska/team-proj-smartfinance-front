@@ -3,7 +3,8 @@ import { BcgBottom, BcgImg, BcgImgBottom, Container, Section } from "./BcgAuth.s
 
 export default function BcgAuth () {
     return (
-         <BcgBottom />
+        <div></div>
+        //  <BcgBottom />
         // <Container >
             // {/* <Section> */}
                 // <BcgImg></BcgImg>
