@@ -11,6 +11,11 @@ export const Box = styled.div`
   background-color: #dfdbdb;
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   border-radius: 0px 30px 30px 30px;
+
+   @media screen and (min-width: 1280px) {
+    width:1069px;
+  height:579px;
+  }
   `
 export const Container = styled.div`
   //display:flex;
@@ -51,9 +56,9 @@ export const Container = styled.div`
   
   @media screen and (min-width: 768px) {
     
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom:0;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding:0;
     padding-top:194px;
     width: 665px;
     border-bottom: none;
@@ -62,9 +67,12 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    padding-left: 110px;
-    padding-right: 110px;
-    width: 1280px;
+    margin-left: 20px;
+    padding-top:136px;
+    padding-left: 0;
+    padding-right: 0;
+    /* padding-right: 280px; */
+    width: 996px;
   }
   `
 
@@ -76,6 +84,11 @@ width:606px;
 height:38px;
   background-color: #F5F6FB;
   border-radius: 20px 20px 0 0;
+
+  @media screen and (min-width: 1280px) {
+    width:760px;
+height:40px;
+  }
   `
 
   export const Name = styled.span`
@@ -88,6 +101,10 @@ height:38px;
     font-weight:700;
     letter-spacing: 0.04em;
   }
+
+  @media screen and (min-width: 1280px) {
+    width:275px;
+  }
   `
   export const Date = styled.span`
     color: #000000;
@@ -99,6 +116,10 @@ height:38px;
     line-height: 1.167;
     font-weight:700;
     letter-spacing: 0.04em;
+  }
+  @media screen and (min-width: 1280px) {
+    width:100px;
+    margin-left:23px;
   }
   `
   export const Type = styled.span`
@@ -123,6 +144,10 @@ height:38px;
     line-height: 1.167;
     font-weight:700;
     letter-spacing: 0.04em;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width:179px;
   }
   `
   

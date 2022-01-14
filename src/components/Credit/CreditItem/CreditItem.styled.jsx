@@ -33,6 +33,10 @@ display:flex;
 padding-top:10px;
 padding-bottom:10px;
   border: solid 1px #F5F6FB;
+
+  @media screen and (min-width: 1280px) {
+    width:760px;
+  }
   `
 export const WrapperInfo = styled.div`
   display:flex;
@@ -66,7 +70,10 @@ export const Name = styled.span`
     font-size: 12px;
   line-height: 1.167;
   font-weight:400;
-  
+  }
+
+  @media screen and (min-width: 1280px) {
+    width:270px;
   }
   `
 
@@ -89,14 +96,11 @@ export const Date = styled.span`
      margin-left:22px;
      width:105px;
     font-size: 12px;
-  line-height: 1.167;
-  
+    line-height: 1.167;
   }
 
   @media screen and (min-width: 1280px) {
-    padding-left: 110px;
-    padding-right: 110px;
-    width: 1280px;
+    width:100px;
   }
   `
 export const Type = styled.span`
@@ -116,6 +120,10 @@ export const Type = styled.span`
   line-height: 1.167;
   
   }
+
+  @media screen and (min-width: 1280px) {
+    width:85px;
+  }
     `
 
 export const Sum = styled.span`
@@ -134,5 +142,10 @@ export const Sum = styled.span`
      text-align:right;
     
   
+  }
+
+  @media screen and (min-width: 1280px) {
+    width:170px;
+    margin-right:50px;
   }
     `
