@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//import s from './ContactList.module.css';
+import {Button} from './IconButton.styled';
 
-const IconButton = ({ children, onClick, ...allyProps }) => {
-    <button type ="button" className="IconButton" onClick={onClick} {...allyProps}>
+const IconButton = ({ children, onClick }) => {
+    return (
+    <Button type ="button" className="IconButton" onClick={onClick}>
         {children}
-    </button>
+    </Button>)
 }
 
 IconButton.defaultProps = {
@@ -15,8 +16,7 @@ IconButton.defaultProps = {
 
 IconButton.propTypes = {
     onClick: PropTypes.func,
-    children: PropTypes.node,
-    'aria-label': PropTypes.string.isRequired,
+    children: PropTypes.node
 }
 
 export default IconButton

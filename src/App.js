@@ -15,10 +15,6 @@ import Spinner from './components/Spinner/Spinner';
 // import { authOperations, authSelectors } from './redux/auth';
 // import { useStore } from 'react-redux';
 
-
-
-
-
 function App() {
   // const dispatch = useDispatch;
 
@@ -33,10 +29,7 @@ function App() {
       {/* <BalanceBar />  */}
        <Suspense fallback={<Spinner />}>
       <Routes>
-      
         <Route exact path="/" element={<HomeView />} />
-        
-        {/* <Route exact path="/balance" element={<BalanceView />} /> */}
         <Route exact path="/credit" element={<CreditView />} />
         <Route exact path="/debit" element={<DebitView />} />
         {/* <Route exact path="/reports" element={<ReportsView />} /> */}

@@ -11,7 +11,7 @@ import {
     Transaction,
     Wrapper
 } from './CreditItem.styled';
-// import IconButton from '../../IconButton';
+import IconButton from '../../IconButton';
 import { ReactComponent as DeleteIcon } from '../../../icons/delete.svg';
 
 function CreditItem ({ transactions }) {
@@ -20,8 +20,11 @@ return (
             <Date >{transactions.date}</Date>
             <Name >{transactions.name}</Name>
             <Type >{transactions.type}</Type>
-            <Sum >-{transactions.sum}.00 грн</Sum>
-            <DeleteIcon width="36" height="18" fill="black" />
+        <Sum >-{transactions.sum}.00 грн</Sum>
+        <IconButton onClick={() => console.log('Pressed')}>
+            {<DeleteIcon width="18" height="18" fill="black" />}
+        </IconButton>
+            
         </Wrapper>
     )   
 }
