@@ -35,10 +35,11 @@ export const Title = styled.h3`
   `
 
 export const List = styled.ul`
-margin:0;
-padding:0;
-list-style:none;
-width:230px;
+    margin:0;
+    padding:0;
+    list-style:none;
+    width:230px;
+    height:278px;
 
   @media screen and (min-width: 1280px) {
     }
