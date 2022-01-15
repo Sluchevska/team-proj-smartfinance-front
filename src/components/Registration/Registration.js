@@ -3,17 +3,21 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { authOperations } from '../../redux/auth';
 import {
-  Container,
+  
   Forma,
   Title,
-  NoticeText,
+  
   Button,
   Span,
   InputDescr,
   BtnContainer,
-  LabelGroup,
+ 
   Label,
   FormInput,
+ 
+  Google,
+ 
+  GoogleContainer,
 } from './Registration.styled';
 
 export default function Registration() {
@@ -26,7 +30,7 @@ export default function Registration() {
     const [passwordError, setPasswordError] = useState('Это обязательное поле');
   const [nameError, setNameError] = useState('Это обязательное поле');
   
-  const [errorSymbol, _setErrorSymbol] = useState('*');
+   const [errorSymbol, setErrorSymbol] = useState('*');
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -59,9 +63,42 @@ export default function Registration() {
     setRegister(!isRegister);
   };
 
+  const emailHandler = e => {
+    setEmail(e.target.value);
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!re.test(String(e.target.value).toLowerCase())) {
+      setEmailError('Некорректный емейл');
+      
+      setErrorSymbol('*');
+      if (!e.target.value) {
+        setEmailError('это обязательное поле');
+        setErrorSymbol('*');
+      }
+    } else {
+      setEmailError('');
+    }
+  };
+
+  const passwordHandler = e => {
+    setPassword(e.target.value);
+    if (e.target.value.length < 6) {
+      setPasswordError('Пароль должен быть не меньше 6 символов');
+      if (!e.target.value) {
+        setPasswordError('это обязательное поле');
+      }
+    } else {
+      setPasswordError('');
+    }
+  };
+
   return (
-    <Fragment>
-      <Title>Вы можете авторизоваться с помощью Google Account:</Title>
+   
+      <Fragment>
+        <Title>Вы можете авторизоваться с помощью Google Account:</Title>
+        <GoogleContainer>
+          <Google href=''>Google</Google>
+        </GoogleContainer>
       <Title>
         Или зайти с помощью e-mail и пароля, предварительно зарегистрировавшись:
       </Title>
@@ -105,7 +142,7 @@ export default function Registration() {
             type="email"
             name="email"
             value={email}
-            onChange={handleChange}
+            onChange={emailHandler}
             placeholder={'your@email.com'}
             pattern="[A-Za-zА-Яа-яЁёЄєЇї0-9._%+-]+@[A-Za-zА-Яа-яЁёЄєЇї0-9.-]+\.[A-Za-zА-Яа-яЁёЄєЇї]{2,4}$"
             title="Email может, сoстоять из букв цифр и обязательного символа @"
@@ -134,7 +171,7 @@ export default function Registration() {
             type="password"
             name="password"
             value={password}
-            onChange={handleChange}
+            onChange={passwordHandler}
             placeholder={'········'}
             pattern="[0-9A-Za-zА-Яа-яЁёЄєЇї!@#$%^&*]{6,}"
             title="Пароль может, сoстоять не меньше чем из шести букв цифр и символов '!@#$%^&*'"
@@ -189,5 +226,6 @@ export default function Registration() {
         </BtnContainer>
       </Forma>
     </Fragment>
+ 
   );
 }

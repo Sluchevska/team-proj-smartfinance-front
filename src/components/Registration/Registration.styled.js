@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import googleIcon from "../../icons/google-symbol.svg";
 
 export const Forma = styled.form`
  align-items: left;
@@ -20,16 +21,16 @@ export const Title = styled.p`
     line-height: 1.176;
     letter-spacing: 0.04em;
     margin-bottom: 20px;
+    margin-top: 0;
+    /* margin-block-start: 0;
+    margin-block-end: 0; */
     color: #52555F;
      @media (max-width: 768px) {
         text-align: center;
       
     }
 `;
-export const NoticeText = styled.p`
-  font-size: 13px;
-  opacity: 0.7;
-`;
+
 
 export const Span = styled.span`
   display: block;
@@ -107,4 +108,48 @@ export const Button = styled.button`
   
   }
   
+`;
+
+
+export const Google = styled.a`
+text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f6f7fb;
+  border-radius: 26px;
+  border: 0;
+  width: 122px;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #000000;
+  &::before{
+    content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+
+  margin-right: 10px;
+  margin-left: 20px;
+  background-image: url(${googleIcon});
+  background-size: contain;
+  background-repeat: no-repeat;
+  }
+`;
+
+export const GoogleContainer = styled.div`
+   display: flex;
+  
+
+  align-items: center;
 `;
