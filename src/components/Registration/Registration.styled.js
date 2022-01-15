@@ -109,25 +109,10 @@ export const Button = styled.button`
   }
   
 `;
-// export const PageWrapper = styled.div`
-//    position: absolute;
-//   left: 50%;
-//   top: -84px;
-//   transform: translate(-50%, 0);
-//   z-index: 1;
-//   display: flex;
-//   flex-direction: column;
-//   margin-left: auto;
-//   margin-right: auto;
-//   padding: 40px 18px 53px 18px;
-//   width: 300px;
-//   height: 525px;
-//   background-color: #fff;
-//   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
-//   border-radius: 30px;
-// `;
+
 
 export const Google = styled.a`
+text-decoration: none;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;

@@ -35,7 +35,7 @@ export const FormWrapper = styled.div`
     margin: 0;
     width: 436px;
     /* height: 535px; */
-    top: 140px;
+    top: 150px;
     left: 75%;
   }
   
