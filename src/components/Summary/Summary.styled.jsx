@@ -35,11 +35,15 @@ export const Title = styled.h3`
   `
 
 export const List = styled.ul`
+display:block;
     margin:0;
     padding:0;
     list-style:none;
     width:230px;
-    height:278px;
+    min-height:233px;
+
+    background-color: #F5F6FB;
+    border-radius: 0 0 20px 0;
 
   @media screen and (min-width: 1280px) {
     }
@@ -49,7 +53,6 @@ export const ListItem = styled.li`
   display:flex;
   justify-content:space-between;
   border-bottom: solid 1px #FFFFFF;
-  background-color: #F5F6FB;
   text-transform:uppercase;
 
   @media screen and (min-width: 768px) {
@@ -66,7 +69,8 @@ export const ListItem = styled.li`
     color: #52555F;
 
     &:last-child{
-      border-radius: 0 0 20px 0;
+      
+      border-bottom: none;
     }
   }
   `
