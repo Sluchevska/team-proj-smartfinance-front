@@ -14,6 +14,8 @@ import {
  
   Label,
   FormInput,
+ 
+  Google,
 } from './Registration.styled';
 
 export default function Registration() {
@@ -60,8 +62,12 @@ export default function Registration() {
   };
 
   return (
-    <Fragment>
-      <Title>Вы можете авторизоваться с помощью Google Account:</Title>
+   
+      <Fragment>
+        <Title>Вы можете авторизоваться с помощью Google Account:</Title>
+        <div>
+          <Google href=''>Google</Google>
+        </div>
       <Title>
         Или зайти с помощью e-mail и пароля, предварительно зарегистрировавшись:
       </Title>
@@ -189,5 +195,6 @@ export default function Registration() {
         </BtnContainer>
       </Forma>
     </Fragment>
+ 
   );
 }

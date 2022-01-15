@@ -34,7 +34,7 @@ width: 320px;
     top: 104px;
     left: 271px;
     transform: rotate(-180deg); */
-}
+/* } */
 `;
 
 

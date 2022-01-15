@@ -108,3 +108,55 @@ export const Button = styled.button`
   }
   
 `;
+// export const PageWrapper = styled.div`
+//    position: absolute;
+//   left: 50%;
+//   top: -84px;
+//   transform: translate(-50%, 0);
+//   z-index: 1;
+//   display: flex;
+//   flex-direction: column;
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding: 40px 18px 53px 18px;
+//   width: 300px;
+//   height: 525px;
+//   background-color: #fff;
+//   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
+//   border-radius: 30px;
+// `;
+
+export const Google = styled.a`
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f6f7fb;
+  border-radius: 26px;
+  border: 0;
+  width: 122px;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #000000;
+  &::before{
+    content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+
+  margin-right: 10px;
+  margin-left: 20px;
+  background-image: url('../../icons/google-symbol.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  }
+`;
