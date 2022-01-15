@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {
     Container,
     WrapperInfo,
@@ -11,17 +11,11 @@ import {
     Transaction,
     Wrapper
 } from './CreditItem.styled';
-import IconButton from '../../IconButton';
+// import IconButton from '../../IconButton';
 import { ReactComponent as DeleteIcon } from '../../../icons/delete.svg';
-// import { useDispatch } from 'react-redux';
-// import * as actions from '../../redux/contacts/contacts-action';
-
-
 
 function CreditItem ({ transactions }) {
-    // const dispatch = useDispatch();
 return (
-    // <Container >
         <Wrapper>
             <Date >{transactions.date}</Date>
             <Name >{transactions.name}</Name>
@@ -29,9 +23,7 @@ return (
             <Sum >-{transactions.sum}.00 грн</Sum>
             <DeleteIcon width="36" height="18" fill="black" />
         </Wrapper>
-    // </Container> 
-)
-    
+    )   
 }
 
 export default CreditItem;

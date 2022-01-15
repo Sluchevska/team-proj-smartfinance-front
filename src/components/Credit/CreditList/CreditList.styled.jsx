@@ -6,11 +6,9 @@ export const List = styled.ul`
   list-style:none;
   
   @media screen and (min-width: 768px) {
-    
   }
 
   @media screen and (min-width: 1280px) {
-    
   }
   `
 export const ListItem = styled.li`

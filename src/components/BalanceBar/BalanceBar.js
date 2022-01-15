@@ -1,5 +1,5 @@
 import React from 'react';
-import {Wrapper, Container, StyledLink} from './BalanceBar.styled';
+import {Container, StyledLink} from './BalanceBar.styled';
 
 const BalanceBar = () => (
     <Container>

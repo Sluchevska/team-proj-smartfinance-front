@@ -1,6 +1,26 @@
 import styled from '@emotion/styled'
 import { NavLink } from 'react-router-dom'
 
+export const Container = styled.div`
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: 320px;
+
+    @media screen and (min-width: 768px) {
+      padding-left: 52px;
+      padding-right: 52px;
+      width: 768px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      padding-left: 110px;
+      padding-right: 110px;
+      width: 1280px;
+    }
+    `
+
 export const StyledLink = styled(NavLink)`
     display:flex;
     justify-content:center;
@@ -17,46 +37,15 @@ export const StyledLink = styled(NavLink)`
     letter-spacing:0.02;
     text-transform: uppercase;
 
-
     color: #000000;
     background-color: #F5F6FB;
     text-decoration:none;
 
     &.active {
     color: #FF751D;
-;
-    
   }
   `
-
-  export const Wrapper = styled.div`
-    position:absolute;
-    top:100%;
-    left:0;
-  `
-
-export const Container = styled.div`
-  display:flex;
-  margin-left: auto;
-  margin-right: auto;
   
-  width: 320px;
-
-  @media screen and (min-width: 768px) {
-    padding-left: 52px;
-    padding-right: 52px;
-    width: 768px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    padding-left: 110px;
-    padding-right: 110px;
-    width: 1280px;
-  }
-  `
- 
-
-
   // мобильная версия
 //   import styled from '@emotion/styled'
 // import { NavLink } from 'react-router-dom'

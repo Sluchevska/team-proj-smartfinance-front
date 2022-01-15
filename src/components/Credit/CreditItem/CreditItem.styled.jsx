@@ -17,7 +17,6 @@ export const Container = styled.div`
     padding-bottom:0;
     width: 768px;
     border-bottom: none;
-    
   }
 
   @media screen and (min-width: 1280px) {
@@ -27,30 +26,27 @@ export const Container = styled.div`
   }
   `
 export const Wrapper = styled.div`
-width:606px;
-display:inline-flex;
+  width:606px;
+  display:inline-flex;
 
-padding-top:10px;
-padding-bottom:10px;
+  padding-top:10px;
+  padding-bottom:10px;
   border: solid 1px #F5F6FB;
 
   @media screen and (min-width: 1280px) {
     width:760px;
   }
-  `
+`
 export const WrapperInfo = styled.div`
   display:flex;
   flex-direction:column;
-  `
+`
 export const Transaction = styled.p`
-display:flex;
-  
- 
-  `
-  export const WrapperSum= styled.div`
   display:flex;
- 
-  `
+`
+export const WrapperSum= styled.div`
+  display:flex;
+`
 
 export const Name = styled.span`
   margin:0;
@@ -66,10 +62,10 @@ export const Name = styled.span`
 
   @media screen and (min-width: 768px) {
     margin-bottom:0;
-     width:200px;
+    width:200px;
     font-size: 12px;
-  line-height: 1.167;
-  font-weight:400;
+    line-height: 1.167;
+    font-weight:400;
   }
 
   @media screen and (min-width: 1280px) {
@@ -77,7 +73,7 @@ export const Name = styled.span`
   }
   `
 
-  export const NameInfo = styled.div`
+export const NameInfo = styled.div`
   display:flex;
   `
 
@@ -92,9 +88,9 @@ export const Date = styled.span`
   letter-spacing: 0.04em;
 
    @media screen and (min-width: 768px) {
-     margin-right:0;
-     margin-left:22px;
-     width:105px;
+    margin-right:0;
+    margin-left:22px;
+    width:105px;
     font-size: 12px;
     line-height: 1.167;
   }
@@ -113,19 +109,17 @@ export const Type = styled.span`
   letter-spacing: 0.04em;
 
   @media screen and (min-width: 768px) {
-     margin-right:0;
-     width:70px;
-     text-align:center;
+    margin-right:0;
+    width:70px;
+    text-align:center;
     font-size: 12px;
-  line-height: 1.167;
-  
+    line-height: 1.167;
   }
 
   @media screen and (min-width: 1280px) {
     width:85px;
   }
     `
-
 export const Sum = styled.span`
   margin:0;
   margin-right:23px;
@@ -137,15 +131,13 @@ export const Sum = styled.span`
   letter-spacing: 0.04em;
 
   @media screen and (min-width: 768px) {
-     margin-right:40px;
-     width:130px;
-     text-align:right;
-    
-  
+    margin-right:40px;
+    width:130px;
+    text-align:right;
   }
 
   @media screen and (min-width: 1280px) {
     width:170px;
     margin-right:50px;
   }
-    `
+  `
