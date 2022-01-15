@@ -19,7 +19,7 @@ export const Box = styled.div`
   }
   `
 
-  export const Wrapper2 = styled.div`
+  export const Wrapper = styled.div`
   
 
    @media screen and (min-width: 1280px) {
@@ -52,7 +52,7 @@ export const Container = styled.div`
     width: 1280px;
   }
   `
-  export const Container2 = styled.div`
+  export const TransactionsWrapper = styled.div`
   /* display:flex;  */
   //justify-content:space-between;
   margin-left: auto;

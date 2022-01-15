@@ -3,10 +3,13 @@ import styled from '@emotion/styled'
 export const Wrapper = styled.div`
     
   @media screen and (min-width: 768px) {
-    
+    margin-top:110px;
+    margin-left:30px;
   }
 
   @media screen and (min-width: 1280px) {
+    margin-top:0;
+    margin-left:0;
     padding-top:136px;
    
   }
@@ -35,7 +38,7 @@ export const Title = styled.h3`
   `
 
 export const List = styled.ul`
-display:block;
+    display:block;
     margin:0;
     padding:0;
     list-style:none;

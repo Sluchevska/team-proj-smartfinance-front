@@ -3,13 +3,13 @@ import React, {useState} from 'react';
 import {
     Box,
     Container,
-    Container2,
+    TransactionsWrapper,
     Header,
     Name,
     Date,
     Type,
     Sum,
-    Wrapper2
+    Wrapper
 } from './BalancePage.styled';
 import CreditList from './CreditList';
 import Summary from '../Summary';
@@ -30,18 +30,18 @@ function BalancePage() {
                         {/* <Calendar /> */}
                         Календарь Инпут Кнопки
                     </div>
-                    <Wrapper2>
-                        <Container2>
-                        <Header>
-                            <Date >ДАТА</Date>
-                            <Name >ОПИСАНИЕ</Name>
-                            <Type >КАТЕГОРИЯ</Type>
-                            <Sum >СУММА</Sum>
-                        </Header>
-                        <CreditList transactions={transactions}/>
-                    </Container2>
-                    <Summary data={data}/>
-                    </Wrapper2>
+                    <Wrapper>
+                        <TransactionsWrapper>
+                            <Header>
+                                <Date >ДАТА</Date>
+                                <Name >ОПИСАНИЕ</Name>
+                                <Type >КАТЕГОРИЯ</Type>
+                                <Sum >СУММА</Sum>
+                            </Header>
+                            <CreditList transactions={transactions}/>
+                        </TransactionsWrapper>
+                        <Summary data={data}/>
+                    </Wrapper>
                 </Box>
             </Container>
         </div>
