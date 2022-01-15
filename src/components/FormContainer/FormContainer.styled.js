@@ -34,8 +34,8 @@ export const FormWrapper = styled.div`
   @media (min-width: 1280px) {
     margin: 0;
     width: 436px;
-    min-height: 535px;
-    top: 117px;
+    /* height: 535px; */
+    top: 140px;
     left: 75%;
   }
   

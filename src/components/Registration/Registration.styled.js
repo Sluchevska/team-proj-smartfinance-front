@@ -21,16 +21,16 @@ export const Title = styled.p`
     line-height: 1.176;
     letter-spacing: 0.04em;
     margin-bottom: 20px;
+    margin-top: 0;
+    /* margin-block-start: 0;
+    margin-block-end: 0; */
     color: #52555F;
      @media (max-width: 768px) {
         text-align: center;
       
     }
 `;
-export const NoticeText = styled.p`
-  font-size: 13px;
-  opacity: 0.7;
-`;
+
 
 export const Span = styled.span`
   display: block;
