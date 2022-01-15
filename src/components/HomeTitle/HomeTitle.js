@@ -1,11 +1,11 @@
 import React from 'react';
-import {  HeroLogo, HeroText, HeroTitle } from './HomeTitle.styled';
+import {  HeroContainer,  HeroText, HeroTitle } from './HomeTitle.styled';
 
 const HomeTitle = () => (
-         <HeroLogo>
+         <HeroContainer>
             <HeroTitle />
             <HeroText>Smart finance</HeroText>
-        </HeroLogo>
+        </HeroContainer>
   
 );
 

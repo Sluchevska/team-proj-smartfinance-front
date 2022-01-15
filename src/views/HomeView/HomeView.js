@@ -6,18 +6,12 @@ import FormContainer from '../../components/FormContainer/FormContainer';
 import HomeTitle from '../../components/HomeTitle';
 // import Authorization from '../components/Authorization';
 import Registration from '../../components/Registration/Registration';
-import RegistrationPageContainer from '../../components/RegistrationPageContainer/RegistrationPage';
+
 import { BcgImg, Container, HomeContainer } from './HomeView.styled';
 
 export default function HomeView() {
     return (
-        // <div>Home Page
-        //     {/* <Authorization />;
-        //     <Registration />; */}
-        //     <Registration/>
-        //            </div>
-        // <RegistrationPageContainer>
-        
+    
         <Container>
             <HomeContainer>
                 <HomeTitle />
@@ -29,8 +23,7 @@ export default function HomeView() {
           </Container>
             
            
-            
-        // </RegistrationPageContainer>
+  
     )
 }
     
