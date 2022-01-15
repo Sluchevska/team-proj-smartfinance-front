@@ -7,19 +7,23 @@ import HomeTitle from '../../components/HomeTitle';
 // import Authorization from '../components/Authorization';
 import Registration from '../../components/Registration/Registration';
 
-import { BcgImg, Container, HomeContainer } from './HomeView.styled';
+import {  BottomContainer, BottomKapusta, Container, HomeContainer } from './HomeView.styled';
 
 export default function HomeView() {
     return (
     
         <Container>
             <HomeContainer>
+             
                 <HomeTitle />
-                <BcgImg/>
+               
            </HomeContainer>
            <FormContainer>
                 <Registration/>
             </FormContainer>
+            <BottomContainer>
+                <BottomKapusta />
+                </BottomContainer>
           </Container>
             
            

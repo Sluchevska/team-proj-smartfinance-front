@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import googleIcon from "../../icons/google-symbol.svg";
 
 export const Forma = styled.form`
  align-items: left;
@@ -155,8 +156,15 @@ export const Google = styled.a`
 
   margin-right: 10px;
   margin-left: 20px;
-  background-image: url('../../icons/google-symbol.svg');
+  background-image: url(${googleIcon});
   background-size: contain;
   background-repeat: no-repeat;
   }
+`;
+
+export const GoogleContainer = styled.div`
+   display: flex;
+  
+
+  align-items: center;
 `;

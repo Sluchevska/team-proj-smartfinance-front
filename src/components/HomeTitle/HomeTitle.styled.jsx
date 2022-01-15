@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import logo from "../../icons/kapustaLogoHPM.svg";
 import logoTab from "../../icons/kapustaLogoHPT.svg";
 import logoDesc from "../../icons/kapustaLogoHPD.svg";
+import mnogoKup from "../../icons/mnogoKapustHPD.png";
 
 export const HeroContainer = styled.div`
 /* width: 183px;
@@ -17,7 +18,8 @@ height: 139px;
 
   padding-left: 49px;
  padding-top: 86px;
-  background-image: url('../../icons/mnogoKapustDesktop.png');
+  background-image: url(${mnogoKup});
+  background-repeat: no-repeat;
   @media screen and (min-width: 768px) {
     
     padding-top: 90px;
@@ -55,7 +57,9 @@ background-repeat: no-repeat;
 `;
 
 
-export const HeroText = styled.h3`
+export const HeroText = styled.p`
+margin-block-start: 0;
+    margin-block-end: 0;
 font-weight: bold;
 font-size: 13px;
 line-height: 15px;

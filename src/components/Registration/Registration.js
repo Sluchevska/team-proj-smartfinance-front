@@ -16,6 +16,8 @@ import {
   FormInput,
  
   Google,
+ 
+  GoogleContainer,
 } from './Registration.styled';
 
 export default function Registration() {
@@ -65,9 +67,9 @@ export default function Registration() {
    
       <Fragment>
         <Title>Вы можете авторизоваться с помощью Google Account:</Title>
-        <div>
+        <GoogleContainer>
           <Google href=''>Google</Google>
-        </div>
+        </GoogleContainer>
       <Title>
         Или зайти с помощью e-mail и пароля, предварительно зарегистрировавшись:
       </Title>

@@ -30,7 +30,7 @@ function App() {
     <div>
       <BgGrey />
       <Header/>
-      <BalanceBar /> 
+      {/* <BalanceBar />  */}
        <Suspense fallback={<Spinner />}>
       <Routes>
       
