@@ -16,7 +16,7 @@ export const Title = styled.h3`
   margin:0;
   color: #000000;
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 768px) {
     width:230px;
     height:38px;
     padding-top:11px;
@@ -42,6 +42,11 @@ display:block;
     width:230px;
     min-height:233px;
 
+    font-size: 12px;
+    line-height: 1.167;
+    font-weight:400;
+    letter-spacing: 0.04em;
+
     background-color: #F5F6FB;
     border-radius: 0 0 20px 0;
 
@@ -56,13 +61,6 @@ export const ListItem = styled.li`
   text-transform:uppercase;
 
   @media screen and (min-width: 768px) {
-    font-size: 12px;
-    line-height: 1.167;
-    font-weight:400;
-    letter-spacing: 0.04em;
-  }
-
-  @media screen and (min-width: 1280px) {
     padding-left:22px;
     padding-right:20px;
     height:38px;

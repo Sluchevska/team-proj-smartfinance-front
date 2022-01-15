@@ -6,7 +6,7 @@ export const Box = styled.div`
   /* 
   justify-content:center;
   flex-direction:column; */
-  display:flex;
+  //display:flex;
   width:665px;
   height:626px;
   background-color: #dfdbdb;
@@ -16,6 +16,14 @@ export const Box = styled.div`
    @media screen and (min-width: 1280px) {
     width:1060px;
   height:579px;
+  }
+  `
+
+  export const Wrapper2 = styled.div`
+  
+
+   @media screen and (min-width: 1280px) {
+    display:flex;
   }
   `
 export const Container = styled.div`
@@ -45,7 +53,7 @@ export const Container = styled.div`
   }
   `
   export const Container2 = styled.div`
-  //display:flex;
+  /* display:flex;  */
   //justify-content:space-between;
   margin-left: auto;
   margin-right: auto;
@@ -59,7 +67,7 @@ export const Container = styled.div`
     margin-left: 30px;
     margin-right: 30px;
     padding:0;
-    padding-top:194px;
+    padding-top:100px;
     width: 665px;
     border-bottom: none;
   }
@@ -69,7 +77,7 @@ export const Container = styled.div`
     margin-right:30px;
     padding:0;
     padding-left: 20px;
-    padding-top:136px;
+    padding-top:100px;
     width: 780px;
   }
   `

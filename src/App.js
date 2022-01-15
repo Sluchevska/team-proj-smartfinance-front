@@ -13,8 +13,8 @@ function App() {
       <Navigation />
         <Routes>
           <Route exact path="/" element={<HomeView />} />
-        <Route exact path="/credit" element={<BalanceView />} /> 
-        <Route exact path="/debit" element={<BalanceView />} /> 
+          <Route exact path="/credit" element={<BalanceView />} /> 
+          <Route exact path="/debit" element={<BalanceView />} /> 
           {/* <Route exact path="/reports" element={<ReportsView />} /> 
           <Route path="*" element = {<Error/>} />   */}
         </Routes>                     
