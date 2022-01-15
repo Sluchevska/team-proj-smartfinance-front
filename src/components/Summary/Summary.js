@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import Container from './Container';
+
 import {
     Wrapper,
     Title,
     List,
-    ListItem,
-    Month,
-    Sum
+    ListItem
 } from './Summary.styled';
 
 const Summary = ({data}) => (
@@ -16,8 +14,8 @@ const Summary = ({data}) => (
             <List>
                 {data.map((data)=> (
                 <ListItem key={data.id}  >
-                    <Month >{data.month}</Month>
-                    <Sum >{data.sum}</Sum>
+                    <p>{data.month}</p>
+                    <p>{data.sum}</p>
                     </ListItem>
                 ))}
             </List>

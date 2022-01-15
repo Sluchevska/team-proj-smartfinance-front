@@ -11,10 +11,8 @@ export const Wrapper = styled.div`
     margin-top:0;
     margin-left:0;
     padding-top:136px;
-   
   }
   `
-
 export const Title = styled.h3`
   margin:0;
   color: #000000;
@@ -36,7 +34,6 @@ export const Title = styled.h3`
     border-radius: 20px 20px 0 0;
     }
   `
-
 export const List = styled.ul`
     display:block;
     margin:0;
@@ -52,9 +49,6 @@ export const List = styled.ul`
 
     background-color: #F5F6FB;
     border-radius: 0 0 20px 0;
-
-  @media screen and (min-width: 1280px) {
-    }
   `
 
 export const ListItem = styled.li`
@@ -70,32 +64,11 @@ export const ListItem = styled.li`
     color: #52555F;
 
     &:last-child{
-      
       border-bottom: none;
     }
   }
   `
-  export const Month = styled.p`
-    
-  @media screen and (min-width: 768px) {
-    
-  }
-  @media screen and (min-width: 1280px) {
-    
-    
-  }
-  `
-
-  export const Sum = styled.p`
-    
-  @media screen and (min-width: 768px) {
-    
-  }
-
-  @media screen and (min-width: 1280px) {
-   
-  }
-  `
+ 
 
   
   

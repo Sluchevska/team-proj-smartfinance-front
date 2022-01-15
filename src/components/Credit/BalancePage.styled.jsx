@@ -1,34 +1,6 @@
 import styled from '@emotion/styled'
 
-export const Box = styled.div`
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* 
-  justify-content:center;
-  flex-direction:column; */
-  //display:flex;
-  width:665px;
-  height:626px;
-  background-color: #dfdbdb;
-  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
-  border-radius: 0px 30px 30px 30px;
-
-   @media screen and (min-width: 1280px) {
-    width:1060px;
-  height:579px;
-  }
-  `
-
-  export const Wrapper = styled.div`
-  
-
-   @media screen and (min-width: 1280px) {
-    display:flex;
-  }
-  `
 export const Container = styled.div`
-  /* //display:flex; */
-  //justify-content:space-between;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -43,7 +15,6 @@ export const Container = styled.div`
     padding-bottom:0;
     width: 768px;
     border-bottom: none;
-    
   }
 
   @media screen and (min-width: 1280px) {
@@ -52,16 +23,31 @@ export const Container = styled.div`
     width: 1280px;
   }
   `
+export const Box = styled.div`
+  width:665px;
+  height:626px;
+  background-color: #dfdbdb;
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  border-radius: 0px 30px 30px 30px;
+
+   @media screen and (min-width: 1280px) {
+    width:1060px;
+    height:579px;
+  }
+  `
+export const Wrapper = styled.div`
+   @media screen and (min-width: 1280px) {
+    display:flex;
+  }
+  `
   export const TransactionsWrapper = styled.div`
-  /* display:flex;  */
-  //justify-content:space-between;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom:12px;
-  width: 320px;
-  border-bottom: solid 1px #F5F6FB;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom:12px;
+    width: 320px;
+    border-bottom: solid 1px #F5F6FB;
   
   @media screen and (min-width: 768px) {
     margin-left: 30px;
@@ -75,13 +61,11 @@ export const Container = styled.div`
   @media screen and (min-width: 1280px) {
     margin:0;
     margin-right:30px;
-    padding:0;
     padding-left: 20px;
     padding-top:100px;
     width: 780px;
   }
   `
-
 export const Header = styled.div`
   margin:0;
   display:inline-flex;
@@ -91,71 +75,55 @@ export const Header = styled.div`
   height:38px;
   background-color: #F5F6FB;
   border-radius: 20px 20px 0 0;
+  color: #000000;
+
+  font-size: 12px;
+  line-height: 1.167;
+  font-weight:700;
+  letter-spacing: 0.04em;
 
   @media screen and (min-width: 1280px) {
     width:760px;
     height:40px;
   }
   `
-
-  export const Name = styled.span`
-    color: #000000;
-  @media screen and (min-width: 768px) {
-    margin-bottom:0;
-     width:200px;
-    font-size: 12px;
-    line-height: 1.167;
-    font-weight:700;
-    letter-spacing: 0.04em;
-  }
-
-  @media screen and (min-width: 1280px) {
-    width:275px;
-  }
-  `
   export const Date = styled.span`
-    color: #000000;
-  @media screen and (min-width: 768px) {
-    margin-left:22px;
-    margin-bottom:0;
-     width:105px;
-    font-size: 12px;
-    line-height: 1.167;
-    font-weight:700;
-    letter-spacing: 0.04em;
-  }
-  @media screen and (min-width: 1280px) {
-    width:100px;
-    margin-left:23px;
-  }
+    @media screen and (min-width: 768px) {
+      margin-left:22px;
+      margin-bottom:0;
+      width:105px;
+    }
+    @media screen and (min-width: 1280px) {
+      width:100px;
+      margin-left:23px;
+    }
   `
-  export const Type = styled.span`
-    color: #000000;
-  @media screen and (min-width: 768px) {
-    margin-bottom:0;
-     width:70px;
-    font-size: 12px;
-    line-height: 1.167;
-    font-weight:700;
-    letter-spacing: 0.04em;
-  }
-  `
-  export const Sum = styled.span`
-    color: #000000;
-  @media screen and (min-width: 768px) {
-    margin-left:3px;
-    text-align:right;
-   
-     width:130px;
-    font-size: 12px;
-    line-height: 1.167;
-    font-weight:700;
-    letter-spacing: 0.04em;
-  }
+  export const Name = styled.span`
+    @media screen and (min-width: 768px) {
+      margin-bottom:0;
+      width:200px;
+    }
 
-  @media screen and (min-width: 1280px) {
-    width:179px;
-  }
+    @media screen and (min-width: 1280px) {
+      width:275px;
+    }
+    `
+  export const Type = styled.span`
+    @media screen and (min-width: 768px) {
+      margin-bottom:0;
+      width:70px;
+    }
+    `
+  export const Sum = styled.span`
+    @media screen and (min-width: 768px) {
+      margin-left:3px;
+      width:130px;
+      text-align:right;
+    }
+
+    @media screen and (min-width: 1280px) {
+      width:179px;
+    }
   `
   
   
