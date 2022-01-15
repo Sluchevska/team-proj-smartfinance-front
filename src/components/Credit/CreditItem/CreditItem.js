@@ -13,10 +13,6 @@ import {
 } from './CreditItem.styled';
 import IconButton from '../../IconButton';
 import { ReactComponent as DeleteIcon } from '../../../icons/delete.svg';
-
-
-import data from '../../../data/data.json';
-
 // import { useDispatch } from 'react-redux';
 // import * as actions from '../../redux/contacts/contacts-action';
 
@@ -30,7 +26,7 @@ return (
             <Date >{transactions.date}</Date>
             <Name >{transactions.name}</Name>
             <Type >{transactions.type}</Type>
-            <Sum >{transactions.sum}</Sum>
+            <Sum >-{transactions.sum}.00 грн</Sum>
             <DeleteIcon width="36" height="18" fill="black" />
         </Wrapper>
     // </Container> 

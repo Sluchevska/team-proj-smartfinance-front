@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // import Container from './Container';
 import {
     Wrapper,
@@ -9,37 +10,26 @@ import {
     Sum
 } from './Summary.styled';
 
-
-const Summary = () => (
+const Summary = ({data}) => (
         <Wrapper>
             <Title>СВОДКА</Title>
             <List>
-                <ListItem >
-                    <Month >НОЯБРЬ</Month>
-                    <Sum >10000</Sum>
-                </ListItem>
-                <ListItem >
-                    <Month >НОЯБРЬ</Month>
-                    <Sum >10000</Sum>
-                </ListItem>
-                <ListItem >
-                    <Month >НОЯБРЬ</Month>
-                    <Sum >10000</Sum>
-                </ListItem>
-                <ListItem >
-                    <Month >НОЯБРЬ</Month>
-                    <Sum >10000</Sum>
-                </ListItem>
-                <ListItem >
-                    <Month >НОЯБРЬ</Month>
-                    <Sum >10000</Sum>
-                </ListItem>
-                <ListItem >
-                    <Month >НОЯБРЬ</Month>
-                    <Sum >10000</Sum>
-                </ListItem>
+                {data.map((data)=> (
+                <ListItem key={data.id}  >
+                    <Month >{data.month}</Month>
+                    <Sum >{data.sum}</Sum>
+                    </ListItem>
+                ))}
             </List>
         </Wrapper>
 );
+
+Summary.propTypes = {
+    contacts: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+        })
+    ),
+};
 
 export default Summary;

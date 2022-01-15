@@ -1,13 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import CreditItem from '../CreditItem';
 import {
     List,
     ListItem
 } from './CreditList.styled';
-
-import CreditItem from '../CreditItem';
-
-
-
 
 const CreditList = ({transactions}) => (
     <List>
@@ -18,6 +15,14 @@ const CreditList = ({transactions}) => (
         ))}
     </List>
 )
+
+CreditList.propTypes = {
+    contacts: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+        })
+    ),
+};
 
 export default CreditList;
 

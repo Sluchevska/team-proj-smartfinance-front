@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
    
   }
   `
-  
+
 export const Title = styled.h3`
   margin:0;
   color: #000000;
@@ -49,6 +49,7 @@ export const ListItem = styled.li`
   justify-content:space-between;
   border-bottom: solid 1px #FFFFFF;
   background-color: #F5F6FB;
+  text-transform:uppercase;
 
   @media screen and (min-width: 768px) {
     font-size: 12px;

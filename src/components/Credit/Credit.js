@@ -13,7 +13,8 @@ import {
 import CreditList from './CreditList';
 import Summary from '../Summary';
 
-import data from '../../data/data.json'
+import transactions from '../../data/transactions.json';
+import data from '../../data/summary.json'
 
 function Credit() {
 // const [transactions, setTransactions] = useState(data);
@@ -28,11 +29,10 @@ function Credit() {
                             <Type >КАТЕГОРИЯ</Type>
                             <Sum >СУММА</Sum>
                         </Header>
-                        <CreditList transactions={data}/>
+                        <CreditList transactions={transactions}/>
                     </Container2>
-                    <Summary />
+                    <Summary data={data}/>
                 </Box>
-            
             </Container>
         </div>
     );
