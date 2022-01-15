@@ -6,16 +6,16 @@ export const ContainerBox = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   width: 320px;
-
+  
   @media screen and (min-width: 768px) {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
     width: 768px;
   }
 
   @media screen and (min-width: 1280px) {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 110px;
+    padding-right: 110px;
     width: 1280px;
   }
   `

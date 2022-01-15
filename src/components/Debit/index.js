@@ -1,1 +1,1 @@
-export { default } from './Debit'
+export { default } from './DebitPage'

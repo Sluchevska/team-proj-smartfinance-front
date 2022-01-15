@@ -9,7 +9,7 @@ import {
     Type,
     Sum,
     Wrapper
-} from './BalancePage.styled';
+} from './CreditPage.styled';
 import BalanceBar from '../BalanceBar';
 // import Calendar from '../Calendar';
 import CreditList from './CreditList';
@@ -18,7 +18,7 @@ import Summary from '../Summary';
 import transactions from '../../data/transactions.json';
 import data from '../../data/summary.json'
 
-function BalancePage() {
+function CreditPage() {
     return (
         <div>
             <BalanceBar />
@@ -46,4 +46,4 @@ function BalancePage() {
     );
 }
 
-export default BalancePage;
+export default CreditPage;

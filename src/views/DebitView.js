@@ -1,18 +1,13 @@
 import React from 'react';
 // import Balance from '../components/Balance';
 
+import DebitPage from '../components/Debit/DebitPage';
 
-import BalancePage from '../components/Credit/BalancePage';
-//import Debit  from '../components/Debit';
-
-export default function BalanceView() {
-  
+export default function DebitView() {
     return (
         <div>
             {/* <Balance /> */}
-            
-            <BalancePage />
-            
+            <DebitPage />
         </div>
     );
 }
