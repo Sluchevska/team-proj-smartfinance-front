@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import useMediaQuery from '@mui/material/useMediaQuery';
 import {
     Wrapper,
     Title,
@@ -8,8 +8,11 @@ import {
     ListItem
 } from './Summary.styled';
 
-const Summary = ({data}) => (
-        <Wrapper>
+function Summary({ data }) {
+    const matches = useMediaQuery('(min-width:768px)');
+    if (matches === true) {
+        return (
+             <Wrapper>
             <Title>СВОДКА</Title>
             <List>
                 {data.map((data)=> (
@@ -20,8 +23,11 @@ const Summary = ({data}) => (
                 ))}
             </List>
         </Wrapper>
-);
+        )
+    }
+    return null;
 
+}
 Summary.propTypes = {
     contacts: PropTypes.arrayOf(
         PropTypes.shape({
