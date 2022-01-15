@@ -15,7 +15,7 @@ import BalanceBar from '../BalanceBar';
 import CreditList from './CreditList';
 import Summary from '../Summary';
 
-import transactions from '../../data/transactions.json';
+import creditTransactions from '../../data/creditTransactions.json';
 import data from '../../data/summary.json'
 
 function CreditPage() {
@@ -36,7 +36,7 @@ function CreditPage() {
                                 <Type >КАТЕГОРИЯ</Type>
                                 <Sum >СУММА</Sum>
                             </Header>
-                            <CreditList transactions={transactions}/>
+                            <CreditList transactions={creditTransactions}/>
                         </TransactionsWrapper>
                         <Summary data={data}/>
                     </Wrapper>

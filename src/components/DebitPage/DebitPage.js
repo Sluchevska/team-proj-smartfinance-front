@@ -15,7 +15,7 @@ import BalanceBar from '../BalanceBar';
 import DebitList from './DebitList';
 import Summary from '../Summary';
 
-import transactions from '../../data/transactions.json';
+import debitTransactions from '../../data/debitTransactions.json';
 import data from '../../data/summary.json'
 
 function BalancePage() {
@@ -36,7 +36,7 @@ function BalancePage() {
                                 <Type >КАТЕГОРИЯ</Type>
                                 <Sum >СУММА</Sum>
                             </Header>
-                            <DebitList transactions={transactions}/>
+                            <DebitList transactions={debitTransactions}/>
                         </TransactionsWrapper>
                         <Summary data={data}/>
                     </Wrapper>
