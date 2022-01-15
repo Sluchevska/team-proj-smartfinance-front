@@ -27,10 +27,10 @@ function CreditItem ({ transactions }) {
 return (
     // <Container >
         <Wrapper>
-            <Date >13.01.22</Date>
-            <Name >Метро</Name>
-            <Type >Транспорт</Type>
-            <Sum >100000</Sum>
+            <Date >{transactions.date}</Date>
+            <Name >{transactions.name}</Name>
+            <Type >{transactions.type}</Type>
+            <Sum >{transactions.sum}</Sum>
             <DeleteIcon width="36" height="18" fill="black" />
         </Wrapper>
     // </Container> 
