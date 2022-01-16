@@ -1,7 +1,9 @@
 import { Fragment, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { authOperations } from '../../redux/auth';
+import { authOperations, authSelectors } from '../../redux/auth';
+
+
 import {
   
   Forma,
@@ -19,8 +21,9 @@ import {
  
   GoogleContainer,
 } from './Registration.styled';
+import RegMod from './RegMod';
 
-export default function Registration() {
+export default function Registration({ onClickComeBack }) {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -29,8 +32,39 @@ export default function Registration() {
   const [emailError, setEmailError] = useState('Это обязательное поле');
     const [passwordError, setPasswordError] = useState('Это обязательное поле');
   const [nameError, setNameError] = useState('Это обязательное поле');
+  const [emailW, setEmailW] = useState(false);
+  const [passwordW, setPasswordW] = useState(false);
+  const [nameW, setNameW] = useState(false)
+  const [errorSymbol, setErrorSymbol] = useState('*');
+  const [setModalOpen, setShowModal] = useState(false);
   
-   const [errorSymbol, setErrorSymbol] = useState('*');
+   const user = useSelector (authSelectors.getUserName);
+ 
+const toggleModal = () => {
+    setShowModal(setShowModal => !setShowModal);
+  };
+  
+  const blurHandler = e => {
+    switch (e.target.name) {
+      case 'name':
+        setNameW(true);
+        break;
+      case 'email':
+        setEmailW(true);
+        break;
+      case 'password':
+        setPasswordW(true);
+        break;
+      default:
+        return;
+    }
+  };
+
+  const clearInput = () => {
+       setName(''); 
+    setEmail('');
+    setPassword('');
+  };
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -53,9 +87,8 @@ export default function Registration() {
       return toast.info('The password should be least at 7 characters long');
     }
     dispatch(authOperations.register({ name, email, password }));
-    setName('');
-    setEmail('');
-    setPassword('');
+ 
+    clearInput()
   };
 
   const handleChangeForm = e => {
@@ -63,11 +96,26 @@ export default function Registration() {
     setRegister(!isRegister);
   };
 
+  const nameHandler = e => {
+    setName(e.target.value);
+    const re = /^[A-Za-zА-Яа-яЁё' '\-()0-9]{3,30}$/;
+    if (!re.test(String(e.target.value).toLowerCase())) {
+      setNameError('Некорректное имя');
+      setErrorSymbol('*');
+      if (!e.target.value) {
+        setNameError('это обязательное поле');
+        setErrorSymbol('*');
+      }
+    } else {
+      setNameError('');
+    }
+  };
+
   const emailHandler = e => {
     setEmail(e.target.value);
-    const re =
+    const check =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!re.test(String(e.target.value).toLowerCase())) {
+    if (!check.test(String(e.target.value).toLowerCase())) {
       setEmailError('Некорректный емейл');
       
       setErrorSymbol('*');
@@ -97,22 +145,23 @@ export default function Registration() {
       <Fragment>
         <Title>Вы можете авторизоваться с помощью Google Account:</Title>
         <GoogleContainer>
-          <Google href=''>Google</Google>
+          <Google href='https://team-proj-smartfinance-back.herokuapp.com/'>Google</Google>
         </GoogleContainer>
       <Title>
         Или зайти с помощью e-mail и пароля, предварительно зарегистрировавшись:
       </Title>
 
-      <Forma onSubmit={handleSubmit} autoComplete="on">
-        {isRegister ? (
+      <Forma onSubmit={handleSubmit} autoComplete="off" action="" >
+       
           <Label>
-            {nameError && (
+            {nameError && nameW && (
               <span style={{ color: 'red', fontSize: 10, paddingTop: 4 }}>
                                 {errorSymbol}{' '}
                             </span>
             )}
             <InputDescr>Введите имя:</InputDescr>
-            <FormInput
+          <FormInput
+              onBlur={blurHandler}
               type="name"
               name="name"
               pattern="^[A-Za-zА-Яа-яЁёЄєЇї' '\-()0-9]{3,30}$"
@@ -120,18 +169,18 @@ export default function Registration() {
               required
               value={name}
               placeholder={'Your name'}
-              onChange={handleChange}
+              onChange={nameHandler}
             />
-            {nameError && (
+            {nameError && nameW &&(
               <div style={{ color: 'red', fontSize: 10, paddingTop: 4 }}>
-                                {emailError}{' '}
+                                {nameError}{' '}
                             </div>
             )}
           </Label>
-        ) : null}
+        
 
         <Label>
-          {emailError && (
+          {emailError && emailW && (
               <span style={{ color: 'red', fontSize: 10, paddingTop: 4 }}>
                                 {errorSymbol}{' '}
                             </span>
@@ -139,6 +188,7 @@ export default function Registration() {
           <InputDescr>Электронная почта:</InputDescr>
 
           <FormInput
+             onBlur={blurHandler}
             type="email"
             name="email"
             value={email}
@@ -149,7 +199,7 @@ export default function Registration() {
             required
             aria-describedby="emailHelp"
           />
-          {emailError && (
+          {emailError && emailW && (
               <div style={{ color: 'red', fontSize: 10, paddingTop: 4 }}>
                                 {emailError}{' '}
                             </div>
@@ -160,7 +210,7 @@ export default function Registration() {
         </Label>
 
         <Label>
-          {passwordError && (
+          {passwordError &&  passwordW && (
               <span style={{ color: 'red', fontSize: 10, paddingTop: 4 }}>
                                 {errorSymbol}{' '}
                             </span>
@@ -168,6 +218,7 @@ export default function Registration() {
           <InputDescr>Пароль: </InputDescr>
 
           <FormInput
+             onBlur={blurHandler}
             type="password"
             name="password"
             value={password}
@@ -177,7 +228,7 @@ export default function Registration() {
             title="Пароль может, сoстоять не меньше чем из шести букв цифр и символов '!@#$%^&*'"
             required
           />
-          {passwordError && (
+          {passwordError && passwordW && (
               <div style={{ color: 'red', fontSize: 10, paddingTop: 4 }}>
                                 {passwordError}{' '}
                             </div>
@@ -188,41 +239,28 @@ export default function Registration() {
           </NoticeText> */}
         </Label>
         <BtnContainer>
-          {isRegister ? (
-            <Fragment>
-              <Button
+          <Button
                 type="button"
-                className="btn btn-primary"
-                onClick={handleChangeForm}
-              >
-                <Span>Войти</Span>
-              </Button>
-              <Button
+                onClick={onClickComeBack}
+          >  ВЕРНУТЬСЯ</Button>
+           <Button
                 type="submit"
-                className="btn btn-primary"
-                onClick={handleSubmit}
-              >
-                <Span>Регистрация</Span>
-              </Button>
-            </Fragment>
-          ) : (
-            <Fragment>
-              <Button
-                type="submit"
-                className="btn btn-primary"
-                onClick={handleSubmit}
-              >
-                <Span>Войти</Span>
-              </Button>
-              <Button
-                type="button"
-                className="btn btn-primary"
-                onClick={handleChangeForm}
-              >
-                <Span>Регистрация</Span>
-              </Button>
-            </Fragment>
+              
+          >  РЕГИСТРАЦИЯ  </Button>
+           {setModalOpen && (
+            <RegMod
+              
+              modalButtonleft={'ГОТОВО'}
+              modalButtonRight={'ВЕРНУТЬСЯ'}
+              handleClickLeft={toggleModal}
+              handleClickRight={toggleModal}
+              onClose={toggleModal}
+           
+            />
           )}
+          
+
+          
         </BtnContainer>
       </Forma>
     </Fragment>

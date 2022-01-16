@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-
+import cross from '../../icons/close.svg'
 
 
 export const ModalOverlay = styled.div`
@@ -52,13 +52,13 @@ export const ModalOverlay = styled.div`
 
 export const Icon = styled.svg`
 position: absolute;
-top: 8px;
-right: 8px;
+top: 20px;
+right: 20px;
 display: flex;
 align-items: center;
 justify-content: center;
-width: 48px;
-height: 48px;
+width: 25px;
+height: 25px;
 padding: 0;
 margin: 0;
 border: none;
@@ -67,7 +67,7 @@ background-color: transparent;
 color: black;
 cursor: pointer;
 outline: none;
-background-image: url('https://cdn-icons.flaticon.com/png/512/2732/premium/2732657.png?token=exp=1642156923~hmac=bd3ab0d2c94e59a7fee802bf61e36da6');
+background-image: url(${cross});
 background-position: center;
 background-size: 60%;
 background-repeat: no-repeat;

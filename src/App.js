@@ -3,7 +3,7 @@ import React, { lazy, Suspense, useEffect } from 'react';
 
 
 import HomeView from './views/HomeView/HomeView';
-// import BalanceView from './views/BalanceView';
+import BalanceView from './views/BalanceView';
 // import ReportsView from './views/ReportsView';
 import CreditView from './views/CreditView';
 import DebitView from './views/DebitView';
@@ -14,6 +14,9 @@ import Spinner from './components/Spinner/Spinner';
 // import { useDispatch } from 'react-redux';
 // import { authOperations, authSelectors } from './redux/auth';
 // import { useStore } from 'react-redux';
+import Balance from './components/Balance';
+
+
 
 function App() {
   // const dispatch = useDispatch;
@@ -23,9 +26,12 @@ function App() {
   //   }, [dispatch]);
   //   const isLoggedIn = useStore(authSelectors.getIsLoggedIn);
   return (
+    
     <div>
       <BgGrey />
+      <Balance/>
       <Header/>
+      
       {/* <BalanceBar />  */}
        <Suspense fallback={<Spinner />}>
       <Routes>
@@ -36,6 +42,7 @@ function App() {
         {/* <Route path="*" element = {<Error/>} / > */}
         </Routes> 
       </Suspense>  
+      
     </div>
   );
 }

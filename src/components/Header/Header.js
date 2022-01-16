@@ -21,8 +21,8 @@ import {
 
 export default function Header() {
     const dispatch = useDispatch();
-    const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-    const name = useSelector(authSelectors.getUsername) || '';
+    const isLoggedIn = useSelector(authSelectors.getIsAuthenticated);
+    const name = useSelector(authSelectors.getUserName) || '';
         // const { isShowingModal, toggle } = useModal();
 
     const logout = () => {
