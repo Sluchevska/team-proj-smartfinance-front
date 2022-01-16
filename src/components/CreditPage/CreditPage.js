@@ -13,6 +13,7 @@ import {
 } from './CreditPage.styled';
 import BalanceBar from '../BalanceBar';
 import Calendar from '../Calendar';
+import CreditInputs from '../CreditPage/CreditInputs';
 import CreditList from './CreditList';
 import Summary from '../Summary';
 
@@ -29,18 +30,19 @@ function CreditPage() {
                 <Box>
                     <div>
                         <Calendar />
+                        <CreditInputs />
 
 
                     </div>
                     <Wrapper>
                         <TransactionsWrapper>
-                            {matches===true? <Header>
+                            {matches === true ? <Header>
                                 <Date >ДАТА</Date>
                                 <Name >ОПИСАНИЕ</Name>
                                 <Type >КАТЕГОРИЯ</Type>
                                 <Sum >СУММА</Sum>
-                            </Header>: null}
-                            <CreditList transactions={creditTransactions}/>
+                            </Header> : null}
+                            <CreditList transactions={creditTransactions} />
                             {/* </Header>
                             <CreditList transactions={creditTransactions} /> */}
                         </TransactionsWrapper>
