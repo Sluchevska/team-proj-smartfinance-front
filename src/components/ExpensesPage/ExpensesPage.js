@@ -13,7 +13,7 @@ import {
 } from './ExpensesPage.styled';
 import BalanceBar from '../BalanceBar';
 import Calendar from '../Calendar';
-// import ExpensesInputs from './ExpensesInputs';
+import ExpensesInputs from './ExpensesInputs';
 import ExpensesList from './ExpensesList';
 import Summary from '../Summary';
 
@@ -29,7 +29,7 @@ function ExpensesPage() {
                 <Box>
                     <div>
                         <Calendar />
-                        {/* <ExpensesInputs /> */}
+                       s <ExpensesInputs />
                     </div>
                     <Wrapper>
                         <OperationsWrapper>
