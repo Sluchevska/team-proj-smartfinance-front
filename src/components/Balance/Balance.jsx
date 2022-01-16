@@ -6,7 +6,7 @@ const Balance = () => {
   return (
     <Wrapper>
      <Title>Баланс:</Title>
-     <Input> </Input>
+     {/* <Input> </Input> */}
     
     </Wrapper>
   )
