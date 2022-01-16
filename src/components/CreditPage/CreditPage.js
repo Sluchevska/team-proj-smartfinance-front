@@ -12,6 +12,8 @@ import {
 } from './CreditPage.styled';
 import BalanceBar from '../BalanceBar';
 // import Calendar from '../Calendar';
+import CreditInputs from '../CreditPage/CreditInputs';
+
 import CreditList from './CreditList';
 import Summary from '../Summary';
 
@@ -25,8 +27,8 @@ function CreditPage() {
             <Container>
                 <Box>
                     <div>
-                        {/* <Calendar /> */}
-                        Календарь Инпут Кнопки
+                        <CreditInputs />
+
                     </div>
                     <Wrapper>
                         <TransactionsWrapper>
@@ -36,9 +38,9 @@ function CreditPage() {
                                 <Type >КАТЕГОРИЯ</Type>
                                 <Sum >СУММА</Sum>
                             </Header>
-                            <CreditList transactions={creditTransactions}/>
+                            <CreditList transactions={creditTransactions} />
                         </TransactionsWrapper>
-                        <Summary data={data}/>
+                        <Summary data={data} />
                     </Wrapper>
                 </Box>
             </Container>
