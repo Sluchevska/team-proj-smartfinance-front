@@ -3,6 +3,7 @@ import BcgAuth from '../../components/BcgAuth/BcgAuth';
 // import BcgAuthBottom from '../components/BcgAuthBottom/';
 import FormContainer from '../../components/FormContainer/FormContainer';
 
+import ModalFunk from '../../components/Modal/ModalFunc'
 import HomeTitle from '../../components/HomeTitle';
 // import Authorization from '../components/Authorization';
 import Registration from '../../components/Registration/Registration';
@@ -14,9 +15,8 @@ export default function HomeView() {
     
         <Container>
             <HomeContainer>
-             
                 <HomeTitle />
-               
+               <ModalFunk />
            </HomeContainer>
            <FormContainer>
                 <Registration/>
