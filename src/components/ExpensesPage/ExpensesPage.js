@@ -29,7 +29,7 @@ function ExpensesPage() {
                 <Box>
                     <div>
                         <Calendar />
-                       s <ExpensesInputs />
+                        <ExpensesInputs />
                     </div>
                     <Wrapper>
                         <OperationsWrapper>
