@@ -4,24 +4,15 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as userApi from '../../api/userApi';
-axios.defaults.baseURL = 'https://team-proj-smartfinance-back.herokuapp.com/';
+// axios.defaults.baseURL = 'https://team-proj-smartfinance-back.herokuapp.com/';
 
-const token = {
-  set(token) {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-  },
-  unset() {
-    axios.defaults.headers.common.Authorization = '';
-  },
-};
 
 const register = createAsyncThunk(
   'auth/signup',
   async (credentials, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post('/users/signup', credentials);
-      console.log(data.result)
-      token.set(data.token);
+      const { data } = await userApi.register(credentials);
+    
       toast.success(
         `The user has been successfully created. Welcome, ${data.user.name}!`,
       );
@@ -46,9 +37,9 @@ const logIn = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const { data } = await userApi.logIn(credentials);
-      token.set(data.token);
+    
       toast.success(`Welcome, ${data.user.name}!`);
-      return data.result;
+      return data;
     } catch (error) {
       const {
         response: { status, statusText },
@@ -67,7 +58,7 @@ const logOut = createAsyncThunk(
   async (_state, { rejectWithValue }) => {
     try {
       await userApi.logOut();
-      token.unset();
+     
     } catch (error) {
       const {
         response: { status, statusText },
@@ -91,10 +82,10 @@ const fetchCurrentUser = createAsyncThunk(
       return thunkAPI.rejectWithValue();
     }
 
-    token.set(persistedToken);
+    userApi.token.set(persistedToken);
     try {
       const { data } = await userApi.getCurrentUser;
-      return data.result.user;
+      return data;
     } catch (error) {
       const {
         response: { status, statusText },
@@ -106,11 +97,23 @@ const fetchCurrentUser = createAsyncThunk(
     }
   },
 );
+ const fetchVerify = createAsyncThunk(
+  'auth/fetchVerify',
+  async (verificationToken, { rejectWithValue }) => {
+    try {
+      const data = await userApi.fetchVerifyToken(verificationToken);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  },
+);
 
 const operations = {
   register,
   logOut,
   logIn,
   fetchCurrentUser,
+  fetchVerify
 };
 export default operations;

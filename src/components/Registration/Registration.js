@@ -151,7 +151,7 @@ const toggleModal = () => {
         Или зайти с помощью e-mail и пароля, предварительно зарегистрировавшись:
       </Title>
 
-      <Forma onSubmit={handleSubmit} autoComplete="on" action="" >
+      <Forma onSubmit={handleSubmit} autoComplete="off" action="" >
        
           <Label>
             {nameError && nameW && (
@@ -246,7 +246,7 @@ const toggleModal = () => {
            <Button
                 type="submit"
               
-          >    ГОТОВО</Button>
+          >  РЕГИСТРАЦИЯ  </Button>
            {setModalOpen && (
             <RegMod
               
