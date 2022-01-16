@@ -7,7 +7,7 @@ export const Container = styled.div`
   padding-right: 20px;
   padding-bottom:12px;
   width: 320px;
-  border-bottom: solid 1px #F5F6FB;
+  //border-bottom: solid 1px #F5F6FB;
   
   @media screen and (min-width: 768px) {
     padding-left: 52px;
@@ -24,36 +24,41 @@ export const Container = styled.div`
   }
   `
 export const Box = styled.div`
-  width:665px;
-  height:626px;
-  background-color: #dfdbdb;
-  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
-  border-radius: 0px 30px 30px 30px;
-
+    
+    padding-top:50px;
+  @media screen and (min-width: 768px) {
+    width:665px;
+    height:626px;
+    background-color: #dfdbdb;
+    box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+    border-radius: 0px 30px 30px 30px;
+    }
+  
    @media screen and (min-width: 1280px) {
     width:1060px;
     height:579px;
   }
   `
 export const Wrapper = styled.div`
-   @media screen and (min-width: 1280px) {
+  margin-top:10px;
+  @media screen and (min-width: 1280px) {
     display:flex;
   }
   `
   export const TransactionsWrapper = styled.div`
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
     padding-bottom:12px;
-    width: 320px;
-    border-bottom: solid 1px #F5F6FB;
+    /* width: 320px; */
+    //border-bottom: solid 1px #F5F6FB;
   
   @media screen and (min-width: 768px) {
     margin-left: 30px;
     margin-right: 30px;
     padding:0;
-    padding-top:100px;
+    /* padding-top:100px; */
     width: 665px;
     border-bottom: none;
   }
@@ -62,7 +67,7 @@ export const Wrapper = styled.div`
     margin:0;
     margin-right:30px;
     padding-left: 20px;
-    padding-top:100px;
+    /* padding-top:100px; */
     width: 780px;
   }
   `

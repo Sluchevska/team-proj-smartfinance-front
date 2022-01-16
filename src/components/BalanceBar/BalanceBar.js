@@ -1,11 +1,13 @@
 import React from 'react';
-import {Container, StyledLink} from './BalanceBar.styled';
+import {Wrapper, Container, StyledLink} from './BalanceBar.styled';
 
 const BalanceBar = () => (
-    <Container>
-        <StyledLink to="/credit">Расход</StyledLink>
-        <StyledLink to="/debit">Доход</StyledLink>  
-    </Container>
+    <Wrapper>
+        <Container>
+            <StyledLink to="/credit">Расход</StyledLink>
+            <StyledLink to="/debit">Доход</StyledLink>  
+        </Container>
+    </Wrapper>
 )
 
 export default BalanceBar;

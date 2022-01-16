@@ -1,4 +1,5 @@
 import React from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import {
     Box,
     Container,
@@ -15,10 +16,11 @@ import BalanceBar from '../BalanceBar';
 import DebitList from './DebitList';
 import Summary from '../Summary';
 
-import debitTransactions from '../../data/debitTransactions.json';
+import DebitTransactions from '../../data/debitTransactions.json';
 import data from '../../data/summary.json'
 
-function BalancePage() {
+function DebitPage() {
+    const matches = useMediaQuery('(min-width:768px)');
     return (
         <div>
             <BalanceBar />
@@ -30,13 +32,13 @@ function BalancePage() {
                     </div>
                     <Wrapper>
                         <TransactionsWrapper>
-                            <Header>
+                            {matches===true? <Header>
                                 <Date >ДАТА</Date>
                                 <Name >ОПИСАНИЕ</Name>
                                 <Type >КАТЕГОРИЯ</Type>
                                 <Sum >СУММА</Sum>
-                            </Header>
-                            <DebitList transactions={debitTransactions}/>
+                            </Header>: null}
+                            <DebitList transactions={DebitTransactions}/>
                         </TransactionsWrapper>
                         <Summary data={data}/>
                     </Wrapper>
@@ -46,4 +48,4 @@ function BalancePage() {
     );
 }
 
-export default BalancePage;
+export default DebitPage;
