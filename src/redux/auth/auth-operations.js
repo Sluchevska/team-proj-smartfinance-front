@@ -3,7 +3,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+import * as userApi from '../../api/userApi';
+axios.defaults.baseURL = 'https://team-proj-smartfinance-back.herokuapp.com/';
 
 const token = {
   set(token) {
@@ -15,10 +16,11 @@ const token = {
 };
 
 const register = createAsyncThunk(
-  'auth/register',
+  'auth/signup',
   async (credentials, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('/users/signup', credentials);
+      console.log(data.result)
       token.set(data.token);
       toast.success(
         `The user has been successfully created. Welcome, ${data.user.name}!`,
@@ -43,10 +45,10 @@ const logIn = createAsyncThunk(
   'auth/login',
   async (credentials, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post('/users/login', credentials);
+      const { data } = await userApi.logIn(credentials);
       token.set(data.token);
       toast.success(`Welcome, ${data.user.name}!`);
-      return data;
+      return data.result;
     } catch (error) {
       const {
         response: { status, statusText },
@@ -64,7 +66,7 @@ const logOut = createAsyncThunk(
   'auth/logout',
   async (_state, { rejectWithValue }) => {
     try {
-      await axios.post('/users/logout');
+      await userApi.logOut();
       token.unset();
     } catch (error) {
       const {
@@ -91,8 +93,8 @@ const fetchCurrentUser = createAsyncThunk(
 
     token.set(persistedToken);
     try {
-      const { data } = await axios.get('/users/current');
-      return data;
+      const { data } = await userApi.getCurrentUser;
+      return data.result.user;
     } catch (error) {
       const {
         response: { status, statusText },
