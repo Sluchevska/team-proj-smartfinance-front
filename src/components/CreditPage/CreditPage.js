@@ -38,7 +38,6 @@ function CreditPage() {
                                 <Type >КАТЕГОРИЯ</Type>
                                 <Sum >СУММА</Sum>
                             </Header>: null}
-                            
                             <CreditList transactions={creditTransactions}/>
                         </TransactionsWrapper>
                         <Summary data={data}/>

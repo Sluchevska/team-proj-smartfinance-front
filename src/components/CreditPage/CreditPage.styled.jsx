@@ -25,7 +25,6 @@ export const Container = styled.div`
   `
 export const Box = styled.div`
 
-
   @media screen and (min-width: 768px) {
     width:665px;
     height:626px;
@@ -40,7 +39,8 @@ export const Box = styled.div`
   }
   `
 export const Wrapper = styled.div`
-   @media screen and (min-width: 1280px) {
+  margin-top:300px;
+  @media screen and (min-width: 1280px) {
     display:flex;
   }
   `
