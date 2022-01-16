@@ -9,7 +9,6 @@ import {
     Date,
     Type,
     Sum,
-    Transaction,
     Wrapper
 } from './CreditItem.styled';
 import IconButton from '../../IconButton';
@@ -39,7 +38,7 @@ function CreditItem({ transactions }) {
                 </NameInfo>
             </WrapperInfo>
             <WrapperSum>
-                <Sum>{transactions.sum}</Sum>
+                <Sum>-{transactions.sum}.00 грн</Sum>
                 <IconButton onClick={() => console.log('Pressed')}>
                     {<DeleteIcon width="18" height="18" fill="black" />}
                 </IconButton>
