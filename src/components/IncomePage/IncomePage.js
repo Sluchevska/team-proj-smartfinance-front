@@ -13,7 +13,7 @@ import {
 } from './IncomePage.styled';
 import BalanceBar from '../BalanceBar';
 import Calendar from '../Calendar';
-import IncomeInputs from './IncomeInputs'
+// import IncomeInputs from './IncomeInputs'
 import IncomeList from './IncomeList';
 import Summary from '../Summary';
 
@@ -29,7 +29,7 @@ function IncomePage() {
                 <Box>
                     <div>
                         <Calendar />
-                        <IncomeInputs />
+                        {/* <IncomeInputs /> */}
                     </div>
                     <Wrapper>
                         <OperationsWrapper>
