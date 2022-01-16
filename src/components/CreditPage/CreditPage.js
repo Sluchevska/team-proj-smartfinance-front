@@ -14,6 +14,8 @@ import {
 import BalanceBar from '../BalanceBar';
 import Calendar from '../Calendar';
 import CreditInputs from '../CreditPage/CreditInputs';
+import ButtonInput from '../ButtonInput';
+import ButtonDelete from '../ButtonDelete';
 import CreditList from './CreditList';
 import Summary from '../Summary';
 
@@ -31,6 +33,8 @@ function CreditPage() {
                     <div>
                         <Calendar />
                         <CreditInputs />
+                        <ButtonInput />
+                        <ButtonDelete />
 
 
                     </div>
