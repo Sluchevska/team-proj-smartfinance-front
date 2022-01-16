@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 1280px) {
     margin-top:0;
     margin-left:0;
-    padding-top:136px;
+    /* padding-top:136px; */
   }
   `
 export const Title = styled.h3`

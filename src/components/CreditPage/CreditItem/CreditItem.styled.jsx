@@ -3,12 +3,12 @@ import styled from '@emotion/styled'
 export const Container = styled.div`
   display:flex;
   justify-content:space-between;
-  margin-left: auto;
+  /* margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom:12px;
-  width: 320px;
+  width: 320px; */
   border-bottom: solid 1px #F5F6FB;
   
   @media screen and (min-width: 768px) {
@@ -26,13 +26,15 @@ export const Container = styled.div`
   }
   `
 export const Wrapper = styled.div`
-  width:606px;
-  display:inline-flex;
 
-  padding-top:10px;
-  padding-bottom:10px;
-  border: solid 1px #F5F6FB;
+  @media screen and (min-width: 768px) {
+    width:606px;
+    display:inline-flex;
 
+    padding-top:10px;
+    padding-bottom:10px;
+    border: solid 1px #F5F6FB;
+    }
   @media screen and (min-width: 1280px) {
     width:760px;
   }
