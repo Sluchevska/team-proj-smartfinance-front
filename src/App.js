@@ -26,7 +26,7 @@ function App() {
       {/* <Balance/> */}
       <Suspense fallback={<Spinner />}>
         <Routes>
-          <Route exact path="/" element={<HomeView />} />
+          <Route exact path="/" element={<HomeView />} redirectTo="/income"  restricted/>
           <Route exact path="/expenses" element={<ExpensesView />} />
           <Route exact path="/income" element={<IncomeView />} />
           {/* <Route exact path="/reports" element={<ReportsView />} /> */}
