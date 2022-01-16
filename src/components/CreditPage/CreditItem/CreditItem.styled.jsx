@@ -3,6 +3,8 @@ import styled from '@emotion/styled'
 export const Container = styled.div`
   display:flex;
   justify-content:space-between;
+  padding-top:12px;
+  padding-bottom:12px;
   /* margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -10,8 +12,9 @@ export const Container = styled.div`
   padding-bottom:12px;
   width: 320px; */
   border-bottom: solid 1px #F5F6FB;
-  
+
   @media screen and (min-width: 768px) {
+    padding:0;
     padding-left: 81px;
     padding-right: 81px;
     padding-bottom:0;
@@ -123,6 +126,7 @@ export const Type = styled.span`
   }
     `
 export const Sum = styled.span`
+
   margin:0;
   margin-right:23px;
   color: #E7192E;
@@ -131,6 +135,11 @@ export const Sum = styled.span`
   font-weight:700;
   line-height: 1.167;
   letter-spacing: 0.04em;
+
+  @media screen and (max-width: 767px) {
+    display:flex;
+    align-items:center;
+  }
 
   @media screen and (min-width: 768px) {
     margin-right:40px;

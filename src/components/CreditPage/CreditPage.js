@@ -40,10 +40,9 @@ function CreditPage() {
                             </Header>: null}
                             <CreditList transactions={creditTransactions}/>
                         </TransactionsWrapper>
-                        {matches === true? <Summary data={data} />: null}
+                        <Summary data={data}/>
                     </Wrapper>
                 </Box>
-                <Summary data={data}/>
             </Container>
         </div>
     );

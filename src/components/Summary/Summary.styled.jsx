@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 export const Wrapper = styled.div`
     
   @media screen and (min-width: 768px) {
-    margin-top:110px;
+    margin-top:550px;
     margin-left:30px;
   }
 

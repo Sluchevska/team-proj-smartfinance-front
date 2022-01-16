@@ -32,23 +32,20 @@ function CreditItem({ transactions }) {
     } else return (
          <Container>
             <WrapperInfo>
-                <Name>Метро</Name>
+                <Name>{transactions.name}</Name>
                 <NameInfo>
-                    <Date>13.01.22</Date>
-                    <Type>Транспорт</Type>
+                    <Date>{transactions.date}</Date>
+                    <Type>{transactions.type}</Type>
                 </NameInfo>
             </WrapperInfo>
             <WrapperSum>
-                <Sum>-10</Sum>
+                <Sum>{transactions.sum}</Sum>
                 <IconButton onClick={() => console.log('Pressed')}>
                     {<DeleteIcon width="18" height="18" fill="black" />}
                 </IconButton>
-                
             </WrapperSum>
-        
         </Container> 
     )
-   
 }
 
 export default CreditItem;

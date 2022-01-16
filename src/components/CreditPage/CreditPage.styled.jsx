@@ -7,7 +7,7 @@ export const Container = styled.div`
   padding-right: 20px;
   padding-bottom:12px;
   width: 320px;
-  border-bottom: solid 1px #F5F6FB;
+  //border-bottom: solid 1px #F5F6FB;
   
   @media screen and (min-width: 768px) {
     padding-left: 52px;
@@ -24,7 +24,7 @@ export const Container = styled.div`
   }
   `
 export const Box = styled.div`
-    background-color: #dfdbdb;
+    
     padding-top:50px;
   @media screen and (min-width: 768px) {
     width:665px;
@@ -52,7 +52,7 @@ export const Wrapper = styled.div`
     padding-right: 20px; */
     padding-bottom:12px;
     /* width: 320px; */
-    border-bottom: solid 1px #F5F6FB;
+    //border-bottom: solid 1px #F5F6FB;
   
   @media screen and (min-width: 768px) {
     margin-left: 30px;
