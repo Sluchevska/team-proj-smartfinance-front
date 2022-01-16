@@ -1,13 +1,13 @@
 import React from 'react';
-import CreditReports from '../components/CreditReports';
-import DebitReports from '../components/DebitReports';
+import ExpensesReports from '../components/ExpensesReports';
+import IncomeReports from '../components/IncomeReports';
 import Charts from '../components/Charts';
 
 export default function ReportsView() {
     return (
         <div>
-            <CreditReports />;
-            <DebitReports />;
+            <ExpensesReports />;
+            <IncomeReports />;
             <Charts />;
         </div>
     )
