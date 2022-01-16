@@ -1,4 +1,5 @@
 import React from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import {
     Box,
     Container,
@@ -11,34 +12,37 @@ import {
     Wrapper
 } from './CreditPage.styled';
 import BalanceBar from '../BalanceBar';
-// import Calendar from '../Calendar';
-import CreditInputs from '../CreditPage/CreditInputs';
-
+import Calendar from '../Calendar';
 import CreditList from './CreditList';
 import Summary from '../Summary';
+
 
 import creditTransactions from '../../data/creditTransactions.json';
 import data from '../../data/summary.json'
 
 function CreditPage() {
+    const matches = useMediaQuery('(min-width:768px)');
     return (
         <div>
             <BalanceBar />
             <Container>
                 <Box>
                     <div>
-                        <CreditInputs />
+                        <Calendar />
+
 
                     </div>
                     <Wrapper>
                         <TransactionsWrapper>
-                            <Header>
+                            {matches===true? <Header>
                                 <Date >ДАТА</Date>
                                 <Name >ОПИСАНИЕ</Name>
                                 <Type >КАТЕГОРИЯ</Type>
                                 <Sum >СУММА</Sum>
-                            </Header>
-                            <CreditList transactions={creditTransactions} />
+                            </Header>: null}
+                            <CreditList transactions={creditTransactions}/>
+                            {/* </Header>
+                            <CreditList transactions={creditTransactions} /> */}
                         </TransactionsWrapper>
                         <Summary data={data} />
                     </Wrapper>
