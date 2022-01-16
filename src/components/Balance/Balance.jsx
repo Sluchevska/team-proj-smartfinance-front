@@ -1,15 +1,37 @@
-import React from 'react';
+import React  from 'react';
+import { Form, Title, FormInput, Button } from './Balance.styled';
 
-import { Wrapper, Title, Input} from './Balance.styled'
+const  Balance = () => {
+  
 
-const Balance = () => {
-  return (
-    <Wrapper>
-     <Title>Баланс:</Title>
-     {/* <Input> </Input> */}
+    //const handleChange = e => {
+      //e.preventDefault();
+      //if () {
+        //return toast.info('Привет! Для начала работы внеси текущий баланс своего счета!  Ты не можешь тратить деньги пока их у тебя нет:)')
+      //}
+    //}
+     //handleSubmit = () => {
+
+     //}
+  
+
+    return(
+       
+       <Form>
+          <Title>Баланс:</Title>
+          <FormInput
+             type="text"
+             value=""
+             //onChange={handleChange}
+            placeholder="00.00 UAH"
+
+          ></FormInput>
+          <Button type="submit"
+          //onClick={handleSubmit}
+          >ПОДТВЕРДИТЬ</Button>
     
-    </Wrapper>
-  )
-}
+       </Form>
+    )
+  }
 
 export default Balance;
