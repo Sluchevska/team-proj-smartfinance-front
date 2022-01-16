@@ -10,8 +10,7 @@ import {
   Title,
   
   Button,
-  Span,
-  InputDescr,
+   InputDescr,
   BtnContainer,
  
   Label,
@@ -22,14 +21,14 @@ import {
   GoogleContainer,
 } from './Registration.styled';
 import RegMod from './RegMod';
+import { VerifyEmail } from './VerifyEmail';
 
 export default function Registration({ onClickComeBack }) {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isRegister, setRegister] = useState(false);
-  const [emailError, setEmailError] = useState('Это обязательное поле');
+    const [emailError, setEmailError] = useState('Это обязательное поле');
     const [passwordError, setPasswordError] = useState('Это обязательное поле');
   const [nameError, setNameError] = useState('Это обязательное поле');
   const [emailW, setEmailW] = useState(false);
@@ -38,7 +37,7 @@ export default function Registration({ onClickComeBack }) {
   const [errorSymbol, setErrorSymbol] = useState('*');
   const [setModalOpen, setShowModal] = useState(false);
   
-   const user = useSelector (authSelectors.getUserName);
+  const userEmail = useSelector (authSelectors.getUserEmail);
  
 const toggleModal = () => {
     setShowModal(setShowModal => !setShowModal);
@@ -66,18 +65,7 @@ const toggleModal = () => {
     setPassword('');
   };
 
-  const handleChange = ({ target: { name, value } }) => {
-    switch (name) {
-      case 'name':
-        return setName(value);
-      case 'email':
-        return setEmail(value);
-      case 'password':
-        return setPassword(value);
-      default:
-        return;
-    }
-  };
+  
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -91,11 +79,7 @@ const toggleModal = () => {
     clearInput()
   };
 
-  const handleChangeForm = e => {
-    e.preventDefault();
-    setRegister(!isRegister);
-  };
-
+  
   const nameHandler = e => {
     setName(e.target.value);
     const re = /^[A-Za-zА-Яа-яЁё' '\-()0-9]{3,30}$/;
@@ -259,7 +243,8 @@ const toggleModal = () => {
             />
           )}
           
-
+          {userEmail && <VerifyEmail
+          />}
           
         </BtnContainer>
       </Forma>

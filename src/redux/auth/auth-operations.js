@@ -97,7 +97,7 @@ const fetchCurrentUser = createAsyncThunk(
     }
   },
 );
- const fetchVerify = createAsyncThunk(
+ const fetchVerifyToken = createAsyncThunk(
   'auth/fetchVerify',
   async (verificationToken, { rejectWithValue }) => {
     try {
@@ -108,12 +108,24 @@ const fetchCurrentUser = createAsyncThunk(
     }
   },
 );
+const fetchVerifyEmail = createAsyncThunk(
+  'auth/fetchVerifyEmail',
+  async (email, { rejectWithValue }) => {
+    try {
+      const data =  await userApi.fetchVerifyEmail(email);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  },
+);
+
 
 const operations = {
   register,
   logOut,
   logIn,
   fetchCurrentUser,
-  fetchVerify
+  fetchVerifyEmail
 };
 export default operations;
