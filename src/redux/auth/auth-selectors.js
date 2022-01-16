@@ -4,7 +4,7 @@ const getUserName = state => state.auth.user.name;
 
 const getUserEmail = state => state.auth.user.email;
 
-const getMessageRepeatEmailVerify = state => state.auth.isRepeatEmailVerify;
+const getMessageEmailVerify = state => state.auth.isRepeatEmailVerify;
 
 const getUserAvatar = state => state.auth.user.avatarURL;
 
@@ -18,7 +18,7 @@ const authSelectors = {
  getIsAuthenticated,
   getUserName,
   getUserEmail,
-  getMessageRepeatEmailVerify,
+  getMessageEmailVerify,
   getFetchigCurrentUser,
   getCurrentToken,
   getUserAvatar,
