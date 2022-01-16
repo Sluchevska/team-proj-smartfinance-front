@@ -12,7 +12,8 @@ import {
     Wrapper
 } from './DebitPage.styled';
 import BalanceBar from '../BalanceBar';
-// import Calendar from '../Calendar';
+import Calendar from '../Calendar';
+import DebitInputs from '../DebitPage/DebitInputs'
 import DebitList from './DebitList';
 import Summary from '../Summary';
 
@@ -27,20 +28,20 @@ function DebitPage() {
             <Container>
                 <Box>
                     <div>
-                        {/* <Calendar /> */}
-                        Календарь Инпут Кнопки
+                        <Calendar />
+                        <DebitInputs />
                     </div>
                     <Wrapper>
                         <TransactionsWrapper>
-                            {matches===true? <Header>
+                            {matches === true ? <Header>
                                 <Date >ДАТА</Date>
                                 <Name >ОПИСАНИЕ</Name>
                                 <Type >КАТЕГОРИЯ</Type>
                                 <Sum >СУММА</Sum>
-                            </Header>: null}
-                            <DebitList transactions={DebitTransactions}/>
+                            </Header> : null}
+                            <DebitList transactions={DebitTransactions} />
                         </TransactionsWrapper>
-                        <Summary data={data}/>
+                        <Summary data={data} />
                     </Wrapper>
                 </Box>
             </Container>
