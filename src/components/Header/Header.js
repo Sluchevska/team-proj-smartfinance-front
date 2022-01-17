@@ -1,32 +1,29 @@
 import React, { useState } from 'react';
 import defaultAvatar from '../../icons/avatarDef.png';
 import { useSelector, useDispatch } from 'react-redux';
+import { logOut } from '../../redux/auth/auth-operations.js';
 import {
-  logOut,
-  } from '../../redux/auth/auth-operations.js';
-import { getIsAuthenticated,
+  getIsAuthenticated,
   getUserName,
-   } from '../../redux/auth/auth-selectors.js';
+} from '../../redux/auth/auth-selectors.js';
 import {
-    ContainerHeader,
-    UserInfo,
-    UserName,
-    Button,
-    LogoutP,
-    AvatarUser,
-    Line,
-    LogoutSvg,
-    Logo,
+  ContainerHeader,
+  UserInfo,
+  UserName,
+  Button,
+  LogoutP,
+  AvatarUser,
+  Line,
+  LogoutSvg,
+  Logo,
 } from './Header.styled';
 
-import Modal from '../Registration/RegMod';
+import Modal from '../Modal/Modal.jsx';
 
 export default function Header() {
-
-   
-    const isLoggedIn = useSelector(getIsAuthenticated);
-    const name = useSelector(getUserName) || '';
-const dispatch = useDispatch();
+  const isLoggedIn = useSelector(getIsAuthenticated);
+  const name = useSelector(getUserName) || '';
+  const dispatch = useDispatch();
 
   const toggleModal = () => {
     setShowModal(prevShowModal => !prevShowModal);
@@ -38,44 +35,35 @@ const dispatch = useDispatch();
   };
 
   const [setModalOpen, setShowModal] = useState(false);
-    
-  
-  
 
+  return (
+    <ContainerHeader>
+      <Logo href="/" />
+      {isLoggedIn && (
+        <UserInfo>
+          <AvatarUser>
+            <img src={defaultAvatar} alt="Default Avatar" width="32" />
+          </AvatarUser>
+          <UserName>{name}</UserName>
+          <Line> </Line>
 
-    return (
-        
-        <ContainerHeader>
-            <Logo href="/" />
-            {isLoggedIn && (
-                <UserInfo>
-                    <AvatarUser>
-                        <img src={defaultAvatar} alt="Default Avatar" width="32" />
-                    </AvatarUser>
-                    <UserName>{name}</UserName>
-                    {/* <Line> </Line> */}
+          <Button type="button" onClick={() => toggleModal()}>
+            <LogoutP>Выйти</LogoutP>
+            <LogoutSvg />
+          </Button>
 
-                    <Button
-                        type="button"
-                        onClick={() => toggleModal()}
-                    >
-                        <LogoutP>Выйти</LogoutP>
-                        <LogoutSvg />
-                        </Button>
-                        
-      
-                     {setModalOpen && (
-                        <Modal
-                           text={'Вы действительно хотите выйти?'}
-          handleClickLeft={logoutModal}
-          handleClickRight={toggleModal}
-          onClose={toggleModal}
-                        />
-                    )}
-                </UserInfo>
-            )}
-        </ContainerHeader>
-    );
+          {setModalOpen && (
+            <Modal
+              modalTitle="Вы действительно хотите выйти?"
+              modalButtonleft="Да"
+              modalButtonRight=" Нет"
+              handleClickLeft={logoutModal}
+              handleClickRight={toggleModal}
+              onClose={toggleModal}
+            />
+          )}
+        </UserInfo>
+      )}
+    </ContainerHeader>
+  );
 }
-                    
-    
