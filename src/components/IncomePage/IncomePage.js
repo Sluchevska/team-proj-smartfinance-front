@@ -13,9 +13,10 @@ import {
 } from './IncomePage.styled';
 import BalanceBar from '../BalanceBar';
 import Calendar from '../Calendar';
-// import ButtonInput from '../ButtonInput';
-// import ButtonDelete from '../ButtonDelete';
-// import DebitInputs from '../DebitPage/DebitInputs'
+
+import ButtonInput from '../ButtonInput';
+import ButtonDelete from '../ButtonDelete';
+
 // import DebitList from './DebitList';
 import IncomeInputs from './IncomeInputs'
 import IncomeList from './IncomeList';
@@ -33,10 +34,10 @@ function IncomePage() {
                 <Box>
                     <div>
                         <Calendar />
-                        {/* <DebitInputs />
-                        <ButtonInput />
-                        <ButtonDelete /> */}
                         <IncomeInputs />
+                        <ButtonInput />
+                        <ButtonDelete />
+
                     </div>
                     <Wrapper>
                         <OperationsWrapper>
