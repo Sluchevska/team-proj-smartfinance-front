@@ -16,9 +16,9 @@ import { authReducer } from './auth';
 
 
 const authPersistConfig = {
-  key: 'auth',
+  key: 'token',
   storage,
-  whitelist: ['token'],
+  whitelist: ['token', 'refreshToken'],
 };
 
 export const store = configureStore({

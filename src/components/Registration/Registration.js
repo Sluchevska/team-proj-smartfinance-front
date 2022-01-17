@@ -1,7 +1,23 @@
+import axios from 'axios';
 import { Fragment, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { authOperations, authSelectors } from '../../redux/auth';
+import { fetchSignUp } from '../../api/userApi';
+import { register,
+  verifyEmail,
+  logOut,
+  logIn,
+  getCurrentUser,
+  refresh,
+  uploadAvatar, } from '../../redux/auth/auth-operations';
+import { getIsAuthenticated,
+  getUserName,
+  getUserEmail,
+  getMessageEmailVerify,
+  getFetchigCurrentUser,
+  getCurrentToken,
+  getUserAvatar,
+  getAuthError, } from '../../redux/auth/auth-selectors';
 
 
 import {
@@ -37,7 +53,7 @@ export default function Registration({ onClickComeBack }) {
   const [errorSymbol, setErrorSymbol] = useState('*');
   const [setModalOpen, setShowModal] = useState(false);
   
-  const userEmail = useSelector (authSelectors.getUserEmail);
+  const userEmail = useSelector (getUserEmail);
  
 const toggleModal = () => {
     setShowModal(setShowModal => !setShowModal);
@@ -67,14 +83,17 @@ const toggleModal = () => {
 
   
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+  //  const data = await fetchSignUp({email, password});
+  //   console.log(data)
     if (!name.trim() || !email.trim() || !password.trim()) {
       return toast.error('Please fill out all required fields!');
     } else if (password.length < 7) {
       return toast.info('The password should be least at 7 characters long');
     }
-    dispatch(authOperations.register({ name, email, password }));
+    console.log('1', email, password);
+    dispatch(register({ email, password }));
  
     clearInput()
   };
@@ -82,6 +101,7 @@ const toggleModal = () => {
   
   const nameHandler = e => {
     setName(e.target.value);
+
     const re = /^[A-Za-zА-Яа-яЁё' '\-()0-9]{3,30}$/;
     if (!re.test(String(e.target.value).toLowerCase())) {
       setNameError('Некорректное имя');
@@ -97,6 +117,7 @@ const toggleModal = () => {
 
   const emailHandler = e => {
     setEmail(e.target.value);
+  
     const check =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!check.test(String(e.target.value).toLowerCase())) {
@@ -150,7 +171,7 @@ const toggleModal = () => {
               name="name"
               pattern="^[A-Za-zА-Яа-яЁёЄєЇї' '\-()0-9]{3,30}$"
               title="Имя может состоять только от трёх до 30 букв, апострофа, тире и пробелов. Например Adrian, Jac Mercer, d'Artagnan, Александр Репета и т.п."
-              required
+              // required
               value={name}
               placeholder={'Your name'}
               onChange={nameHandler}
