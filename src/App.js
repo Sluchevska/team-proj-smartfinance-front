@@ -22,28 +22,13 @@ function App() {
     dispatch(getCurrentUser());
   }, [dispatch]);
 
-
-  // const isFetchigCurrentUser = useSelector(state =>
-  //   getFetchigCurrentUser(state),
-  // );
-
-  // const onToken = useSelector(getCurrentToken);
-  
-  // useEffect(() => {
-  //   if (onToken) {
-  //     dispatch(getCurrentUser());
-  //   }
-    
-  // }, [dispatch, onToken]);
   return (
     <div>
       <BgGrey />
       <Header />
       {/* <Balance/> */}
       <Suspense fallback={<Spinner />}>
-        {/* {isFetchigCurrentUser ? (
-          <Spinner />
-        ) : ( */}
+                
           <Routes>
             <Route exact path="/" element={<Home /> } />
             <Route exact path="/expenses" element={<ExpensesView />} />
@@ -51,7 +36,7 @@ function App() {
             {/* <Route exact path="/reports" element={<ReportsView />} /> */}
             {/* <Route path="*" element = {<Error/>} / > */}
         </Routes>
-          {/* )} */}
+       
       </Suspense>  
     </div>
   );

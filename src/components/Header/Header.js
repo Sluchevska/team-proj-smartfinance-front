@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import defaultAvatar from '../../icons/avatarDef.png';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -19,21 +19,29 @@ import {
     Logo,
 } from './Header.styled';
 
-// import Modal from '../Modal/logoutModal';
-// import useModal from '../Modal/useModal';
+import Modal from '../Registration/RegMod';
+// import useModal from '../Modal/Modal.jsx';
 
 
 export default function Header() {
+
     const dispatch = useDispatch();
     const isLoggedIn = useSelector(getIsAuthenticated);
     const name = useSelector(getUserName) || '';
-        // const { isShowingModal, toggle } = useModal();
 
-    const logout = () => {
+    // const { isShowingModal, toggle } = useModal();
+const [setModalOpen, setShowModal] = useState(false);
+     const toggleModal = () => {
+    setShowModal(prevShowModal => !prevShowModal);
+  };
+
+    const logoutModal = () => {
         dispatch(logOut());
-        // toggle();
+        toggleModal();
        
     };
+  
+
 
     return (
         <ContainerHeader>
@@ -48,18 +56,21 @@ export default function Header() {
 
                     <Button
                         type="button"
-                        // onClick={() => toggle()}
+                        onClick={() => toggleModal()}
                     >
                         <LogoutP>Выйти</LogoutP>
                         <LogoutSvg />
-                    </Button>
-                     {/* {isShowingModal && (
+                        </Button>
+                        
+      
+                     {setModalOpen && (
                         <Modal
                             text={'Вы уверены, что хотите выйти?'}
-                            toAgree={logout}
-                            onClose={toggle}
+                             handleClickLeft={logoutModal}
+          handleClickRight={toggleModal}
+          onClose={toggleModal}
                         />
-                    )} */}
+                    )}
                 </UserInfo>
             )}
         </ContainerHeader>
