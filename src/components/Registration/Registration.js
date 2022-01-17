@@ -83,7 +83,7 @@ const toggleModal = () => {
 
   
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
   //  const data = await fetchSignUp({email, password});
   //   console.log(data)
@@ -92,18 +92,18 @@ const toggleModal = () => {
     } else if (password.length < 7) {
       return toast.info('The password should be least at 7 characters long');
     }
-    console.log('1', email, password);
-    dispatch(register({ email, password }));
- 
     clearInput()
+    dispatch(register({ name, email, password }));
+ 
+    
   };
 
   
   const nameHandler = e => {
     setName(e.target.value);
 
-    const re = /^[A-Za-zА-Яа-яЁё' '\-()0-9]{3,30}$/;
-    if (!re.test(String(e.target.value).toLowerCase())) {
+    const check = /^[A-Za-zА-Яа-яЁё' '\-()0-9]{3,30}$/;
+    if (!check.test(String(e.target.value).toLowerCase())) {
       setNameError('Некорректное имя');
       setErrorSymbol('*');
       if (!e.target.value) {
@@ -131,6 +131,7 @@ const toggleModal = () => {
     } else {
       setEmailError('');
     }
+     
   };
 
   const passwordHandler = e => {
@@ -171,7 +172,7 @@ const toggleModal = () => {
               name="name"
               pattern="^[A-Za-zА-Яа-яЁёЄєЇї' '\-()0-9]{3,30}$"
               title="Имя может состоять только от трёх до 30 букв, апострофа, тире и пробелов. Например Adrian, Jac Mercer, d'Artagnan, Александр Репета и т.п."
-              // required
+              required
               value={name}
               placeholder={'Your name'}
               onChange={nameHandler}

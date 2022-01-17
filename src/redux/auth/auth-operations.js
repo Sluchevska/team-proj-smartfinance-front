@@ -36,11 +36,11 @@ import {
 axios.defaults.baseURL = 'https://team-proj-smartfinance-back.herokuapp.com/';
 
 const register = credentials => async dispatch => {
-   console.log(credentials);
+
  dispatch(registerRequest());
   try {
     const response = await fetchSignUp(credentials);
-    dispatch(registerSuccess(response.data));
+      dispatch(registerSuccess(response.data));
   } catch ({ response }) {
     dispatch(registerError(response.data.message));
     
@@ -58,6 +58,7 @@ const  verifyEmail = email => async dispatch => {
 };
 
 const logIn = credentials => async dispatch => {
+  console.log(credentials)
   dispatch(loginRequest());
   try {
     const response = await fetchLogIn(credentials);
@@ -146,13 +147,11 @@ const refresh = async (dispatch, getState) => {
 // const register = createAsyncThunk(
 //   'auth/register',
 //   async (credentials, { rejectWithValue }) => {
-//     console.log(credentials);
-//     try {
-//       const data  = await userApi.register(credentials);
-//       console.log(data)
-    
+//        try {
+//       const data  = await register(credentials);
+//     console.log(data)
 //       toast.success(
-//         `The user has been successfully created. Welcome, ${data.user.name}!`,
+//         `The user has been successfully created. Welcome, ${data.user.email}!`,
 //       );
 //       return data;
 //     } catch (error) {

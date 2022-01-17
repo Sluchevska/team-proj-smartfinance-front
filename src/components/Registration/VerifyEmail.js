@@ -1,25 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { register,
-  verifyEmail,
-  logOut,
-  logIn,
-  getCurrentUser,
-  refresh,
-  uploadAvatar, } from '../../redux/auth/auth-operations';
-import { getIsAuthenticated,
-  getUserName,
+import { verifyEmail } from '../../redux/auth/auth-operations';
+import {
   getUserEmail,
   getMessageEmailVerify,
-  getFetchigCurrentUser,
-  getCurrentToken,
-  getUserAvatar,
-  getAuthError,
 } from '../../redux/auth/auth-selectors';
-  import { repeatEmailVerifyRequest,
-  repeatEmailVerifySuccess,
-  repeatEmailVerifyOk,
-  repeatEmailVerifyError, } from '../../redux/auth/auth-actions';
+import { repeatEmailVerifyOk } from '../../redux/auth/auth-actions';
 
 import RegMod from './RegMod';
 
