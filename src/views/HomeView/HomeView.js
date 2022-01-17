@@ -36,7 +36,7 @@ export default function HomeView({ location }) {
         <Container>
             <HomeContainer>
                 <HomeTitle />
-               <ModalFunk />
+               {/* <ModalFunk /> */}
            </HomeContainer>
            <FormContainer>
                {login ? (

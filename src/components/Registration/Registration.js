@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { fetchSignUp } from '../../api/userApi';
@@ -36,8 +36,8 @@ import {
  
   GoogleContainer,
 } from './Registration.styled';
-import RegMod from './RegMod';
-import { VerifyEmail } from './VerifyEmail';
+import Modal from '../Modal/Modal.jsx';
+
 
 export default function Registration({ onClickComeBack }) {
   const dispatch = useDispatch();
@@ -53,7 +53,8 @@ export default function Registration({ onClickComeBack }) {
   const [errorSymbol, setErrorSymbol] = useState('*');
   const [setModalOpen, setShowModal] = useState(false);
   
-  const userEmail = useSelector (getUserEmail);
+  const userEmail = useSelector(getUserEmail);
+  const user = useSelector(getUserName);
  
 const toggleModal = () => {
     setShowModal(setShowModal => !setShowModal);
@@ -145,6 +146,12 @@ const toggleModal = () => {
       setPasswordError('');
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      setShowModal(true);
+    }
+  }, [user]);
 
   return (
    
@@ -253,20 +260,22 @@ const toggleModal = () => {
                 type="submit"
               
           >  РЕГИСТРАЦИЯ  </Button>
-           {setModalOpen && (
-            <RegMod
-              
+         {setModalOpen && (
+            <Modal
+              modalTitle={`${user.split(' ')[0].slice(0, 1).toUpperCase()}${user
+                .split(' ')[0]
+                .slice(1, 12)
+                .toLowerCase()}, перейдите на ваш электронный                            адрес и подтвердите аутентификацию!`}
               modalButtonleft={'ГОТОВО'}
               modalButtonRight={'ВЕРНУТЬСЯ'}
               handleClickLeft={toggleModal}
               handleClickRight={toggleModal}
               onClose={toggleModal}
-           
+             
             />
-          )}
+          )} 
           
-          {userEmail && <VerifyEmail
-          />}
+          
           
         </BtnContainer>
       </Forma>
