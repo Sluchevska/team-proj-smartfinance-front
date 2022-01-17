@@ -10,7 +10,8 @@ import {
   fetchLogOut,
   fetchUploadAvatar,
   fetchGetCurrentUser,
-   fetchVerifyToken
+  fetchVerifyEmail,
+  fetchVerifyToken
 } from '../../api/userApi.js';
 import {
   registerRequest,
@@ -59,7 +60,6 @@ const logIn = credentials => async dispatch => {
 };
 
 const logOut = () => async dispatch => {
-  console.log(token)
   dispatch(logoutRequest());
   try {
     await fetchLogOut();
@@ -253,7 +253,7 @@ export {
   logOut,
   logIn,
   getCurrentUser,
-  // refresh,
+  refresh,
   uploadAvatar,
 };
 

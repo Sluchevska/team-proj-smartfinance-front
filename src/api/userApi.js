@@ -30,7 +30,6 @@ export async function fetchGetCurrentUser() {
 
 export async function fetchLogOut() {
     const data = await axios.get(`/api/users/logout`);
-    console.log(data)
     return data;
 }
 
@@ -39,10 +38,10 @@ export async function fetchVerifyToken() {
     return data;
 }
 
-// export async function fetchVerifyEmail(email) {
-//     const data = await axios.post(`/api/users/verify`, email);
-//     return data;
-// }
+export async function fetchVerifyEmail(email) {
+    const data = await axios.post(`/api/users/verify`, email);
+    return data;
+}
 
 export async function fetchUploadAvatar() {
     const data = await axios.patch(`/api/users/avatars`, FormData);

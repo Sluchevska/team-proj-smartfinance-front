@@ -49,10 +49,8 @@ export default function Header() {
 
           <Button type="button" onClick={() => toggleModal()}>
             <LogoutP>Выйти</LogoutP>
-          </Button>
-          <Button type="button" onClick={() => toggleModal()}>
             <LogoutSvg />
-         </Button>
+          </Button>
 
           {setModalOpen && (
             <Modal
