@@ -4,20 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { fetchSignUp } from '../../api/userApi';
 import { register,
-  verifyEmail,
-  logOut,
-  logIn,
-  getCurrentUser,
-  refresh,
-  uploadAvatar, } from '../../redux/auth/auth-operations';
-import { getIsAuthenticated,
+  } from '../../redux/auth/auth-operations';
+import { 
   getUserName,
   getUserEmail,
-  getMessageEmailVerify,
-  getFetchigCurrentUser,
-  getCurrentToken,
-  getUserAvatar,
-  getAuthError, } from '../../redux/auth/auth-selectors';
+  } from '../../redux/auth/auth-selectors';
 
 
 import {
@@ -36,7 +27,7 @@ import {
  
   GoogleContainer,
 } from './Registration.styled';
-import Modal from '../Modal/Modal.jsx';
+
 
 
 export default function Registration({ onClickComeBack }) {
@@ -260,20 +251,10 @@ const toggleModal = () => {
                 type="submit"
               
           >  РЕГИСТРАЦИЯ  </Button>
-         {setModalOpen && (
-            <Modal
-              modalTitle={`${user.split(' ')[0].slice(0, 1).toUpperCase()}${user
-                .split(' ')[0]
-                .slice(1, 12)
-                .toLowerCase()}, перейдите на ваш электронный                            адрес и подтвердите аутентификацию!`}
-              modalButtonleft={'ГОТОВО'}
-              modalButtonRight={'ВЕРНУТЬСЯ'}
-              handleClickLeft={toggleModal}
-              handleClickRight={toggleModal}
-              onClose={toggleModal}
+         
              
-            />
-          )} 
+           
+        
           
           
           
