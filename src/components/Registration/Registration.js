@@ -36,8 +36,8 @@ import {
  
   GoogleContainer,
 } from './Registration.styled';
-import RegMod from '../Modal/Modal.jsx';
-import { VerifyEmail } from './VerifyEmail';
+import Modal from '../Modal/Modal.jsx';
+
 
 export default function Registration({ onClickComeBack }) {
   const dispatch = useDispatch();
@@ -254,7 +254,7 @@ const toggleModal = () => {
               
           >  РЕГИСТРАЦИЯ  </Button>
            {setModalOpen && (
-            <RegMod
+            <Modal
               
               modalButtonleft={'РЕГИСТРАЦИЯ'}
               modalButtonRight={'ВЕРНУТЬСЯ'}
@@ -263,10 +263,9 @@ const toggleModal = () => {
               onClose={toggleModal}
            
             />
-          )}
+          )} 
           
-          {userEmail && <VerifyEmail
-          />}
+          
           
         </BtnContainer>
       </Forma>
