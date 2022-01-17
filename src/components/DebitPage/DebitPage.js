@@ -13,6 +13,8 @@ import {
 } from './DebitPage.styled';
 import BalanceBar from '../BalanceBar';
 import Calendar from '../Calendar';
+import ButtonInput from '../ButtonInput';
+import ButtonDelete from '../ButtonDelete';
 import DebitInputs from '../DebitPage/DebitInputs'
 import DebitList from './DebitList';
 import Summary from '../Summary';
@@ -30,6 +32,8 @@ function DebitPage() {
                     <div>
                         <Calendar />
                         <DebitInputs />
+                        <ButtonInput />
+                        <ButtonDelete />
                     </div>
                     <Wrapper>
                         <TransactionsWrapper>

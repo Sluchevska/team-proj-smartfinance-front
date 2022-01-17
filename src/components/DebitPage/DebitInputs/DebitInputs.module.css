@@ -13,6 +13,7 @@
   border-right: none;
   border-top-left-radius: 10px;
   width: 268px;
+  
 }
 
 .select {
@@ -23,6 +24,7 @@
   border-right: none;
   outline: none;
   width: 188px;
+ 
 }
 
 .amountInput {
@@ -33,7 +35,7 @@
   border-bottom-right-radius: 10px;
   outline: none;
   width: 126px;
-}
+} 
 
 .iconCalculator {
   background-image: url(../../CreditPage/CreditInputs/calculator.svg);
