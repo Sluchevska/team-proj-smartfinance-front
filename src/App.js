@@ -8,7 +8,8 @@ import { BgGrey } from './App.styled';
 import Header from './components/Header/Header';
 import Spinner from './components/Spinner/Spinner';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCurrentToken, getCurrentUser, getFetchigCurrentUser } from './redux/auth';
+import { getCurrentToken, getCurrentUser, getFetchigCurrentUser, refresh } from './redux/auth';
+import Home from './routs/Home';
 
 // import { useDispatch } from 'react-redux';
 // import { authOperations, authSelectors } from './redux/auth';
@@ -17,35 +18,40 @@ import { getCurrentToken, getCurrentUser, getFetchigCurrentUser } from './redux/
 
 function App() {
   const dispatch = useDispatch();
-
-  const isFetchigCurrentUser = useSelector(state =>
-    getFetchigCurrentUser(state),
-  );
-
-  const onToken = useSelector(getCurrentToken);
-  
   useEffect(() => {
-    if (onToken) {
-      dispatch(getCurrentUser());
-    }
+    dispatch(getCurrentUser());
+  }, [dispatch]);
+
+
+  // const isFetchigCurrentUser = useSelector(state =>
+  //   getFetchigCurrentUser(state),
+  // );
+
+  // const onToken = useSelector(getCurrentToken);
+  
+  // useEffect(() => {
+  //   if (onToken) {
+  //     dispatch(getCurrentUser());
+  //   }
     
-  }, [dispatch, onToken]);
+  // }, [dispatch, onToken]);
   return (
     <div>
       <BgGrey />
       <Header />
       {/* <Balance/> */}
       <Suspense fallback={<Spinner />}>
-        {isFetchigCurrentUser ? (
+        {/* {isFetchigCurrentUser ? (
           <Spinner />
-        ) : (
+        ) : ( */}
           <Routes>
-            <Route exact path="/" restricted element={<HomeView /> } />
+            <Route exact path="/" element={<Home /> } />
             <Route exact path="/expenses" element={<ExpensesView />} />
             <Route exact path="/income" element={<IncomeView />} />
             {/* <Route exact path="/reports" element={<ReportsView />} /> */}
             {/* <Route path="*" element = {<Error/>} / > */}
-          </Routes>)}
+        </Routes>
+          {/* )} */}
       </Suspense>  
     </div>
   );
