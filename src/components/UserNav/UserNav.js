@@ -16,12 +16,12 @@ import {
   Line,
   LogoutSvg,
   Logo,
-} from './Header.styled';
+} from '../../views/HeaderView/HeaderView.styled.js';
 
 import Modal from '../Modal/Modal.jsx';
 
-export default function Header() {
-  const isLoggedIn = useSelector(getIsAuthenticated);
+export default function UserNav() {
+
   const name = useSelector(getUserName) || '';
   const dispatch = useDispatch();
 
@@ -37,9 +37,9 @@ export default function Header() {
   const [setModalOpen, setShowModal] = useState(false);
 
   return (
-    <ContainerHeader>
-      <Logo href="/" />
-      {isLoggedIn && (
+    
+    
+   
         <UserInfo>
           <AvatarUser>
             <img src={defaultAvatar} alt="Default Avatar" width="32" />
@@ -65,7 +65,7 @@ export default function Header() {
             />
           )}
         </UserInfo>
-      )}
-    </ContainerHeader>
+   
+
   );
 }
