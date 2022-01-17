@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect} from 'react';
 import { createPortal } from 'react-dom';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -44,9 +44,6 @@ function RegMod({
         <div >
           <p>{modalTitle}</p>
         </div>
-
-        {/* <p className={styles.title}>{modalTitle}</p> */}
-
         <div >
           <div >
             <button onClick={handleClickLeft}>
