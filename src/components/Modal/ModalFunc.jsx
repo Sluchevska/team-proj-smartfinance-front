@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Modal from './Modal';
 
 class ModalFunc extends Component {
+  
   state = {
     isOpen: false,
   }

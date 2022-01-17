@@ -19,9 +19,7 @@ import {
     Logo,
 } from './Header.styled';
 
-import Modal from '../Registration/RegMod';
-// import useModal from '../Modal/Modal.jsx';
-
+import Modal from '../Modal/ModalFunc';
 
 export default function Header() {
 
@@ -41,9 +39,11 @@ const [setModalOpen, setShowModal] = useState(false);
        
     };
   
+  
 
 
     return (
+        
         <ContainerHeader>
             <Logo href="/" />
             {isLoggedIn && (
@@ -52,7 +52,7 @@ const [setModalOpen, setShowModal] = useState(false);
                         <img src={defaultAvatar} alt="Default Avatar" width="32" />
                     </AvatarUser>
                     <UserName>{name}</UserName>
-                    <Line> </Line>
+                    {/* <Line> </Line> */}
 
                     <Button
                         type="button"
@@ -65,7 +65,7 @@ const [setModalOpen, setShowModal] = useState(false);
       
                      {setModalOpen && (
                         <Modal
-                            text={'Вы уверены, что хотите выйти?'}
+                           text={'Вы действительно хотите выйти?'}
                              handleClickLeft={logoutModal}
           handleClickRight={toggleModal}
           onClose={toggleModal}
