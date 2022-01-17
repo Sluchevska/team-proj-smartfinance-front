@@ -30,7 +30,7 @@ color: rgba(82, 85, 95, 0.7);
 line-height: 14,06px;
 letter-spacing: 0.02em;
 text-align: center;
-background-color: rgba(242, 245, 252, 1);
+// background-color: rgba(242, 245, 252, 1);
 margin-right: 20px;
 
 @media (max-width: 768px) {
@@ -51,7 +51,7 @@ line-height: 14,06px;
 text-align: center;
 border-radius: 16px;
 margin-right: 20px;
-background-color: rgba(242, 245, 252, 1);
+// background-color: rgba(242, 245, 252, 1);
 border: 2px solid #FFFFFF; 
 color: #000000;
 
