@@ -1,7 +1,22 @@
 import { Fragment, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { authOperations, authSelectors } from '../../redux/auth';
+import { register,
+  verifyEmail,
+  logOut,
+  logIn,
+  getCurrentUser,
+  refresh,
+  uploadAvatar, } from '../../redux/auth/auth-operations';
+import { getIsAuthenticated,
+  getUserName,
+  getUserEmail,
+  getMessageEmailVerify,
+  getFetchigCurrentUser,
+  getCurrentToken,
+  getUserAvatar,
+  getAuthError, } from '../../redux/auth/auth-selectors';
+
 
 import {
   Forma,
@@ -61,7 +76,7 @@ export default function LogIn({ onClickRegister}) {
     } else if (password.length < 7) {
       return toast.info('The password should be least at 7 characters long');
     }
-    dispatch(authOperations.logIn({ email, password }));
+    dispatch(logIn({ email, password }));
 
     clearInput();
   };

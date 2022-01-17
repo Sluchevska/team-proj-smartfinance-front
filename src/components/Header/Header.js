@@ -1,8 +1,12 @@
 import React from 'react';
 import defaultAvatar from '../../icons/avatarDef.png';
 import { useSelector, useDispatch } from 'react-redux';
-import {authOperations} from '../../redux/auth';
-import { authSelectors } from '../../redux/auth';
+import {
+  logOut,
+  } from '../../redux/auth/auth-operations.js';
+import { getIsAuthenticated,
+  getUserName,
+   } from '../../redux/auth/auth-selectors.js';
 import {
     ContainerHeader,
     UserInfo,
@@ -21,12 +25,12 @@ import {
 
 export default function Header() {
     const dispatch = useDispatch();
-    const isLoggedIn = useSelector(authSelectors.getIsAuthenticated);
-    const name = useSelector(authSelectors.getUserName) || '';
+    const isLoggedIn = useSelector(getIsAuthenticated);
+    const name = useSelector(getUserName) || '';
         // const { isShowingModal, toggle } = useModal();
 
     const logout = () => {
-        dispatch(authOperations.logOut());
+        dispatch(logOut());
         // toggle();
        
     };

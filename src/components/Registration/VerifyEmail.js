@@ -1,12 +1,18 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { authActions, authOperations, authSelectors } from '../../redux/auth';
+import { verifyEmail } from '../../redux/auth/auth-operations';
+import {
+  getUserEmail,
+  getMessageEmailVerify,
+} from '../../redux/auth/auth-selectors';
+import { repeatEmailVerifyOk } from '../../redux/auth/auth-actions';
+
 import RegMod from './RegMod';
 
 export const VerifyEmail = () => {
   const dispatch = useDispatch();
-  const userEmail = useSelector(authSelectors.getUserEmail);
-  const messageSent = useSelector(authSelectors.getMessageEmailVerify);
+  const userEmail = useSelector(getUserEmail);
+  const messageSent = useSelector(getMessageEmailVerify);
   const [modal, setModal] = useState(false);
 
   useEffect(() => {
@@ -14,12 +20,12 @@ export const VerifyEmail = () => {
   }, [messageSent]);
 
   const handleClick = () => {
-    dispatch(authOperations.fetchVerifyEmail({ email: userEmail }));
+    dispatch(verifyEmail({ email: userEmail }));
   };
 
   const closeModal = () => {
     setModal(false);
-    dispatch(authActions.repeatEmailVerifyOk);
+    dispatch(repeatEmailVerifyOk);
   };
 
   return (

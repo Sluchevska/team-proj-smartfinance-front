@@ -14,7 +14,7 @@ const getCurrentToken = state => state.auth.token;
 
 const getAuthError = state => state.auth.error;
 
-const authSelectors = {
+export{
  getIsAuthenticated,
   getUserName,
   getUserEmail,
@@ -24,4 +24,3 @@ const authSelectors = {
   getUserAvatar,
   getAuthError,
 };
-export default authSelectors;

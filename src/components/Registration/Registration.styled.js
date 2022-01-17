@@ -62,6 +62,7 @@ export const FormInput = styled.input`
 
 export const InputDescr = styled.span`
    font-family: Roboto, sant-serif;
+
     font-weight: 400;
     font-size: 12px;
     line-height: 1.176;
