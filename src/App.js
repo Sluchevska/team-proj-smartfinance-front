@@ -1,48 +1,43 @@
 import { Routes, Route } from 'react-router-dom';
 import React, { lazy, Suspense, useEffect } from 'react';
-
-
 import HomeView from './views/HomeView/HomeView';
-import BalanceView from './views/BalanceView';
 // import ReportsView from './views/ReportsView';
-import CreditView from './views/CreditView';
-import DebitView from './views/DebitView';
-import BalanceBar from './components/BalanceBar';
+import ExpensesView from './views/ExpensesView';
+import IncomeView from './views/IncomeView';
 import { BgGrey } from './App.styled';
 import Header from './components/Header/Header';
 import Spinner from './components/Spinner/Spinner';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCurrentToken, getCurrentUser, getFetchigCurrentUser, refresh } from './redux/auth';
+import Home from './routs/Home';
+
 // import { useDispatch } from 'react-redux';
 // import { authOperations, authSelectors } from './redux/auth';
 // import { useStore } from 'react-redux';
-import Balance from './components/Balance';
-
-
+// import Balance from './components/Balance';
 
 function App() {
-  // const dispatch = useDispatch;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCurrentUser());
+  }, [dispatch]);
 
-  //   useEffect(() => {
-  //       dispatch(authOperations.fetchCurrentUser());
-  //   }, [dispatch]);
-  //   const isLoggedIn = useStore(authSelectors.getIsLoggedIn);
   return (
-    
     <div>
       <BgGrey />
-      <Balance/>
-      <Header/>
-      
-      {/* <BalanceBar />  */}
-       <Suspense fallback={<Spinner />}>
-      <Routes>
-        <Route exact path="/" element={<HomeView />} />
-        <Route exact path="/credit" element={<CreditView />} />
-        <Route exact path="/debit" element={<DebitView />} />
-        {/* <Route exact path="/reports" element={<ReportsView />} /> */}
-        {/* <Route path="*" element = {<Error/>} / > */}
-        </Routes> 
+      <Header />
+      {/* <Balance/> */}
+      <Suspense fallback={<Spinner />}>
+                
+          <Routes>
+            <Route exact path="/" element={<Home /> } />
+            <Route exact path="/expenses" element={<ExpensesView />} />
+            <Route exact path="/income" element={<IncomeView />} />
+            {/* <Route exact path="/reports" element={<ReportsView />} /> */}
+            {/* <Route path="*" element = {<Error/>} / > */}
+        </Routes>
+       
       </Suspense>  
-      
     </div>
   );
 }

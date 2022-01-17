@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://team-proj-smartfinance-back.herokuapp.com/';
+axios.defaults.baseURL = 'https://team-proj-smartfinance-back.herokuapp.com';
 
 export const token = {
   set(token) {
@@ -12,22 +12,23 @@ export const token = {
 };
 
 
-export async function register(credentials) {
-    const data = await axios.post(`/api/users/registration`, credentials);
+export async function fetchSignUp(credentials) {
+       const data = await axios.post(`/api/users/register`, credentials);
+    console.log(data)
     return data;
 }
 
-export async function logIn(credentials) {
+export async function fetchLogIn(credentials) {
     const data = await axios.post(`/api/users/login`, credentials);
     return data;
 }
 
-export async function getCurrentUser() {
+export async function fetchGetCurrentUser() {
     const data = await axios.get(`/api/users/current`);
     return data;
 }
 
-export async function logOut() {
+export async function fetchLogOut() {
     const data = await axios.get(`/api/users/logout`);
     return data;
 }

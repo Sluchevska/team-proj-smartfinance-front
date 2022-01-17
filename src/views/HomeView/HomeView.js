@@ -11,16 +11,17 @@ import Registration from '../../components/Registration/Registration';
 import {authSelectors } from '../../redux/auth';
 import {  BottomContainer, BottomKapusta, Container, HomeContainer } from './HomeView.styled';
 import LogIn from '../../components/LogIn/LogIn'
+import Login from '../../routs/Home';
 export default function HomeView({ location }) {
-    const { refreshToken, token } = queryString.parse(location);
-    const dispatch = useDispatch();
+    // const { refreshToken, token } = queryString.parse(location);
+    // const dispatch = useDispatch();
     
-    useEffect(() => {
-    if (token) {
-      dispatch(authSelectors.loginGoogleSuccess(token));
-      dispatch(authSelectors.refreshLoginGoogleSuccess(refreshToken));
-    }
-  }, [dispatch, refreshToken, token]);
+  //   useEffect(() => {
+  //   if (token) {
+  //     dispatch(authSelectors.loginGoogleSuccess(token));
+  //     dispatch(authSelectors.refreshLoginGoogleSuccess(refreshToken));
+  //   }
+  // }, [dispatch, refreshToken, token]);
 
   const [login, setLogin] = useState(true);
   const onRegisterClick = () => {
@@ -35,7 +36,7 @@ export default function HomeView({ location }) {
         <Container>
             <HomeContainer>
                 <HomeTitle />
-               <ModalFunk />
+               {/* <ModalFunk /> */}
            </HomeContainer>
            <FormContainer>
                {login ? (

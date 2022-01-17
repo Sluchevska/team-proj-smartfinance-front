@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-// import img from "../../icons/";
+import logout from "../../icons/logout.svg";
 import logo from "../../icons/logoHPD.svg";
 
 export const ContainerHeader = styled.header`
@@ -80,10 +80,10 @@ export const LogoutP = styled.p`
 `; 
 // кнопка Выйти для мобилки
 export const  LogoutSvg = styled.svg`
-/* background-image: url(); */
+background-image: url(${logout});
 width: 16px;
 height: 16px;
-@media screen and  (min-width: 768px) {
+@media screen and  (min-width: 767px) {
 display: none;
 }
 `;

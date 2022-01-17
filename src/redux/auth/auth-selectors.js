@@ -4,7 +4,7 @@ const getUserName = state => state.auth.user.name;
 
 const getUserEmail = state => state.auth.user.email;
 
-const getMessageRepeatEmailVerify = state => state.auth.isRepeatEmailVerify;
+
 
 const getUserAvatar = state => state.auth.user.avatarURL;
 
@@ -14,14 +14,13 @@ const getCurrentToken = state => state.auth.token;
 
 const getAuthError = state => state.auth.error;
 
-const authSelectors = {
+export{
  getIsAuthenticated,
   getUserName,
   getUserEmail,
-  getMessageRepeatEmailVerify,
+ 
   getFetchigCurrentUser,
   getCurrentToken,
   getUserAvatar,
   getAuthError,
 };
-export default authSelectors;

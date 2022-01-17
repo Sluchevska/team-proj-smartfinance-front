@@ -1,7 +1,23 @@
-import { Fragment, useState } from 'react';
+import axios from 'axios';
+import { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { authOperations, authSelectors } from '../../redux/auth';
+import { fetchSignUp } from '../../api/userApi';
+import { register,
+  verifyEmail,
+  logOut,
+  logIn,
+  getCurrentUser,
+  refresh,
+  uploadAvatar, } from '../../redux/auth/auth-operations';
+import { getIsAuthenticated,
+  getUserName,
+  getUserEmail,
+  getMessageEmailVerify,
+  getFetchigCurrentUser,
+  getCurrentToken,
+  getUserAvatar,
+  getAuthError, } from '../../redux/auth/auth-selectors';
 
 
 import {
@@ -10,8 +26,7 @@ import {
   Title,
   
   Button,
-  Span,
-  InputDescr,
+   InputDescr,
   BtnContainer,
  
   Label,
@@ -21,15 +36,15 @@ import {
  
   GoogleContainer,
 } from './Registration.styled';
-import RegMod from './RegMod';
+import Modal from '../Modal/Modal.jsx';
+
 
 export default function Registration({ onClickComeBack }) {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isRegister, setRegister] = useState(false);
-  const [emailError, setEmailError] = useState('Это обязательное поле');
+    const [emailError, setEmailError] = useState('Это обязательное поле');
     const [passwordError, setPasswordError] = useState('Это обязательное поле');
   const [nameError, setNameError] = useState('Это обязательное поле');
   const [emailW, setEmailW] = useState(false);
@@ -38,7 +53,8 @@ export default function Registration({ onClickComeBack }) {
   const [errorSymbol, setErrorSymbol] = useState('*');
   const [setModalOpen, setShowModal] = useState(false);
   
-   const user = useSelector (authSelectors.getUserName);
+  const userEmail = useSelector(getUserEmail);
+  const user = useSelector(getUserName);
  
 const toggleModal = () => {
     setShowModal(setShowModal => !setShowModal);
@@ -66,40 +82,29 @@ const toggleModal = () => {
     setPassword('');
   };
 
-  const handleChange = ({ target: { name, value } }) => {
-    switch (name) {
-      case 'name':
-        return setName(value);
-      case 'email':
-        return setEmail(value);
-      case 'password':
-        return setPassword(value);
-      default:
-        return;
-    }
-  };
+  
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+  //  const data = await fetchSignUp({email, password});
+  //   console.log(data)
     if (!name.trim() || !email.trim() || !password.trim()) {
       return toast.error('Please fill out all required fields!');
     } else if (password.length < 7) {
       return toast.info('The password should be least at 7 characters long');
     }
-    dispatch(authOperations.register({ name, email, password }));
- 
     clearInput()
+    dispatch(register({ name, email, password }));
+ 
+    
   };
 
-  const handleChangeForm = e => {
-    e.preventDefault();
-    setRegister(!isRegister);
-  };
-
+  
   const nameHandler = e => {
     setName(e.target.value);
-    const re = /^[A-Za-zА-Яа-яЁё' '\-()0-9]{3,30}$/;
-    if (!re.test(String(e.target.value).toLowerCase())) {
+
+    const check = /^[A-Za-zА-Яа-яЁё' '\-()0-9]{3,30}$/;
+    if (!check.test(String(e.target.value).toLowerCase())) {
       setNameError('Некорректное имя');
       setErrorSymbol('*');
       if (!e.target.value) {
@@ -113,6 +118,7 @@ const toggleModal = () => {
 
   const emailHandler = e => {
     setEmail(e.target.value);
+  
     const check =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!check.test(String(e.target.value).toLowerCase())) {
@@ -126,6 +132,7 @@ const toggleModal = () => {
     } else {
       setEmailError('');
     }
+     
   };
 
   const passwordHandler = e => {
@@ -139,6 +146,12 @@ const toggleModal = () => {
       setPasswordError('');
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      setShowModal(true);
+    }
+  }, [user]);
 
   return (
    
@@ -247,19 +260,22 @@ const toggleModal = () => {
                 type="submit"
               
           >  РЕГИСТРАЦИЯ  </Button>
-           {setModalOpen && (
-            <RegMod
-              
+         {setModalOpen && (
+            <Modal
+              modalTitle={`${user.split(' ')[0].slice(0, 1).toUpperCase()}${user
+                .split(' ')[0]
+                .slice(1, 12)
+                .toLowerCase()}, перейдите на ваш электронный                            адрес и подтвердите аутентификацию!`}
               modalButtonleft={'ГОТОВО'}
               modalButtonRight={'ВЕРНУТЬСЯ'}
               handleClickLeft={toggleModal}
               handleClickRight={toggleModal}
               onClose={toggleModal}
-           
+             
             />
-          )}
+          )} 
           
-
+          
           
         </BtnContainer>
       </Forma>
