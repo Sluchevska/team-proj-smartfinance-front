@@ -4,10 +4,6 @@ const registerRequest = createAction('auth/registerRequest');
 const registerSuccess = createAction('auth/registerSuccess');
 const registerError = createAction('auth/registerError');
 
-const repeatEmailVerifyRequest = createAction('auth/repeatEmailVerifyRequest');
-const repeatEmailVerifySuccess = createAction('auth/repeatEmailVerifySuccess');
-const repeatEmailVerifyOk = createAction('auth/repeatEmailVerifyOk');
-const repeatEmailVerifyError = createAction('auth/repeatEmailVerifyError');
 
 const loginRequest = createAction('auth/loginRequest');
 const loginSuccess = createAction('auth/loginSuccess');
@@ -45,9 +41,6 @@ export {
   getCurrentUserSuccess,
   getCurrentUserError,
   
-  repeatEmailVerifyRequest,
-  repeatEmailVerifySuccess,
-  repeatEmailVerifyOk,
-  repeatEmailVerifyError,
+  
 };
 

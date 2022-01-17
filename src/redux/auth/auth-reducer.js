@@ -3,10 +3,7 @@ import { createReducer } from '@reduxjs/toolkit';
 import {
   registerSuccess,
   registerError,
-  repeatEmailVerifyRequest,
-  repeatEmailVerifySuccess,
-  repeatEmailVerifyOk,
-  repeatEmailVerifyError,
+  
   logoutSuccess,
   logoutError,
   uploadAvatarRequest,
@@ -52,9 +49,7 @@ const error = createReducer(null, {
   [registerError]: setError,
   [registerSuccess]: () => null,
   [registerRequest]: () => null,
-  [repeatEmailVerifyError]: setError,
-  [repeatEmailVerifySuccess]: () => null,
-  [repeatEmailVerifyRequest]: () => null,
+  
   [loginError]: setError,
   [loginSuccess]: () => null,
   [loginRequest]: () => null,
@@ -91,10 +86,7 @@ const isFetchigCurrentUser = createReducer(false, {
   [logoutSuccess]: () => false,
 });
 
-const isRepeatEmailVerify = createReducer(null, {
-  [repeatEmailVerifySuccess]: (_, { payload }) => payload.data.message,
-  [repeatEmailVerifyOk]: () => null,
-});
+
 const authReducer = combineReducers({
   user,
   isLogin,
@@ -102,7 +94,7 @@ const authReducer = combineReducers({
   refreshToken,
   error,
   isFetchigCurrentUser,
-  isRepeatEmailVerify,
+ 
 });
 export {authReducer} ;
 

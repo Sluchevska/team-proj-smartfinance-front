@@ -20,9 +20,7 @@ import {
   uploadAvatarRequest,
   uploadAvatarSuccess,
   uploadAvatarError,
-  repeatEmailVerifyRequest,
-  repeatEmailVerifySuccess,
-  repeatEmailVerifyError,
+  
   logoutRequest,
   logoutSuccess,
   loginRequest,
@@ -46,16 +44,7 @@ const register = credentials => async dispatch => {
     
   }
 };
-const  verifyEmail = email => async dispatch => {
-  dispatch(repeatEmailVerifyRequest());
-  try {
-    const response = await fetchVerifyEmail(email);
-    dispatch(repeatEmailVerifySuccess(response.data));
-  } catch ({ response }) {
-    dispatch(repeatEmailVerifyError(response.data.message));
-  
-  }
-};
+
 
 const logIn = credentials => async dispatch => {
   console.log(credentials)
@@ -260,7 +249,7 @@ const refresh = async (dispatch, getState) => {
 
 export {
   register,
-  verifyEmail,
+
   logOut,
   logIn,
   getCurrentUser,
