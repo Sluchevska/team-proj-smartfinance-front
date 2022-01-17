@@ -5,11 +5,12 @@ import HomeView from './views/HomeView/HomeView';
 import ExpensesView from './views/ExpensesView';
 import IncomeView from './views/IncomeView';
 import { BgGrey } from './App.styled';
-import Header from './components/Header/Header';
+
 import Spinner from './components/Spinner/Spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCurrentToken, getCurrentUser, getFetchigCurrentUser, refresh } from './redux/auth';
 import Home from './routs/Home';
+import HeaderView from './views/HeaderView/HeaderView';
 
 // import { useDispatch } from 'react-redux';
 // import { authOperations, authSelectors } from './redux/auth';
@@ -25,7 +26,7 @@ function App() {
   return (
     <div>
       <BgGrey />
-      <Header />
+      <HeaderView />
       {/* <Balance/> */}
       <Suspense fallback={<Spinner />}>
                 
