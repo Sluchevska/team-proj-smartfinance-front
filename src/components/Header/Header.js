@@ -19,25 +19,26 @@ import {
     Logo,
 } from './Header.styled';
 
-import Modal from '../Modal/ModalFunc';
+import Modal from '../Registration/RegMod';
 
 export default function Header() {
 
-    const dispatch = useDispatch();
+   
     const isLoggedIn = useSelector(getIsAuthenticated);
     const name = useSelector(getUserName) || '';
+const dispatch = useDispatch();
 
-    // const { isShowingModal, toggle } = useModal();
-const [setModalOpen, setShowModal] = useState(false);
-     const toggleModal = () => {
+  const toggleModal = () => {
     setShowModal(prevShowModal => !prevShowModal);
   };
 
-    const logoutModal = () => {
-        dispatch(logOut());
-        toggleModal();
-       
-    };
+  const logoutModal = () => {
+    dispatch(logOut());
+    toggleModal();
+  };
+
+  const [setModalOpen, setShowModal] = useState(false);
+    
   
   
 
@@ -66,7 +67,7 @@ const [setModalOpen, setShowModal] = useState(false);
                      {setModalOpen && (
                         <Modal
                            text={'Вы действительно хотите выйти?'}
-                             handleClickLeft={logoutModal}
+          handleClickLeft={logoutModal}
           handleClickRight={toggleModal}
           onClose={toggleModal}
                         />

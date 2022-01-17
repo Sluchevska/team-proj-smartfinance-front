@@ -1,5 +1,6 @@
 import React, { useEffect} from 'react';
 import { createPortal } from 'react-dom';
+import {ModalOverlay, ModalWindow, ModalTitle, ModalHeader, ModalFooter, Icon, Button} from '../Modal/Modal.styled'
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -35,27 +36,29 @@ function RegMod({
   
 
   return createPortal(
-    <div  onClick={handleOverlayClick}>
-      <div >
-        <span  onClick={onClose}>
-          &#10006;
-        </span>
+    <ModalOverlay onClick={handleOverlayClick}>
+      <ModalWindow >
+ 
+        <Icon  onClick={onClose}>
+        
+        </Icon>
 
-        <div >
-          <p>{modalTitle}</p>
-        </div>
-        <div >
-          <div >
-            <button onClick={handleClickLeft}>
+        <ModalHeader >
+          <ModalTitle>{modalTitle}</ModalTitle>
+        </ModalHeader>
+        <ModalFooter>
+          
+            <Button onClick={handleClickLeft}>
               {modalButtonleft}
-            </button>
-            <button  onClick={handleClickRight}>
+            </Button>
+            <Button  onClick={handleClickRight}>
               {modalButtonRight}
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>,
+            </Button>
+          
+        </ModalFooter>
+  
+      </ModalWindow>
+    </ModalOverlay>,
     modalRoot,
   );
 }

@@ -24,8 +24,8 @@ const Modal = ({
                </ModalTitle>
               </ModalHeader>
               <ModalFooter>
-                <Button active onClick={onSubmit}>Yes</Button>
-                <Button onClick={onCancel}>No</Button>
+                <Button type="button" active onClick={onSubmit}>Yes</Button>
+                <Button type="button" onClick={onCancel}>No</Button>
               </ModalFooter>
             </ModalWindow>
           </ModalOverlay>
