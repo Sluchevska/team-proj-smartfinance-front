@@ -47,7 +47,6 @@ export default class IncomeForm extends Component {
                             <span className={styles.placeholder}>
 
                             </span>
-
                         )}
                     </div>
                     <input

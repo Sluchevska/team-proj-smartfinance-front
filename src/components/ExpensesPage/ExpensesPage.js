@@ -13,10 +13,6 @@ import {
 } from './ExpensesPage.styled';
 import BalanceBar from '../BalanceBar';
 import Calendar from '../Calendar';
-// import CreditInputs from '../CreditPage/CreditInputs';
-// import ButtonInput from '../ButtonInput';
-// import ButtonDelete from '../ButtonDelete';
-// import CreditList from './CreditList';
 import ExpensesInputs from './ExpensesInputs';
 import ExpensesList from './ExpensesList';
 import Summary from '../Summary';
@@ -33,11 +29,6 @@ function ExpensesPage() {
                 <Box>
                     <div>
                         <Calendar />
-                        {/* <CreditInputs />
-                        <ButtonInput />
-                        <ButtonDelete /> */}
-
-
                         <ExpensesInputs />
                     </div>
                     <Wrapper>
