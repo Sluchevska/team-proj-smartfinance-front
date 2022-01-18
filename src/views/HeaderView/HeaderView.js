@@ -22,7 +22,8 @@ export default function HeaderView() {
   return (
     <ContainerHeader>
       <Logo href="/" />
-      {isLoggedIn ? <UserNav/> : <HomeView/> }
+      
+      {isLoggedIn && <UserNav/> }
     </ContainerHeader>
   );
 }
