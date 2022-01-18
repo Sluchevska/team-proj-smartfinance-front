@@ -15,9 +15,7 @@ function Home
     if (login) {
       history("/expenses");
     }
-    if (!login) {
-      history("/")
-    }
+   
   }, [history, login]);
 
   return (
