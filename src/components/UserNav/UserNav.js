@@ -48,10 +48,13 @@ export default function UserNav() {
           <UserName>{name}</UserName>
           <Line> </Line>
 
-          <Button type="button" onClick={() => toggleModal()}>
+      <Button type="button" onClick={() => toggleModal()}>
+            <LogoutSvg src={logoutSvg} alt='exit logo'/>
         <LogoutP>Выйти</LogoutP>
-        <LogoutSvg/>
-          </Button>
+    
+        
+      </Button>
+      
           {/* <Button type="button" onClick={() => toggleModal()}>
             <LogoutSvg />
          </Button> */}

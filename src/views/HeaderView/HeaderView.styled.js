@@ -64,6 +64,12 @@ export const Button = styled.button`
   display: flex;
   background: transparent;
   border: none;
+  
+   &:hover, &:active {
+   
+    cursor: pointer;
+  }
+  
 `;
 export const LogoutP = styled.p`
   display: none;
@@ -79,8 +85,8 @@ export const LogoutP = styled.p`
   }
 `; 
 
-export const  LogoutSvg = styled.svg`
-background-image: url(${logout});
+export const  LogoutSvg = styled.img`
+/* background-image: url(${logout}); */
 width: 16px;
 height: 16px;
 @media screen and  (min-width: 767px) {
