@@ -12,7 +12,7 @@ import {
   Logo,
 } from './HeaderView.styled';
 
-import HomeView from '../HomeView/HomeView';
+import MainView from '../MainView/MainView';
 import UserNav from '../../components/UserNav/UserNav';
 
 export default function HeaderView() {
@@ -22,7 +22,8 @@ export default function HeaderView() {
   return (
     <ContainerHeader>
       <Logo href="/" />
-      {isLoggedIn ? <UserNav/> : <HomeView/> }
+      
+      {isLoggedIn && <UserNav/> }
     </ContainerHeader>
   );
 }

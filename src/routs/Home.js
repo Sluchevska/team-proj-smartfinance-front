@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { getIsAuthenticated} from "../redux/auth/auth-selectors";
 import { useNavigate } from "react-router-dom";
 
-import HomeView from "../views/HomeView/HomeView";
+import MainView from "../views/MainView/MainView";
 
 
 function Home
@@ -13,13 +13,16 @@ function Home
 
   useEffect(() => {
     if (login) {
-      history("/income");
+      history("/expenses");
+    }
+    if (!login) {
+      history("/")
     }
   }, [history, login]);
 
   return (
     <section>
-      <HomeView/>
+      <MainView/>
     </section>
   );
 }
