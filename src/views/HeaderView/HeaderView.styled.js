@@ -49,7 +49,7 @@ export const AvatarTxt = styled.div`
   margin: auto;
   `;
 
-// имя 
+
 export const UserName = styled.p`
 display: none;
 @media screen and  (min-width: 768px) {
@@ -59,7 +59,7 @@ display: none;
 }
 `;
 
-// кнопка Выйти
+
 export const Button = styled.button`
   display: flex;
   background: transparent;
@@ -78,7 +78,7 @@ export const LogoutP = styled.p`
   }
   }
 `; 
-// кнопка Выйти для мобилки
+
 export const  LogoutSvg = styled.svg`
 background-image: url(${logout});
 width: 16px;
