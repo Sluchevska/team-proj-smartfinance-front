@@ -1,19 +1,25 @@
-import balanceServices from '../../api/balanceServices';
+import { setBalanceApi } from '../../api/userApi';
 import balanceActions from './balance-actions';
 
-const getBalance = () => async dispatch => {
-  try {
-    dispatch(balanceActions.setLoading(true));
-    const balance = await balanceServices.getBalance();
-    dispatch(balanceActions.getBalance(balance));
-    dispatch(balanceActions.setLoading(false));
-  } catch (error) {
-    throw new Error(error);
-  }
-};
+const setBalanceOperation = (balance) => dispatch => {
+
+    dispatch(balanceActions.setBalanceRequest());
+
+    setBalanceApi(balance)
+    .then(( {data} ) => {
+      console.log('balance set', data);
+      dispatch(balanceActions.setBalanceSuccess(data));
+    })
+    .catch((error) => {
+      dispatch(balanceActions.setBalanceError(error));
+    });
+
+  };
+
+    
 
 const balanceOperations = {
-  getBalance
+  setBalanceOperation
 };
 
 export default balanceOperations;

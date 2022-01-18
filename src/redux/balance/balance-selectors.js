@@ -1,10 +1,7 @@
-const balanceCurrent = state => state.balance.current;
-const balanceLoading = state => state.balance.loading;
+const getBalance = (state) => state.balance;
 
-const balanceSelectors = {
-  balanceCurrent,
-  balanceLoading,
-}
 
-export default balanceSelectors;
+const selectors = { getBalance }
+
+export default selectors;
  

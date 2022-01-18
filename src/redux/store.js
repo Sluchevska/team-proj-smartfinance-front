@@ -11,7 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth';
-import { balanceReducer } from './balance';
+// import { balanceReducer } from './balance';
 
 
 
@@ -25,7 +25,7 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
        auth: persistReducer(authPersistConfig, authReducer),
-       balance: balanceReducer,
+      //  balance: balanceReducer,
     
   },
   devTools: process.env.NODE_ENV !== 'production',

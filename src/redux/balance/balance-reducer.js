@@ -1,15 +1,26 @@
-import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
-import balanceActions from './balance-actions';
+import initState from './balance.initstate';
+import actions from './balance-actions';
+import  {
+  getCurrentUserSuccess,
+  loginSuccess,
+  logoutSuccess,
+} from "../auth/auth-actions";
 
-const initialBalance = 0;
+const balanceReducer = createReducer(initState, {
+  [actions.setBalanceSuccess]: (state, { payload }) => {
+  return { ...state, balance: payload.updatedBalance };
+},
 
+[loginSuccess]: (_, { payload }) => ({
+  balance: payload.balance,
+}),
 
-const current = createReducer(initialBalance,{
- [balanceActions.getBalance]: (_, { payload} ) => payload,
+[getCurrentUserSuccess]: (state, { payload }) => {
+  return { ...state, balance: payload.balance};
+},
 
+[logoutSuccess]: (_, __) => initState,
 });
 
-export default combineReducers({
-  current
-});
+export default balanceReducer;

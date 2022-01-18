@@ -1,48 +1,60 @@
-import React, { useState, useEffect }  from 'react';
-import { useDispatch } from 'react-redux';
-import balanceOperations from '../../redux/balance/balance-operations';
-// import { balanceSelectors } from '../../redux/balance/balance-selectors';
+import React, {  useEffect }  from 'react';
 
+import { useSelector, useDispatch } from 'react-redux';
+// import Modal from "../Modal/Modal";
+import balanceOperations from '../../redux/balance/balance-operations';
+import  balanceSelectors from '../../redux/balance/balance-selectors';
+import { getCurrentUser } from '../../redux/auth/auth-operations';
 import { Form, Title, FormInput, Button } from './Balance.styled';
 
 const  Balance = () => {
   const dispatch = useDispatch();
 
-//   const currentBalance = useSelector(balanceSelectors.balanceCurrent);
-
-  const [balance, setBalance] = useState('');
-
   useEffect(() => {
-     dispatch(balanceOperations.getBalance());
-  }, [dispatch]);
+   dispatch(getCurrentUser());
+}, [dispatch]);
 
-  const handleClick = () => {
-     dispatch(balanceOperations.updateBalance(parseFloat(balance)))
-  };
+   let balanceFromStore = useSelector(balanceSelectors.getBalance);
 
-  const onInputHandler = e => {
-     setBalance(e.target.value);
-  };
+   const updateBalance = (e) => {
+      e.preventDefault();
+
+      const newBalance = e.target.balance.value.split(" ")[0];
+      dispatch(balanceOperations.setBalanceOperation(newBalance));
+
+      
+   };
+   
+   // const [setModalOpen, setModalClose] = useState(' ');
+   // const toggleWindow = () => {
+   //    setModalOpen(setModalOpen => !setModalOpen)
+   // };
 
 
     return(
        
-       <Form>
+       <Form onSubmit={updateBalance}>
+
           <Title>Баланс:</Title>
+          {/* {setModalClose && <Modal onClose={toggleWindow}/>} */}
           <FormInput
+             name="balance"
              type="text"
-             value=""
-             placeholder="00.00 UAH"
-             onChange={onInputHandler}
-
-
+             defaultValue={
+                parseFloat(
+                   balanceFromStore && typeof balanceFromStore === "number"
+                   ? balanceFromStore
+                   : 0
+                   ).toFixed(2) + "UAN"
+               }
           ></FormInput>
+         
           <Button 
-              type="button"
-              onClick={handleClick}
+              type="submit"
           >ПОДТВЕРДИТЬ</Button>
     
        </Form>
+       
     )
   }
 

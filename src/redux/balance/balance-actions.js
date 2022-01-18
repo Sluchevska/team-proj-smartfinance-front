@@ -1,11 +1,14 @@
 import { createAction } from '@reduxjs/toolkit';
 
-const getBalance = createAction('balance/getBalance');
-const setLoading = createAction('balance/setLoading');
+const setBalanceRequest = createAction("balance/setBalanceRequest");
+const setBalanceSuccess = createAction("balance/setBalanceSuccess");
+const setBalanceError = createAction("balance/setBalanceError");
+
 
 const balanceActions = {
-  getBalance,
-  setLoading
+  setBalanceRequest,
+  setBalanceSuccess,
+  setBalanceError,
 };
 
 export default balanceActions;
