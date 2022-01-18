@@ -12,8 +12,11 @@ function Home
   const history = useNavigate();
 
   useEffect(() => {
+    if (!login) {
+      history("/");
+    }
     if (login) {
-      history("/expenses");
+      history("/expenses")
     }
    
   }, [history, login]);
