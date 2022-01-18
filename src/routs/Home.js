@@ -13,7 +13,7 @@ function Home
 
   useEffect(() => {
     if (login) {
-      history("/income");
+      history("/expenses");
     }
   }, [history, login]);
 
