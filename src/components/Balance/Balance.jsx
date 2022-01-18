@@ -1,19 +1,29 @@
-import React  from 'react';
+import React, { useState, useEffect }  from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import balanceOperations from '../../redux/balance/balance-operations';
+// import { balanceSelectors } from '../../redux/balance/balance-selectors';
+
 import { Form, Title, FormInput, Button } from './Balance.styled';
 
 const  Balance = () => {
-  
+  const dispatch = useDispatch();
 
-    //const handleChange = e => {
-      //e.preventDefault();
-      //if () {
-        //return toast.info('Привет! Для начала работы внеси текущий баланс своего счета!  Ты не можешь тратить деньги пока их у тебя нет:)')
-      //}
-    //}
-     //handleSubmit = () => {
+//   const currentBalance = useSelector(balanceSelectors.balanceCurrent);
 
-     //}
-  
+  const [balance, setBalance] = useState('');
+
+  useEffect(() => {
+     dispatch(balanceOperations.getBalance());
+  }, [dispatch]);
+
+  const handleClick = () => {
+     dispatch(balanceOperations.updateBalance(parseFloat(balance)))
+  };
+
+  const onInputHandler = e => {
+     setBalance(e.target.value);
+  };
+
 
     return(
        
@@ -22,12 +32,14 @@ const  Balance = () => {
           <FormInput
              type="text"
              value=""
-             //onChange={handleChange}
-            placeholder="00.00 UAH"
+             placeholder="00.00 UAH"
+             onChange={onInputHandler}
+
 
           ></FormInput>
-          <Button type="submit"
-          //onClick={handleSubmit}
+          <Button 
+              type="button"
+              onClick={handleClick}
           >ПОДТВЕРДИТЬ</Button>
     
        </Form>
