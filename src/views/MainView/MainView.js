@@ -9,7 +9,7 @@ import HomeTitle from '../../components/HomeTitle';
 // import Authorization from '../components/Authorization';
 import Registration from '../../components/Registration/Registration';
 import {authSelectors } from '../../redux/auth';
-import {  BottomContainer, BottomKapusta, Container, HomeContainer } from './HomeView.styled';
+import {  BottomContainer, BottomKapusta, Container, HomeContainer } from './MainView.styled';
 import LogIn from '../../components/LogIn/LogIn'
 import Login from '../../routs/Home';
 export default function HomeView({ location }) {

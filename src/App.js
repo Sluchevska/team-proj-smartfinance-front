@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import React, { lazy, Suspense, useEffect } from 'react';
-import HomeView from './views/HomeView/HomeView';
+import HomeView from './views/MainView/MainView';
 // import ReportsView from './views/ReportsView';
 import ExpensesView from './views/ExpensesView';
 import IncomeView from './views/IncomeView';
