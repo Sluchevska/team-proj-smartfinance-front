@@ -49,4 +49,12 @@ export async function fetchUploadAvatar() {
     return data;
 }
 
+export const setBalanceApi = (balance) => {
+  return axios
+  .post(`/api/users/balance`, { balance: balance })
+  .then(({ data }) => data)
+  .catch((error) => {
+    throw error;
+  });
+};
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import BcgAuth from '../../components/BcgAuth/BcgAuth';
+
 // import BcgAuthBottom from '../components/BcgAuthBottom/';
 import FormContainer from '../../components/FormContainer/FormContainer';
 import queryString from 'query-string';

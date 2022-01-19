@@ -46,7 +46,7 @@ const register = credentials => async dispatch => {
 
 
 const logIn = credentials => async dispatch => {
-  console.log(credentials)
+
   dispatch(loginRequest());
   try {
     const response = await fetchLogIn(credentials);
@@ -59,7 +59,7 @@ const logIn = credentials => async dispatch => {
 };
 
 const logOut = () => async dispatch => {
-  console.log(token)
+ 
   dispatch(logoutRequest());
   try {
     await fetchLogOut();

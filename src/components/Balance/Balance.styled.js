@@ -1,6 +1,25 @@
 import styled from '@emotion/styled';
 
-export const Form = styled.div`
+export const BalanceContainer = styled.div`
+  
+padding-top: 40px;
+
+@media (max-width: 768px) {
+ 
+ 
+}
+`
+export const ButtonContainer = styled.div`
+  
+
+
+@media (max-width: 768px) {
+ 
+ 
+}
+`
+
+export const FormContainer = styled.div`
   display: flex;
   width: 369px;
   height: 44px;
@@ -15,14 +34,14 @@ export const Form = styled.div`
   top: 50%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%) };
+  transform: translate(-50%, -50%) ;
   position: relative;
 }
 `
 
 export const Title = styled.p`
-width: 83px;
-height: 20px;
+/* width: 83px;
+height: 20px; */
 font-family: Roboto, sant-serif;
 font-weight: 500;
 font-size: 12px;
@@ -31,11 +50,12 @@ line-height: 14,06px;
 letter-spacing: 0.02em;
 text-align: center;
 // background-color: rgba(242, 245, 252, 1);
-margin-right: 20px;
+margin-right: 21px;
 
 @media (max-width: 768px) {
   text-align: center;
-  margin-left: 90px;
+  /* margin-left: 90px; */
+}
   
 `
 
