@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import BcgAuth from '../../components/BcgAuth/BcgAuth';
+
 // import BcgAuthBottom from '../components/BcgAuthBottom/';
 import FormContainer from '../../components/FormContainer/FormContainer';
 import queryString from 'query-string';
@@ -9,7 +9,7 @@ import HomeTitle from '../../components/HomeTitle';
 // import Authorization from '../components/Authorization';
 import Registration from '../../components/Registration/Registration';
 import {authSelectors } from '../../redux/auth';
-import {  BottomContainer, BottomKapusta, Container, HomeContainer } from './HomeView.styled';
+import {  BottomContainer, BottomKapusta, Container, HomeContainer } from './MainView.styled';
 import LogIn from '../../components/LogIn/LogIn'
 import Login from '../../routs/Home';
 export default function HomeView({ location }) {

@@ -1,36 +1,68 @@
-import React  from 'react';
-import { Form, Title, FormInput, Button } from './Balance.styled';
+import React, {  useEffect, useState }  from 'react';
+
+import { useSelector, useDispatch } from 'react-redux';
+import Modal from "../Modal/Modal";
+import balanceOperations from '../../redux/balance/balance-operations';
+import  balanceSelectors from '../../redux/balance/balance-selectors';
+import { getCurrentUser } from '../../redux/auth/auth-operations';
+import { Title, FormInput, Button, BalanceContainer, FormContainer } from './Balance.styled';
+import GoToReportsBtn from '../GoToReportsBtn/GoToReportsBtn';
 
 const  Balance = () => {
-  
+  const dispatch = useDispatch();
 
-    //const handleChange = e => {
-      //e.preventDefault();
-      //if () {
-        //return toast.info('Привет! Для начала работы внеси текущий баланс своего счета!  Ты не можешь тратить деньги пока их у тебя нет:)')
-      //}
-    //}
-     //handleSubmit = () => {
+  useEffect(() => {
+   dispatch(getCurrentUser());
+}, [dispatch]);
 
-     //}
-  
+   let balanceFromStore = useSelector(balanceSelectors.getBalance);
+
+   const updateBalance = (e) => {
+      e.preventDefault();
+
+      const newBalance = e.target.balance.value.split(" ")[0];
+      dispatch(balanceOperations.setBalanceOperation(newBalance));
+
+      
+   };
+const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => setIsModalOpen(state => !state);
+
+useEffect(() => {
+    document.body.style.overflow = isModalOpen ? 'hidden' : 'auto';
+  }, [isModalOpen]);
+
 
     return(
        
-       <Form>
-          <Title>Баланс:</Title>
-          <FormInput
-             type="text"
-             value=""
-             //onChange={handleChange}
-            placeholder="00.00 UAH"
+       <BalanceContainer>
+          <FormContainer onSubmit={updateBalance}>
 
-          ></FormInput>
-          <Button type="submit"
-          //onClick={handleSubmit}
+          <Title>Баланс:</Title>
+          {/* {setModalClose && <Modal onClose={toggleWindow}/>} */}
+          <FormInput
+                name="balance"
+                placeholder='00.00'
+             type="text"
+             defaultValue={
+                parseFloat(
+                   balanceFromStore && typeof balanceFromStore === "number"
+                   ? balanceFromStore
+                   : 0
+                   ).toFixed(2) + "UAN"
+               }
+             ></FormInput>
+             
+         
+          <Button 
+              type="submit"
           >ПОДТВЕРДИТЬ</Button>
     
-       </Form>
+          </FormContainer>
+          
+       <GoToReportsBtn/>
+       </BalanceContainer>
+       
     )
   }
 

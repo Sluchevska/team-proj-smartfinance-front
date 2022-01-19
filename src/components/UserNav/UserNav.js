@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import defaultAvatar from '../../icons/avatarDef.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { logOut } from '../../redux/auth/auth-operations.js';
+import logoutSvg from "../../icons/logout.svg";
 import {
   getIsAuthenticated,
   getUserName,
@@ -47,12 +48,16 @@ export default function UserNav() {
           <UserName>{name}</UserName>
           <Line> </Line>
 
-          <Button type="button" onClick={() => toggleModal()}>
-            <LogoutP>Выйти</LogoutP>
-          </Button>
-          <Button type="button" onClick={() => toggleModal()}>
+      <Button type="button" onClick={() => toggleModal()}>
+            <LogoutSvg src={logoutSvg} alt='exit logo'/>
+        <LogoutP>Выйти</LogoutP>
+    
+        
+      </Button>
+      
+          {/* <Button type="button" onClick={() => toggleModal()}>
             <LogoutSvg />
-         </Button>
+         </Button> */}
 
           {setModalOpen && (
             <Modal

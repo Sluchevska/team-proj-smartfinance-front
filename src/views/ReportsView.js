@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useState, useEffect } from 'react';
 import {shallowEqual, useDispatch, useSelector} from 'react-redux'
 import {transactionsSelectors, transactionsOperations} from '../redux/transactions-month'
@@ -7,6 +8,7 @@ import {transactionsSelectors, transactionsOperations} from '../redux/transactio
 // import Charts from '../components/Charts';
 // import ReturnHome from '../components/ReturnHome';
 import SwitchMonthArrow from '../components/ExpensesReports/SwitchMonthArrow/SwitchMonthArrow';
+
 
 
 export default function ReportsView() {
@@ -47,6 +49,7 @@ export default function ReportsView() {
 
     return (
         <div>
+
             {/* <ReturnHome />; */}
             {/* <ExpensesReports />; */}
             {/* <IncomeReports />; */}
@@ -55,6 +58,7 @@ export default function ReportsView() {
                 onHandleClickRight={onHandleClickRight}/>
                 
             {/* <Charts />; */}
+
         </div>
     )
 }

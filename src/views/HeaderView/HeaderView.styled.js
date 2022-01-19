@@ -49,7 +49,7 @@ export const AvatarTxt = styled.div`
   margin: auto;
   `;
 
-// имя 
+
 export const UserName = styled.p`
 display: none;
 @media screen and  (min-width: 768px) {
@@ -59,11 +59,17 @@ display: none;
 }
 `;
 
-// кнопка Выйти
+
 export const Button = styled.button`
   display: flex;
   background: transparent;
   border: none;
+  
+   &:hover, &:active {
+   
+    cursor: pointer;
+  }
+  
 `;
 export const LogoutP = styled.p`
   display: none;
@@ -78,9 +84,9 @@ export const LogoutP = styled.p`
   }
   }
 `; 
-// кнопка Выйти для мобилки
-export const  LogoutSvg = styled.svg`
-background-image: url(${logout});
+
+export const  LogoutSvg = styled.img`
+/* background-image: url(${logout}); */
 width: 16px;
 height: 16px;
 @media screen and  (min-width: 767px) {

@@ -49,6 +49,7 @@ export async function fetchUploadAvatar() {
     return data;
 }
 
+
 export async function fetchMonthReports({month, year}){
     console.log("api", month, year);
     const {data} = await axios.get(`/api/operations/info?year=${year}&month=${month}`)
@@ -56,5 +57,15 @@ export async function fetchMonthReports({month, year}){
     return data;
 }
 
+
+
+export const setBalanceApi = (balance) => {
+  return axios
+  .post(`/api/users/balance`, { balance: balance })
+  .then(({ data }) => data)
+  .catch((error) => {
+    throw error;
+  });
+};
 
 
