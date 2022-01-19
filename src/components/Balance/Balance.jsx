@@ -6,6 +6,7 @@ import balanceOperations from '../../redux/balance/balance-operations';
 import  balanceSelectors from '../../redux/balance/balance-selectors';
 import { getCurrentUser } from '../../redux/auth/auth-operations';
 import { Form, Title, FormInput, Button } from './Balance.styled';
+import GoToReportsBtn from '../GoToReportsBtn/GoToReportsBtn';
 
 const  Balance = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,8 @@ const  Balance = () => {
 
     return(
        
-       <Form onSubmit={updateBalance}>
+       <div>
+          <Form onSubmit={updateBalance}>
 
           <Title>Баланс:</Title>
           {/* {setModalClose && <Modal onClose={toggleWindow}/>} */}
@@ -54,6 +56,8 @@ const  Balance = () => {
           >ПОДТВЕРДИТЬ</Button>
     
        </Form>
+       <GoToReportsBtn/>
+       </div>
        
     )
   }
