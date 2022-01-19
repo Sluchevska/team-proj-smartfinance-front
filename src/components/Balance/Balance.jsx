@@ -1,11 +1,11 @@
-import React, {  useEffect }  from 'react';
+import React, {  useEffect, useState }  from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-// import Modal from "../Modal/Modal";
+import Modal from "../Modal/Modal";
 import balanceOperations from '../../redux/balance/balance-operations';
 import  balanceSelectors from '../../redux/balance/balance-selectors';
 import { getCurrentUser } from '../../redux/auth/auth-operations';
-import { Form, Title, FormInput, Button } from './Balance.styled';
+import { Title, FormInput, Button, BalanceContainer, FormContainer } from './Balance.styled';
 import GoToReportsBtn from '../GoToReportsBtn/GoToReportsBtn';
 
 const  Balance = () => {
@@ -25,22 +25,24 @@ const  Balance = () => {
 
       
    };
+   //  const [setModalOpen, setShowModal] = useState(true);
    
-   // const [setModalOpen, setModalClose] = useState(' ');
+   // // const [setModalOpen, setModalClose] = useState(' ');
    // const toggleWindow = () => {
-   //    setModalOpen(setModalOpen => !setModalOpen)
+   //    setShowModal(setShowModal => !setShowModal)
    // };
 
 
     return(
        
-       <div>
-          <Form onSubmit={updateBalance}>
+       <BalanceContainer>
+          <FormContainer onSubmit={updateBalance}>
 
           <Title>Баланс:</Title>
           {/* {setModalClose && <Modal onClose={toggleWindow}/>} */}
           <FormInput
-             name="balance"
+                name="balance"
+                placeholder='00.00'
              type="text"
              defaultValue={
                 parseFloat(
@@ -49,15 +51,17 @@ const  Balance = () => {
                    : 0
                    ).toFixed(2) + "UAN"
                }
-          ></FormInput>
+             ></FormInput>
+             
          
           <Button 
               type="submit"
           >ПОДТВЕРДИТЬ</Button>
     
-       </Form>
+          </FormContainer>
+          
        <GoToReportsBtn/>
-       </div>
+       </BalanceContainer>
        
     )
   }
