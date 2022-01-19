@@ -25,12 +25,12 @@ const  Balance = () => {
 
       
    };
-   //  const [setModalOpen, setShowModal] = useState(true);
-   
-   // // const [setModalOpen, setModalClose] = useState(' ');
-   // const toggleWindow = () => {
-   //    setShowModal(setShowModal => !setShowModal)
-   // };
+const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => setIsModalOpen(state => !state);
+
+useEffect(() => {
+    document.body.style.overflow = isModalOpen ? 'hidden' : 'auto';
+  }, [isModalOpen]);
 
 
     return(
