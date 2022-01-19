@@ -37,7 +37,8 @@ function App() {
       {/* <Balance/> */}
       <Suspense fallback={<Spinner />}>
                 
-        <Routes>
+          <Routes>
+            <Route exact path="/expenses" element={<ExpensesView />} />
           <Route path="/" element={<Navigate replace to="home" />} />
         <Route
           path="home"

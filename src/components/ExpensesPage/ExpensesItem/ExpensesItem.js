@@ -4,25 +4,25 @@ import {
     Container,
     WrapperInfo,
     WrapperSum,
-    Name,
+    Description,
     NameInfo,
     Date,
-    Type,
+    Category,
     Sum,
     Wrapper
 } from './ExpensesItem.styled';
 import IconButton from '../../IconButton';
 import { ReactComponent as DeleteIcon } from '../../../icons/delete.svg';
 
-function ExpensesItem({ transactions }) {
+function ExpensesItem({ operations }) {
     const matches = useMediaQuery('(min-width:768px)');
     if (matches === true) {
         return (
                 <Wrapper>
-                    <Date >{transactions.date}</Date>
-                    <Name >{transactions.name}</Name>
-                    <Type >{transactions.type}</Type>
-                    <Sum >-{transactions.sum}.00 грн</Sum>
+                    <Date >{operations.date}</Date>
+                    <Description >{operations.description}</Description>
+                    <Category >{operations.category}</Category>
+                    <Sum >-{operations.sum}.00 грн</Sum>
                     <IconButton onClick={() => console.log('Pressed')}>
                         {<DeleteIcon width="18" height="18" fill="black" />}
                     </IconButton>
@@ -31,14 +31,14 @@ function ExpensesItem({ transactions }) {
     } else return (
          <Container>
             <WrapperInfo>
-                <Name>{transactions.name}</Name>
+                <Description>{operations.description}</Description>
                 <NameInfo>
-                    <Date>{transactions.date}</Date>
-                    <Type>{transactions.type}</Type>
+                    <Date>{operations.date}</Date>
+                    <Category>{operations.category}</Category>
                 </NameInfo>
             </WrapperInfo>
             <WrapperSum>
-                <Sum>-{transactions.sum}.00 грн</Sum>
+                <Sum>-{operations.sum}.00 грн</Sum>
                 <IconButton onClick={() => console.log('Pressed')}>
                     {<DeleteIcon width="18" height="18" fill="black" />}
                 </IconButton>
@@ -70,15 +70,15 @@ export default ExpensesItem;
 
         //<button onClick={() => dispatch(actions.deleteContact(contacts.id))}>Delete</button>
 
-        //function CreditItem ({ transactions }) {
+        //function CreditItem ({ operations }) {
     // const dispatch = useDispatch();
 // return (
 //     <div >
 //         <p >
-//             <span >{transactions.date}</span>
-//             <span >{transactions.name}</span>
-//             <span >{transactions.type}</span>
-//             <span >{transactions.sum}</span>
+//             <span >{operations.date}</span>
+//             <span >{operations.name}</span>
+//             <span >{operations.type}</span>
+//             <span >{operations.sum}</span>
 //         </p>
 //         <DeleteIcon width="40" height="40" fill = "black"/>
 //     </div> 

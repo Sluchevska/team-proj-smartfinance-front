@@ -103,7 +103,7 @@ export const Header = styled.div`
       margin-left:23px;
     }
   `
-  export const Name = styled.span`
+  export const Description = styled.span`
     @media screen and (min-width: 768px) {
       margin-bottom:0;
       width:200px;
@@ -113,7 +113,7 @@ export const Header = styled.div`
       width:275px;
     }
     `
-  export const Type = styled.span`
+  export const Category = styled.span`
     @media screen and (min-width: 768px) {
       margin-bottom:0;
       width:70px;

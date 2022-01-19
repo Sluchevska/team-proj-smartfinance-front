@@ -6,11 +6,11 @@ import {
     ListItem
 } from './ExpensesList.styled';
 
-const ExpensesList = ({transactions}) => (
+const ExpensesList = ({operations}) => (
     <List>
-        {transactions.map((transactions)=> (
-            <ListItem key={transactions.id}  >
-                <ExpensesItem transactions={transactions}/>
+        {operations.map((operations)=> (
+            <ListItem key={operations.id}  >
+                <ExpensesItem operations={operations}/>
             </ListItem>
         ))}
     </List>

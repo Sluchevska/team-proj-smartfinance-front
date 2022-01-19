@@ -5,9 +5,9 @@ import {
     Container,
     OperationsWrapper,
     Header,
-    Name,
+    Description,
     Date,
-    Type,
+    Category,
     Sum,
     Wrapper
 } from './ExpensesPage.styled';
@@ -36,19 +36,16 @@ function ExpensesPage() {
                         <ExpensesInputs />
                         <ButtonInput />
                         <ButtonDelete />
-
-
-
                     </div>
                     <Wrapper>
                         <OperationsWrapper>
                             {matches === true ? <Header>
                                 <Date >ДАТА</Date>
-                                <Name >ОПИСАНИЕ</Name>
-                                <Type >КАТЕГОРИЯ</Type>
+                                <Description >ОПИСАНИЕ</Description>
+                                <Category >КАТЕГОРИЯ</Category>
                                 <Sum >СУММА</Sum>
                             </Header> : null}
-                            <ExpensesList transactions={expensesOperations} />
+                            <ExpensesList operations={expensesOperations} />
                         </OperationsWrapper>
                         <Summary data={data} />
                     </Wrapper>

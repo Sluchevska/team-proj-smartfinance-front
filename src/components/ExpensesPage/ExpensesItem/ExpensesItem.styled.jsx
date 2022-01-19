@@ -53,7 +53,7 @@ export const WrapperSum= styled.div`
   display:flex;
 `
 
-export const Name = styled.span`
+export const Description = styled.span`
   margin:0;
   margin-bottom:8px;
   width:100px;
@@ -67,7 +67,7 @@ export const Name = styled.span`
 
   @media screen and (min-width: 768px) {
     margin-bottom:0;
-    width:200px;
+    width:180px;
     font-size: 12px;
     line-height: 1.167;
     font-weight:400;
@@ -104,7 +104,7 @@ export const Date = styled.span`
     width:100px;
   }
   `
-export const Type = styled.span`
+export const Category = styled.span`
   margin:0;
   display:block;
 
@@ -115,7 +115,7 @@ export const Type = styled.span`
 
   @media screen and (min-width: 768px) {
     margin-right:0;
-    width:70px;
+    width:90px;
     text-align:center;
     font-size: 12px;
     line-height: 1.167;
