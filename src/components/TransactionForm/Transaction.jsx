@@ -17,7 +17,7 @@ import { buttonGroupStyles } from './buttonStyles';
 import calc from '../../icons/calculator.svg';
 import calendar from '../../icons/calendar.svg';
 import expenseCategories from './expenseCategories.json';
-import { fetchAddTransaction } from '../../redux/transaction/transactions-operations';
+import { fetchAddTransaction } from '../../redux/transaction/transactions-operations.js';
 import { getSelectedDate } from '../../redux/transaction/transactions-selectors';
 import s from './Transaction.module.css';
 import { selectStyles } from './selectStyles';
