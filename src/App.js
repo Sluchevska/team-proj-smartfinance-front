@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import React, { lazy, Suspense, useEffect } from 'react';
+
 import HomeView from './views/MainView/MainView';
 // import ReportsView from './views/ReportsView';
 import ExpensesView from './views/ExpensesView';
@@ -38,6 +39,7 @@ function App() {
       {/* <Balance/> */}
       <Suspense fallback={<Spinner />}>
                 
+
         <Routes>
           <Route path="/" element={<Navigate replace to="home" />} />
         <Route
@@ -51,6 +53,7 @@ function App() {
         ></Route>
             <Route path="/income"  element={!isLogIn ? <Navigate to="/home" /> : <IncomeView />} /> 
             <Route exact path="/reports" element={!isLogIn ? <Navigate to="/home" /> :<ReportsView />} />
+
             {/* <Route path="*" element = {<Error/>} / > */}
 
         </Routes>
