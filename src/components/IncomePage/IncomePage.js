@@ -12,13 +12,12 @@ import {
     Wrapper
 } from './IncomePage.styled';
 import BalanceBar from '../BalanceBar';
-// import Calendar from '../Calendar';
 
-// import ButtonInput from '../ButtonInput';
-// import ButtonDelete from '../ButtonDelete';
+
+
 import Transaction from '../TransactionForm/Transaction'
 // import DebitList from './DebitList';
-// import IncomeInputs from './IncomeInputs'
+
 import IncomeList from './IncomeList';
 import Summary from '../Summary';
 
