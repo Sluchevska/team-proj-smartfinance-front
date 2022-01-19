@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import React, { lazy, Suspense, useEffect } from 'react';
 import HomeView from './views/HomeView/HomeView';
-// import ReportsView from './views/ReportsView';
+import ReportsView from './views/ReportsView';
 import ExpensesView from './views/ExpensesView';
 import IncomeView from './views/IncomeView';
 import { BgGrey } from './App.styled';
@@ -34,7 +34,7 @@ function App() {
             <Route exact path="/" element={<Home /> } />
             <Route exact path="/expenses" element={<ExpensesView />} />
             <Route exact path="/income" element={<IncomeView />} />
-            {/* <Route exact path="/reports" element={<ReportsView />} /> */}
+            <Route exact path="/reports" element={<ReportsView />} />
             {/* <Route path="*" element = {<Error/>} / > */}
         </Routes>
        
