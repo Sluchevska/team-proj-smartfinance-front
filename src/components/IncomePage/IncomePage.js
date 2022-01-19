@@ -16,7 +16,7 @@ import BalanceBar from '../BalanceBar';
 
 // import ButtonInput from '../ButtonInput';
 // import ButtonDelete from '../ButtonDelete';
-import Transaction from '../TransactionForm/Transaction'
+// import Transaction from '../TransactionForm/Transaction'
 // import DebitList from './DebitList';
 // import IncomeInputs from './IncomeInputs'
 import IncomeList from './IncomeList';
@@ -34,7 +34,7 @@ function IncomePage() {
                 <Box>
 
                     <div>
-                        <Transaction />
+                        {/* <Transaction /> */}
                     </div>
 
 
