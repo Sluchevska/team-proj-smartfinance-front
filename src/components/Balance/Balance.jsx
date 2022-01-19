@@ -37,8 +37,10 @@ useEffect(() => {
        
        <BalanceContainer>
           <FormContainer onSubmit={updateBalance}>
+             <label>
+           <Title>Баланс:</Title>     
 
-          <Title>Баланс:</Title>
+          
           {/* {setModalClose && <Modal onClose={toggleWindow}/>} */}
           <FormInput
                 name="balance"
@@ -57,7 +59,7 @@ useEffect(() => {
           <Button 
               type="submit"
           >ПОДТВЕРДИТЬ</Button>
-    
+    </label>
           </FormContainer>
           
        <GoToReportsBtn/>

@@ -19,7 +19,7 @@ export const ButtonContainer = styled.div`
 }
 `
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
   display: flex;
   width: 369px;
   height: 44px;

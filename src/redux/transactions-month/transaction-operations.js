@@ -19,7 +19,7 @@ const token = {
         try {
           token.set(authToken);
       const {data} = await transactionsApi.fetchMonthReports(date);
-      console.log("fetch", data)
+    
 dispatch(operationsSuccess(data))  
         }
         catch(error){
