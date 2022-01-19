@@ -12,6 +12,7 @@ import { getCurrentToken, getCurrentUser, getFetchigCurrentUser, getIsAuthentica
 import Home from './routs/Home';
 import HeaderView from './views/HeaderView/HeaderView';
 import MainView from './views/MainView/MainView'
+import { HomeContainer } from './views/MainView/MainView.styled';
 
 // import { useDispatch } from 'react-redux';
 // import { authOperations, authSelectors } from './redux/auth';
@@ -32,6 +33,7 @@ function App() {
     <div>
       <BgGrey />
       <HeaderView />
+      <HomeContainer>
       {/* <Balance/> */}
       <Suspense fallback={<Spinner />}>
                 
@@ -52,7 +54,8 @@ function App() {
 
         </Routes>
        
-      </Suspense>  
+        </Suspense>  
+        </HomeContainer>
     </div>
   );
 }
