@@ -125,7 +125,34 @@ export const Category = styled.span`
     width:85px;
   }
     `
-export const Sum = styled.span`
+export const PlusSum = styled.span`
+
+  margin:0;
+  margin-right:23px;
+  color: #407946;
+
+  font-size: 12px;
+  font-weight:700;
+  line-height: 1.167;
+  letter-spacing: 0.04em;
+
+  @media screen and (max-width: 767px) {
+    display:flex;
+    align-items:center;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-right:40px;
+    width:130px;
+    text-align:right;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width:170px;
+    margin-right:50px;
+  }
+  `
+  export const MinusSum = styled.span`
 
   margin:0;
   margin-right:23px;

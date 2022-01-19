@@ -1,5 +1,6 @@
 import React from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import {useLocation} from 'react-router-dom';
 import {
     Box,
     Container,
@@ -25,6 +26,7 @@ import expensesOperations from '../../data/expensesOperations.json';
 import data from '../../data/summary.json'
 
 function ExpensesPage() {
+    const location = useLocation();
     const matches = useMediaQuery('(min-width:768px)');
     return (
         <div>

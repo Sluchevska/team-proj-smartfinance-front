@@ -39,6 +39,7 @@ function App() {
                 
           <Routes>
             <Route exact path="/expenses" element={<ExpensesView />} />
+            <Route exact path="/income" element={<ExpensesView />} />
           <Route path="/" element={<Navigate replace to="home" />} />
         <Route
           path="home"

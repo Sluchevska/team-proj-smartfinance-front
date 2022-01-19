@@ -1,5 +1,7 @@
 import React from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import {useLocation} from 'react-router-dom';
+
 import {
     Container,
     WrapperInfo,
@@ -8,43 +10,48 @@ import {
     NameInfo,
     Date,
     Category,
-    Sum,
+    PlusSum,
+    MinusSum,
     Wrapper
 } from './ExpensesItem.styled';
 import IconButton from '../../IconButton';
 import { ReactComponent as DeleteIcon } from '../../../icons/delete.svg';
 
 function ExpensesItem({ operations }) {
+    const location = useLocation();
     const matches = useMediaQuery('(min-width:768px)');
     if (matches === true) {
         return (
-                <Wrapper>
-                    <Date >{operations.date}</Date>
-                    <Description >{operations.description}</Description>
-                    <Category >{operations.category}</Category>
-                    <Sum >-{operations.sum}.00 грн</Sum>
-                    <IconButton onClick={() => console.log('Pressed')}>
-                        {<DeleteIcon width="18" height="18" fill="black" />}
-                    </IconButton>
-                </Wrapper>
-            )
-    } else return (
-         <Container>
-            <WrapperInfo>
-                <Description>{operations.description}</Description>
-                <NameInfo>
-                    <Date>{operations.date}</Date>
-                    <Category>{operations.category}</Category>
-                </NameInfo>
-            </WrapperInfo>
-            <WrapperSum>
-                <Sum>-{operations.sum}.00 грн</Sum>
+            <Wrapper>
+                <Date >{operations.date}</Date>
+                <Description >{operations.description}</Description>
+                <Category >{operations.category}</Category>
+                {location.pathname === '/expenses' ? <MinusSum>-{operations.sum} грн</MinusSum> :<PlusSum>{operations.sum} грн</PlusSum>}
                 <IconButton onClick={() => console.log('Pressed')}>
                     {<DeleteIcon width="18" height="18" fill="black" />}
                 </IconButton>
-            </WrapperSum>
-        </Container> 
-    )
+            </Wrapper>
+        )
+    }
+    else return (
+            <Container>
+                <WrapperInfo>
+                    <Description>{operations.description}</Description>
+                    <NameInfo>
+                        <Date>{operations.date}</Date>
+                        <Category>{operations.category}</Category>
+                    </NameInfo>
+                </WrapperInfo>
+                <WrapperSum>
+                    {location.pathname === '/expenses' ? <MinusSum>-{operations.sum} грн</MinusSum> :<PlusSum>{operations.sum} грн</PlusSum>}
+                    <IconButton onClick={() => console.log('Pressed')}>
+                        {<DeleteIcon width="18" height="18" fill="black" />}
+                    </IconButton>
+                </WrapperSum>
+            </Container>
+        )
+    
+
 }
 
 export default ExpensesItem;
@@ -81,7 +88,9 @@ export default ExpensesItem;
 //             <span >{operations.sum}</span>
 //         </p>
 //         <DeleteIcon width="40" height="40" fill = "black"/>
-//     </div> 
+//     </div>
 // )
     
 // }
+
+//  if (matches === true)
