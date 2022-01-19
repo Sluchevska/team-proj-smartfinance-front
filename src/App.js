@@ -4,7 +4,7 @@ import HomeView from './views/MainView/MainView';
 // import ReportsView from './views/ReportsView';
 import ExpensesView from './views/ExpensesView';
 import IncomeView from './views/IncomeView';
-import { BgGrey } from './App.styled';
+
 
 import Spinner from './components/Spinner/Spinner';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,6 +13,7 @@ import Home from './routs/Home';
 import HeaderView from './views/HeaderView/HeaderView';
 import MainView from './views/MainView/MainView'
 import { HomeContainer } from './views/MainView/MainView.styled';
+import ReportsView from './views/ReportsView';
 
 // import { useDispatch } from 'react-redux';
 // import { authOperations, authSelectors } from './redux/auth';
@@ -31,7 +32,7 @@ function App() {
 
   return (
     <div>
-      <BgGrey />
+     
       <HeaderView />
       <HomeContainer>
       {/* <Balance/> */}
@@ -49,7 +50,7 @@ function App() {
             
         ></Route>
             <Route path="/income"  element={!isLogIn ? <Navigate to="/home" /> : <IncomeView />} /> 
-            {/* <Route exact path="/reports" element={<ReportsView />} /> */}
+            <Route exact path="/reports" element={!isLogIn ? <Navigate to="/home" /> :<ReportsView />} />
             {/* <Route path="*" element = {<Error/>} / > */}
 
         </Routes>
