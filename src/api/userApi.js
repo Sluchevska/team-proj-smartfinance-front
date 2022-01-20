@@ -30,8 +30,7 @@ export async function fetchGetCurrentUser() {
 
 export async function fetchLogOut() {
     const data = await axios.get(`/api/users/logout`);
-    console.log(data)
-    return data;
+      return data;
 }
 
 
