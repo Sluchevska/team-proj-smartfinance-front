@@ -16,13 +16,16 @@ font-size: 12px;
     margin-right: 20px;
     padding: 0;
     margin:0;
+    text-decoration: none;
 `
 
 
 
 export const Container = styled.div`
+text-decoration: none;
 @media screen and (min-width: 768px) {
 display: flex;
+
     width: 154px;
     /* height: 24px; */
     align-items: center;
