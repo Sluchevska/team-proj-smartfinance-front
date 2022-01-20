@@ -71,22 +71,6 @@ const logOut = () => async dispatch => {
   }
 };
 
-const uploadAvatar = formData => async (dispatch, getState) => {
-  dispatch(uploadAvatarRequest());
-  try {
-    const response = await fetchUploadAvatar(formData);
-    dispatch(uploadAvatarSuccess(response.data.data));
-  } catch ({ response }) {
-    if (response.data.message === 'Unvalid token') {
-      await refresh(dispatch, getState);
-      const response = await fetchUploadAvatar(formData);
-      dispatch(uploadAvatarSuccess(response.data.data));
-    } else {
-      dispatch(uploadAvatarError(response.data.message));
-    
-    }
-  }
-};
 
 const getCurrentUser = () => async (dispatch, getState) => {
   const {
@@ -104,12 +88,13 @@ const getCurrentUser = () => async (dispatch, getState) => {
     console.log(response.data.user)
      } catch ({ response }) {
     if (response.data.message === 'Unvalid token') {
-      return await refresh(dispatch, getState);
+       toast.warn('Server error. Try again');
     }
     dispatch(getCurrentUserError(response.data.message));
    
   }
 };
+
 
 
 
@@ -120,6 +105,5 @@ export {
   logIn,
   getCurrentUser,
 
-  uploadAvatar,
 };
 
