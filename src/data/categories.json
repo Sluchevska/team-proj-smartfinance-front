@@ -1,0 +1,93 @@
+[
+    {
+        "id": 0,
+        "category": "Продукты",
+        "type": "expenses",
+        "icon": "./src/icons/products.svg",
+        "sum": 0
+    },
+    {
+        "id": 1,
+        "category": "Алкоголь",
+        "type": "expenses",
+        "icon": "../../../../icons/cocktail.svg",
+        "sum": 0
+    },
+    {
+        "id": 2,
+        "category": "Развлечения",
+        "type": "expenses",
+        "icon": "Kite",
+        "sum": 0
+    },
+    {
+        "id": 3,
+        "category": "Здоровье",
+        "type": "expenses",
+        "icon": "../../../../icons/heart.svg",
+        "sum": 0
+    },
+    {
+        "id": 4,
+        "category": "Транспорт",
+        "type": "expenses",
+        "icon": "../../../../icons/car.svg",
+        "sum": 0
+    },
+    {
+        "id": 5,
+        "category": "Все для дома",
+        "type": "expenses",
+        "icon": "../../../../icons/couch.svg",
+        "sum": 0
+    },
+    {
+        "id": 6,
+        "category": "Техника",
+        "type": "expenses",
+        "icon": "../../../../icons/tools.svg",
+        "sum": 0
+    },
+    {
+        "id": 7,
+        "category": "Коммуналка, связь",
+        "type": "expenses",
+        "icon": "../../../../icons/invoice.svg",
+        "sum": 0
+    },
+    {
+        "id": 8,
+        "category": "Спорт, хобби",
+        "type": "expenses",
+        "icon": "../../../../icons/clay.svg",
+        "sum": 0
+    },
+    {
+        "id": 9,
+        "category": "Образование",
+        "type": "expenses",
+        "icon": "../../../../icons/books.svg",
+        "sum": 0
+    },
+    {
+        "id": 10,
+        "category": "Прочее",
+        "type": "expenses",
+        "icon": "../../../../icons/sprite.svg#ufo",
+        "sum": 0
+    },
+    {
+        "id": 11,
+        "category": "ЗП",
+        "type": "income",
+        "icon": "../../../../icons/salary1.svg",
+        "sum": 0
+    },
+    {
+        "id": 12,
+        "category": "Доп. доход",
+        "type": "income",
+        "icon": "#salary2.svg",
+        "sum": 0
+    }
+]

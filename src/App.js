@@ -2,7 +2,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import React, { lazy, Suspense, useEffect } from 'react';
 
 import HomeView from './views/MainView/MainView';
-// import ReportsView from './views/ReportsView';
 import ExpensesView from './views/ExpensesView';
 import IncomeView from './views/IncomeView';
 
@@ -33,7 +32,6 @@ function App() {
 
   return (
     <div>
-     
       <HeaderView />
       <HomeContainer>
       {/* <Balance/> */}
@@ -60,7 +58,7 @@ function App() {
        
         </Suspense>  
         </HomeContainer>
-    </div>
+        </div>
   );
 }
 
