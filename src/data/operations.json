@@ -80,7 +80,7 @@
     "type": "income"
   },
   {
-    "id": "id-1",
+    "id": "id-11",
     "date": "15.01.21",
     "category": "Транспорт",
     "description": "Метро",
@@ -88,7 +88,7 @@
     "type": "expenses"
   },
   {
-    "id": "id-2",
+    "id": "id-12",
     "date": "15.01.21",
     "category": "Продукты",
     "description": "Вода",
@@ -96,7 +96,7 @@
     "type": "expenses"
   },
   {
-    "id": "id-3",
+    "id": "id-13",
     "date": "15.01.21",
     "category": "Здоровье",
     "description": "Витамины",
@@ -104,7 +104,7 @@
     "type": "expenses"
   },
   {
-    "id": "id-4",
+    "id": "id-14",
     "date": "15.01.21",
     "category": "Алкоголь",
     "description": "Вино",
@@ -112,7 +112,7 @@
     "type": "expenses"
   },
   {
-    "id": "id-5",
+    "id": "id-15",
     "date": "15.01.21",
     "category": "Развлечения",
     "description": "Кино",
@@ -120,7 +120,7 @@
     "type": "expenses"
   },
   {
-    "id": "id-6",
+    "id": "id-16",
     "date": "15.01.21",
     "category": "Все для дома",
     "description": "Веник",
@@ -128,7 +128,7 @@
     "type": "expenses"
   },
   {
-    "id": "id-7",
+    "id": "id-17",
     "date": "15.01.21",
     "category": "Техника",
     "description": "Ноутбук",
@@ -136,7 +136,7 @@
     "type": "expenses"
   },
   {
-    "id": "id-8",
+    "id": "id-18",
     "date": "15.01.21",
     "category": "Спорт, хобби",
     "description": "Шейпинг",
@@ -144,7 +144,7 @@
     "type": "expenses"
   },
   {
-    "id": "id-9",
+    "id": "id-19",
     "date": "15.01.21",
     "category": "Образование",
     "description": "Курсы английского",
@@ -152,7 +152,7 @@
     "type": "expenses"
   },
   {
-    "id": "id-10",
+    "id": "id-20",
     "date": "15.01.21",
     "category": "Прочее",
     "description": "Игрушки",
