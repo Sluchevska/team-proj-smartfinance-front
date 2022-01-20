@@ -7,24 +7,24 @@ export async function allTransactions() {
     return data;
 }
 
-export async function allTransactionsByYear(year) {
-    const { data } = await axios.get(`/api/transactions/byYear/${year}`);
-    return data;
-}
+// export async function allTransactionsByYear(year) {
+//     const { data } = await axios.get(`/api/transactions/byYear/${year}`);
+//     return data;
+// }
 
-export async function allTransactionsByCategory(year, month) {
-    const { data } = await axios.get(
-        `/api/transactions/byCategory/${year}/${month}`,
-    );
-    return data;
-}
+// export async function allTransactionsByCategory(year, month) {
+//     const { data } = await axios.get(
+//         `/api/transactions/byCategory/${year}/${month}`,
+//     );
+//     return data;
+// }
 
-export async function allTransactionsByMonth({ year, month }) {
-    const { data } = await axios.get(
-        `/api/transactions/byMonth/${year}/${month}`,
-    );
-    return data.data;
-}
+// export async function allTransactionsByMonth({ year, month }) {
+//     const { data } = await axios.get(
+//         `/api/transactions/byMonth/${year}/${month}`,
+//     );
+//     return data.data;
+// }
 
 export async function addTransaction(transaction) {
     const { data } = await axios.post(`/api/transactions/`, transaction);
