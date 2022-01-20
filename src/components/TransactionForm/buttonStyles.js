@@ -7,7 +7,7 @@ const buttonGroupStyles = {
     },
     '& .MuiButtonGroup-grouped:first-of-type': {
         marginRight: '15px',
-        borderRight: '2px solid #F5F6FB',
+        border: '2px solid #F5F6FB',
         borderTopRightRadius: '16px',
         borderBottomRightRadius: '16px',
     },
