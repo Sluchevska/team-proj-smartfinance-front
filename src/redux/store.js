@@ -11,10 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth';
-// import { balanceReducer } from './balance';
-
-
-
+import balanceReducer from './balance/balance-reducer';
 
 const authPersistConfig = {
   key: 'token',
@@ -24,16 +21,13 @@ const authPersistConfig = {
 
 export const store = configureStore({
   reducer: {
-       auth: persistReducer(authPersistConfig, authReducer),
-      //  balance: balanceReducer,
-    
+    auth: persistReducer(authPersistConfig, authReducer),
+    balance: balanceReducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
-     
-       serializableCheck: false,
-   
+      serializableCheck: false,
     }),
 });
 

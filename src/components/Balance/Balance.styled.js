@@ -18,7 +18,7 @@ export const Form = styled.div`
   transform: translate(-50%, -50%) };
   position: relative;
 }
-`
+`;
 
 export const Title = styled.p`
 width: 83px;
@@ -37,60 +37,60 @@ margin-right: 20px;
   text-align: center;
   margin-left: 90px;
   
-`
+`;
 
 export const FormInput = styled.input`
-width: 125px;
-height: 44px;
-border: 0px solid transparent;
+  width: 125px;
+  height: 44px;
+  border: 0px solid transparent;
 
-font-size: 12px;
-font-family: Roboto, sant-serif;
-font-weight: 700;
-line-height: 14,06px;
-text-align: center;
-border-radius: 16px;
-margin-right: 20px;
-// background-color: rgba(242, 245, 252, 1);
-border: 2px solid #FFFFFF; 
-color: #000000;
+  font-size: 12px;
+  font-family: Roboto, sant-serif;
+  font-weight: 700;
+  line-height: 14, 06px;
+  text-align: center;
+  border-radius: 16px;
+  margin-right: 20px;
+  // background-color: rgba(242, 245, 252, 1);
+  border: 2px solid #ffffff;
+  color: #000000;
 
+  &:hover,
+  &:active,
+  &:focus {
+    outline: 0;
+    outline-offset: 0;
+  }
 
-&:hover, &:active, &:focus {
-  outline: 0;
-  outline-offset: 0;
-  
-};
-
-@media (max-width: 768px) {
-  border-radius: none;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  margin-right: 0;
-}
-
-
-`
+  @media (max-width: 768px) {
+    border-radius: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin-right: 0;
+  }
+`;
 
 export const Button = styled.button`
-width: 125px;
-height: 44px;
-border: none;
-border-radius: 12px;
-font-family: Roboto, sant-serif;
-font-weight: 400;
-font-size: 12px;
-background-color: rgba(242, 245, 252, 1);
-border: 2px solid #FFFFFF; 
-color: rgba(82, 85, 95, 0.7);
-
-
-@media (max-width: 768px) {
-  border-radius: none;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  margin-right: 0;
+  width: 125px;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  font-family: Roboto, sant-serif;
+  font-weight: 400;
+  font-size: 12px;
+  background-color: rgba(242, 245, 252, 1);
+  border: 2px solid #ffffff;
   color: rgba(82, 85, 95, 0.7);
- 
-}
-`
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    border-radius: none;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin-right: 0;
+    color: rgba(82, 85, 95, 0.7);
+  }
+`;
