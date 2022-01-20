@@ -8,19 +8,18 @@ const getUserEmail = state => state.auth.user.email;
 
 const getUserAvatar = state => state.auth.user.avatarURL;
 
-const getFetchigCurrentUser = state => state.auth.isFetchigCurrentUser;
+const getFetchingCurrentUser = state => state.auth.isFetchingCurrentUser;
 
 const getCurrentToken = state => state.auth.token;
 
-const getAuthError = state => state.auth.error;
 
 export{
  getIsAuthenticated,
   getUserName,
   getUserEmail,
  
-  getFetchigCurrentUser,
+  getFetchingCurrentUser,
   getCurrentToken,
   getUserAvatar,
-  getAuthError,
+ 
 };

@@ -34,15 +34,6 @@ export async function fetchLogOut() {
     return data;
 }
 
-export async function fetchVerifyToken() {
-    const data = await axios.get(`/api/users/verify/:verificationToken`);
-    return data;
-}
-
-// export async function fetchVerifyEmail(email) {
-//     const data = await axios.post(`/api/users/verify`, email);
-//     return data;
-// }
 
 export async function fetchUploadAvatar() {
     const data = await axios.patch(`/api/users/avatars`, FormData);
