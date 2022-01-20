@@ -3,90 +3,131 @@ import styled from '@emotion/styled';
 export const BalanceContainer = styled.div`
   
 padding-top: 40px;
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-@media (max-width: 768px) {
- 
+@media (min-width: 768px) {
+ flex-direction: row;
  
 }
 `
-export const ButtonContainer = styled.div`
-  
+export const InputContainer = styled.div`
+   display: flex;
+    margin-top: 12px;
 
 
-@media (max-width: 768px) {
- 
+@media (min-width: 768px) {
+ margin-top: 0px;
  
 }
 `
 
 export const FormContainer = styled.form`
-  display: flex;
-  width: 369px;
-  height: 44px;
-  text-align: center;
-  margin: 0 auto;
-  position: relative;
+ display: table-footer-group;
+    font-size: 12px;
+    color: rgba(82, 85, 95, 0.7);
+    
 
-
-@media (max-width: 768px) {
-  display: inline;
-  justify-content: center;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%) ;
-  position: relative;
+@media (min-width: 768px) {
+   margin-right: 90px;
+    margin-bottom: 0;
 }
 `
 
-export const Title = styled.p`
-/* width: 83px;
-height: 20px; */
-font-family: Roboto, sant-serif;
-font-weight: 500;
-font-size: 12px;
-color: rgba(82, 85, 95, 0.7);
-line-height: 14,06px;
-letter-spacing: 0.02em;
-text-align: center;
-// background-color: rgba(242, 245, 252, 1);
-margin-right: 21px;
+export const Title = styled.label`
+position: relative;
+    display: block;
+    text-align: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    font-weight: 500;
 
-@media (max-width: 768px) {
-  text-align: center;
-  /* margin-left: 90px; */
+
+@media (min-width: 768px) {
+display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    color: rgba(82, 85, 95, 0.7);
+    font-size: 12px;
+    line-height: 1.17;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0px;
+    padding-top: 0px;
+}
+@media screen and (min-width: 1280px) {
+   display: flex;
+    align-items: baseline;
+    justify-content: center;
+    color: rgba(82, 85, 95, 0.7);
+    font-size: 12px;
+    line-height: 1.17;
 }
   
 `
 
 export const FormInput = styled.input`
-width: 125px;
-height: 44px;
-border: 0px solid transparent;
+display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    width: 125px;
+    height: 44px;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    border-radius: 22px 0 0 22px;
+    font-weight: 700;
+    padding-left: 20px;
+    padding-right: 20px;
+    outline: none;
 
-font-size: 12px;
-font-family: Roboto, sant-serif;
-font-weight: 700;
-line-height: 14,06px;
-text-align: center;
-border-radius: 16px;
-margin-right: 20px;
-// background-color: rgba(242, 245, 252, 1);
-border: 2px solid #FFFFFF; 
-color: #000000;
 
-
-&:hover, &:active, &:focus {
-  outline: 0;
-  outline-offset: 0;
+&:focus {
+ outline: none;
+  border: 1px solid #ff751d;
   
 };
+&::placeholder{
+  font-weight: 700;
 
-@media (max-width: 768px) {
-  border-radius: none;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  margin-right: 0;
+  text-align: right;
+  letter-spacing: 0.02em;
+
+  color: #000000;
+}
+
+@media (min-width: 768px) {
+ height: 44px;
+    margin-left: 21px;
+    margin-top: 0px;
+    width: 125px;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.17;
+    font-weight: bold;
+    color: black;
+}
+@media screen and (min-width: 1280px) {
+  height: 44px;
+    margin-left: 40px;
+    margin-right: 15px;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.17;
+    font-weight: bold;
+    color: black;
 }
 
 
@@ -94,23 +135,39 @@ color: #000000;
 
 export const Button = styled.button`
 width: 125px;
-height: 44px;
-border: none;
-border-radius: 12px;
-font-family: Roboto, sant-serif;
-font-weight: 400;
-font-size: 12px;
-background-color: rgba(242, 245, 252, 1);
-border: 2px solid #FFFFFF; 
-color: rgba(82, 85, 95, 0.7);
+    height: 44px;
+    border: 2px solid #ffffff;
+    border-left: 1px;
+    background-color: transparent;
+    border-radius: 0 22px 22px 0;
+    color: rgba(82, 85, 95, 0.7);
+    font-size: 12px;
+    line-height: 1.17;
+    cursor: pointer;
+    &:hover,&:active, &:focus {
+    background-color: #ff751d;
+  color: #fff;}
 
 
-@media (max-width: 768px) {
-  border-radius: none;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  margin-right: 0;
-  color: rgba(82, 85, 95, 0.7);
- 
+@media (min-width: 768px) {
+ width: 125px;
+    height: 44px;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    border-radius: 16px;
+    color: rgba(82, 85, 95, 0.7);
+    font-size: 12px;
+    line-height: 1.17;
+    margin-left: 15px;
+}
+@media screen and (min-width: 1280px) {
+   width: 125px;
+    height: 44px;
+    background-color: transparent;
+    border-radius: 16px;
+    color: rgba(82, 85, 95, 0.7);
+    font-size: 12px;
+    line-height: 1.17;
+    margin-left: 0px;
 }
 `
