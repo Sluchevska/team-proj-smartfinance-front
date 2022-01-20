@@ -17,14 +17,3 @@ export const fetchAddTransaction = createAsyncThunk(
     },
 );
 
-export const fetchDeleteTransaction = createAsyncThunk(
-    'transactions/fetchDeleteTransaction',
-    async (operationId, { rejectWithValue }) => {
-        try {
-            const data = await transactionsApi.deleteTransaction(operationId);
-            return data;
-        } catch (error) {
-            return rejectWithValue(error.message);
-        }
-    },
-);

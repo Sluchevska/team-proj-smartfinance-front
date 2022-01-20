@@ -2,7 +2,7 @@ import * as actions from './transactions-actions';
 
 import {
     fetchAddTransaction,
-    fetchDeleteTransaction,
+
 } from './transactions-operations';
 
 import { combineReducers } from 'redux';
@@ -24,9 +24,6 @@ const isLoading = createReducer(false, {
     [fetchAddTransaction.fulfilled]: () => false,
     [fetchAddTransaction.rejected]: () => false,
 
-    [fetchDeleteTransaction.pending]: () => true,
-    [fetchDeleteTransaction.fulfilled]: () => false,
-    [fetchDeleteTransaction.rejected]: () => false,
 });
 
 const setError = (_, { payload }) => payload;
@@ -36,9 +33,6 @@ const error = createReducer(null, {
 
     [fetchAddTransaction.pending]: () => null,
     [fetchAddTransaction.rejected]: setError,
-
-    [fetchDeleteTransaction.pending]: () => null,
-    [fetchDeleteTransaction.rejected]: setError,
 
     [actions.resetError]: () => null,
 });
