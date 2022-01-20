@@ -3,6 +3,7 @@ import cross from '../../icons/close.svg'
 
 
 export const ModalOverlay = styled.div`
+ z-index: 5;
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
@@ -11,7 +12,8 @@ export const ModalOverlay = styled.div`
     right: 0;
   `
   
-  export const ModalWindow = styled.div`
+export const ModalWindow = styled.div`
+
     position: absolute;
     top: 50%;
     left: 50%;

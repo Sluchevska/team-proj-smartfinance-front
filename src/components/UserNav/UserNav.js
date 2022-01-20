@@ -4,11 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logOut } from '../../redux/auth/auth-operations.js';
 import logoutSvg from "../../icons/logout.svg";
 import {
-  getIsAuthenticated,
+  
   getUserName,
 } from '../../redux/auth/auth-selectors.js';
 import {
-  ContainerHeader,
+ 
   UserInfo,
   UserName,
   Button,
@@ -16,7 +16,7 @@ import {
   AvatarUser,
   Line,
   LogoutSvg,
-  Logo,
+
 } from '../../views/HeaderView/HeaderView.styled.js';
 
 import Modal from '../Modal/Modal.jsx';
