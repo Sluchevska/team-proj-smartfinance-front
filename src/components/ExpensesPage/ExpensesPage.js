@@ -28,6 +28,13 @@ import data from '../../data/summary.json'
 function ExpensesPage() {
     const location = useLocation();
     const matches = useMediaQuery('(min-width:768px)');
+//   const contacts = useSelector(getContacts);
+//   
+//   const dispatch = useDispatch();
+
+//   useEffect(() => {
+//     dispatch(contactsOperations.fetchContacts());
+//   }, [dispatch]);
     return (
         <div>
             <BalanceBar />
