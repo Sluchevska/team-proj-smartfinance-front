@@ -6,7 +6,7 @@ import Icon from './Icons';
 import s from './Reports.module.css';
 import categories from '../../data/categories.json';
 import operations from '../../data/expensesOperations2.json'
-const type = "income";
+const type = "expenses";
 const month = 1;
 const year = 2022
 const categoriesList = categories.filter(category => category.type === type);
@@ -38,7 +38,7 @@ const onButton = (month, year, category) => dispatch(fetchByCategoryPeriod(month
     <ul className={s.iconList}>
     {/* {isFetching && (
       <div className={s.loader}>
-        <Loader type="Puff" color="#00BFFF" height={50} width={50} timeout={3000} />
+        <Spinner type="Puff" color="#00BFFF" height={50} width={50} timeout={3000} />
       </div>
     )} */}
     {categoriesList &&
