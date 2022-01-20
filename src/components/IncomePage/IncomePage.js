@@ -12,7 +12,8 @@ import {
     Wrapper
 } from './IncomePage.styled';
 import BalanceBar from '../BalanceBar';
-import Transaction from '../TransactionForm/Transaction'
+import Transaction from '../TransactionForm/Transaction';
+import incomeCategories from '../TransactionForm/incomeCategories.json';
 // import DebitList from './DebitList';
 
 import IncomeList from './IncomeList';
@@ -30,7 +31,11 @@ function IncomePage() {
                 <Box>
 
                     <div>
-                        <Transaction />
+                        <Transaction
+                            isIncome={true}
+                            categories={incomeCategories}
+                            placeholder="Описание дохода"
+                        />
                     </div>
 
 
