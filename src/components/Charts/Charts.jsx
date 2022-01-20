@@ -1,61 +1,64 @@
-// import { useEffect } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { getOperations, getLoading, fetchByCategoryPeriod } from '../../../redux/operations';
-// import Chart from '../../../../node_modules/chart.js/dist/chart.min.js';
-// <script src="./node_modules/chart.js/Chart.min.js"></script>
+//  import { BarChart, Bar, Cell, XAxis, YAxis, LabelList, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, Cell, LabelList, XAxis, ResponsiveContainer } from 'recharts';
+ import MobileCharts from './MobileCharts';
+ import VerticalCharts from './VerticalCharts';
+  const data = [
+      {
+        "id": "id-1",
+        "description": "Метро",
+        "sum": 500
+      },
+      {
+        "id": "id-7",
+        "description": "Машина",
+        "sum": 1920
+      },
+      {
+        "id": "id-8",
+        "description": "Поезд",
+        "sum": 1000
+      },
+      {
+        "id": "id-9",
+        "description": "Такси",
+        "sum": 300
+      },
+      {
+        "id": "id-10",
+        "description": "Трактор",
+        "sum": 400
+      },
+      {
+        "id": "id-11",
+        "description": "Мопед",
+        "sum": 1300
+      },
+      {
+        "id": "id-12",
+        "description": "Такси",
+        "sum": 600
+      },
+      {
+        "id": "id-13",
+        "description": "Трактор",
+        "sum": 700
+      },
+      {
+        "id": "id-14",
+        "description": "Мопед",
+        "sum": 800
+      }
+    ];
 
-// // import Spinner from '../../Spinner';
-// // import s from './Icons.module.css';
-// import categories from '../../../data/categories.json';
-// import operations from '../../../data/expensesOperations2.json'
-// const type = "expenses";
-// const month = 1;
-// const year = 2022
-// const categoriesList = categories.filter(category => category.type === type);
-// const operationsList = operations.filter(operation => operation.type === type);
-
-
-// const Charts = () => {
-//   const dispatch = useDispatch();
-//   var popCanvas = document.getElementById("periodChart");
-//   console.log(popCanvas);
-// var barChart = new Chart(popCanvas, {
-//   type: 'bar',
-//   data: {
-//     labels: ["China", "India", "United States", "Indonesia", "Brazil", "Pakistan", "Nigeria", "Bangladesh", "Russia", "Japan"],
-//     datasets: [{
-//       label: 'Population',
-//       data: [1379302771, 1281935911, 326625791, 260580739, 207353391, 204924861, 190632261, 157826578, 142257519, 126451398],
-//       backgroundColor: [
-//         '#FF751D',
-//         '#FFDAC0',
-//       ]
-//     }]
-//   }
-// });
-//   const operations = useSelector(getOperations);
-// const onButton = (month, year, category) => dispatch(fetchByCategoryPeriod(month, year, category));
-
-//   const categoriesSums = (operations, categories) => {
-//     for (let i = 0; i < categories.length; i++) {
-//       const el = categories[i];
-//      operations
-//      .map(operation => {
-//         if (operation.category === el.category){
-//           el.sum += operation.sum;
-//         }
-//      })
-//     }
-//   }
-//   categoriesSums(operationsList, categoriesList);
-
-//   const isFetching = useSelector(getLoading);
-//   useEffect(() => dispatch(fetchByTypePeriod()), [dispatch]);
-//   return(
-//     <div>
-//     <canvas id="periodChart" width="800" height="500"></canvas>
-//   </div>
-//   );
-// };
-
-// export default Charts;
+  export default function Charts () {
+    const screenIsMobile = window.screen.width <= 320;
+    console.log(screenIsMobile);
+      return (
+        <>
+        {screenIsMobile ? 
+       (<MobileCharts data={data}/>) :
+       (<VerticalCharts data={data}/>)
+        }
+       </>
+      );
+    }
