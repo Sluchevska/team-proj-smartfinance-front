@@ -14,7 +14,7 @@ import { authReducer } from './auth';
 
 import operationsReducer from './transactions-month/transaction-reducers'
 
-// import { transactionsReducer } from './transaction';
+import { transactionsReducer } from './transaction';
 // import { balanceReducer } from './balance';
 
 
@@ -29,16 +29,18 @@ const authPersistConfig = {
 
 export const store = configureStore({
   reducer: {
-    // auth: persistReducer(authPersistConfig, authReducer),
-    // transactions: transactionsReducer,
 
-       auth: persistReducer(authPersistConfig, authReducer),
 
-       operations: operationsReducer,
 
-      //  balance: balanceReducer,
+    auth: persistReducer(authPersistConfig, authReducer),
 
-    
+    operations: operationsReducer,
+
+    transactions: transactionsReducer,
+
+    //  balance: balanceReducer,
+
+
   },
   devTools: process.env.NODE_ENV !== 'production',
   middleware: getDefaultMiddleware =>
