@@ -5,7 +5,7 @@ import Modal from "../Modal/Modal";
 import balanceOperations from '../../redux/balance/balance-operations';
 import  balanceSelectors from '../../redux/balance/balance-selectors';
 import { getCurrentUser } from '../../redux/auth/auth-operations';
-import { Title, FormInput, Button, BalanceContainer, FormContainer,  InputContainer } from './Balance.styled';
+import { Title, FormInput, Button, BalanceContainer, FormContainer,  InputContainer, ViewContainer } from './Balance.styled';
 import GoToReportsBtn from '../GoToReportsBtn/GoToReportsBtn';
 
 const  Balance = () => {
@@ -33,8 +33,9 @@ useEffect(() => {
   }, [isModalOpen]);
 
 
-    return(
-       
+   return (
+       <ViewContainer>
+       <div>
        <BalanceContainer>
           <FormContainer onSubmit={updateBalance}>
             
@@ -64,9 +65,13 @@ useEffect(() => {
     </Title> 
           </FormContainer>
           
-       {/* <GoToReportsBtn/> */}
-       </BalanceContainer>
        
+       </BalanceContainer>
+       </div>
+       <div>
+           <GoToReportsBtn/>  
+         </div>
+         </ViewContainer>
     )
   }
 

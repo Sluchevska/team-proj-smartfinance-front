@@ -23,6 +23,32 @@ export const InputContainer = styled.div`
  
 }
 `
+export const ViewContainer = styled.div`
+  display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 13px;
+
+
+@media (min-width: 768px) {
+ display: flex;
+    justify-content: right;
+    align-items: baseline;
+  
+    width: 100%;
+
+    @media screen and (min-width: 1280px) {
+  
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+   
+    width: 1060px;
+  }
+ 
+}
+`
 
 export const FormContainer = styled.form`
  display: table-footer-group;
