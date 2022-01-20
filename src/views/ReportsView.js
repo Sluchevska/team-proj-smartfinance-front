@@ -6,7 +6,7 @@ import {transactionsSelectors, transactionsOperations} from '../redux/transactio
 // import ExpensesReports from '../components/ExpensesReports';
 // import IncomeReports from '../components/IncomeReports';
 // import Charts from '../components/Charts';
-// import ReturnHome from '../components/ReturnHome';
+import ReturnHome from '../components/ReturnHome';
 import SwitchMonthArrow from '../components/ExpensesReports/SwitchMonthArrow/SwitchMonthArrow';
 
 
@@ -50,7 +50,7 @@ export default function ReportsView() {
     return (
         <div>
 
-            {/* <ReturnHome />; */}
+            <ReturnHome />;
             {/* <ExpensesReports />; */}
             {/* <IncomeReports />; */}
             <SwitchMonthArrow  year={year}

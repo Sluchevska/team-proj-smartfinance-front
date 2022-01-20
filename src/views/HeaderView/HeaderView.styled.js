@@ -81,6 +81,9 @@ export const LogoutP = styled.p`
    &:hover {
     text-decoration: underline;
     cursor: pointer;
+    
+    color: #ff751d;
+ 
   }
   }
 `; 
@@ -89,6 +92,7 @@ export const  LogoutSvg = styled.img`
 /* background-image: url(${logout}); */
 width: 16px;
 height: 16px;
+
 @media screen and  (min-width: 767px) {
 display: none;
 }
