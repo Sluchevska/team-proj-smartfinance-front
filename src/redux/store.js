@@ -24,7 +24,7 @@ import { transactionsReducer } from './transaction';
 const authPersistConfig = {
   key: 'token',
   storage,
-  whitelist: ['token', 'refreshToken'],
+  whitelist: ['token'],
 };
 
 export const store = configureStore({
