@@ -14,8 +14,7 @@ export const token = {
 
 export async function fetchSignUp(credentials) {
        const data = await axios.post(`/api/users/register`, credentials);
-    console.log(data)
-    return data;
+       return data;
 }
 
 export async function fetchGoogleAuth() {

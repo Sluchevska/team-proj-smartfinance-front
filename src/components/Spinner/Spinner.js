@@ -1,16 +1,10 @@
-import { useState } from "react";
-import { css } from "@emotion/react";
-import CircleLoader from "react-spinners/CircleLoader";
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
-const override = css`
-  display: block;
-  position: fixed;
-  left: 40%;
-  top: 20%;
-`;
+export default function App()  {
 
-export default function Spinner() {
-  return (
-      <CircleLoader color="#FF751D" loading={useState(true)} css={override} size={180} />
-  );
-}
+  return(
+  <div className="loaderContainer">
+  <Loader type="ThreeDots" color="#00BFFF" height={160} width={160} />
+  </div>)
+  }
