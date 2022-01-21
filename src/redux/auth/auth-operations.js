@@ -51,10 +51,10 @@ const logIn = credentials => async dispatch => {
   dispatch(loginRequest());
   try {
     const response = await fetchLogIn(credentials);
-    console.log(response)
-    token.set(response.data.data.user.token);
+  
+    token.set(response.data.data.token);
      toast.success(`Welcome, ${response.data.data.user.name}!`);
-    console.log(response.data.data.user.token)
+    console.log(response.data.data.token)
     dispatch(loginSuccess(response.data.data));
   } catch ({ response }) {
     dispatch(loginError(response.data.message));
@@ -92,15 +92,16 @@ const getCurrentUser = () => async (dispatch, getState) => {
   try {
     const response = await fetchGetCurrentUser();
     dispatch(getCurrentUserSuccess(response.data.data.user));
-    console.log(response.data.data.user)
+    console.log(response)
+   
      } catch ({ response }) {
-    if (response.data.message === 'Unvalid token') {
-       toast.warn('Server error. Try again');
-    }
+    
     dispatch(getCurrentUserError(response.data.message));
    
   }
 };
+
+
 
 
 
