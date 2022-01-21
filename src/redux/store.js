@@ -16,6 +16,7 @@ import operationsReducer from './transactions-month/transaction-reducers'
 
 import { transactionsReducer } from './transaction';
 import { transOperationsReducer } from './transoperations';
+import { summaryReducer } from './summary';
 // import { balanceReducer } from './balance';
 
 
@@ -31,8 +32,6 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
 
-
-
     auth: persistReducer(authPersistConfig, authReducer),
 
     operations: operationsReducer,
@@ -40,6 +39,8 @@ export const store = configureStore({
     transactions: transactionsReducer,
 
     transOperations: transOperationsReducer,
+
+    summary: summaryReducer,
 
     //  balance: balanceReducer,
 

@@ -40,7 +40,7 @@ function ExpensesPage() {
     console.log("загрузка при первом входе на страницу")
       dispatch(fetchOperation(2022, 1, 15, 'expenses'));
       console.log("код после отработки фетча")
-  }, []);
+  }, [date, dispatch]);
     return (
         <div>
             <BalanceBar />
