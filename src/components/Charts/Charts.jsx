@@ -1,7 +1,7 @@
-//  import { BarChart, Bar, Cell, XAxis, YAxis, LabelList, ResponsiveContainer } from 'recharts';
-import { BarChart, Bar, Cell, LabelList, XAxis, ResponsiveContainer } from 'recharts';
+ import s from './Charts.module.css'
  import MobileCharts from './MobileCharts';
  import VerticalCharts from './VerticalCharts';
+ 
   const data = [
       {
         "id": "id-1",
@@ -54,11 +54,11 @@ import { BarChart, Bar, Cell, LabelList, XAxis, ResponsiveContainer } from 'rech
     const screenIsMobile = window.screen.width <= 320;
     console.log(screenIsMobile);
       return (
-        <>
+        <div className={s.container}>
         {screenIsMobile ? 
        (<MobileCharts data={data}/>) :
        (<VerticalCharts data={data}/>)
         }
-       </>
+       </div>
       );
     }
