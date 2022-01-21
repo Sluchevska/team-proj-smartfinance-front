@@ -31,7 +31,7 @@ function OperationsItem({ operations }) {
                 <Category >{operations.category}</Category>
                 {location.pathname === '/expenses' ? <MinusSum>-{operations.sum} грн</MinusSum> :<PlusSum>{operations.sum} грн</PlusSum>}
                 <IconButton onClick={() => console.log('Pressed')}>
-                    {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteOperation(operations.id))} />}
+                    {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteOperation(operations._id))} />}
                 </IconButton>
             </Wrapper>
         )

@@ -5,25 +5,15 @@ import { createReducer } from '@reduxjs/toolkit'
 import {
     addOperationSuccess,
     deleteOperationSuccess,
-    fetchOperationSuccess,
-    changeFilter
+    fetchOperationSuccess
 } from './operations-action'
 
 const operationsByDate = createReducer([], {
     [fetchOperationSuccess]:(_, {payload}) => payload,
     [addOperationSuccess]: (state, {payload}) => [payload, ...state],
     [deleteOperationSuccess]: (state, {payload}) =>
-        state.filter(({id}) => id !== payload)
+        state.filter(({_id}) => _id !== payload)
 })
-
-// const filter = createReducer('', {
-//    [changeFilter]:(_, {payload}) => payload,
-// })
-
-// export default combineReducers({
-//     items,
-//     filter
-// });
 
 export default combineReducers({
     operationsByDate

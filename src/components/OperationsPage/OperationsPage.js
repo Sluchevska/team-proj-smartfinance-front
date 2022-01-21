@@ -40,7 +40,7 @@ function OperationsPage() {
             console.log("код после отработки фетча расходы")
         }
         if (location.pathname === '/income') {
-            dispatch(fetchOperationIncome(2022, 1, 15));
+            dispatch(fetchOperationIncome(2022, '01', 15));
             console.log("код после отработки фетча")
         }
     }, [dispatch, location.pathname, date]);

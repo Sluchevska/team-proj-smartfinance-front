@@ -20,7 +20,6 @@ export const fetchOperationExpenses = (year, month, day) => async dispatch => {
     console.log("fetch запрос")
     dispatch(fetchOperationRequest());
 
-    //асинхронный код
     try {
         const { data } = await axios.get(`/api/operations/byday?year=${year}&month=${month}&day=${day}&type=expenses`);
         dispatch(fetchOperationSuccess(data.data.operations.expenses));
@@ -34,7 +33,6 @@ export const fetchOperationIncome = (year, month, day) => async dispatch => {
     console.log("fetch запрос")
     dispatch(fetchOperationRequest());
 
-    //асинхронный код
     try {
         const { data } = await axios.get(`/api/operations/byday?year=${year}&month=${month}&day=${day}&type=income`);
      dispatch(fetchOperationSuccess(data.data.operations.income));

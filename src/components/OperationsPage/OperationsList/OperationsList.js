@@ -14,7 +14,7 @@ function OperationsList() {
     return(
         <List>
             {operations.map((operations)=> (
-                <ListItem key={operations.id}  >
+                <ListItem key={operations._id}  >
                     <OperationsItem operations={operations}/>
                 </ListItem>
             ))}
