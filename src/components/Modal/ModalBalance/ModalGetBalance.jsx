@@ -3,7 +3,6 @@ import { ModalWindow, ModalTitle, ModalText } from './ModalGetBalance.styled';
 
 function ModalGetBalance() {
   const isBalans = useSelector(state => state.auth.user.balance);
-  console.log('isBalans', isBalans);
   const showModalBalance = isBalans === null ? true : false;
   return (
     showModalBalance && (
