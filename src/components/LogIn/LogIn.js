@@ -68,7 +68,7 @@ export default function LogIn({ onClickRegister}) {
   
  
     dispatch(logIn({ email, password }));
- toast.success(`Welcome, ${email}!`);
+ 
     clearInput();
   };
 

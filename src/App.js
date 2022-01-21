@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import React, { lazy, Suspense, useEffect } from 'react';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import HomeView from './views/MainView/MainView';
 import OperationsView from './views/OperationsView';
 
@@ -57,7 +58,8 @@ function App() {
         </Routes>
        
         </Suspense>  
-        </HomeContainer>
+      </HomeContainer>
+         <ToastContainer autoClose={2500} />
         </div>
   );
 }

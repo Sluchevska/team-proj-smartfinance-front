@@ -81,6 +81,7 @@ export default function Registration({ onClickComeBack }) {
     }
     clearInput()
     dispatch(register({ name, email, password }));
+     toast.success(`На ваш ${email} отправлено письмо для подтверждения`);
  
     
   };
