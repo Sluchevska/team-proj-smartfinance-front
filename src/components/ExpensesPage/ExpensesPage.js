@@ -26,6 +26,8 @@ import expensesOperations from '../../data/expensesOperations.json';
 import data from '../../data/summary.json'
 
 function ExpensesPage() {
+    //     const dispatch = useDispatch();
+//   useEffect(() => dispatch(fetchContacts()), [dispatch])
     const location = useLocation();
     const matches = useMediaQuery('(min-width:768px)');
 //   const contacts = useSelector(getContacts);
