@@ -39,9 +39,12 @@ const register = credentials => async dispatch => {
  dispatch(registerRequest());
   try {
     const response = await fetchSignUp(credentials);
-      dispatch(registerSuccess(response.data));
+    dispatch(registerSuccess(response.data));
+     toast.success(`На ваш e-mail отправлено письмо для подтверждения`);
+ 
   } catch ({ response }) {
     dispatch(registerError(response.data.message));
+       toast.warn(`${response.data.message}`);
     
   }
 };
@@ -51,7 +54,7 @@ export const fetchAuthGoogle = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const data = await fetchGoogleAuth();
-      return data;
+        return data;
     } catch (error) {
       return rejectWithValue(error.response.data)
       
@@ -64,7 +67,7 @@ export const fetchRedirectGoogle = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const data = await fetchGoogleRedirect();
-      return data;
+          return data;
     } catch (error) {
       return rejectWithValue(error.message)
       
@@ -85,6 +88,7 @@ const logIn = credentials => async dispatch => {
       dispatch(loginSuccess(response.data.data));
   } catch ({ response }) {
     dispatch(loginError(response.data.message));
+   toast.warn(`${response.data.message}`);
    
   }
 };
@@ -99,6 +103,7 @@ const logOut = () => async dispatch => {
   } catch ({ response }) {
     token.unset();
     dispatch(logoutSuccess());
+   
   }
 };
 
