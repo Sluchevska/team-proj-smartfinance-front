@@ -13,6 +13,9 @@ export const deleteOperationRequest = createAction('operations/deleteOperationRe
 export const deleteOperationSuccess = createAction('operations/deleteOperationSuccess');
 export const deleteOperationError = createAction('operations/deleteOperationError');
 
+export const resetError = createAction('transactions/resetError');
+export const selectDate = createAction('transactions/selectDate');
+
 
     
 

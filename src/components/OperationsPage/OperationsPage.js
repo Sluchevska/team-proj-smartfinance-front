@@ -11,7 +11,7 @@ import Summary from './Summary';
 import incomeCategories from '../TransactionForm/incomeCategories.json'
 import data from '../../data/summary.json';
 import { fetchOperationExpenses, fetchOperationIncome } from '../../redux/transaction/transactions-operations';
-import { getSelectedDate } from '../../redux/transaction/transactions-selectors';
+import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
 
 import {
     Box,

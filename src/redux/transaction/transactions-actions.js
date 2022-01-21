@@ -3,9 +3,9 @@ import { createAction } from '@reduxjs/toolkit';
 export const resetError = createAction('transactions/resetError');
 export const selectDate = createAction('transactions/selectDate');
 
-export const fetchOperationRequest = createAction('transactions/fetchOperationRequest');
-export const fetchOperationSuccess = createAction('transactions/fetchOperationSuccess');
-export const fetchOperationError = createAction('transactions/fetchOperationError');
+export const fetchOperationRequest = createAction('operations/fetchOperationRequest');
+export const fetchOperationSuccess = createAction('operations/fetchOperationSuccess');
+export const fetchOperationError = createAction('operations/fetchOperationError');
 
 export const addOperationRequest = createAction('transactions/addOperationRequest');
 export const addOperationSuccess = createAction('transactions/addOperationSuccess');

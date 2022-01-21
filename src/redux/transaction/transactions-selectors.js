@@ -1,9 +1,9 @@
 //export const getTransactionsIsLoading = state => state.transactions.isLoading;
 //export const getTransactionsError = state => state.transactions.error;
-export const getSelectedDate = state => state.transactions.selectedDate;
-export const getSelectedMonth = state => state.transactions.selectedDate.month;
-export const getSelectedYear = state => state.transactions.selectedDate.year;
-export const getOperations = state => state.transactions.operationsByDate;
+// export const getSelectedDate = state => state.transactions.selectedDate;
+// export const getSelectedMonth = state => state.transactions.selectedDate.month;
+// export const getSelectedYear = state => state.transactions.selectedDate.year;
+// export const getOperations = state => state.transactions.operationsByDate;
 
 
 // export const getAllTransactions = state =>
