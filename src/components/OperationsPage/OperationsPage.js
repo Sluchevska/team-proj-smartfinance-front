@@ -3,10 +3,10 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch} from 'react-redux';
 
-import BalanceBar from '../BalanceBar';
+import OperationsBar from './OperationsBar';
 import Transaction from '../TransactionForm/Transaction';
 import OperationsList from './OperationsList/OperationsList';
-import Summary from '../Summary';
+import Summary from './Summary';
 
 import incomeCategories from '../TransactionForm/incomeCategories.json'
 import data from '../../data/summary.json';
@@ -54,7 +54,7 @@ function OperationsPage() {
     
     return (
         <div>
-            <BalanceBar />
+            <OperationsBar />
             <Container>
                 <Box>
                     {location.pathname === '/expenses' ?

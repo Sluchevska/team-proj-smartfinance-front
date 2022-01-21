@@ -1,7 +1,7 @@
 import React from 'react';
-import {Wrapper, Container, StyledLink} from './BalanceBar.styled';
+import {Wrapper, Container, StyledLink} from './OperationsBar.styled';
 
-const BalanceBar = () => (
+const OperationsBar = () => (
     <Wrapper>
         <Container>
             <StyledLink to="/expenses">Расход</StyledLink>
@@ -10,4 +10,4 @@ const BalanceBar = () => (
     </Wrapper>
 )
 
-export default BalanceBar;
+export default OperationsBar;
