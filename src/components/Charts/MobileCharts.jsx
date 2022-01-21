@@ -4,15 +4,16 @@ export default function MobileCharts ({data}) {
         <div>
           <ResponsiveContainer width="100%" height={300} margin={{
                   top: 10,
-                  right: 15,
+                  right: 10,
                   bottom: 10,
                   left: 10
                 }}>
             <BarChart 
                 layout='vertical' 
                 data={data} 
-                barGap="15"
-          >
+                barGap="5"
+                barCategoryGap="10"
+            >
             <XAxis hide axisline={false} type="number"/>
               <Bar dataKey="sum" barSize={20} radius={[0, 10, 10, 0]} label={{fill: '#52555F', fontSize: 10, fontFamily: 'Roboto', position: 'right' }}>
               {data

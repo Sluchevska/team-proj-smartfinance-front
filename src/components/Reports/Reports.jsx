@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getOperations, getLoading, fetchByCategoryPeriod } from '../../redux/operations';
+import { getOperations, getLoading, fetchByCategoryPeriod } from '../../redux/reports';
 import Icon from './Icons';
 // import Spinner from '../../Spinner';
 import s from './Reports.module.css';
