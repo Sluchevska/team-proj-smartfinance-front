@@ -3,6 +3,7 @@ import logout from "../../icons/logout.svg";
 import logo from "../../icons/logoHPD.svg";
 
 export const ContainerHeader = styled.header`
+/* position: fixed; */
   width: 100%;
   display: flex;
   align-items: center;

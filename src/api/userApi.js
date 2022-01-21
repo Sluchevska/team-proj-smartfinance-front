@@ -24,7 +24,8 @@ export async function fetchLogIn(credentials) {
 }
 
 export async function fetchGetCurrentUser() {
-    const data = await axios.get(`/api/users/current`);
+  const data = await axios.get(`/api/users/current`);
+  console.log(data)
     return data;
 }
 

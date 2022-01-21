@@ -45,12 +45,16 @@ const register = credentials => async dispatch => {
 };
 
 
+
 const logIn = credentials => async dispatch => {
 
   dispatch(loginRequest());
   try {
     const response = await fetchLogIn(credentials);
+    console.log(response)
     token.set(response.data.data.user.token);
+     toast.success(`Welcome, ${response.data.data.user.name}!`);
+    console.log(response.data.data.user.token)
     dispatch(loginSuccess(response.data.data));
   } catch ({ response }) {
     dispatch(loginError(response.data.message));
@@ -72,10 +76,13 @@ const logOut = () => async dispatch => {
 };
 
 
+
 const getCurrentUser = () => async (dispatch, getState) => {
   const {
     auth: { token: persistedToken },
   } = getState();
+ 
+ 
 
   if (!persistedToken) {
     return;
@@ -84,8 +91,8 @@ const getCurrentUser = () => async (dispatch, getState) => {
   dispatch(getCurrentUserRequest());
   try {
     const response = await fetchGetCurrentUser();
-    dispatch(getCurrentUserSuccess(response.data.user));
-    console.log(response.data.user)
+    dispatch(getCurrentUserSuccess(response.data.data.user));
+    console.log(response.data.data.user)
      } catch ({ response }) {
     if (response.data.message === 'Unvalid token') {
        toast.warn('Server error. Try again');

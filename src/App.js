@@ -22,6 +22,7 @@ import ReportsView from './views/ReportsView';
 
 function App() {
   const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(getCurrentUser());
   }, [dispatch]);
