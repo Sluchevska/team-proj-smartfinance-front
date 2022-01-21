@@ -43,11 +43,11 @@ function OperationsPage() {
     useEffect(() => {
         // console.log("загрузка при первом входе на страницу")
         if (location.pathname === '/expenses') {
-            dispatch(fetchOperationExpenses(2022, '01', 15));
+            dispatch(fetchOperationExpenses(date.year, monthApi, dayApi));
             // console.log("код после отработки фетча расходы")
         }
         if (location.pathname === '/income') {
-            dispatch(fetchOperationIncome(2022, '01', 15));
+            dispatch(fetchOperationIncome(date.year, monthApi, dayApi));
             // console.log("код после отработки фетча")
         }
     }, [dispatch, location.pathname, date]);

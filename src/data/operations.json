@@ -1,55 +1,79 @@
 [
   {
     "id": "id-1",
-    "date": "07.01.21",
+    "date": "01.12.21",
     "category": "ЗП",
     "description": "Аванс",
-    "sum": "28000",
+    "sum": "10000",
     "type": "income"
   },
   {
     "id": "id-2",
-    "date": "15.01.21",
+    "date": "01.12.21",
     "category": "Доп. доход",
     "description": "Кредит",
     "sum": "50000",
     "type": "income"
   },
   {
-    "id": "id-3",
-    "date": "15.01.21",
-    "category": "Доп. доход",
-    "description": "Кредит",
-    "sum": "50000",
-    "type": "income"
+    "id": "id-222",
+    "date": "01.12.21",
+    "category": "Спорт, хобби",
+    "description": "Шейпинг",
+    "sum": "1000",
+    "type": "expenses"
+  },
+  {
+    "id": "id-252",
+    "date": "01.12.21",
+    "category": "Спорт, хобби",
+    "description": "Шейпинг",
+    "sum": "1000",
+    "type": "expenses"
   },
   {
     "id": "id-4",
-    "date": "15.01.21",
+    "date": "01.11.21",
     "category": "Доп. доход",
     "description": "Кредит",
-    "sum": "50000",
+    "sum": "20000",
     "type": "income"
   },
   {
     "id": "id-5",
-    "date": "15.01.21",
+    "date": "15.10.21",
     "category": "ЗП",
-    "description": "Аванс",
-    "sum": "28000",
+    "description": "Зарплата",
+    "sum": "14000",
     "type": "income"
   },
   {
     "id": "id-6",
-    "date": "15.01.21",
-    "category": "ЗП",
-    "description": "Аванс",
-    "sum": "28000",
+    "date": "15.10.21",
+    "category": "Доп. доход",
+    "description": "Кредит",
+    "sum": "8000",
     "type": "income"
   },
   {
+    "id": "id-444",
+    "date": "01.10.21",
+    "category": "Спорт, хобби",
+    "description": "Шейпинг",
+    "sum": "1000",
+    "type": "expenses"
+  },
+  {
+    "id": "id-333",
+    "date": "01.10.21",
+    "category": "Спорт, хобби",
+    "description": "Шейпинг",
+    "sum": "1000",
+    "type": "expenses"
+  },
+  {
     "id": "id-7",
-    "date": "15.01.21",
+    "date": "01.09.21",
     "category": "ЗП",
     "description": "Аванс",
     "sum": "28000",
@@ -57,15 +81,31 @@
   },
   {
     "id": "id-8",
-    "date": "15.01.21",
-    "category": "ЗП",
-    "description": "Аванс",
-    "sum": "28000",
+    "date": "01.09.21",
+    "category": "Доп. доход",
+    "description": "Кредит",
+    "sum": "10000",
     "type": "income"
   },
   {
+    "id": "id-555",
+    "date": "01.09.21",
+    "category": "Спорт, хобби",
+    "description": "Шейпинг",
+    "sum": "1000",
+    "type": "expenses"
+  },
+  {
+    "id": "id-651",
+    "date": "01.09.21",
+    "category": "Спорт, хобби",
+    "description": "Шейпинг",
+    "sum": "1000",
+    "type": "expenses"
+  },
+  {
     "id": "id-9",
-    "date": "15.01.21",
+    "date": "15.08.21",
     "category": "ЗП",
     "description": "Аванс",
     "sum": "28000",
@@ -73,7 +113,7 @@
   },
   {
     "id": "id-10",
-    "date": "15.01.21",
+    "date": "15.08.21",
     "category": "Доп. доход",
     "description": "Кредит",
     "sum": "50000",
@@ -81,82 +121,178 @@
   },
   {
     "id": "id-11",
-    "date": "15.01.21",
+    "date": "15.07.21",
+    "category": "ЗП",
+    "description": "Аванс",
+    "sum": "28000",
+    "type": "income"
+  },
+  {
+    "id": "id-12",
+    "date": "15.07.21",
+    "category": "Доп. доход",
+    "description": "Кредит",
+    "sum": "50000",
+    "type": "income"
+  },
+  {
+    "id": "id-13",
+    "date": "21.01.22",
     "category": "Транспорт",
     "description": "Метро",
     "sum": "15",
     "type": "expenses"
   },
   {
-    "id": "id-12",
-    "date": "15.01.21",
+    "id": "id-14",
+    "date": "21.01.22",
     "category": "Продукты",
     "description": "Вода",
     "sum": "25",
     "type": "expenses"
   },
   {
-    "id": "id-13",
-    "date": "15.01.21",
+    "id": "id-15",
+    "date": "21.01.22",
     "category": "Здоровье",
     "description": "Витамины",
     "sum": "450",
     "type": "expenses"
   },
   {
-    "id": "id-14",
-    "date": "15.01.21",
+    "id": "id-16",
+    "date": "21.01.22",
     "category": "Алкоголь",
     "description": "Вино",
     "sum": "180",
     "type": "expenses"
   },
   {
-    "id": "id-15",
-    "date": "15.01.21",
+    "id": "id-17",
+    "date": "21.01.22",
     "category": "Развлечения",
     "description": "Кино",
     "sum": "250",
     "type": "expenses"
   },
   {
-    "id": "id-16",
-    "date": "15.01.21",
+    "id": "id-18",
+    "date": "21.01.22",
     "category": "Все для дома",
     "description": "Веник",
     "sum": "75",
     "type": "expenses"
   },
   {
-    "id": "id-17",
-    "date": "15.01.21",
+    "id": "id-19",
+    "date": "21.01.22",
     "category": "Техника",
     "description": "Ноутбук",
     "sum": "28000",
     "type": "expenses"
   },
   {
-    "id": "id-18",
-    "date": "15.01.21",
+    "id": "id-20",
+    "date": "21.01.22",
     "category": "Спорт, хобби",
     "description": "Шейпинг",
     "sum": "1000",
     "type": "expenses"
   },
   {
-    "id": "id-19",
-    "date": "15.01.21",
+    "id": "id-21",
+    "date": "21.01.22",
     "category": "Образование",
     "description": "Курсы английского",
     "sum": "10500",
     "type": "expenses"
   },
   {
-    "id": "id-20",
-    "date": "15.01.21",
+    "id": "id-22",
+    "date": "21.01.22",
     "category": "Прочее",
     "description": "Игрушки",
     "sum": "2500",
     "type": "expenses"
+  },
+  {
+    "id": "id-23",
+    "date": "21.01.22",
+    "category": "ЗП",
+    "description": "Аванс",
+    "sum": "28000",
+    "type": "income"
+  },
+  {
+    "id": "id-24",
+    "date": "21.01.22",
+    "category": "Доп. доход",
+    "description": "Кредит",
+    "sum": "50000",
+    "type": "income"
+  },
+  {
+    "id": "id-25",
+    "date": "21.01.22",
+    "category": "Доп. доход",
+    "description": "Кредит",
+    "sum": "50000",
+    "type": "income"
+  },
+  {
+    "id": "id-26",
+    "date": "21.01.22",
+    "category": "Доп. доход",
+    "description": "Кредит",
+    "sum": "50000",
+    "type": "income"
+  },
+  {
+    "id": "id-27",
+    "date": "21.01.22",
+    "category": "ЗП",
+    "description": "Аванс",
+    "sum": "28000",
+    "type": "income"
+  },
+  {
+    "id": "id-28",
+    "date": "21.01.22",
+    "category": "ЗП",
+    "description": "Аванс",
+    "sum": "28000",
+    "type": "income"
+  },
+  {
+    "id": "id-29",
+    "date": "21.01.22",
+    "category": "ЗП",
+    "description": "Аванс",
+    "sum": "28000",
+    "type": "income"
+  },
+  {
+    "id": "id-30",
+    "date": "21.01.22",
+    "category": "ЗП",
+    "description": "Аванс",
+    "sum": "28000",
+    "type": "income"
+  },
+  {
+    "id": "id-31",
+    "date": "21.01.22",
+    "category": "ЗП",
+    "description": "Аванс",
+    "sum": "28000",
+    "type": "income"
+  },
+  {
+    "id": "id-32",
+    "date": "21.01.22",
+    "category": "Доп. доход",
+    "description": "Кредит",
+    "sum": "50000",
+    "type": "income"
   }
 ]

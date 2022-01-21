@@ -1,9 +1,4 @@
 import axios from 'axios';
-// import {
-//     fetchOperations,
-//     addOperation,
-//     deleteOperation
-// } from '../../api/operationsApi'
 import {
     addOperationRequest,
     addOperationSuccess,
