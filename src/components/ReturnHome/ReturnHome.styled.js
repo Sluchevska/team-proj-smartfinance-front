@@ -42,12 +42,12 @@ border: none;
 float: left;
 
 `
-// export const  ReturnNav = styled.NavLink`
-// display: flex;
-//   font-size: 12px;
-//   line-height: 10px;
-//   letter-spacing: 0.04em;
-//   color: rgba(82, 85, 95, 0.7);
+export const  ReturnNav = styled.div`
+display: flex;
+  font-size: 12px;
+  line-height: 10px;
+  letter-spacing: 0.04em;
+  color: rgba(82, 85, 95, 0.7);
 
-// `
+`
 

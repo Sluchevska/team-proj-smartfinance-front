@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 
 export const ModalWindow = styled.div`
   position: absolute;
-  z-index:1000000;
-  top: 135%;
-  left: 20%;
+  z-index:1000;
+  top: 117%;
+  left: -6%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,6 +21,8 @@ export const ModalWindow = styled.div`
   color: #ffffff;
 
   @media screen and (min-width: 768px) {
+    top: 135%;
+    left: 20%;
     width: 292px;
     height: 152px;
     padding: 30px;
