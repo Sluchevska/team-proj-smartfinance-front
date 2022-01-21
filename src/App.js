@@ -8,7 +8,7 @@ import OperationsView from './views/OperationsView';
 
 import Spinner from './components/Spinner/Spinner';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCurrentToken, getCurrentUser, getFetchigCurrentUser, getIsAuthenticated, refresh } from './redux/auth';
+import { getCurrentToken, getCurrentUser, getFetchingCurrentUser, getIsAuthenticated, refresh } from './redux/auth';
 import Home from './routs/Home';
 import HeaderView from './views/HeaderView/HeaderView';
 import MainView from './views/MainView/MainView'
@@ -31,12 +31,16 @@ function App() {
     getIsAuthenticated
   );
 
+  const isFetchingCurrentUser = useSelector(state =>
+    getFetchingCurrentUser(state),
+  );
+
   return (
-    <div>
+    // !isFetchingCurrentUser && (
+      <div>
       <HeaderView />
       <HomeContainer>
-      {/* <Balance/> */}
-      <Suspense fallback={<Spinner />}>
+          <Suspense fallback={<Spinner />}>
     
         <Routes>
 
@@ -61,7 +65,9 @@ function App() {
       </HomeContainer>
          <ToastContainer autoClose={2500} />
         </div>
-  );
+    )
+    
+  // );
 }
 
 export default App;

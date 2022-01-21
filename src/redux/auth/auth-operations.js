@@ -123,6 +123,7 @@ const getCurrentUser = () => async (dispatch, getState) => {
   dispatch(getCurrentUserRequest());
   try {
     const response = await fetchGetCurrentUser();
+    console.log(response)
     dispatch(getCurrentUserSuccess(response.data.data.user));
      
      } catch ({ response }) {

@@ -49,10 +49,7 @@ export async function fetchUploadAvatar() {
     return data;
 }
 
-export async function fetchRefreshToken() {
-  const data = await axios.get('/api/users/refreshtoken')
-  return data
-}
+
 
 
 export async function fetchMonthReports({month, year}){

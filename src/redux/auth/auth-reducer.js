@@ -25,7 +25,7 @@ import {
 
 import { fetchAuthGoogle, fetchRedirectGoogle } from './auth-operations';
 
-const initialUserState = { name: null, email: null, balance: null };
+const initialUserState = { name: null, email: null};
 
 const user = createReducer(initialUserState, {
   [registerSuccess]: (_, { payload }) => payload.user,
@@ -86,7 +86,7 @@ const isLogin = createReducer(false, {
   [logoutSuccess]: () => false,
 });
 
-const isFetchigCurrentUser = createReducer(false, {
+const isFetchingCurrentUser = createReducer(false, {
   [getCurrentUserRequest]: () => true,
   [getCurrentUserSuccess]: () => false,
   [getCurrentUserError]: () => false,
@@ -99,7 +99,7 @@ const authReducer = combineReducers({
   isLogin,
   token,
   error,
-  isFetchigCurrentUser,
+  isFetchingCurrentUser,
  
 });
 export {authReducer} ;
