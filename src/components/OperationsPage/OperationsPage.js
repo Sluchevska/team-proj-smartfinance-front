@@ -8,7 +8,6 @@ import Transaction from '../TransactionForm/Transaction';
 import OperationsList from './OperationsList';
 import Summary from '../Summary';
 
-import expensesOperations from '../../data/expensesOperations.json';
 import incomeCategories from '../TransactionForm/incomeCategories.json'
 import data from '../../data/summary.json';
 import { fetchOperationExpenses, fetchOperationIncome } from '../../redux/transoperations/operations-operations';
