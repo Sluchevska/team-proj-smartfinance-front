@@ -43,13 +43,9 @@ export default function Registration({ onClickComeBack }) {
   const [nameW, setNameW] = useState(false)
   const [errorSymbol, setErrorSymbol] = useState('*');
   const [setModalOpen, setShowModal] = useState(false);
-  
-  const userEmail = useSelector(getUserEmail);
+
   const user = useSelector(getUserName);
  
-const toggleModal = () => {
-    setShowModal(setShowModal => !setShowModal);
-  };
   
   const blurHandler = e => {
     switch (e.target.name) {
@@ -77,12 +73,11 @@ const toggleModal = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  //  const data = await fetchSignUp({email, password});
-  //   console.log(data)
+
     if (!name.trim() || !email.trim() || !password.trim()) {
       return toast.error('Please fill out all required fields!');
-    } else if (password.length < 7) {
-      return toast.info('The password should be least at 7 characters long');
+    } else if (password.length < 6) {
+      return toast.info('The password should be least at 6 characters long');
     }
     clearInput()
     dispatch(register({ name, email, password }));

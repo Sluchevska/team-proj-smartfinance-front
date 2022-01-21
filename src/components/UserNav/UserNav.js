@@ -4,11 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logOut } from '../../redux/auth/auth-operations.js';
 import logoutSvg from "../../icons/logout.svg";
 import {
-  getIsAuthenticated,
+  
   getUserName,
 } from '../../redux/auth/auth-selectors.js';
 import {
-  ContainerHeader,
+ 
   UserInfo,
   UserName,
   Button,
@@ -16,14 +16,15 @@ import {
   AvatarUser,
   Line,
   LogoutSvg,
-  Logo,
+
 } from '../../views/HeaderView/HeaderView.styled.js';
 
 import Modal from '../Modal/Modal.jsx';
 
 export default function UserNav() {
 
-  const name = useSelector(getUserName) || '';
+  const userName = useSelector(getUserName) || '';
+  console.log(userName)
   const dispatch = useDispatch();
 
   const toggleModal = () => {
@@ -45,7 +46,7 @@ export default function UserNav() {
           <AvatarUser>
             <img src={defaultAvatar} alt="Default Avatar" width="32" />
           </AvatarUser>
-          <UserName>{name}</UserName>
+          <UserName>{userName}</UserName>
           <Line> </Line>
 
       <Button type="button" onClick={() => toggleModal()}>

@@ -1,21 +1,10 @@
 import { Fragment, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { register,
-  verifyEmail,
-  logOut,
+import { 
   logIn,
-  getCurrentUser,
-  refresh,
-  uploadAvatar, } from '../../redux/auth/auth-operations';
-import { getIsAuthenticated,
-  getUserName,
-  getUserEmail,
-  getMessageEmailVerify,
-  getFetchigCurrentUser,
-  getCurrentToken,
-  getUserAvatar,
-  getAuthError, } from '../../redux/auth/auth-selectors';
+  } from '../../redux/auth/auth-operations';
+
 
 
 import {
@@ -76,8 +65,10 @@ export default function LogIn({ onClickRegister}) {
     } else if (password.length < 7) {
       return toast.info('The password should be least at 7 characters long');
     }
+  
+ 
     dispatch(logIn({ email, password }));
-
+ toast.success(`Welcome, ${email}!`);
     clearInput();
   };
 

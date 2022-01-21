@@ -13,12 +13,10 @@ import {
     Wrapper
 } from './ExpensesPage.styled';
 import BalanceBar from '../BalanceBar';
-import Calendar from '../Calendar';
+import Transaction from '../TransactionForm/Transaction'
 
-import ButtonInput from '../ButtonInput';
-import ButtonDelete from '../ButtonDelete';
 // import CreditList from './CreditList';
-import ExpensesInputs from './ExpensesInputs';
+
 import ExpensesList from './ExpensesList';
 import Summary from '../Summary';
 
@@ -43,10 +41,10 @@ function ExpensesPage() {
             <Container>
                 <Box>
                     <div>
-                        <Calendar />
-                        <ExpensesInputs />
-                        <ButtonInput />
-                        <ButtonDelete />
+
+
+                        <Transaction />
+
                     </div>
                     <Wrapper>
                         <OperationsWrapper>

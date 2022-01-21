@@ -11,7 +11,12 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth';
+
+import operationsReducer from './transactions-month/transaction-reducers'
+
+import { transactionsReducer } from './transaction';
 // import { balanceReducer } from './balance';
+
 
 
 
@@ -19,21 +24,30 @@ import { authReducer } from './auth';
 const authPersistConfig = {
   key: 'token',
   storage,
-  whitelist: ['token', 'refreshToken'],
+  whitelist: ['token'],
 };
 
 export const store = configureStore({
   reducer: {
-       auth: persistReducer(authPersistConfig, authReducer),
-      //  balance: balanceReducer,
-    
+
+
+
+    auth: persistReducer(authPersistConfig, authReducer),
+
+    operations: operationsReducer,
+
+    transactions: transactionsReducer,
+
+    //  balance: balanceReducer,
+
+
   },
   devTools: process.env.NODE_ENV !== 'production',
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
-     
-       serializableCheck: false,
-   
+
+      serializableCheck: false,
+
     }),
 });
 

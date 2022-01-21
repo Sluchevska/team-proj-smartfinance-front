@@ -12,13 +12,10 @@ import {
     Wrapper
 } from './IncomePage.styled';
 import BalanceBar from '../BalanceBar';
-import Calendar from '../Calendar';
-
-import ButtonInput from '../ButtonInput';
-import ButtonDelete from '../ButtonDelete';
-
+import Transaction from '../TransactionForm/Transaction';
+import incomeCategories from '../TransactionForm/incomeCategories.json';
 // import DebitList from './DebitList';
-import IncomeInputs from './IncomeInputs'
+
 import IncomeList from './IncomeList';
 import Summary from '../Summary';
 
@@ -32,13 +29,16 @@ function IncomePage() {
             <BalanceBar />
             <Container>
                 <Box>
-                    <div>
-                        <Calendar />
-                        <IncomeInputs />
-                        <ButtonInput />
-                        <ButtonDelete />
 
+                    <div>
+                        <Transaction
+                            isIncome={true}
+                            categories={incomeCategories}
+                            placeholder="Описание дохода"
+                        />
                     </div>
+
+
                     <Wrapper>
                         <OperationsWrapper>
                             {matches === true ? <Header>

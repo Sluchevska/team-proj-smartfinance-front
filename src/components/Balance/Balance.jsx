@@ -1,11 +1,12 @@
-import React, {  useEffect }  from 'react';
+import React, {  useEffect, useState }  from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-// import Modal from "../Modal/Modal";
+import Modal from "../Modal/Modal";
 import balanceOperations from '../../redux/balance/balance-operations';
 import  balanceSelectors from '../../redux/balance/balance-selectors';
 import { getCurrentUser } from '../../redux/auth/auth-operations';
-import { Form, Title, FormInput, Button } from './Balance.styled';
+import { Title, FormInput, Button, BalanceContainer, FormContainer,  InputContainer, ViewContainer } from './Balance.styled';
+import GoToReportsBtn from '../GoToReportsBtn/GoToReportsBtn';
 
 const  Balance = () => {
   const dispatch = useDispatch();
@@ -24,37 +25,53 @@ const  Balance = () => {
 
       
    };
-   
-   // const [setModalOpen, setModalClose] = useState(' ');
-   // const toggleWindow = () => {
-   //    setModalOpen(setModalOpen => !setModalOpen)
-   // };
+const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => setIsModalOpen(state => !state);
+
+useEffect(() => {
+    document.body.style.overflow = isModalOpen ? 'hidden' : 'auto';
+  }, [isModalOpen]);
 
 
-    return(
+   return (
+       <ViewContainer>
        
-       <Form onSubmit={updateBalance}>
-
-          <Title>Баланс:</Title>
-          {/* {setModalClose && <Modal onClose={toggleWindow}/>} */}
+       <BalanceContainer>
+          <FormContainer onSubmit={updateBalance}>
+            
+           <Title>Баланс:    
+<InputContainer>
+          
+                {/* {setModalClose && <Modal onClose={toggleWindow}/>} */}
+                
           <FormInput
-             name="balance"
+                name="balance"
+                placeholder='00.00'
              type="text"
              defaultValue={
                 parseFloat(
                    balanceFromStore && typeof balanceFromStore === "number"
                    ? balanceFromStore
                    : 0
-                   ).toFixed(2) + "UAN"
+                   ).toFixed(2) +  "грн"
                }
-          ></FormInput>
+             ></FormInput>
+             
          
           <Button 
               type="submit"
-          >ПОДТВЕРДИТЬ</Button>
-    
-       </Form>
+                   >ПОДТВЕРДИТЬ</Button>
+                   </InputContainer>
+    </Title> 
+          </FormContainer>
+          
        
+       </BalanceContainer>
+       
+     
+           <GoToReportsBtn/>  
+        
+         </ViewContainer>
     )
   }
 
