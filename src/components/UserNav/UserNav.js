@@ -23,7 +23,8 @@ import Modal from '../Modal/Modal.jsx';
 
 export default function UserNav() {
 
-  const name = useSelector(getUserName) || '';
+  const userName = useSelector(getUserName) || '';
+  console.log(userName)
   const dispatch = useDispatch();
 
   const toggleModal = () => {
@@ -45,7 +46,7 @@ export default function UserNav() {
           <AvatarUser>
             <img src={defaultAvatar} alt="Default Avatar" width="32" />
           </AvatarUser>
-          <UserName>{name}</UserName>
+          <UserName>{userName}</UserName>
           <Line> </Line>
 
       <Button type="button" onClick={() => toggleModal()}>

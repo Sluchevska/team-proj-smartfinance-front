@@ -24,7 +24,8 @@ export async function fetchLogIn(credentials) {
 }
 
 export async function fetchGetCurrentUser() {
-    const data = await axios.get(`/api/users/current`);
+  const data = await axios.get(`/api/users/current`);
+
     return data;
 }
 
@@ -37,6 +38,11 @@ export async function fetchLogOut() {
 export async function fetchUploadAvatar() {
     const data = await axios.patch(`/api/users/avatars`, FormData);
     return data;
+}
+
+export async function fetchRefreshToken() {
+  const data = await axios.get('/api/users/refreshtoken')
+  return data
 }
 
 

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const BalanceContainer = styled.div`
   
-padding-top: 40px;
+
 display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,17 +25,19 @@ export const InputContainer = styled.div`
 `
 export const ViewContainer = styled.div`
   display: flex;
+  flex-direction:column-reverse;
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin-top: 13px;
+
 
 
 @media (min-width: 768px) {
  display: flex;
-    justify-content: right;
+    justify-content: space-evenly;
     align-items: baseline;
-  
+    flex-direction: row;
+  padding-top:40px;
     width: 100%;
 
     @media screen and (min-width: 1280px) {

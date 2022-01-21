@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { GoToSvg, GoToText, Container } from './GoToReports.styled';
+import { GoToSvg, GoToText, Container, HolderStyle } from './GoToReports.styled';
 
 
 
@@ -7,8 +7,10 @@ const GoToReportsBtn = () => {
   return (
     <Container>
       <NavLink to="/reports">
+        <HolderStyle>
         <GoToText>Перейти к отчетам</GoToText>
-        <GoToSvg/>
+          <GoToSvg />
+          </HolderStyle>
         </NavLink>
     </Container>
   );

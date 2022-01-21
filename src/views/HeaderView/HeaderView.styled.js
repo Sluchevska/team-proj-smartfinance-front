@@ -3,6 +3,7 @@ import logout from "../../icons/logout.svg";
 import logo from "../../icons/logoHPD.svg";
 
 export const ContainerHeader = styled.header`
+/* position: fixed; */
   width: 100%;
   display: flex;
   align-items: center;
@@ -51,7 +52,7 @@ export const AvatarTxt = styled.div`
 
 
 export const UserName = styled.p`
-display: none;
+/* display: none; */
 @media screen and  (min-width: 768px) {
   display: flex;
   color:  #52555F;
