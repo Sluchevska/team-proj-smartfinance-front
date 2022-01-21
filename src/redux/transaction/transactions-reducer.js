@@ -1,12 +1,13 @@
-import * as actions from './transactions-actions';
-
-import {
-    fetchAddTransaction,
-
-} from './transactions-operations';
-
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
+//import * as actions from './transactions-actions';
+
+import {
+    addOperationSuccess,
+    deleteOperationSuccess,
+    fetchOperationSuccess,
+    selectDate
+} from './transactions-operations';
 
 const initialDate = {
     day: new Date().getDate(),
@@ -15,30 +16,33 @@ const initialDate = {
 };
 
 const selectedDate = createReducer(initialDate, {
-    [actions.selectedDate]: (_, { payload }) => payload,
+    [selectDate]: (_, { payload }) => payload,
 });
 
-const isLoading = createReducer(false, {
-
-    [fetchAddTransaction.pending]: () => true,
-    [fetchAddTransaction.fulfilled]: () => false,
-    [fetchAddTransaction.rejected]: () => false,
-
-});
-
-const setError = (_, { payload }) => payload;
-
-const error = createReducer(null, {
-
-
-    [fetchAddTransaction.pending]: () => null,
-    [fetchAddTransaction.rejected]: setError,
-
-    [actions.resetError]: () => null,
-});
+const operationsByDate = createReducer([], {
+    [fetchOperationSuccess]:(_, {payload}) => payload,
+    [addOperationSuccess]: (state, {payload}) => [payload, ...state],
+    [deleteOperationSuccess]: (state, {payload}) =>
+        state.filter(({_id}) => _id !== payload)
+})
 
 export default combineReducers({
     selectedDate,
-    isLoading,
-    error,
+    operationsByDate
 });
+
+// const isLoading = createReducer(false, {
+
+//     [fetchAddTransaction.pending]: () => true,
+//     [fetchAddTransaction.fulfilled]: () => false,
+//     [fetchAddTransaction.rejected]: () => false,
+
+// });
+
+// const setError = (_, { payload }) => payload;
+
+// const error = createReducer(null, {
+//     [fetchAddTransaction.pending]: () => null,
+//     [fetchAddTransaction.rejected]: setError,
+//     [actions.resetError]: () => null,
+// });

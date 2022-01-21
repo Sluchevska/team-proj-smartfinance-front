@@ -3,15 +3,15 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch} from 'react-redux';
 
-import OperationsBar from './OperationsBar';
+import OperationsBar from './BalanceBar';
 import Transaction from '../TransactionForm/Transaction';
 import OperationsList from './OperationsList/OperationsList';
 import Summary from './Summary';
 
 import incomeCategories from '../TransactionForm/incomeCategories.json'
 import data from '../../data/summary.json';
-import { fetchOperationExpenses, fetchOperationIncome } from '../../redux/transoperations/operations-operations';
-import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
+import { fetchOperationExpenses, fetchOperationIncome } from '../../redux/transaction/transactions-operations';
+import { getSelectedDate } from '../../redux/transaction/transactions-selectors';
 
 import {
     Box,

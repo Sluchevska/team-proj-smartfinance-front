@@ -17,15 +17,15 @@ import { buttonGroupStyles } from './buttonStyles';
 import calc from '../../icons/calculator.svg';
 import calendar from '../../icons/calendar.svg';
 import expenseCategories from './expenseCategories.json';
-import { fetchAddTransaction } from '../../redux/transaction/transactions-operations.js';
+import { addOperation } from '../../redux/transaction/transactions-operations';
 import { getSelectedDate } from '../../redux/transaction/transactions-selectors';
 import s from './Transaction.module.css';
 import { selectStyles } from './selectStyles';
-import { transactionsActions } from '../../redux/transaction';
+import * as actions  from '../../redux/transaction/transactions-actions.js';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
-import { addOperation } from '../../redux/transoperations/operations-operations';
+
 
 function Transaction({ categories, isIncome, placeholder }) {
   const selectedDate = useSelector(getSelectedDate);
@@ -110,7 +110,7 @@ function Transaction({ categories, isIncome, placeholder }) {
 
   const handleChangeDate = data => {
     dispatch(
-      transactionsActions.selectedDate({
+      actions.selectDate({
         day: data.getDate(),
         month: data.getMonth() + 1,
         year: data.getFullYear(),
