@@ -1,8 +1,18 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch} from 'react-redux';
+
+import BalanceBar from '../BalanceBar';
+import Transaction from '../TransactionForm/Transaction';
+import ExpensesList from './ExpensesList';
+import Summary from '../Summary';
+
+import expensesOperations from '../../data/expensesOperations.json';
+import data from '../../data/summary.json';
+import { fetchOperation } from '../../redux/transoperations/operations-operations';
 import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
+
 import {
     Box,
     Container,
@@ -14,41 +24,32 @@ import {
     Sum,
     Wrapper
 } from './ExpensesPage.styled';
-import BalanceBar from '../BalanceBar';
-import Transaction from '../TransactionForm/Transaction';
-import { fetchOperation } from '../../redux/transoperations/operations-operations';
-
-// import CreditList from './CreditList';
-
-import ExpensesList from './ExpensesList';
-import Summary from '../Summary';
-
-import expensesOperations from '../../data/expensesOperations.json';
-import data from '../../data/summary.json'
 
 function ExpensesPage() {
-    //     const dispatch = useDispatch();
-//   useEffect(() => dispatch(fetchContacts()), [dispatch])
+    //const [type, setType] = useState('');
+    const dispatch = useDispatch();
     const location = useLocation();
     const matches = useMediaQuery('(min-width:768px)');
     const date = useSelector(getSelectedDate);
-//   const contacts = useSelector(getContacts);
-//   
-  const dispatch = useDispatch();
 
     useEffect(() => {
-    console.log("загрузка при первом входе на страницу")
-      dispatch(fetchOperation(2022, 1, 15, 'expenses'));
-      console.log("код после отработки фетча")
-  }, [date, dispatch]);
+        console.log("загрузка при первом входе на страницу")
+        if (location.pathname === '/expenses') {
+            dispatch(fetchOperation(2022, '01', 15, 'expenses'));
+            console.log("код после отработки фетча расходы")
+        }
+        if (location.pathname === '/income') {
+            dispatch(fetchOperation(2022, 1, 15, 'income'));
+            console.log("код после отработки фетча")
+        }
+    }, [date, dispatch]);
+    
     return (
         <div>
             <BalanceBar />
             <Container>
                 <Box>
-                    <div>
-                        <Transaction />
-                    </div>
+                    <Transaction />
                     <Wrapper>
                         <OperationsWrapper>
                             {matches === true ? <Header>

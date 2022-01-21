@@ -16,7 +16,7 @@ import {
     fetchOperationError
 } from './operations-action'
 
-axios.defaults.baseURL = 'https://team-proj-smartfinance-back.herokuapp.com';
+//axios.defaults.baseURL = 'https://team-proj-smartfinance-back.herokuapp.com';
 
 export const fetchOperation = (year, month, day, operationType) => async dispatch => {
     console.log("fetch запрос")
@@ -24,7 +24,7 @@ export const fetchOperation = (year, month, day, operationType) => async dispatc
 
     //асинхронный код
     try {
-        const { data } = await axios.get(`/operations/byday?${year}&${month}&${day}&${operationType}`);
+        const { data } = await axios.get(`/api/operations/byday?${year}&${month}&${day}&${operationType}`);
         dispatch(fetchOperationSuccess(data));
         console.log("список операций", data)
         } catch (error) {
