@@ -41,14 +41,14 @@ function OperationsPage() {
     const monthApi = pad(date.month);
 
     useEffect(() => {
-        console.log("загрузка при первом входе на страницу")
+        // console.log("загрузка при первом входе на страницу")
         if (location.pathname === '/expenses') {
             dispatch(fetchOperationExpenses(2022, '01', 15));
-            console.log("код после отработки фетча расходы")
+            // console.log("код после отработки фетча расходы")
         }
         if (location.pathname === '/income') {
             dispatch(fetchOperationIncome(2022, '01', 15));
-            console.log("код после отработки фетча")
+            // console.log("код после отработки фетча")
         }
     }, [dispatch, location.pathname, date]);
     
