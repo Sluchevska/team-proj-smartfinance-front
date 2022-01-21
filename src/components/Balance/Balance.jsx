@@ -56,7 +56,7 @@ const Balance = () => {
                   balanceFromStore && typeof balanceFromStore === 'number'
                     ? balanceFromStore
                     : 0,
-                ).toFixed(2) + 'грн'
+                ).toFixed(2) + 'UAH'
               }
             ></FormInput>
 
