@@ -25,6 +25,8 @@ import { transactionsActions } from '../../redux/transaction';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
+import { addOperation } from '../../redux/transoperations/operations-operations';
+
 function Transaction({ categories, isIncome, placeholder }) {
   const selectedDate = useSelector(getSelectedDate);
   const [date, setDate] = useState(
@@ -32,7 +34,7 @@ function Transaction({ categories, isIncome, placeholder }) {
   );
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
-  const [amount, setAmount] = useState(0);
+  const [sum, setSum] = useState(0);
   const dispatch = useDispatch();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('tablet'));
@@ -50,30 +52,52 @@ function Transaction({ categories, isIncome, placeholder }) {
       case 'category':
         setCategory(value);
         break;
-      case 'amount':
-        setAmount(value);
+      case 'sum':
+        setSum(value);
         break;
       default:
         return;
     }
   };
 
+  
+  
   const handleSubmit = e => {
     e.preventDefault();
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
     const day = date.getDate();
+
+    function pad(n) {
+        if (n < 10) return '0' + n;
+        return n;
+    }
+
+    const dayApi = pad(day);
+    const monthApi = pad(month);
+
     dispatch(
-      fetchAddTransaction({
-        year,
-        month,
-        day,
-        description,
+      addOperation({
+        date:'21.01.2022',
         category,
-        amount,
-        isIncome,
+        description,
+        sum,
+        type:'expenses',
       }),
     );
+
+    //  dispatch(
+    //   fetchAddTransaction({
+    //     year,
+    //     month,
+    //     day,
+    //     description,
+    //     category,
+    //     sum,
+    //     isIncome,
+    //   }),
+    // );
+
     reset();
   };
 
@@ -81,7 +105,7 @@ function Transaction({ categories, isIncome, placeholder }) {
     setDate(new Date());
     setDescription('');
     setCategory('');
-    setAmount(0);
+    setSum(0);
   };
 
   const handleChangeDate = data => {
@@ -163,8 +187,8 @@ function Transaction({ categories, isIncome, placeholder }) {
           <input
             className={s.sum}
             type="number"
-            name="amount"
-            value={amount}
+            name="sum"
+            value={sum}
             onChange={handleChange}
             placeholder="0,00"
             pattern="^\d{1,3}(\s\d{3})*(\.\d+)?$"

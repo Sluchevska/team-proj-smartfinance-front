@@ -42,23 +42,25 @@ export const fetchOperationIncome = (year, month, day) => async dispatch => {
         }
 }
 
-// export const addOperation = ({ date, category, description,sum, type }) => async dispatch => {
-//     const operation = {
-//         date,
-//         category,
-//         description,
-//         sum,
-//         type
-//     }
+export const addOperation = ({ date, category, description, sum, type }) => async dispatch => {
+    const operation = {
+        date,
+        category,
+        description,
+        sum,
+        type
+    }
 
-//     dispatch(addOperationRequest());
+    dispatch(addOperationRequest());
 
-//     try {
-//         const { data } = await axios.post('/operations', operation);
-//         dispatch(addOperationSuccess(data))
-//     } catch (error) {
-//         dispatch(addOperationError(error))
-//     }
+    try {
+        const { data } = await axios.post('api/operations', operation);
+        console.log(data);
+        dispatch(addOperationSuccess(data.data.operation))
+    } catch (error) {
+        dispatch(addOperationError(error))
+    }
+}
 
 //     // axios
 //     //     .post('api/operations', Operation)
