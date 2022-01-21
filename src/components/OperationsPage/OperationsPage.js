@@ -5,7 +5,7 @@ import { useSelector, useDispatch} from 'react-redux';
 
 import BalanceBar from '../BalanceBar';
 import Transaction from '../TransactionForm/Transaction';
-import OperationsList from './OperationsList';
+import OperationsList from './OperationsList/OperationsList';
 import Summary from '../Summary';
 
 import incomeCategories from '../TransactionForm/incomeCategories.json'
