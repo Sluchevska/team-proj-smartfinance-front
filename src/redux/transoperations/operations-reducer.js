@@ -7,21 +7,25 @@ import {
     deleteOperationSuccess,
     fetchOperationSuccess,
     changeFilter
-} from './Operations-action'
+} from './operations-action'
 
-const items = createReducer([], {
+const operationsByDate = createReducer([], {
     [fetchOperationSuccess]:(_, {payload}) => payload,
     [addOperationSuccess]: (state, {payload}) => [payload, ...state],
     [deleteOperationSuccess]: (state, {payload}) =>
         state.filter(({id}) => id !== payload)
 })
 
-const filter = createReducer('', {
-   [changeFilter]:(_, {payload}) => payload, 
-})
+// const filter = createReducer('', {
+//    [changeFilter]:(_, {payload}) => payload,
+// })
+
+// export default combineReducers({
+//     items,
+//     filter
+// });
 
 export default combineReducers({
-    items,
-    filter
+    operationsByDate
 });
 

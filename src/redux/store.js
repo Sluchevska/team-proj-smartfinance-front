@@ -15,6 +15,7 @@ import { authReducer } from './auth';
 import operationsReducer from './transactions-month/transaction-reducers'
 
 import { transactionsReducer } from './transaction';
+import { transOperationsReducer } from './transoperations';
 // import { balanceReducer } from './balance';
 
 
@@ -37,6 +38,8 @@ export const store = configureStore({
     operations: operationsReducer,
 
     transactions: transactionsReducer,
+
+    transOperations: transOperationsReducer,
 
     //  balance: balanceReducer,
 

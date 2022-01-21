@@ -1,6 +1,8 @@
 import React from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import {useLocation} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import * as actions from '../../../redux/transoperations'
 
 import {
     Container,
@@ -18,6 +20,7 @@ import IconButton from '../../IconButton';
 import { ReactComponent as DeleteIcon } from '../../../icons/delete.svg';
 
 function ExpensesItem({ operations }) {
+    const dispatch = useDispatch();
     const location = useLocation();
     const matches = useMediaQuery('(min-width:768px)');
     if (matches === true) {
@@ -28,7 +31,7 @@ function ExpensesItem({ operations }) {
                 <Category >{operations.category}</Category>
                 {location.pathname === '/expenses' ? <MinusSum>-{operations.sum} грн</MinusSum> :<PlusSum>{operations.sum} грн</PlusSum>}
                 <IconButton onClick={() => console.log('Pressed')}>
-                    {<DeleteIcon width="18" height="18" fill="black" />}
+                    {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteOperation(operations.id))} />}
                 </IconButton>
             </Wrapper>
         )
@@ -45,7 +48,7 @@ function ExpensesItem({ operations }) {
                 <WrapperSum>
                     {location.pathname === '/expenses' ? <MinusSum>-{operations.sum} грн</MinusSum> :<PlusSum>{operations.sum} грн</PlusSum>}
                     <IconButton onClick={() => console.log('Pressed')}>
-                        {<DeleteIcon width="18" height="18" fill="black" />}
+                        {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteOperation(operations.id))} />}
                     </IconButton>
                 </WrapperSum>
             </Container>
