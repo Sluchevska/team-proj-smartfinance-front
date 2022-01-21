@@ -39,36 +39,36 @@ const Balance = () => {
   }, [isModalOpen]);
 
   return (
-    <ViewContainer>
-      <BalanceContainer>
-        <FormContainer onSubmit={updateBalance}>
-          <Title>
-            Баланс:
-            <InputContainer>
-              {/* {setModalClose && <Modal onClose={toggleWindow}/>} */}
+    //  <ViewContainer>
+    <BalanceContainer>
+      <FormContainer onSubmit={updateBalance}>
+        <Title>
+          Баланс:
+          <InputContainer>
+            {/* {setModalClose && <Modal onClose={toggleWindow}/>} */}
 
-              <FormInput
-                name="balance"
-                placeholder="00.00"
-                type="text"
-                defaultValue={
-                  parseFloat(
-                    balanceFromStore && typeof balanceFromStore === 'number'
-                      ? balanceFromStore
-                      : 0,
-                  ).toFixed(2) + 'грн'
-                }
-              ></FormInput>
+            <FormInput
+              name="balance"
+              placeholder="00.00"
+              type="text"
+              defaultValue={
+                parseFloat(
+                  balanceFromStore && typeof balanceFromStore === 'number'
+                    ? balanceFromStore
+                    : 0,
+                ).toFixed(2) + 'грн'
+              }
+            ></FormInput>
 
-              <Button type="submit">ПОДТВЕРДИТЬ</Button>
-            </InputContainer>
-            <ModalGetBalance />
-          </Title>
-        </FormContainer>
-      </BalanceContainer>
+            <Button type="submit">ПОДТВЕРДИТЬ</Button>
+          </InputContainer>
+          <ModalGetBalance />
+        </Title>
+      </FormContainer>
+    </BalanceContainer>
 
-      <GoToReportsBtn />
-    </ViewContainer>
+    //    {/* <GoToReportsBtn />}
+    //  </ViewContainer> */
   );
 };
 

@@ -15,7 +15,7 @@ export const  GoToText = styled.p`
 font-size: 12px;
     line-height: 14px;
     letter-spacing: 0.04em;
-    
+    color: rgba(82, 85, 95, 0.7);
     padding: 0;
     margin:0;
     text-decoration: none;

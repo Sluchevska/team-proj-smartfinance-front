@@ -54,8 +54,7 @@ const logIn = credentials => async dispatch => {
   
     token.set(response.data.data.token);
      toast.success(`Welcome, ${response.data.data.user.name}!`);
-    console.log(response.data.data.token)
-    dispatch(loginSuccess(response.data.data));
+      dispatch(loginSuccess(response.data.data));
   } catch ({ response }) {
     dispatch(loginError(response.data.message));
    
@@ -92,8 +91,7 @@ const getCurrentUser = () => async (dispatch, getState) => {
   try {
     const response = await fetchGetCurrentUser();
     dispatch(getCurrentUserSuccess(response.data.data.user));
-    console.log(response)
-   
+     
      } catch ({ response }) {
     
     dispatch(getCurrentUserError(response.data.message));
