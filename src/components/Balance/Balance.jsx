@@ -34,7 +34,7 @@ useEffect(() => {
 
 
    return (
-       <ViewContainer>
+      //  <ViewContainer>
        
        <BalanceContainer>
           <FormContainer onSubmit={updateBalance}>
@@ -69,9 +69,9 @@ useEffect(() => {
        </BalanceContainer>
        
      
-           <GoToReportsBtn/>  
+         //   {/* <GoToReportsBtn/>   */}
         
-         </ViewContainer>
+         // </ViewContainer>
     )
   }
 
