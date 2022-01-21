@@ -43,6 +43,7 @@ function OperationsPage() {
     useEffect(() => {
         // console.log("загрузка при первом входе на страницу")
         if (location.pathname === '/expenses') {
+            console.log(date.year);
             dispatch(fetchOperationExpenses(date.year, monthApi, dayApi));
             // console.log("код после отработки фетча расходы")
         }
