@@ -12,9 +12,9 @@ export const fetchSummary = (operationsType) => async dispatch => {
     dispatch(fetchSummaryRequest());
 
     try {
-        const { data } = await axios.get(`/operations?${operationsType}`);
+        const { data } = await axios.get(`api/operations?${operationsType}`);
         dispatch(fetchSummarySuccess(data));
-        console.log("список операций", data)
+        console.log("summary", data)
     } catch (error) {
             dispatch(fetchSummaryError(error.message))
         }

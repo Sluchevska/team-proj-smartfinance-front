@@ -32,6 +32,14 @@ function OperationsPage() {
     const matches = useMediaQuery('(min-width:768px)');
     const date = useSelector(getSelectedDate);
 
+    function pad(n) {
+        if (n < 10) return '0' + n;
+        return n;
+    }
+
+    const dayApi = pad(date.day);
+    const monthApi = pad(date.month);
+
     useEffect(() => {
         console.log("загрузка при первом входе на страницу")
         if (location.pathname === '/expenses') {
