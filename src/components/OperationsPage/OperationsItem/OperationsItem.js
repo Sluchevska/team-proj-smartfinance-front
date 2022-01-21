@@ -15,11 +15,11 @@ import {
     PlusSum,
     MinusSum,
     Wrapper
-} from './ExpensesItem.styled';
+} from './OperationsItem.styled';
 import IconButton from '../../IconButton';
 import { ReactComponent as DeleteIcon } from '../../../icons/delete.svg';
 
-function ExpensesItem({ operations }) {
+function OperationsItem({ operations }) {
     const dispatch = useDispatch();
     const location = useLocation();
     const matches = useMediaQuery('(min-width:768px)');
@@ -46,18 +46,16 @@ function ExpensesItem({ operations }) {
                     </NameInfo>
                 </WrapperInfo>
                 <WrapperSum>
-                    {location.pathname === '/expenses' ? <MinusSum>-{operations.sum} грн</MinusSum> :<PlusSum>{operations.sum} грн</PlusSum>}
+                    {location.pathname === '/income' ? <MinusSum>-{operations.sum} грн</MinusSum> :<PlusSum>{operations.sum} грн</PlusSum>}
                     <IconButton onClick={() => console.log('Pressed')}>
                         {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(actions.deleteOperation(operations.id))} />}
                     </IconButton>
                 </WrapperSum>
             </Container>
         )
-    
-
 }
 
-export default ExpensesItem;
+export default OperationsItem;
 
 //вариант мобилки
 /* <Container>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Balance from '../components/Balance/Balance.jsx';
-import ExpensesPage from '../components/ExpensesPage';
+import OperationsPage from '../components/OperationsPage';
 
 export default function ExpensesView() {
 //     const dispatch = useDispatch();
@@ -8,7 +8,7 @@ export default function ExpensesView() {
     return (
         <div>
             <Balance />
-            <ExpensesPage />
+            <OperationsPage />
         </div>
     );
 }

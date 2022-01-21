@@ -16,17 +16,29 @@ import {
     fetchOperationError
 } from './operations-action'
 
-//axios.defaults.baseURL = 'https://team-proj-smartfinance-back.herokuapp.com';
-
-export const fetchOperation = (year, month, day, operationType) => async dispatch => {
+export const fetchOperationExpenses = (year, month, day) => async dispatch => {
     console.log("fetch запрос")
     dispatch(fetchOperationRequest());
 
     //асинхронный код
     try {
-        const { data } = await axios.get(`/api/operations/byday?${year}&${month}&${day}&${operationType}`);
-        dispatch(fetchOperationSuccess(data));
-        console.log("список операций", data)
+        const { data } = await axios.get(`/api/operations/byday?year=${year}&month=${month}&day=${day}&type=expenses`);
+        dispatch(fetchOperationSuccess(data.data.operations.expenses));
+        console.log("список операций расходы", data)
+        } catch (error) {
+            dispatch(fetchOperationError(error.message))
+        }
+}
+
+export const fetchOperationIncome = (year, month, day) => async dispatch => {
+    console.log("fetch запрос")
+    dispatch(fetchOperationRequest());
+
+    //асинхронный код
+    try {
+        const { data } = await axios.get(`/api/operations/byday?year=${year}&month=${month}&day=${day}&type=income`);
+     dispatch(fetchOperationSuccess(data.data.operations.income));
+        console.log("список операций доходы", data)
         } catch (error) {
             dispatch(fetchOperationError(error.message))
         }
@@ -51,7 +63,7 @@ export const fetchOperation = (year, month, day, operationType) => async dispatc
 //     }
 
 //     // axios
-//     //     .post('/Operations', Operation)
+//     //     .post('api/operations', Operation)
 //     //     .then(({ data }) => dispatch(addOperationSuccess(data)))
 //     //     .catch(error => dispatch(addOperationError(error)));
 // }
@@ -60,7 +72,7 @@ export const deleteOperation = operationId => dispatch => {
     dispatch(deleteOperationRequest());
 
     axios
-        .delete(`/operations/${operationId}`)
+        .delete(`api/operations/${operationId}`)
         .then(() => dispatch(deleteOperationSuccess(operationId)))
         .catch(error => dispatch(deleteOperationError(error)));
 }

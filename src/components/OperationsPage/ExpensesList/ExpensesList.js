@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getOperations} from '../../../redux/transoperations/operations-selectors';
-import ExpensesItem from '../ExpensesItem';
+import ExpensesItem from '../OperationsItem';
 import {
     List,
     ListItem

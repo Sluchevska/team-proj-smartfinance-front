@@ -5,12 +5,13 @@ import { useSelector, useDispatch} from 'react-redux';
 
 import BalanceBar from '../BalanceBar';
 import Transaction from '../TransactionForm/Transaction';
-import ExpensesList from './ExpensesList';
+import OperationsList from './OperationsList';
 import Summary from '../Summary';
 
 import expensesOperations from '../../data/expensesOperations.json';
+import incomeCategories from '../TransactionForm/incomeCategories.json'
 import data from '../../data/summary.json';
-import { fetchOperation } from '../../redux/transoperations/operations-operations';
+import { fetchOperationExpenses, fetchOperationIncome } from '../../redux/transoperations/operations-operations';
 import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
 
 import {
@@ -23,9 +24,9 @@ import {
     Category,
     Sum,
     Wrapper
-} from './ExpensesPage.styled';
+} from './OperationsPage.styled';
 
-function ExpensesPage() {
+function OperationsPage() {
     //const [type, setType] = useState('');
     const dispatch = useDispatch();
     const location = useLocation();
@@ -35,21 +36,27 @@ function ExpensesPage() {
     useEffect(() => {
         console.log("загрузка при первом входе на страницу")
         if (location.pathname === '/expenses') {
-            dispatch(fetchOperation(2022, '01', 15, 'expenses'));
+            dispatch(fetchOperationExpenses(2022, '01', 15));
             console.log("код после отработки фетча расходы")
         }
         if (location.pathname === '/income') {
-            dispatch(fetchOperation(2022, 1, 15, 'income'));
+            dispatch(fetchOperationIncome(2022, 1, 15));
             console.log("код после отработки фетча")
         }
-    }, [date, dispatch]);
+    }, [dispatch, location.pathname, date]);
     
     return (
         <div>
             <BalanceBar />
             <Container>
                 <Box>
-                    <Transaction />
+                    {location.pathname === '/expenses' ?
+                        <Transaction /> :
+                        <Transaction
+                            isIncome={true}
+                            categories={incomeCategories}
+                            placeholder="Описание дохода"
+                        />}
                     <Wrapper>
                         <OperationsWrapper>
                             {matches === true ? <Header>
@@ -58,7 +65,7 @@ function ExpensesPage() {
                                 <Category >КАТЕГОРИЯ</Category>
                                 <Sum >СУММА</Sum>
                             </Header> : null}
-                            <ExpensesList  />
+                            <OperationsList  />
                         </OperationsWrapper>
                         <Summary data={data} />
                     </Wrapper>
@@ -68,4 +75,4 @@ function ExpensesPage() {
     );
 }
 
-export default ExpensesPage;
+export default OperationsPage;
