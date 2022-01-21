@@ -8,17 +8,19 @@ import {
   fetchSignUp,
   fetchLogIn,
   fetchLogOut,
-  fetchUploadAvatar,
+  // fetchUploadAvatar,
   fetchGetCurrentUser,
+  fetchGoogleAuth,
+  fetchGoogleRedirect,
 
 } from '../../api/userApi.js';
 import {
   registerRequest,
   registerSuccess,
   registerError,
-  uploadAvatarRequest,
-  uploadAvatarSuccess,
-  uploadAvatarError,
+  // uploadAvatarRequest,
+  // uploadAvatarSuccess,
+  // uploadAvatarError,
   
   logoutRequest,
   logoutSuccess,
@@ -43,6 +45,32 @@ const register = credentials => async dispatch => {
     
   }
 };
+
+export const fetchAuthGoogle = createAsyncThunk(
+  'auth/fetchGoogleAuth',
+  async (_, { rejectWithValue }) => {
+    try {
+      const data = await fetchGoogleAuth();
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.response.data)
+      
+    }
+  },
+);
+
+export const fetchRedirectGoogle = createAsyncThunk(
+  'auth/fetchGoogleRedirect',
+  async (_, { rejectWithValue }) => {
+    try {
+      const data = await fetchGoogleRedirect();
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message)
+      
+    }
+  },
+);
 
 
 
@@ -112,6 +140,7 @@ export {
   logOut,
   logIn,
   getCurrentUser,
+  
 
 };
 
