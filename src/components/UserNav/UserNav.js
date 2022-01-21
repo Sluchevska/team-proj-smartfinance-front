@@ -24,7 +24,6 @@ import Modal from '../Modal/Modal.jsx';
 export default function UserNav() {
 
   const userName = useSelector(getUserName) || '';
-  console.log(userName)
   const dispatch = useDispatch();
 
   const toggleModal = () => {

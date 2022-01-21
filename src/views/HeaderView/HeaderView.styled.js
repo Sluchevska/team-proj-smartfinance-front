@@ -52,11 +52,12 @@ export const AvatarTxt = styled.div`
 
 
 export const UserName = styled.p`
-/* display: none; */
+color:  #52555F;
+  cursor: pointer;
+display: none;
 @media screen and  (min-width: 768px) {
   display: flex;
-  color:  #52555F;
-  cursor: pointer;
+  
 }
 `;
 
