@@ -42,7 +42,7 @@ function OperationsPage() {
     const monthApi = pad(date.month);
 
     useEffect(() => {
-        console.log("загрузка при первом входе на страницу")
+        //console.log("загрузка при первом входе на страницу")
         if (location.pathname === '/expenses') {
             dispatch(fetchOperations(date.year, monthApi, dayApi, 'expenses'));
         }
@@ -56,7 +56,7 @@ function OperationsPage() {
             {matches === true ? <OperationsBar /> : null}
             <Container>
                 <Box>
-                    
+
                     {location.pathname === '/expenses' ?
                         <Transaction type='expenses'/> :
                         <Transaction
