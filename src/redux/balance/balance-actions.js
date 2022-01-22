@@ -1,4 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
+import balanceTypes from './balance-types';
 
 const setBalanceRequest = createAction('balance/setBalanceRequest');
 const setBalanceSuccess = createAction('balance/setBalanceSuccess');
@@ -6,7 +7,7 @@ const setBalanceError = createAction('balance/setBalanceError');
 
 const setBalanceSum = sum => {
   return {
-    type: 'balance/set',
+    type: balanceTypes.SET,
     payload: { sum },
   };
 };

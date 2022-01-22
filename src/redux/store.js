@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import {
   persistStore,
   persistReducer,
@@ -24,6 +25,7 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     balance: balanceReducer,
   },
+  composeWithDevTools,
   devTools: process.env.NODE_ENV !== 'production',
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

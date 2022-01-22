@@ -33,7 +33,7 @@ const Balance = ({ balanceFromStore }) => {
     //       setTestBalance(data.data.user.balance);
 
     const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTU4OTVhYTEwOGY4MzVkMGVkNjE3YiIsImlhdCI6MTY0MjY5NjE3NH0.MkHNftK0ADW4cFeACECO8X8g0udAU10ehBld9vD_gDU';
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTU4OTVhYTEwOGY4MzVkMGVkNjE3YiIsImlhdCI6MTY0MjY5OTI2OH0.aaReAMKXK0HTbtGNGTIGzIIwwoMBJGb_MGM44TIyrVE';
 
     const headers = {
       'Content-Type': 'application/json',
