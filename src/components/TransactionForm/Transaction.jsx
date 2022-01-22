@@ -25,7 +25,7 @@ import * as actions  from '../../redux/transaction/transactions-actions.js';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
-function Transaction({ categories, isIncome, placeholder }) {
+function Transaction({ categories, isIncome, placeholder, type }) {
   const selectedDate = useSelector(getSelectedDate);
   const [date, setDate] = useState(
     new Date(selectedDate.year, selectedDate.month - 1, selectedDate.day),
@@ -76,11 +76,11 @@ function Transaction({ categories, isIncome, placeholder }) {
 
     dispatch(
       addOperation({
-        date:'21.01.2022',
+        date:`${dayApi}.${monthApi}.${year}`,
         category,
         description,
         sum,
-        type:'expenses',
+        type,
       }),
     );
 

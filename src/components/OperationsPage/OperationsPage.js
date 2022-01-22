@@ -31,6 +31,7 @@ function OperationsPage() {
     const location = useLocation();
     const matches = useMediaQuery('(min-width:768px)');
     const date = useSelector(getSelectedDate);
+    console.log(date);
 
     function pad(n) {
         if (n < 10) return '0' + n;
@@ -41,15 +42,15 @@ function OperationsPage() {
     const monthApi = pad(date.month);
 
     useEffect(() => {
-        // console.log("загрузка при первом входе на страницу")
+        console.log("загрузка при первом входе на страницу")
         if (location.pathname === '/expenses') {
             console.log(date.year);
             dispatch(fetchOperationExpenses(date.year, monthApi, dayApi));
-            // console.log("код после отработки фетча расходы")
+            console.log("код после отработки фетча расходы")
         }
         if (location.pathname === '/income') {
             dispatch(fetchOperationIncome(date.year, monthApi, dayApi));
-            // console.log("код после отработки фетча")
+            console.log("код после отработки фетча")
         }
     }, [dispatch, location.pathname, date]);
     
@@ -59,11 +60,12 @@ function OperationsPage() {
             <Container>
                 <Box>
                     {location.pathname === '/expenses' ?
-                        <Transaction /> :
+                        <Transaction type='expenses'/> :
                         <Transaction
                             isIncome={true}
                             categories={incomeCategories}
                             placeholder="Описание дохода"
+                            type='income'
                         />}
                     <Wrapper>
                         <OperationsWrapper>
