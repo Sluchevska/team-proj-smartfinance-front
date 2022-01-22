@@ -116,6 +116,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
   };
 
   return (
+    <div className={s.container}>
     <form onSubmit={handleSubmit} className={s.form}>
       <div className={s.wrapInputs}>
         <label className={s.label}>
@@ -200,7 +201,8 @@ function Transaction({ categories, isIncome, placeholder, type }) {
           Очистить
         </Button>
       </ButtonGroup>
-    </form>
+      </form>
+    </div>
   );
 }
 

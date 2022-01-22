@@ -12,10 +12,9 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import { authReducer } from './auth';
-import operationsReducer from './transactions-month/transaction-reducers'
-// import { transactionsReducer } from './transaction';
-//import { summaryReducer } from './summary';
 // import { balanceReducer } from './balance';
+import operationsReducer from './transactions-month/transaction-reducers'
+import { summaryReducer } from './summary';
 import {transOperationsReducer} from './transoperations'
 
 const authPersistConfig = {
@@ -26,26 +25,18 @@ const authPersistConfig = {
 
 export const store = configureStore({
   reducer: {
-
     auth: persistReducer(authPersistConfig, authReducer),
-
-    operations: operationsReducer,
-
-    transOperations: transOperationsReducer
-    // transactions: transactionsReducer,
-
-    //summary: summaryReducer,
-
     //  balance: balanceReducer,
-
-
+    operations: operationsReducer,
+    transOperations: transOperationsReducer,
+    summary: summaryReducer,
   },
+
   devTools: process.env.NODE_ENV !== 'production',
+  
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
-
       serializableCheck: false,
-
     }),
 });
 

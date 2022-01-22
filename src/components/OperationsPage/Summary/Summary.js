@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { useSelector, useDispatch} from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { fetchSummary } from '../../../redux/summary/summary-operations';
+import { getOperationsByMonth } from '../../../redux/summary/summary-selectors';
+import { getOperations} from '../../../redux/transoperations/operations-selectors';
 import {
     Wrapper,
     Title,
@@ -8,17 +13,34 @@ import {
     ListItem
 } from './Summary.styled';
 
-function Summary({ data }) {
+function Summary() {
+    const dispatch = useDispatch();
+    const location = useLocation();
+    const operations = useSelector(getOperations);
+    const data = useSelector(getOperationsByMonth);
     const matches = useMediaQuery('(min-width:768px)');
+    const monthToLongName = () => new Date().toLocaleString('ru', {       
+        month: 'long'       
+    });
+
+    useEffect(() => {
+        if (location.pathname === '/expenses') {
+            dispatch(fetchSummary('expenses'));
+        }
+        if (location.pathname === '/income') {
+            dispatch(fetchSummary('income'));
+        }
+    }, [dispatch, location.pathname, operations]);
+    
     if (matches === true) {
         return (
             <Wrapper>
                 <Title>СВОДКА</Title>
                 <List>
                     {data.map((data)=> (
-                    <ListItem key={data.id}  >
-                        <p>{data.month}</p>
-                        <p>{data.sum}</p>
+                    <ListItem key={data.month}  >
+                        <p>{monthToLongName(data.month)}</p>
+                        <p>{data.total}</p>
                         </ListItem>
                     ))}
                 </List>

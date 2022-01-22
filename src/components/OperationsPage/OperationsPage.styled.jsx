@@ -5,7 +5,7 @@ export const Container = styled.div`
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom:12px;
+  //padding-bottom:12px;
   width: 320px;
   //border-bottom: solid 1px #F5F6FB;
   
@@ -25,11 +25,11 @@ export const Container = styled.div`
   `
 export const Box = styled.div`
     
-    padding-top:50px;
+    //padding-top:50px;
   @media screen and (min-width: 768px) {
     width:665px;
     height:626px;
-    background-color: #dfdbdb;
+    background-color: #FFFFFF;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 0px 30px 30px 30px;
     }

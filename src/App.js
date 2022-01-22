@@ -34,20 +34,16 @@ function App() {
     dispatch(getCurrentUser());
   }, [dispatch]);
 
-  const onToken = useSelector(getCurrentToken);
-
   const isLogIn = useSelector(getIsAuthenticated);
 
-  const isFetchingCurrentUser = useSelector(state =>
-    getFetchingCurrentUser(state),
-  );
+
 
   return (
     <div>
       <HeaderView />
       <HomeContainer>
         <Suspense fallback={<Spinner />}>
-          {/* {isFetchingCurrentUser ? (<Spinner />) : ( */}
+       
           <Routes>
             <Route path="/" element={<Navigate replace to="home" />} />
             <Route
@@ -70,7 +66,7 @@ function App() {
 
             {/* <Route path="*" element = {<Error/>} / > */}
           </Routes>
-          ){/* } */}
+      
         </Suspense>
       </HomeContainer>
       <ToastContainer autoClose={2500} />
