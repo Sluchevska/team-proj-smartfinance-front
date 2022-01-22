@@ -48,3 +48,13 @@ li {
   list-style: none;
 }
 
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+    background-color: #FF751D;
+    height: 130px;
+    opacity: 1;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {
+  display: none;
+    background-color: #FF751D
+}

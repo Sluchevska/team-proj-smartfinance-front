@@ -3,14 +3,14 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch} from 'react-redux';
 
-import OperationsBar from './BalanceBar';
+import OperationsBar from './OperationsBar';
 import Transaction from './TransactionForm/Transaction';
 import OperationsList from './OperationsList/OperationsList';
 import Summary from './Summary';
 
 import incomeCategories from './TransactionForm/incomeCategories.json'
-import data from '../../data/summary.json';
 import { fetchOperations } from '../../redux/transoperations/operations-operations';
+//import { fetchSummary } from '../../redux/summary/summary-operations';
 import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
 
 import {
@@ -31,7 +31,6 @@ function OperationsPage() {
     const location = useLocation();
     const matches = useMediaQuery('(min-width:768px)');
     const date = useSelector(getSelectedDate);
-    console.log(date);
 
     function pad(n) {
         if (n < 10) return '0' + n;
@@ -42,22 +41,21 @@ function OperationsPage() {
     const monthApi = pad(date.month);
 
     useEffect(() => {
-        console.log("загрузка при первом входе на страницу")
+        //console.log("загрузка при первом входе на страницу")
         if (location.pathname === '/expenses') {
             dispatch(fetchOperations(date.year, monthApi, dayApi, 'expenses'));
-            console.log("код после отработки фетча расходы")
         }
         if (location.pathname === '/income') {
             dispatch(fetchOperations(date.year, monthApi, dayApi, 'income'));
-            console.log("код после отработки фетча")
         }
     }, [dispatch, location.pathname, date]);
     
     return (
         <div>
-            <OperationsBar />
+            {matches === true ? <OperationsBar /> : null}
             <Container>
                 <Box>
+
                     {location.pathname === '/expenses' ?
                         <Transaction type='expenses'/> :
                         <Transaction
@@ -66,6 +64,7 @@ function OperationsPage() {
                             placeholder="Описание дохода"
                             type='income'
                         />}
+                    
                     <Wrapper>
                         <OperationsWrapper>
                             {matches === true ? <Header>
@@ -76,10 +75,12 @@ function OperationsPage() {
                             </Header> : null}
                             <OperationsList  />
                         </OperationsWrapper>
-                        <Summary data={data} />
+                        <Summary />
                     </Wrapper>
+                     
                 </Box>
             </Container>
+            {matches === true ? null : <OperationsBar />}
         </div>
     );
 }

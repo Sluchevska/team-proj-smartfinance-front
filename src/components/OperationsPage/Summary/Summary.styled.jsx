@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 export const Wrapper = styled.div`
     
   @media screen and (min-width: 768px) {
-    margin-top:550px;
+    margin-top:90px;
     margin-left:30px;
   }
 
@@ -54,6 +54,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   display:flex;
   justify-content:space-between;
+  align-items:center;
   border-bottom: solid 1px #FFFFFF;
   text-transform:uppercase;
 

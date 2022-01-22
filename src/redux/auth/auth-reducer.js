@@ -15,14 +15,14 @@ import {
   loginRequest,
 } from './auth-actions';
 
-import { fetchAuthGoogle, fetchRedirectGoogle } from './auth-operations';
+import { fetchGoogleUser } from './auth-operations';
 
 const initialUserState = { name: null, email: null };
 
 const user = createReducer(initialUserState, {
   [registerSuccess]: (_, { payload }) => payload.user,
-  [fetchAuthGoogle.fulfilled]: (_, { payload }) => payload.user,
-  [fetchRedirectGoogle.fulfilled]: (_, { payload }) => payload.user,
+  [fetchGoogleUser.fulfilled]: (_, { payload }) => payload.user,
+  // [fetchRedirectGoogle.fulfilled]: (_, { payload }) => payload.user,
   [loginSuccess]: (_, { payload }) => payload.user,
 
   [logoutSuccess]: () => initialUserState,
@@ -41,8 +41,8 @@ const error = createReducer(null, {
   [registerSuccess]: () => null,
   [registerRequest]: () => null,
 
-  [fetchAuthGoogle.fulfilled]: setError,
-  [fetchRedirectGoogle.fulfilled]: setError,
+  [fetchGoogleUser.fulfilled]: setError,
+  // [fetchRedirectGoogle.fulfilled]: setError,
 
   [loginError]: setError,
   [loginSuccess]: () => null,
@@ -59,15 +59,15 @@ const error = createReducer(null, {
 const isLogin = createReducer(false, {
   [loginSuccess]: () => true,
   [getCurrentUserSuccess]: () => true,
-
-  [fetchAuthGoogle.fulfilled]: () => true,
-  [fetchRedirectGoogle.fulfilled]: () => true,
+[getCurrentUserRequest]: ()=> true,
+  [fetchGoogleUser.fulfilled]: () => true,
+  // [fetchRedirectGoogle.fulfilled]: () => true,
 
   [registerError]: () => false,
   [loginError]: () => false,
 
-  [fetchAuthGoogle.fulfilled]: () => false,
-  [fetchRedirectGoogle.fulfilled]: () => false,
+  [fetchGoogleUser.fulfilled]: () => false,
+  // [fetchRedirectGoogle.fulfilled]: () => false,
 
   [getCurrentUserError]: () => false,
   [logoutSuccess]: () => false,

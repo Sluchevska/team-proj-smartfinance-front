@@ -25,7 +25,7 @@ import * as actions  from '../../../redux/transoperations/operations-action';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
-function Transaction({ categories, isIncome, placeholder, type }) {
+function InputMobile({ categories, placeholder, type }) {
   const selectedDate = useSelector(getSelectedDate);
   const [date, setDate] = useState(
     new Date(selectedDate.year, selectedDate.month - 1, selectedDate.day),
@@ -82,17 +82,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
       }),
     );
 
-    //  dispatch(
-    //   fetchAddTransaction({
-    //     year,
-    //     month,
-    //     day,
-    //     description,
-    //     category,
-    //     sum,
-    //     isIncome,
-    //   }),
-    // );
+   
 
     reset();
   };
@@ -206,11 +196,11 @@ function Transaction({ categories, isIncome, placeholder, type }) {
   );
 }
 
-Transaction.defaultProps = {
+InputMobile.defaultProps = {
   isIncome: false,
   categories: expenseCategories,
   placeholder: 'Описание расхода',
   selectLabel: 'Категория товара',
 };
 
-export default Transaction;
+export default InputMobile;

@@ -8,10 +8,20 @@ import {
     ListItem
 } from './OperationsList.styled';
 
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
+
 function OperationsList() {
     const operations = useSelector(getOperations);
-    // console.log("какие операции заходят в отрисовку",operations)
-    return(
+    return (
+        <SimpleBar
+            style={{
+                maxHeight: 346,
+                scrollbarMinSize: 130,
+                
+            }}
+            autoHide={false}
+            scrollbarMinSize={130}>
         <List>
             {operations.map((operations)=> (
                 <ListItem key={operations._id}  >
@@ -19,13 +29,14 @@ function OperationsList() {
                 </ListItem>
             ))}
         </List>
+       </SimpleBar>
     )
 }
 
 OperationsList.propTypes = {
-    contacts: PropTypes.arrayOf(
+    operations: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string.isRequired,
+            _id: PropTypes.string.isRequired,
         })
     ),
 };

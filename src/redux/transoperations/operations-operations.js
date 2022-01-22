@@ -12,13 +12,11 @@ import {
 } from './operations-action'
 
 export const fetchOperations = (year, month, day, type) => async dispatch => {
-    console.log("fetch запрос")
     dispatch(fetchOperationRequest());
 
     try {
         const { data } = await axios.get(`/api/operations/byday?year=${year}&month=${month}&day=${day}&type=${type}`);
         dispatch(fetchOperationSuccess(data.data.operations));
-        console.log("список операций расходы", data)
         } catch (error) {
             dispatch(fetchOperationError(error.message))
         }
@@ -37,7 +35,6 @@ export const addOperation = ({ date, category, description, sum, type }) => asyn
 
     try {
         const { data } = await axios.post('api/operations', operation);
-        console.log(data);
         dispatch(addOperationSuccess(data.data.operation))
     } catch (error) {
         dispatch(addOperationError(error))

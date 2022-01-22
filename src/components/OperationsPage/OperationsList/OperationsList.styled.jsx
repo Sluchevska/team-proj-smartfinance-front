@@ -4,10 +4,10 @@ export const List = styled.ul`
   margin:0;
   padding:0;
   list-style:none;
-  max-height:160px;
+  //max-height:160px;
   
   @media screen and (min-width: 768px) {
-    max-height:0;
+  // max-width:606px;
   }
 
   @media screen and (min-width: 1280px) {
