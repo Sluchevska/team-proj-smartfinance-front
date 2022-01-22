@@ -12,10 +12,11 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import { authReducer } from './auth';
-// import { balanceReducer } from './balance';
-import operationsReducer from './transactions-month/transaction-reducers'
-import { summaryReducer } from './summary';
-import {transOperationsReducer} from './transoperations'
+import operationsReducer from './transactions-month/transaction-reducers';
+// import { transactionsReducer } from './transaction';
+//import { summaryReducer } from './summary';
+import balanceReducer from './balance/balance-reducer';
+import { transOperationsReducer } from './transoperations';
 
 const authPersistConfig = {
   key: 'token',
@@ -26,10 +27,15 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    //  balance: balanceReducer,
+
     operations: operationsReducer,
+
     transOperations: transOperationsReducer,
-    summary: summaryReducer,
+    // transactions: transactionsReducer,
+
+    //summary: summaryReducer,
+
+    balance: balanceReducer,
   },
 
   devTools: process.env.NODE_ENV !== 'production',

@@ -1,5 +1,5 @@
 const initState = {
-  balance: ' '
+  balance: 0,
 };
 
 export default initState;
