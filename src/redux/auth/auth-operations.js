@@ -10,8 +10,8 @@ import {
   fetchLogOut,
 
   fetchGetCurrentUser,
-  fetchGoogleAuth,
-  fetchGoogleRedirect,
+  // fetchGoogleAuth,
+  // fetchGoogleRedirect,
 } from '../../api/userApi.js';
 import {
   registerRequest,
@@ -42,23 +42,35 @@ const register = credentials => async dispatch => {
   }
 };
 
-export const fetchAuthGoogle = createAsyncThunk(
-  'auth/fetchGoogleAuth',
-  async (_, { rejectWithValue }) => {
-    try {
-      const data = await fetchGoogleAuth();
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.response.data);
-    }
-  },
-);
+// export const fetchAuthGoogle = createAsyncThunk(
+//   'auth/fetchGoogleAuth',
+//   async (_, { rejectWithValue }) => {
+//     try {
+//       const data = await fetchGoogleAuth();
+//       return data;
+//     } catch (error) {
+//       return rejectWithValue(error.response.data);
+//     }
+//   },
+// );
 
-export const fetchRedirectGoogle = createAsyncThunk(
-  'auth/fetchGoogleRedirect',
-  async (_, { rejectWithValue }) => {
+// export const fetchRedirectGoogle = createAsyncThunk(
+//   'auth/fetchGoogleRedirect',
+//   async (_, { rejectWithValue }) => {
+//     try {
+//       const data = await fetchGoogleRedirect();
+//       return data;
+//     } catch (error) {
+//       return rejectWithValue(error.message);
+//     }
+//   },
+// );
+const fetchGoogleUser = createAsyncThunk(
+  'auth/fetchGoogleUser',
+  async (googleToken, { rejectWithValue }) => {
+    token.set(googleToken);
     try {
-      const data = await fetchGoogleRedirect();
+      const { data } = await fetchGetCurrentUser();
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -110,4 +122,4 @@ const getCurrentUser = () => async (dispatch, getState) => {
   }
 };
 
-export { register, logOut, logIn, getCurrentUser };
+export { register, logOut, logIn, getCurrentUser, fetchGoogleUser };
