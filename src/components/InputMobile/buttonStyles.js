@@ -14,7 +14,6 @@ const buttonGroupStyles = {
     '& .MuiButtonGroup-grouped:last-of-type': {
         borderTopLeftRadius: '16px',
         borderBottomLeftRadius: '16px',
-        border: '2px solid #F5F6FB',
     },
     '& .MuiButton-root': { color: '#52555F' },
     '& .MuiButton-root:hover': { backgroundColor: '#FF751D', color: '#fff' },

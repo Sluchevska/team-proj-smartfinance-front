@@ -53,9 +53,12 @@ export async function fetchUploadAvatar() {
 
 
 export async function fetchMonthReports({month, year}){
-   
-    const {data} = await axios.get(`/api/operations/info?year=${year}&month=${month}`)
-  
+  const monthApi = pad(month);
+  function pad(n) {
+    if (n < 10) return '0' + n;
+    return n;
+  }
+const {data} = await axios.get(`/api/operations/info?year=${year}&month=${monthApi}`)
     return data;
 }
 
