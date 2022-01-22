@@ -34,10 +34,10 @@ export default function HomeView({ location }) {
     return (
     
         <Container>
-            <HomeContainer>
+            {/* <HomeContainer> */}
                 <HomeTitle />
                {/* <ModalFunk /> */}
-           </HomeContainer>
+           {/* </HomeContainer> */}
            <FormContainer>
                {login ? (
                     <LogIn onClickRegister={onRegisterClick} />

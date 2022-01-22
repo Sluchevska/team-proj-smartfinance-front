@@ -13,7 +13,7 @@ export const Container = styled.div`
 export const HomeContainer = styled.div`
 
     background-color: #F5F6FB;
-   
+  
     height: 286px;
     border-radius: 0 0 0 180px;
     @media screen and (min-width: 768px) {
