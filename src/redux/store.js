@@ -10,18 +10,13 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+
 import { authReducer } from './auth';
-
 import operationsReducer from './transactions-month/transaction-reducers'
-
-import { transactionsReducer } from './transaction';
-import { transOperationsReducer } from './transoperations';
-import { summaryReducer } from './summary';
+// import { transactionsReducer } from './transaction';
+//import { summaryReducer } from './summary';
 // import { balanceReducer } from './balance';
-
-
-
-
+import {transOperationsReducer} from './transoperations'
 
 const authPersistConfig = {
   key: 'token',
@@ -36,11 +31,10 @@ export const store = configureStore({
 
     operations: operationsReducer,
 
-    transactions: transactionsReducer,
+    transOperations: transOperationsReducer
+    // transactions: transactionsReducer,
 
-    transOperations: transOperationsReducer,
-
-    summary: summaryReducer,
+    //summary: summaryReducer,
 
     //  balance: balanceReducer,
 

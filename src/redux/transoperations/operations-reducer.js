@@ -5,8 +5,19 @@ import { createReducer } from '@reduxjs/toolkit'
 import {
     addOperationSuccess,
     deleteOperationSuccess,
-    fetchOperationSuccess
+    fetchOperationSuccess,
+    selectDate
 } from './operations-action'
+
+const initialDate = {
+    day: new Date().getDate(),
+    month: new Date().getMonth() + 1,
+    year: new Date().getFullYear(),
+};
+
+const selectedDate = createReducer(initialDate, {
+    [selectDate]: (_, { payload }) => payload,
+});
 
 const operationsByDate = createReducer([], {
     [fetchOperationSuccess]:(_, {payload}) => payload,
@@ -16,6 +27,8 @@ const operationsByDate = createReducer([], {
 })
 
 export default combineReducers({
+    selectedDate,
     operationsByDate
+    
 });
 

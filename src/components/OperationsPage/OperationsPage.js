@@ -3,14 +3,14 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch} from 'react-redux';
 
-import OperationsBar from './OperationsBar';
-import Transaction from '../TransactionForm/Transaction';
+import OperationsBar from './BalanceBar';
+import Transaction from './TransactionForm/Transaction';
 import OperationsList from './OperationsList/OperationsList';
 import Summary from './Summary';
 
-import incomeCategories from '../TransactionForm/incomeCategories.json'
+import incomeCategories from './TransactionForm/incomeCategories.json'
 import data from '../../data/summary.json';
-import { fetchOperationExpenses, fetchOperationIncome } from '../../redux/transoperations/operations-operations';
+import { fetchOperations } from '../../redux/transoperations/operations-operations';
 import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
 
 import {
@@ -31,6 +31,7 @@ function OperationsPage() {
     const location = useLocation();
     const matches = useMediaQuery('(min-width:768px)');
     const date = useSelector(getSelectedDate);
+    console.log(date);
 
     function pad(n) {
         if (n < 10) return '0' + n;
@@ -41,14 +42,14 @@ function OperationsPage() {
     const monthApi = pad(date.month);
 
     useEffect(() => {
-        // console.log("загрузка при первом входе на страницу")
+        console.log("загрузка при первом входе на страницу")
         if (location.pathname === '/expenses') {
-            dispatch(fetchOperationExpenses(2022, '01', 15));
-            // console.log("код после отработки фетча расходы")
+            dispatch(fetchOperations(date.year, monthApi, dayApi, 'expenses'));
+            console.log("код после отработки фетча расходы")
         }
         if (location.pathname === '/income') {
-            dispatch(fetchOperationIncome(2022, '01', 15));
-            // console.log("код после отработки фетча")
+            dispatch(fetchOperations(date.year, monthApi, dayApi, 'income'));
+            console.log("код после отработки фетча")
         }
     }, [dispatch, location.pathname, date]);
     
@@ -58,11 +59,12 @@ function OperationsPage() {
             <Container>
                 <Box>
                     {location.pathname === '/expenses' ?
-                        <Transaction /> :
+                        <Transaction type='expenses'/> :
                         <Transaction
                             isIncome={true}
                             categories={incomeCategories}
                             placeholder="Описание дохода"
+                            type='income'
                         />}
                     <Wrapper>
                         <OperationsWrapper>
