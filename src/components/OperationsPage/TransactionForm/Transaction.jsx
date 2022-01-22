@@ -24,6 +24,7 @@ import { selectStyles } from './selectStyles';
 import * as actions  from '../../../redux/transoperations/operations-action';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+import { NavLink } from 'react-router-dom';
 
 function Transaction({ categories, isIncome, placeholder, type }) {
   const selectedDate = useSelector(getSelectedDate);
@@ -205,8 +206,12 @@ function Transaction({ categories, isIncome, placeholder, type }) {
       </form>
       <div className={s.buttons}>
         <ButtonGroup color="secondary" variant="outlined" sx={buttonGroupStyles}>
-        <Button type="submit">Внести расход</Button>
-        <Button type="submit">Внести доход</Button>
+          <NavLink to="/expenses/input">
+            <Button type="submit">Внести расход</Button>
+        </NavLink>
+          <NavLink to="/income/input">
+            <Button type="submit">Внести доход</Button>
+          </NavLink>
       </ButtonGroup>
       </div>
     </div>
