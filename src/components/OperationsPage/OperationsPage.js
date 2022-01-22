@@ -3,7 +3,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch} from 'react-redux';
 
-import OperationsBar from './BalanceBar';
+import OperationsBar from './OperationsBar';
 import Transaction from './TransactionForm/Transaction';
 import OperationsList from './OperationsList/OperationsList';
 import Summary from './Summary';
@@ -53,7 +53,7 @@ function OperationsPage() {
     
     return (
         <div>
-            {/* <OperationsBar /> */}
+            {matches === true ? <OperationsBar /> : null}
             <Container>
                 <Box>
 
@@ -77,11 +77,13 @@ function OperationsPage() {
                             <OperationsList  />
                         </OperationsWrapper>
                         <Summary />
-                        <OperationsBar />
+                        
+                        
                     </Wrapper>
                      
                 </Box>
             </Container>
+            {matches === true ? null : <OperationsBar />}
         </div>
     );
 }

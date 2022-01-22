@@ -2,12 +2,12 @@ import React from 'react';
 import {Wrapper, Container, StyledLink} from './OperationsBar.styled';
 
 const OperationsBar = () => (
-    <div>
-        {/* <Container> */}
+    <Wrapper>
+        <Container>
             <StyledLink to="/expenses">Расход</StyledLink>
             <StyledLink to="/income">Доход</StyledLink>  
-        {/* </Container> */}
-    </div>
+        </Container>
+    </Wrapper>
 )
 
 export default OperationsBar;
