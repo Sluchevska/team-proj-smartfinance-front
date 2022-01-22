@@ -15,7 +15,7 @@ function OperationsList() {
     const operations = useSelector(getOperations);
     return (
         <SimpleBar
-            style={{ maxHeight: 320}}
+            style={{ maxHeight: 346}}
             
             autoHide={false}>
         <List>
