@@ -2,9 +2,12 @@ import styled from '@emotion/styled';
 import logo from "../../icons/kapustaLogoHPM.svg";
 import logoTab from "../../icons/kapustaLogoHPT.svg";
 import logoDesc from "../../icons/kapustaLogoHPD.svg";
-import mnogoKup from "../../icons/mnogoKapustHPD.png";
+import mnogoKup from "../../icons/mnogoKapDesk.svg";
+import mnogoKupMob from "../../icons/mnogoKapustMobile.svg";
 
 export const HeroContainer = styled.div`
+ padding-top: 104px;
+ padding-left: 271px;
 /* width: 183px;
 height: 63px;
 @media screen and (min-width: 768px) {
@@ -16,19 +19,34 @@ width: 377px;
 height: 139px;
   } */
 
-  padding-left: 49px;
- padding-top: 86px;
-  background-image: url(${mnogoKup});
-  background-repeat: no-repeat;
+  /* padding-left: 49px;
+ padding-top: 86px; */
+  /* background-image: url(${mnogoKup});
+  background-repeat: no-repeat; */
   @media screen and (min-width: 768px) {
     
-    padding-top: 90px;
-    padding-left: 171px;
+    padding-top: 28px;
+    padding-left: 10px;
   }
 @media screen and (min-width: 1280px) {
     
-    padding-top: 308px;
-    padding-left: 230px;
+    /* padding-top: 308px; */
+    /* padding-left: 230px; */
+  }
+`;
+export const HeroKapustaSvg = styled.svg`
+background-image: url(${mnogoKupMob});
+  background-repeat: no-repeat;
+ 
+
+@media screen and (min-width: 768px) {
+background-image: url(${mnogoKup});
+  background-repeat: repeat;
+  width: 100%;
+  height: 232px;
+}
+@media screen and (min-width: 1280px) {
+
   }
 `;
 
@@ -44,6 +62,7 @@ background-repeat: no-repeat;
     width: 306px;
     height: 77px;
     background-image: url(${logoTab});
+   
     /* margin-top: 90px;
     margin-left: 171px; */
   }
@@ -76,6 +95,25 @@ padding-left: 50px;
 }
 @media screen and (min-width: 1280px) {
 padding-left: 70px;
+  }
+`;
+
+export const HeroTitleContainer = styled.div`
+position: absolute;
+top: 142px;
+right: 88px;
+
+  @media screen and (min-width: 768px) {
+
+    
+    top:146px;
+    left:171px;
+  }
+ 
+@media screen and (min-width: 1280px) {
+    
+    padding-top: 48px;
+    padding-left: 230px;
   }
 `;
 
