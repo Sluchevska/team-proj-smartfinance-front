@@ -21,12 +21,14 @@ export const Container = styled.div`
     width: 320px;
 
     @media screen and (min-width: 768px) {
+      margin-top:58px;
       padding-left: 52px;
       padding-right: 52px;
       width: 768px;
     }
 
     @media screen and (min-width: 1280px) {
+      margin-top:9px;
       padding-left: 110px;
       padding-right: 110px;
       width: 1280px;

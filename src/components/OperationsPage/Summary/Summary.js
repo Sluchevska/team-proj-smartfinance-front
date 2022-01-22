@@ -13,21 +13,6 @@ import {
     ListItem
 } from './Summary.styled';
 
-const months = {
-    '01' : 'январь',
-    '02' : 'февраль',
-    '03' : 'март',
-    '04' : 'апрель',
-    '05' : 'май',
-    '06' : 'июнь',
-    '07' : 'июль',
-    '08' : 'август',
-    '09' : 'сентябрь',
-    '10' : 'октябрь',
-    '11' : 'ноябрь',
-    '12' : 'декабрь'
-}
-
 function Summary() {
     const dispatch = useDispatch();
     const location = useLocation();
@@ -46,8 +31,6 @@ function Summary() {
             dispatch(fetchSummary('income'));
         }
     }, [dispatch, location.pathname, operations]);
-    
-
     
     if (matches === true) {
         return (
