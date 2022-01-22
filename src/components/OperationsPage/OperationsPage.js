@@ -9,9 +9,8 @@ import OperationsList from './OperationsList/OperationsList';
 import Summary from './Summary';
 
 import incomeCategories from './TransactionForm/incomeCategories.json'
-import data from '../../data/summary.json';
 import { fetchOperations } from '../../redux/transoperations/operations-operations';
-import { fetchSummary } from '../../redux/summary/summary-operations';
+//import { fetchSummary } from '../../redux/summary/summary-operations';
 import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
 
 import {
