@@ -13,15 +13,7 @@ import {  BottomContainer, BottomKapusta, Container, HomeContainer } from './Mai
 import LogIn from '../../components/LogIn/LogIn'
 import Login from '../../routs/Home';
 export default function HomeView({ location }) {
-    // const { refreshToken, token } = queryString.parse(location);
-    // const dispatch = useDispatch();
-    
-  //   useEffect(() => {
-  //   if (token) {
-  //     dispatch(authSelectors.loginGoogleSuccess(token));
-  //     dispatch(authSelectors.refreshLoginGoogleSuccess(refreshToken));
-  //   }
-  // }, [dispatch, refreshToken, token]);
+  
 
   const [login, setLogin] = useState(true);
   const onRegisterClick = () => {

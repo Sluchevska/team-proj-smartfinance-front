@@ -43,7 +43,7 @@ export const BottomKapusta = styled.div`
   position: absolute;
     width: 83px;
     height: 89px;
-    top: 525px;
+    top: 560px;
     left: 35px;
    
     background-image: url(${oneKap});
@@ -52,7 +52,7 @@ export const BottomKapusta = styled.div`
     z-index: 3;
     width: 183px;
     height: 142px;
-    top: 56%;
+    top: 580px;
     left: 13%;
     background-image: url(${twoKap});
     }
@@ -61,7 +61,7 @@ export const BottomKapusta = styled.div`
       width: 183px;
     height: 142px;
     left: 230px;
-    top: 76px;  
+    top: 157px;  
     }
 `;
 
