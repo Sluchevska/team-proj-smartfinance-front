@@ -140,7 +140,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
           onChange={handleChange}
           placeholder={placeholder}
         />
-        <FormControl>
+          <FormControl >
           <InputLabel sx={{ fontSize: '12px' }}>Категория</InputLabel>
           <Select
             sx={
@@ -151,6 +151,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
                     borderRadius: '0 0 16px 0',
                     border: '2px solid #FFF',
                     fontSize: '12px',
+                    
                   }
                 : isTablet
                 ? {
