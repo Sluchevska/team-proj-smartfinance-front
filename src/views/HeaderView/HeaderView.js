@@ -12,7 +12,7 @@ export default function HeaderView() {
 
   return (
     <ContainerHeader>
-      <Logo />
+      <Logo href='/' alt='logo' />
 
       {isLoggedIn && <UserNav />}
     </ContainerHeader>
