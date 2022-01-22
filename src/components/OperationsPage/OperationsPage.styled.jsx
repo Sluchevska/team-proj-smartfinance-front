@@ -51,6 +51,7 @@ export const Wrapper = styled.div`
     /* padding-left: 20px;
     padding-right: 20px; */
     padding-bottom:12px;
+
     /* width: 320px; */
     //border-bottom: solid 1px #F5F6FB;
   
@@ -58,8 +59,9 @@ export const Wrapper = styled.div`
     margin-left: 30px;
     margin-right: 30px;
     padding:0;
+    min-height:384px;
     /* padding-top:100px; */
-    width: 665px;
+    //width: 665px;
     border-bottom: none;
   }
 

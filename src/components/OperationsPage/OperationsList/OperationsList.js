@@ -14,7 +14,10 @@ import 'simplebar/dist/simplebar.min.css';
 function OperationsList() {
     const operations = useSelector(getOperations);
     return (
-        <SimpleBar style={{ maxHeight: 200 }}>
+        <SimpleBar
+            style={{ maxHeight: 346}}
+            
+            autoHide={false}>
         <List>
             {operations.map((operations)=> (
                 <ListItem key={operations._id}  >
@@ -22,7 +25,7 @@ function OperationsList() {
                 </ListItem>
             ))}
         </List>
-        </SimpleBar>
+       </SimpleBar>
     )
 }
 

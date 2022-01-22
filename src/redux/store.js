@@ -14,7 +14,7 @@ import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth';
 import operationsReducer from './transactions-month/transaction-reducers';
 // import { transactionsReducer } from './transaction';
-//import { summaryReducer } from './summary';
+import { summaryReducer } from './summary';
 import balanceReducer from './balance/balance-reducer';
 import { transOperationsReducer } from './transoperations';
 
@@ -33,7 +33,7 @@ export const store = configureStore({
     transOperations: transOperationsReducer,
     // transactions: transactionsReducer,
 
-    //summary: summaryReducer,
+    summary: summaryReducer,
 
     balance: balanceReducer,
   },
