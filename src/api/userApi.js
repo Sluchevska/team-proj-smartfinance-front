@@ -17,15 +17,15 @@ export async function fetchSignUp(credentials) {
        return data;
 }
 
-export async function fetchGoogleAuth() {
-  const { data } = await axios.get(`/auth/google`);
-  return data;
-}
+// export async function fetchGoogleAuth() {
+//   const { data } = await axios.get(`/api/users/google`);
+//   return data;
+// }
 
-export async function fetchGoogleRedirect() {
-  const { data } = await axios.get(`/auth/google-redirect`);
-  return data;
-}
+// export async function fetchGoogleRedirect() {
+//   const { data } = await axios.get(`/api/users/google-redirect`);
+//   return data;
+// }
 
 export async function fetchLogIn(credentials) {
     const data = await axios.post(`/api/users/login`, credentials);
