@@ -7,9 +7,11 @@ const SwitchMonthArrow = ({month, year, onHandleClickLeft, onHandleClickRight}) 
     <Container>
         <Title>Текущий период:</Title>
         <IconContainer>
+ 
         <IconLeft onClick={onHandleClickLeft}></IconLeft>
         <Month>{currentMonth.name} {year}</Month>
         <IconRigth onClick={onHandleClickRight}></IconRigth>
+       
         </IconContainer>
 
     </Container>

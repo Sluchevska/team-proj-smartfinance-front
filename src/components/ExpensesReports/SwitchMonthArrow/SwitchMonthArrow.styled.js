@@ -6,7 +6,15 @@ import arrowL from '../../../icons/arrow-left.svg'
 
 export const Container = styled.div`
 display: grid;
-justify-content: end;`
+justify-content: end;
+margin: 20px;
+
+// @media (min-width: 320px) {
+//     display: block;
+//     margin-right: auto;
+//     margin-left: auto;
+//   }
+`
 
 export const Title = styled.p`
 margin: 40px 20px 10px;
@@ -19,7 +27,7 @@ color: rgba(82, 85, 95, 0.7);`
 
 export const Month = styled.p`
 margin: 0;
-padding-left: 26px;
+padding: 0 20px;
 font-weight: bold;
 font-size: 14px;
 line-height: 16px;
@@ -28,45 +36,32 @@ text-transform: uppercase;
 color: #000000;`
 
 export const IconContainer = styled.div`
-position: relative;
-display:flex;
+display: flex;
+justify-content: center;
+align-items: center;
+
 `
 
 export const IconLeft = styled.svg`
-position: absolute;
-top: -4px;
-right: 130px;
-display: flex;
-align-items: center;
-justify-content: center;
 width: 15px;
-height: 25px;
+height: 20px;
 padding: 0;
 margin: 0;
 border: none;
 background-color: transparent;
+cursor: pointer; 
 outline: none;
 background-image: url(${arrowL});
 background-position: center;
 background-size: 60%;
 background-repeat: no-repeat;
-
-&:hover{
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
 `
 
 
 
 export const IconRigth = styled.svg`
-position: absolute;
-top: -4px;
-right: 5px;
-display: flex;
-align-items: center;
-justify-content: center;
 width: 15px;
-height: 25px;
+height: 20px;
 padding: 0;
 margin: 0;
 border: none;
@@ -77,7 +72,4 @@ background-image: url(${arrowR});
 background-position: center;
 background-size: 60%;
 background-repeat: no-repeat;
-&:hover{
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
 `
