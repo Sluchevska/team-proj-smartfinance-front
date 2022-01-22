@@ -4,11 +4,11 @@ import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch} from 'react-redux';
 
 import OperationsBar from './BalanceBar';
-import Transaction from '../TransactionForm/Transaction';
+import Transaction from './TransactionForm/Transaction';
 import OperationsList from './OperationsList/OperationsList';
 import Summary from './Summary';
 
-import incomeCategories from '../TransactionForm/incomeCategories.json'
+import incomeCategories from './TransactionForm/incomeCategories.json'
 import data from '../../data/summary.json';
 import { fetchOperations } from '../../redux/transoperations/operations-operations';
 import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
