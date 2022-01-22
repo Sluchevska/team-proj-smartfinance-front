@@ -19,9 +19,12 @@ function Summary() {
     const operations = useSelector(getOperations);
     const data = useSelector(getOperationsByMonth);
     const matches = useMediaQuery('(min-width:768px)');
-    const monthToLongName = () => new Date().toLocaleString('ru', {       
-        month: 'long'       
-    });
+    function monthToName(data) {
+        const monthName = new Date(data).toLocaleString('ru', {
+            month: 'long'
+        });
+        return monthName;
+    }
 
     useEffect(() => {
         if (location.pathname === '/expenses') {
@@ -39,9 +42,9 @@ function Summary() {
                 <List>
                     {data.map((data)=> (
                     <ListItem key={data.month}  >
-                        <p>{monthToLongName(data.month)}</p>
+                        <p>{monthToName(data.month)}</p>
                         <p>{data.total}</p>
-                        </ListItem>
+                    </ListItem>
                     ))}
                 </List>
             </Wrapper>

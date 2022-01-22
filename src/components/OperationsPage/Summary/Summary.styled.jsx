@@ -54,6 +54,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   display:flex;
   justify-content:space-between;
+  align-items:center;
   border-bottom: solid 1px #FFFFFF;
   text-transform:uppercase;
 
