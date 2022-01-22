@@ -14,14 +14,14 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import DatePicker from 'react-datepicker';
 import { buttonGroupStyles } from './buttonStyles';
-import calc from '../../../icons/calculator.svg';
-import calendar from '../../../icons/calendar.svg';
+import calc from '../../icons/calculator.svg';
+import calendar from '../../icons/calendar.svg';
 import expenseCategories from './expenseCategories.json';
-import { addOperation } from '../../../redux/transoperations/operations-operations';
-import { getSelectedDate } from '../../../redux/transoperations/operations-selectors';
-import s from './Transaction.module.css';
+import { addOperation } from '../../redux/transoperations/operations-operations';
+import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
+import s from '../InputMobile/InputMobile.module.css';
 import { selectStyles } from './selectStyles';
-import * as actions  from '../../../redux/transoperations/operations-action';
+import * as actions  from '../../redux/transoperations/operations-action';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
