@@ -53,9 +53,10 @@ function OperationsPage() {
     
     return (
         <div>
-            <OperationsBar />
+            {/* <OperationsBar /> */}
             <Container>
                 <Box>
+
                     {location.pathname === '/expenses' ?
                         <Transaction type='expenses'/> :
                         <Transaction
@@ -64,6 +65,7 @@ function OperationsPage() {
                             placeholder="Описание дохода"
                             type='income'
                         />}
+                    
                     <Wrapper>
                         <OperationsWrapper>
                             {matches === true ? <Header>
@@ -75,7 +77,9 @@ function OperationsPage() {
                             <OperationsList  />
                         </OperationsWrapper>
                         <Summary />
+                        <OperationsBar />
                     </Wrapper>
+                     
                 </Box>
             </Container>
         </div>

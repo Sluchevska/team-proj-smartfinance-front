@@ -45,7 +45,10 @@ function Summary() {
         if (location.pathname === '/income') {
             dispatch(fetchSummary('income'));
         }
-    }, [dispatch,location.pathname, operations]);
+    }, [dispatch, location.pathname, operations]);
+    
+
+    
     if (matches === true) {
         return (
             <Wrapper>

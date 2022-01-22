@@ -25,7 +25,7 @@ export const Container = styled.div`
   `
 export const Box = styled.div`
     
-    padding-top:50px;
+    //padding-top:50px;
   @media screen and (min-width: 768px) {
     width:665px;
     height:626px;
