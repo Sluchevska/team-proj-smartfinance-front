@@ -10,7 +10,6 @@ import {
 
 function OperationsList() {
     const operations = useSelector(getOperations);
-    // console.log("какие операции заходят в отрисовку",operations)
     return(
         <List>
             {operations.map((operations)=> (
@@ -23,9 +22,9 @@ function OperationsList() {
 }
 
 OperationsList.propTypes = {
-    contacts: PropTypes.arrayOf(
+    operations: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string.isRequired,
+            _id: PropTypes.string.isRequired,
         })
     ),
 };
