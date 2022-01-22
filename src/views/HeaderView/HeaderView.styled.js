@@ -1,46 +1,45 @@
-import styled from "@emotion/styled";
-import logout from "../../icons/logout.svg";
-import logo from "../../icons/logoHPD.svg";
+import styled from '@emotion/styled';
+import logout from '../../icons/logout.svg';
+import logo from '../../icons/logoHPD.svg';
 
 export const ContainerHeader = styled.header`
-/* position: fixed; */
+  /* position: fixed; */
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;  
-  background-color: #FFFFFF;
+  justify-content: space-between;
+  background-color: #ffffff;
   height: 56px;
-  /* margin: 0 auto; */
-  padding: 0 19px;
-  @media screen and (min-width: 768px) { 
-     padding: 0 26px;
-   }
-  @media screen and (max-width: 767px){
-  position: absolute;
-  top: 0;
+   padding: 0 19px;
+  @media screen and (min-width: 768px) {
+    padding: 0 26px;
+  }
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    top: 0;
   }
 `;
 
-export const Logo = styled.a`
-    background-image: url(${logo});
-    width: 90px;
-    height: 31px;
-    background-repeat: no-repeat;  
+export const Logo = styled.svg`
+  background-image: url(${logo});
+  width: 90px;
+  height: 31px;
+  background-repeat: no-repeat;
 `;
 
 export const UserInfo = styled.div`
- display: flex;
- align-items: center;
- justify-content: space-between;
-@media screen and  (min-width: 768px) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (min-width: 768px) {
     width: 212px;
-}
-`; 
+  }
+`;
 export const AvatarUser = styled.div`
   display: flex;
   width: 32px;
   height: 32px;
-  background-color: #F5F6FA;
+  background-color: #f5f6fa;
   border-radius: 50%;
   margin-right: 12px;
   overflow: hidden;
@@ -48,65 +47,61 @@ export const AvatarUser = styled.div`
 
 export const AvatarTxt = styled.div`
   margin: auto;
-  `;
-
-
-export const UserName = styled.p`
-/* display: none; */
-@media screen and  (min-width: 768px) {
-  display: flex;
-  color:  #52555F;
-  cursor: pointer;
-}
 `;
 
+export const UserName = styled.p`
+  color: #52555f;
+  cursor: pointer;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+`;
 
 export const Button = styled.button`
   display: flex;
   background: transparent;
   border: none;
-  
-   &:hover, &:active {
-   
+
+  &:hover,
+  &:active {
     cursor: pointer;
   }
-  
 `;
 export const LogoutP = styled.p`
   display: none;
-  @media screen and  (min-width: 768px) {
-   display: flex;
-     /* justify-content: space-between; */
-   color:  #52555F;
- 
-   &:hover {
-    text-decoration: underline;
-    cursor: pointer;
-    
-    color: #ff751d;
- 
-  }
-  }
-`; 
+  @media screen and (min-width: 768px) {
+    display: flex;
+    /* justify-content: space-between; */
+    color: #52555f;
 
-export const  LogoutSvg = styled.img`
-/* background-image: url(${logout}); */
-width: 16px;
-height: 16px;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
 
-@media screen and  (min-width: 767px) {
-display: none;
-}
+      color: #ff751d;
+    }
+  }
+`;
+
+export const LogoutSvg = styled.img`
+  /* background-image: url(${logout}); */
+  width: 16px;
+  height: 16px;
+
+  @media screen and (min-width: 767px) {
+    display: none;
+  }
 `;
 
 export const Line = styled.div`
-@media screen and (max-width: 320px) {
+  @media screen and (max-width: 320px) {
     display: none;
   }
   @media screen and (min-width: 768px) {
-    width: 0px; 
-    height: 36px; 
-    float: left;   
-    border: 1px solid #E0E5EB;
-    }
+    width: 0px;
+    height: 36px;
+    float: left;
+    border: 1px solid #e0e5eb;
+  }
 `;

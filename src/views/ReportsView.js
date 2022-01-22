@@ -5,6 +5,7 @@ import {transactionsSelectors, transactionsOperations} from '../redux/transactio
 import Reports from '../components/Reports';
 import Charts from '../components/Charts';
 import ReturnHome from '../components/ReturnHome/ReturnHome.jsx'
+import Balance from '../components/Balance/Balance.jsx';
 import SwitchMonthArrow from '../components/ExpensesReports/SwitchMonthArrow/SwitchMonthArrow';
 import TotalExpence from '../components/ExpensesReports/TotalExpense/TotalExpense';
 
@@ -51,15 +52,19 @@ export default function ReportsView() {
       
       };
     return (
-        <div>
-            <ReturnHome />
+
+      
+        <>
+        <ReturnHome />
+        <Balance/>
+
             <SwitchMonthArrow  year={year}
                 month={month} onHandleClickLeft={onHandleClickLeft}
                 onHandleClickRight={onHandleClickRight}/>
                 <TotalExpence />
                 <Reports />
                 <Charts/>
-                </div>
+            </> 
     )
 }
     

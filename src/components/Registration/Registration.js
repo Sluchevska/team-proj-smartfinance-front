@@ -81,7 +81,7 @@ export default function Registration({ onClickComeBack }) {
     }
     clearInput()
     dispatch(register({ name, email, password }));
- 
+    
     
   };
 

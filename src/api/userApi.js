@@ -14,8 +14,17 @@ export const token = {
 
 export async function fetchSignUp(credentials) {
        const data = await axios.post(`/api/users/register`, credentials);
-    console.log(data)
-    return data;
+       return data;
+}
+
+export async function fetchGoogleAuth() {
+  const { data } = await axios.get(`/auth/google`);
+  return data;
+}
+
+export async function fetchGoogleRedirect() {
+  const { data } = await axios.get(`/auth/google-redirect`);
+  return data;
 }
 
 export async function fetchLogIn(credentials) {
@@ -40,10 +49,7 @@ export async function fetchUploadAvatar() {
     return data;
 }
 
-export async function fetchRefreshToken() {
-  const data = await axios.get('/api/users/refreshtoken')
-  return data
-}
+
 
 
 export async function fetchMonthReports({month, year}){
