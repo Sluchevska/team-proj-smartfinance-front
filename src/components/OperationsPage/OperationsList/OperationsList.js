@@ -8,9 +8,13 @@ import {
     ListItem
 } from './OperationsList.styled';
 
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
+
 function OperationsList() {
     const operations = useSelector(getOperations);
-    return(
+    return (
+        <SimpleBar style={{ maxHeight: 200 }}>
         <List>
             {operations.map((operations)=> (
                 <ListItem key={operations._id}  >
@@ -18,6 +22,7 @@ function OperationsList() {
                 </ListItem>
             ))}
         </List>
+        </SimpleBar>
     )
 }
 
