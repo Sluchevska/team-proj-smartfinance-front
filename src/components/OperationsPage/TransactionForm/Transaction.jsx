@@ -32,7 +32,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
   );
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
-  const [sum, setSum] = useState(0);
+  const [sum, setSum] = useState([]);
   const dispatch = useDispatch();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('tablet'));
@@ -101,7 +101,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
     setDate(new Date());
     setDescription('');
     setCategory('');
-    setSum(0);
+    setSum([]);
   };
 
   const handleChangeDate = data => {
@@ -187,7 +187,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
             name="sum"
             value={sum}
             onChange={handleChange}
-            placeholder="0,00"
+            placeholder="0.00"
             pattern="^\d{1,3}(\s\d{3})*(\.\d+)?$"
             required
           />
