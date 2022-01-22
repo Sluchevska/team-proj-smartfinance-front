@@ -59,7 +59,7 @@ export const Wrapper = styled.div`
     margin-right: 30px;
     padding:0;
     /* padding-top:100px; */
-    width: 665px;
+    //width: 665px;
     border-bottom: none;
   }
 

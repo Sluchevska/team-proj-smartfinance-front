@@ -15,7 +15,7 @@ function OperationsList() {
     const operations = useSelector(getOperations);
     return (
         <SimpleBar
-            style={{ maxHeight: 200}}
+            style={{ maxHeight: 320}}
             
             autoHide={false}>
         <List>
@@ -25,7 +25,7 @@ function OperationsList() {
                 </ListItem>
             ))}
         </List>
-        </SimpleBar>
+       </SimpleBar>
     )
 }
 
