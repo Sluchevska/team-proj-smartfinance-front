@@ -1,15 +1,30 @@
 import {Container, ContainerMain,Expense, Income, Title } from "./TotalExpense.styled";
 
-const TotalExpence = ()=> {
+const TotalExpence = ({totalExpense})=> {
+   console.log("totalExpense", totalExpense) 
+
+const income = totalExpense.find(item => {
+    if(item.type === "income"){
+        return item;
+    }
+})
+
+const expenses = totalExpense.find(item => {
+    if (item.type === "expenses") {
+        return item;
+    }
+})
+
+
 return (
     <Container>
         <ContainerMain>
             <Title>Расходы:</Title>
-            <Income> - 1200 грн</Income>
+            <Income> - {income.total}грн</Income>
         </ContainerMain>
         <ContainerMain>
             <Title>Доходы:</Title>
-            <Expense> + 400 грн</Expense>
+            <Expense> + {expenses.total} грн</Expense>
         </ContainerMain>
     </Container>
 )
