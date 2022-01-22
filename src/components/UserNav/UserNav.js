@@ -2,13 +2,9 @@ import React, { useState } from 'react';
 import defaultAvatar from '../../icons/avatarDef.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { logOut } from '../../redux/auth/auth-operations.js';
-import logoutSvg from "../../icons/logout.svg";
+import logoutSvg from '../../icons/logout.svg';
+import { getUserName } from '../../redux/auth/auth-selectors.js';
 import {
-  getIsAuthenticated,
-  getUserName,
-} from '../../redux/auth/auth-selectors.js';
-import {
-  ContainerHeader,
   UserInfo,
   UserName,
   Button,
@@ -16,14 +12,12 @@ import {
   AvatarUser,
   Line,
   LogoutSvg,
-  Logo,
 } from '../../views/HeaderView/HeaderView.styled.js';
 
 import Modal from '../Modal/Modal.jsx';
 
 export default function UserNav() {
-
-  const name = useSelector(getUserName) || '';
+  const userName = useSelector(getUserName) || '';
   const dispatch = useDispatch();
 
   const toggleModal = () => {
@@ -38,39 +32,28 @@ export default function UserNav() {
   const [setModalOpen, setShowModal] = useState(false);
 
   return (
-    
-    
-   
-        <UserInfo>
-          <AvatarUser>
-            <img src={defaultAvatar} alt="Default Avatar" width="32" />
-          </AvatarUser>
-          <UserName>{name}</UserName>
-          <Line> </Line>
+    <UserInfo>
+      <AvatarUser>
+        <img src={defaultAvatar} alt="Default Avatar" width="32" />
+      </AvatarUser>
+      <UserName>{userName}</UserName>
+      <Line> </Line>
 
       <Button type="button" onClick={() => toggleModal()}>
-            <LogoutSvg src={logoutSvg} alt='exit logo'/>
+        <LogoutSvg src={logoutSvg} alt="exit logo" />
         <LogoutP>Выйти</LogoutP>
-    
-        
       </Button>
-      
-          {/* <Button type="button" onClick={() => toggleModal()}>
-            <LogoutSvg />
-         </Button> */}
 
-          {setModalOpen && (
-            <Modal
-              modalTitle="Вы действительно хотите выйти?"
-              modalButtonleft="Да"
-              modalButtonRight=" Нет"
-              handleClickLeft={logoutModal}
-              handleClickRight={toggleModal}
-              onClose={toggleModal}
-            />
-          )}
-        </UserInfo>
-   
-
+      {setModalOpen && (
+        <Modal
+          modalTitle="Вы действительно хотите выйти?"
+          modalButtonleft="Да"
+          modalButtonRight=" Нет"
+          handleClickLeft={logoutModal}
+          handleClickRight={toggleModal}
+          onClose={toggleModal}
+        />
+      )}
+    </UserInfo>
   );
 }

@@ -1,0 +1,106 @@
+[
+  {
+    "id": "id-1",
+    "date": "15.01.21",
+    "description": "Метро",
+    "category": "Транспорт",
+    "type": "expenses",
+    "sum": 100
+  },
+  {
+    "id": "id-2",
+    "date": "15.01.21",
+    "description": "Мясо",
+    "category": "Продукты",
+    "type": "expenses",
+    "sum": 1000
+  },
+  {
+    "id": "id-3",
+    "date": "15.01.21",
+    "description": "Вино",
+    "category": "Алкоголь",
+    "type": "expenses",
+    "sum": 500
+  },
+  {
+    "id": "id-4",
+    "date": "15.01.21",
+    "description": "Кино",
+    "category": "Развлечения",
+    "type": "expenses",
+    "sum": 10000
+  },
+  {
+    "id": "id-5",
+    "date": "15.01.21",
+    "description": "Метро",
+    "category": "Транспорт",
+    "type": "expenses",
+    "sum": 350
+  },
+  {
+    "id": "id-6",
+    "date": "15.01.21",
+    "description": "Машина",
+    "category": "Транспорт",
+    "type": "expenses",
+    "sum": 1150
+  },
+  {
+    "id": "id-7",
+    "date": "15.01.21",
+    "description": "Машина",
+    "category": "Транспорт",
+    "type": "expenses",
+    "sum": 1920
+  },
+  {
+    "id": "id-8",
+    "date": "15.01.21",
+    "description": "Поезд",
+    "category": "Транспорт",
+    "type": "expenses",
+    "sum": 1000
+  },
+  {
+    "id": "id-9",
+    "date": "15.01.21",
+    "description": "Такси",
+    "category": "Транспорт",
+    "type": "expenses",
+    "sum": 100
+  },
+  {
+    "id": "id-10",
+    "date": "15.01.21",
+    "description": "Такси",
+    "category": "Транспорт",
+    "type": "expenses",
+    "sum": 100
+  },
+  {
+    "id": "id-1",
+    "date": "15.01.21",
+    "description": "ЗП",
+    "category": "ЗП",
+    "type": "income",
+    "sum": 20000
+  },
+  {
+    "id": "id-2",
+    "date": "15.01.21",
+    "description": "% по депозиту",
+    "category": "Доп. доход",
+    "type": "income",
+    "sum": 1000
+  },
+  {
+    "id": "id-3",
+    "date": "15.01.21",
+    "description": "Премия",
+    "category": "Доп. доход",
+    "type": "income",
+    "sum": 1000
+  }
+]
