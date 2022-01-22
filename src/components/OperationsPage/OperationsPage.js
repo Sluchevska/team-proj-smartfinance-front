@@ -10,7 +10,7 @@ import Summary from './Summary';
 
 import incomeCategories from '../TransactionForm/incomeCategories.json'
 import data from '../../data/summary.json';
-import { fetchOperationExpenses, fetchOperationIncome } from '../../redux/transaction/transactions-operations';
+import { fetchOperations } from '../../redux/transoperations/operations-operations';
 import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
 
 import {
@@ -44,12 +44,11 @@ function OperationsPage() {
     useEffect(() => {
         console.log("загрузка при первом входе на страницу")
         if (location.pathname === '/expenses') {
-            console.log(date.year);
-            dispatch(fetchOperationExpenses(date.year, monthApi, dayApi));
+            dispatch(fetchOperations(date.year, monthApi, dayApi, 'expenses'));
             console.log("код после отработки фетча расходы")
         }
         if (location.pathname === '/income') {
-            dispatch(fetchOperationIncome(date.year, monthApi, dayApi));
+            dispatch(fetchOperations(date.year, monthApi, dayApi, 'income'));
             console.log("код после отработки фетча")
         }
     }, [dispatch, location.pathname, date]);

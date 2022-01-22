@@ -21,7 +21,7 @@ import { addOperation } from '../../redux/transoperations/operations-operations'
 import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
 import s from './Transaction.module.css';
 import { selectStyles } from './selectStyles';
-import * as actions  from '../../redux/transaction/transactions-actions.js';
+import * as actions  from '../../redux/transoperations/operations-action';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
@@ -58,8 +58,6 @@ function Transaction({ categories, isIncome, placeholder, type }) {
     }
   };
 
-  
-  
   const handleSubmit = e => {
     e.preventDefault();
     const year = date.getFullYear();
