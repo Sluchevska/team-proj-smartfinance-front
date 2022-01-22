@@ -56,7 +56,7 @@ function OperationsPage() {
             {matches === true ? <OperationsBar /> : null}
             <Container>
                 <Box>
-
+                    
                     {location.pathname === '/expenses' ?
                         <Transaction type='expenses'/> :
                         <Transaction
@@ -77,8 +77,6 @@ function OperationsPage() {
                             <OperationsList  />
                         </OperationsWrapper>
                         <Summary />
-                        
-                        
                     </Wrapper>
                      
                 </Box>

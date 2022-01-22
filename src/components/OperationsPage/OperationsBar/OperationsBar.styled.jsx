@@ -1,17 +1,17 @@
 import styled from '@emotion/styled'
 import { NavLink } from 'react-router-dom'
 
-export const Wrapper = styled.div`
+// export const Wrapper = styled.div`
     
 
-    @media screen and (max-width: 767px) {
-     display:absolute;
-     top:100;
-     left:0;
-    }
+//     @media screen and (max-width: 767px) {
+//      display:absolute;
+//      top:100;
+//      left:0;
+//     }
 
    
-    `
+//     `
 
 export const Container = styled.div`
     display:flex;
@@ -61,11 +61,11 @@ export const StyledLink = styled(NavLink)`
     height:40px;
 
     border-radius: 20px 20px 0px 0px;
-   
-    &.active {
-    color: #FF751D;
-    background-color: #F5F6FB;
-      }
+    background-color: #FAFBFD;
+      &.active {
+      color: #FF751D;
+      background-color: #FEFEFE;
+        }
   }
   `
   

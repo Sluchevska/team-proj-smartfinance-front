@@ -29,7 +29,7 @@ export const Box = styled.div`
   @media screen and (min-width: 768px) {
     width:665px;
     height:626px;
-    background-color: #dfdbdb;
+    background-color: #FFFFFF;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 0px 30px 30px 30px;
     }
