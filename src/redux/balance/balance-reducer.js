@@ -7,9 +7,7 @@ import {
   logoutSuccess,
 } from '../auth/auth-actions';
 
-import balanceTypes from './balance-types';
-
-const initialBalance = { initBalance: 0 };
+const initialBalance = { initBalance: null };
 
 // const balanceReducer = createReducer(initialBalance, {
 //   [actions.setBalanceSuccess]: (state, { payload }) => {
@@ -29,8 +27,7 @@ const initialBalance = { initBalance: 0 };
 
 const balanceReducer = (state = initialBalance, { type, payload }) => {
   switch (type) {
-    case balanceTypes.SET:
-      console.log(payload.sum);
+    case 'balance/set':
       return { initBalance: payload.sum };
 
     default:
