@@ -42,6 +42,8 @@ display: flex;
 
 export const HolderStyle = styled.div`
  display: flex;
+ align-content: center;
+ align-items: center;
 
 @media screen and (min-width: 768px) {
    

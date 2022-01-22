@@ -3,7 +3,7 @@ import cross from '../../icons/close.svg'
 
 
 export const ModalOverlay = styled.div`
- z-index: 5;
+ z-index: 15;
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;

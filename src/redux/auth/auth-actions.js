@@ -13,9 +13,6 @@ const logoutRequest = createAction('auth/logoutRequest');
 const logoutSuccess = createAction('auth/logoutSuccess');
 const logoutError = createAction('auth/logoutError');
 
-const uploadAvatarRequest = createAction('auth/uploadAvatarRequest');
-const uploadAvatarSuccess = createAction('auth/uploadAvatarSuccess');
-const uploadAvatarError = createAction('auth/uploadAvatarError');
 
 const getCurrentUserRequest = createAction('auth/getCurrentUserRequest');
 const getCurrentUserSuccess = createAction('auth/getCurrentUserSuccess');
@@ -23,23 +20,23 @@ const getCurrentUserError = createAction('auth/getCurrentUserError');
 
 
 
+
 export {
   registerRequest,
   registerSuccess,
   registerError,
+
   logoutRequest,
   logoutSuccess,
   logoutError,
-  uploadAvatarRequest,
-  uploadAvatarSuccess,
-  uploadAvatarError,
-  loginRequest,
+   loginRequest,
   loginSuccess,
   loginError,
   
   getCurrentUserRequest,
   getCurrentUserSuccess,
   getCurrentUserError,
+  
   
   
 };
