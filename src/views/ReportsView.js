@@ -6,23 +6,31 @@ import Reports from '../components/Reports';
 import Charts from '../components/Charts';
 import ReturnHome from '../components/ReturnHome/ReturnHome.jsx'
 import SwitchMonthArrow from '../components/ExpensesReports/SwitchMonthArrow/SwitchMonthArrow';
+import TotalExpence from '../components/ExpensesReports/TotalExpense/TotalExpense';
+
 
 export default function ReportsView() {
-    const dispatch = useDispatch();
-
-    const { year: selectedYear, month: selectedMonth } = useSelector(
-        transactionsSelectors.getSelectedDate, shallowEqual
-      );
-
+  const dispatch = useDispatch();
+  
+  const { year: selectedYear, month: selectedMonth } = useSelector(
+    transactionsSelectors.getSelectedDate, shallowEqual
+    );
+    
+    
+  
     const [month, setMonth] = useState(selectedMonth);
     const [year, setYear] = useState(selectedYear);
-
-
+    
+    
     useEffect(() => {
-        dispatch(
-          transactionsOperations.fetchAllTransactionsByMonth({ month, year }),
+      dispatch(
+        transactionsOperations.fetchAllTransactionsByMonth({ month, year }),
         );
       }, [dispatch, month, year]);
+      
+      // const totalExpense = useSelector(transactionsSelectors.getTotalExpense);
+      // console.log("totalExpense", totalExpense)
+  
   
     const onHandleClickRight = () => {
         if (month < 12) {
@@ -43,14 +51,15 @@ export default function ReportsView() {
       
       };
     return (
-        <>
+        <div>
             <ReturnHome />
             <SwitchMonthArrow  year={year}
                 month={month} onHandleClickLeft={onHandleClickLeft}
                 onHandleClickRight={onHandleClickRight}/>
+                <TotalExpence />
                 <Reports />
                 <Charts/>
-                </>
+                </div>
     )
 }
     

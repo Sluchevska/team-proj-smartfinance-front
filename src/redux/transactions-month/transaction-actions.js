@@ -9,4 +9,6 @@ export const operationsRequest = createAction('operations/Request');
 export const operationsSuccess = createAction('operations/Success');
 export const operationsError = createAction('operations/Error');
 
+
+// export const totalExpense = createAction('operation/totalExpense')
 //произвольный путь
