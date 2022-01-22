@@ -203,6 +203,12 @@ function Transaction({ categories, isIncome, placeholder, type }) {
         </Button>
       </ButtonGroup>
       </form>
+      <div className={s.buttons}>
+        <ButtonGroup color="secondary" variant="outlined" sx={buttonGroupStyles}>
+        <Button type="submit">Внести расход</Button>
+        <Button type="submit">Внести доход</Button>
+      </ButtonGroup>
+      </div>
     </div>
   );
 }

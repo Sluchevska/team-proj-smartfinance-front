@@ -101,6 +101,11 @@
     border: 2px solid #f5f6fb;
     border-radius: 0px 16px 16px 0px;
   }
+   .buttons {
+    display: none;
+  }
+
+
 }
 
 @media screen and (min-width: 1280px) {
@@ -114,12 +119,20 @@
     margin-bottom: 0;
     margin-right: 25px;
   }
+
+  .buttons {
+    display: none;
+  }
 }
 
 
 @media screen and (max-width: 768px) {
 .form {
   display: none;
+}
+
+.buttons {
+  margin-top: 100px;
 }
 }
   
