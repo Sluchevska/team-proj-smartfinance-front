@@ -12,8 +12,8 @@ export const fetchSummary = (operationsType) => async dispatch => {
     dispatch(fetchSummaryRequest());
 
     try {
-        const { data } = await axios.get(`api/operations?${operationsType}`);
-        dispatch(fetchSummarySuccess(data));
+        const { data } = await axios.get(`api/operations/bymonth?${operationsType}`);
+        dispatch(fetchSummarySuccess(data.MonthlyData));
         console.log("summary", data)
     } catch (error) {
             dispatch(fetchSummaryError(error.message))

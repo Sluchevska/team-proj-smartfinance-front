@@ -10,7 +10,6 @@ import {
 
 function OperationsList() {
     const operations = useSelector(getOperations);
-    // console.log("какие операции заходят в отрисовку",operations)
     return(
         <List>
             {operations.map((operations)=> (
