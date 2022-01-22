@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import gotobtn from "../../icons/gotoreportbtn.svg";
-import { NavLink } from 'react-router-dom';
+
 
 export const  GoToSvg = styled.svg`
 background-image: url(${gotobtn});
@@ -8,6 +8,10 @@ width: 24px;
 height: 24px;
 margin-left: 15px;
 display: flex;
+&:hover, &:active{
+    color: #ff751d;
+    fill:#ff751d;
+ }
 
 `
 
@@ -19,6 +23,9 @@ font-size: 12px;
     padding: 0;
     margin:0;
     text-decoration: none;
+    &:hover, &:active{
+    color: #ff751d;
+ }
 `
 
 
@@ -42,6 +49,9 @@ display: flex;
 
 export const HolderStyle = styled.div`
  display: flex;
+ align-content: center;
+ align-items: center;
+ 
 
 @media screen and (min-width: 768px) {
    

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const ModalWindow = styled.div`
   position: absolute;
-  z-index:1000;
+  z-index:10;
   top: 117%;
   left: -6%;
   display: flex;
@@ -34,8 +34,8 @@ export const ModalWindow = styled.div`
     left: 46px;
     top: -30px;
     border: 15px solid transparent;
-    border-bottom: 15px solid #162c5c;
- `;
+    border-bottom: 15px solid #162c5c;}
+ `
 
 export const ModalTitle = styled.p`
   font-size: 14px;

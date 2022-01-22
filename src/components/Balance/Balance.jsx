@@ -51,13 +51,14 @@ const Balance = () => {
               name="balance"
               placeholder="00.00"
               type="text"
-              defaultValue={
-                parseFloat(
-                  balanceFromStore && typeof balanceFromStore === 'number'
-                    ? balanceFromStore
-                    : 0,
-                ).toFixed(2) + 'UAH'
-              }
+               autoComplete="off"
+              // defaultValue={
+              //   parseFloat(
+              //     balanceFromStore && typeof balanceFromStore === 'number'
+              //       ? balanceFromStore
+              //       : 0,
+              //   ).toFixed(2) + 'UAH'
+              // }
             ></FormInput>
 
             <Button type="submit">ПОДТВЕРДИТЬ</Button>
