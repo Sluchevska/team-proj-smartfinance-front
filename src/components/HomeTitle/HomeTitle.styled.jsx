@@ -8,31 +8,13 @@ import mnogoKupMob from "../../icons/mnogoKapustMobile.svg";
 export const HeroContainer = styled.div`
  padding-top: 104px;
  padding-left: 271px;
-/* width: 183px;
-height: 63px;
-@media screen and (min-width: 768px) {
-width: 306px;
-height: 100px;
-  }
-@media screen and (min-width: 1280px) {
-width: 377px;
-height: 139px;
-  } */
 
-  /* padding-left: 49px;
- padding-top: 86px; */
-  /* background-image: url(${mnogoKup});
-  background-repeat: no-repeat; */
   @media screen and (min-width: 768px) {
     
     padding-top: 28px;
     padding-left: 10px;
   }
-@media screen and (min-width: 1280px) {
-    
-    /* padding-top: 308px; */
-    /* padding-left: 230px; */
-  }
+
 `;
 export const HeroKapustaSvg = styled.svg`
 background-image: url(${mnogoKupMob});
@@ -45,17 +27,14 @@ background-image: url(${mnogoKup});
   width: 100%;
   height: 232px;
 }
-@media screen and (min-width: 1280px) {
 
-  }
 `;
 
 export const HeroTitle = styled.svg`
 
 width: 183px;
 height: 46px;
-/* margin-left: 49px;
- margin-top: 86px; */
+
 background-image: url(${logo});
 background-repeat: no-repeat;
 @media screen and (min-width: 768px) {
@@ -63,15 +42,12 @@ background-repeat: no-repeat;
     height: 77px;
     background-image: url(${logoTab});
    
-    /* margin-top: 90px;
-    margin-left: 171px; */
   }
 @media screen and (min-width: 1280px) {
     width: 377px;
     height: 120px;
     background-image: url(${logoDesc});
-    /* margin-top: 308px;
-    margin-left: 230px; */
+  
   }
 `;
 
@@ -111,7 +87,7 @@ right: 88px;
   }
  
 @media screen and (min-width: 1280px) {
-    
+    position: static;
     padding-top: 48px;
     padding-left: 230px;
   }
