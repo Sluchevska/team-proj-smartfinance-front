@@ -19,6 +19,7 @@ import { buttonGroupStyles } from './buttonStyles';
 import calc from '../../icons/calculator.svg';
 import calendar from '../../icons/calendar.svg';
 import expenseCategories from './expenseCategories.json';
+import incomeCategories from './incomeCategories.json';
 import { addOperation } from '../../redux/transoperations/operations-operations';
 import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
 import s from '../InputMobile/InputMobile.module.css';
@@ -29,9 +30,10 @@ import { useTheme } from '@mui/material/styles';
 
 import { NavLink } from 'react-router-dom';
 
-import { ReturnSvg,  ReturnNav } from './returnHomeMobile.styled';
+import { ReturnSvg, ReturnNav } from './returnHomeMobile.styled';
 
-function InputMobile({ categories, placeholder }) {
+
+function InputMobile() {
 
   
   const location = useLocation();
@@ -44,19 +46,26 @@ function InputMobile({ categories, placeholder }) {
   const [category, setCategory] = useState('');
   const [sum, setSum] = useState(0);
   const [type, setType] = useState('');
+  const [placeholder, setPlaceholder] = useState('Описание расхода');
+  const [categories, setCategories] = useState(expenseCategories);
   const dispatch = useDispatch();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('tablet'));
   const isTablet = useMediaQuery(theme.breakpoints.only('tablet'));
+ 
 
   //добавила зависимость отрисовки от того какой путь вверху прописан
   //тогда оно в локальный стейт заносит тип операции и передает в фетч
   useEffect(() => {
     if (location.pathname === '/expenses/input') {
-    setType('expenses');
+      setType('expenses');
+      setPlaceholder('Описание расхода');
+      setCategories(expenseCategories);
   }
   if (location.pathname === '/income/input') {
     setType('income');
+    setPlaceholder('Описание дохода');
+    setCategories(incomeCategories);
   }
   },[])
   
