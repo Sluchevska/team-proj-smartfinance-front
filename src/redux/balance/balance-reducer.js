@@ -18,6 +18,10 @@ const balance = createReducer(initialBalance, {
     ...initialBalance,
     ...payload,
   }),
+  [actions.updateUserBalanceSuccess]: (state, { payload }) => {
+    state.balance = payload;
+  },
+
   [actions.getUserBalanceRequest]: (state, _) => {
     state.isGetBalance = true;
   },
