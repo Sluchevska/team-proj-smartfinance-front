@@ -140,7 +140,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
           value={description}
           onChange={handleChange}
             placeholder={placeholder}
-            required
+            // required
         />
           <FormControl >
           <InputLabel sx={{ fontSize: '12px' }}>Категория</InputLabel>
@@ -210,10 +210,10 @@ function Transaction({ categories, isIncome, placeholder, type }) {
       <div className={s.buttons}>
         <ButtonGroup color="secondary" variant="outlined" sx={buttonGroupStyles}>
           <NavLink to="/expenses/input">
-            <Button type="submit">Внести расход</Button>
+            <Button type="submit" style={{ fontSize: '10px' }} >Внести расход</Button>
         </NavLink>
           <NavLink to="/income/input">
-            <Button type="submit">Внести доход</Button>
+            <Button type="submit" style={{ fontSize: '10px' }}>Внести доход</Button>
           </NavLink>
       </ButtonGroup>
       </div>

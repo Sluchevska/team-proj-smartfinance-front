@@ -188,7 +188,7 @@ function InputMobile() {
                     marginBottom: '30px',
                     borderRadius: '0 0 16px 0',
                     border: '2px solid #FFF',
-                    fontSize: '12px',
+                    fontSize: '22px',
                   }
                 : isTablet
                 ? {

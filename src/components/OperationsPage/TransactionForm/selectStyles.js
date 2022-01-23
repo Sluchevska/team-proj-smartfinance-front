@@ -5,21 +5,19 @@ const selectStyles = {
     borderRadius: '0',
     borderRight: 'none',
     border: '2px solid #F5F6FB',
-     borderColor: '#F5F6FB',
-    
-    
+    borderColor: '#F5F6FB',
+
+
 
     '& .MuiOutlinedInput-input': {
         width: '188px',
         padding: '10px',
-        
+
 
 
     },
     '& .MuiSelect-nativeInput': {
         outline: 'none',
-
-
     },
 };
 
