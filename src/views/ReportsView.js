@@ -12,6 +12,7 @@ import TotalExpence from '../components/ExpensesReports/TotalExpense/TotalExpens
 import Charts from '../components/Charts/Charts';
 import ReportsList from '../components/ExpensesReports/ReportsList/ReportsList';
 import { ReportsContainer } from '../components/ExpensesReports/ReportsView.styled';
+import { BottomKapusta } from '../components/Charts/Charts.styled';
 
 export default function ReportsView() {
   const dispatch = useDispatch();
@@ -65,6 +66,8 @@ export default function ReportsView() {
           <TotalExpence />
           <ReportsList />
           <Charts />
+           <BottomKapusta/>
+         
         </>
       )}
     </>
