@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import twoKap from "../../../icons/2kapustaHPD.svg";
+import mnogoKup from '../../../icons/mnogoKapDesk.svg';
 
 export const Wrapper = styled.div`
     
@@ -75,7 +76,7 @@ export const ListItem = styled.li`
   
        @media screen and (min-width: 768px){
         position: absolute;
-    z-index: 3;
+  
     width: 183px;
     height: 142px;
     top: 1033px;
@@ -84,10 +85,13 @@ export const ListItem = styled.li`
     }
 
     @media screen and (min-width: 1280px){
-      /* width: 183px;
-    height: 142px;
-    left: 230px;
-    top: 157px;   */
+      /* position: static; */
+      z-index: -1;
+   background-image: url(${mnogoKup});
+    background-repeat: repeat;
+    width: 100%;
+    height: 232px;
+    top: 719px;
     }
 `;
 
