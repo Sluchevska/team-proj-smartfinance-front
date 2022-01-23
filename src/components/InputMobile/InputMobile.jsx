@@ -141,11 +141,7 @@ function InputMobile({ categories, placeholder }) {
        <NavLink to="/expenses">
           <ReturnNav>
           <ReturnSvg/>
-<<<<<<< Updated upstream
-          {/* <ReturnText>Вернуться на главную</ReturnText> */}
-=======
-          <ReturnText></ReturnText>
->>>>>>> Stashed changes
+    
           </ReturnNav>
         </NavLink>
         </Container>
