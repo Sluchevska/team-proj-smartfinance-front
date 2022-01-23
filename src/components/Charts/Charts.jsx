@@ -1,65 +1,49 @@
- import s from './Charts.module.css'
- import MobileCharts from './MobileCharts';
- import VerticalCharts from './VerticalCharts';
- 
-  const data = [
-      {
-        "id": "id-1",
-        "description": "Метро",
-        "sum": 500
-      },
-      {
-        "id": "id-7",
-        "description": "Машина",
-        "sum": 1920
-      },
-      {
-        "id": "id-8",
-        "description": "Поезд",
-        "sum": 1000
-      },
-      {
-        "id": "id-9",
-        "description": "Такси",
-        "sum": 300
-      },
-      {
-        "id": "id-10",
-        "description": "Трактор",
-        "sum": 400
-      },
-      {
-        "id": "id-11",
-        "description": "Мопед",
-        "sum": 1300
-      },
-      {
-        "id": "id-12",
-        "description": "Такси",
-        "sum": 600
-      },
-      {
-        "id": "id-13",
-        "description": "Трактор",
-        "sum": 700
-      },
-      {
-        "id": "id-14",
-        "description": "Мопед",
-        "sum": 800
-      }
-    ];
+import { Container, ContainerMain } from './Charts.styled';
+import MobileCharts from './MobileCharts';
+import VerticalCharts from './VerticalCharts';
+import { useSelector } from 'react-redux';
 
-  export default function Charts () {
-    const screenIsMobile = window.screen.width <= 320;
-    console.log(screenIsMobile);
-      return (
-        <div className={s.container}>
-        {screenIsMobile ? 
-       (<MobileCharts data={data}/>) :
-       (<VerticalCharts data={data}/>)
-          }
-            {/* <BottomKapusta/> */}
-       </div>
-      );
+import {
+  getCategory,
+  getType,
+  getDescriptionExpenses,
+  getDescriptionIncome,
+} from '../../redux/transactions-month/transaction-selectors';
+
+const Charts = () => {
+  const category = useSelector(getCategory);
+  const type = useSelector(getType);
+
+  const expenses = useSelector(getDescriptionExpenses);
+  const income = useSelector(getDescriptionIncome);
+
+  function dataFilteredType(type) {
+    if (type === 'expenses') {
+      return expenses;
     }
+    if (type === 'income') {
+      return income;
+    }
+  }
+
+  const data = dataFilteredType(type);
+
+  const dataFiltered = data.find(el => el.category === category);
+
+  const chartsData = [...dataFiltered.descriptionData];
+
+  const screenIsMobile = window.screen.width <= 320;
+  return (
+    <ContainerMain>
+      <Container>
+        {screenIsMobile ? (
+          <MobileCharts data={chartsData} />
+        ) : (
+          <VerticalCharts data={chartsData} />
+        )}
+      </Container>
+    </ContainerMain>
+  );
+};
+
+export default Charts;
