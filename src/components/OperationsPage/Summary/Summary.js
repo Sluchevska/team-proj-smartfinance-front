@@ -46,7 +46,7 @@ function Summary() {
                     {data.map((data)=> (
                     <ListItem key={data.month}  >
                         <p>{monthToName(data.month)}</p>
-                        <p>{data.total}</p>
+                        <p>{data.total.toFixed(2)}</p>
                     </ListItem>
                     ))}
                 </List>
