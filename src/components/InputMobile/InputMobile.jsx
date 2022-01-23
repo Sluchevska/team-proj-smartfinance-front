@@ -49,6 +49,8 @@ function InputMobile({ categories, placeholder }) {
   const isMobile = useMediaQuery(theme.breakpoints.down('tablet'));
   const isTablet = useMediaQuery(theme.breakpoints.only('tablet'));
 
+  //добавила зависимость отрисовки от того какой путь вверху прописан
+  //тогда оно в локальный стейт заносит тип операции и передает в фетч
   useEffect(() => {
     if (location.pathname === '/expenses/input') {
     setType('expenses');
