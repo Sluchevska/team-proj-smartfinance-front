@@ -85,8 +85,7 @@ export const ListItem = styled.li`
     }
 
     @media screen and (min-width: 1280px){
-      /* position: static; */
-      z-index: -1;
+        z-index: -1;
    background-image: url(${mnogoKup});
     background-repeat: repeat;
     width: 100%;

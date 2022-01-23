@@ -58,7 +58,8 @@
         {screenIsMobile ? 
        (<MobileCharts data={data}/>) :
        (<VerticalCharts data={data}/>)
-        }
+          }
+            {/* <BottomKapusta/> */}
        </div>
       );
     }
