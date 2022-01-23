@@ -10,7 +10,8 @@ import {
   MenuItem,
   Select,
 } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import DatePicker from 'react-datepicker';
@@ -30,7 +31,11 @@ import { NavLink } from 'react-router-dom';
 
 import { ReturnSvg, ReturnText, ReturnNav } from './returnHomeMobile.styled';
 
-function InputMobile({ categories, placeholder, type }) {
+function InputMobile({ categories, placeholder }) {
+
+  
+  const location = useLocation();
+  
   const selectedDate = useSelector(getSelectedDate);
   const [date, setDate] = useState(
     new Date(selectedDate.year, selectedDate.month - 1, selectedDate.day),
@@ -38,10 +43,22 @@ function InputMobile({ categories, placeholder, type }) {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [sum, setSum] = useState(0);
+  const [type, setType] = useState('');
   const dispatch = useDispatch();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('tablet'));
   const isTablet = useMediaQuery(theme.breakpoints.only('tablet'));
+
+  useEffect(() => {
+    if (location.pathname === '/expenses/input') {
+    setType('expenses');
+  }
+  if (location.pathname === '/income/input') {
+    setType('income');
+  }
+  },[])
+  
+  
   const handleChange = e => {
     const { name, value } = e.target;
 
