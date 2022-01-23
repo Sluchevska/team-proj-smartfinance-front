@@ -1,5 +1,6 @@
 import { BarChart, Bar, Cell, LabelList, XAxis, ResponsiveContainer } from 'recharts';
 export default function MobileCharts ({data}) {
+  console.log("MobileCharts", data)
     return (
         <div>
           <ResponsiveContainer width="100%" height={300} margin={{
