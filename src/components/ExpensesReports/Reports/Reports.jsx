@@ -12,10 +12,10 @@ const Reports = () => {
 
     //   const operations = useSelector(getOperations);
     // const onButton = useSelector(transactionsSelectors.getDescriptionExpenses);
-    const expenses = useSelector(transactionsSelectors.getCategoryExpenses);
- const income = useSelector(transactionsSelectors.getCategoryIncome);
-    const [data, setData] = useState(expenses);
-const[title, setTitle] =useState('Расходы');
+  const expenses = useSelector(transactionsSelectors.getCategoryExpenses);
+  const income = useSelector(transactionsSelectors.getCategoryIncome);
+  const [data, setData] = useState(expenses);
+  const[title, setTitle] =useState('Расходы');
     
     const onHandleIncomeClick = () => {
       setData(expenses);
