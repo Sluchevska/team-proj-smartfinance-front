@@ -15,6 +15,7 @@ const selectStyles = {
     '& .MuiSelect-nativeInput': {
         outline: 'none',
 
+
     },
 };
 
