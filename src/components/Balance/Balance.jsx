@@ -70,7 +70,9 @@ const Balance = () => {
                 <ModalGetBalance />
               </>
             ) : (
-              <BalanceDisplay>{`${balanceFromStore} UAH`}</BalanceDisplay>
+              <BalanceDisplay>{`${balanceFromStore.toFixed(
+                2,
+              )} UAH`}</BalanceDisplay>
             ))}
         </Title>
       </FormContainer>
