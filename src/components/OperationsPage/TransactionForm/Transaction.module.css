@@ -132,8 +132,10 @@
 }
 
 .buttons {
-  margin-top: 200px;
+  margin-top: 150px;
   margin-bottom: 100px;
+  margin-right: auto;
+  margin-left: -20px;
   
 
  
