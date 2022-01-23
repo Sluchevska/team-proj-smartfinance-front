@@ -10,7 +10,6 @@ import Summary from './Summary';
 
 import incomeCategories from './TransactionForm/incomeCategories.json'
 import { fetchOperations } from '../../redux/transoperations/operations-operations';
-//import { fetchSummary } from '../../redux/summary/summary-operations';
 import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
 
 import {
@@ -26,7 +25,6 @@ import {
 } from './OperationsPage.styled';
 
 function OperationsPage() {
-    //const [type, setType] = useState('');
     const dispatch = useDispatch();
     const location = useLocation();
     const matches = useMediaQuery('(min-width:768px)');
@@ -41,7 +39,6 @@ function OperationsPage() {
     const monthApi = pad(date.month);
 
     useEffect(() => {
-        //console.log("загрузка при первом входе на страницу")
         if (location.pathname === '/expenses') {
             dispatch(fetchOperations(date.year, monthApi, dayApi, 'expenses'));
         }

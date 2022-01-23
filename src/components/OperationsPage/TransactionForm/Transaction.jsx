@@ -82,19 +82,6 @@ function Transaction({ categories, isIncome, placeholder, type }) {
         type,
       }),
     );
-
-    //  dispatch(
-    //   fetchAddTransaction({
-    //     year,
-    //     month,
-    //     day,
-    //     description,
-    //     category,
-    //     sum,
-    //     isIncome,
-    //   }),
-    // );
-
     reset();
   };
 
