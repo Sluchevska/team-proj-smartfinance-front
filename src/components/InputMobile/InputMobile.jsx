@@ -29,7 +29,7 @@ import { useTheme } from '@mui/material/styles';
 
 import { NavLink } from 'react-router-dom';
 
-import { ReturnSvg, ReturnText, ReturnNav } from './returnHomeMobile.styled';
+import { ReturnSvg,  ReturnNav } from './returnHomeMobile.styled';
 
 function InputMobile({ categories, placeholder }) {
 
@@ -141,7 +141,7 @@ function InputMobile({ categories, placeholder }) {
        <NavLink to="/expenses">
           <ReturnNav>
           <ReturnSvg/>
-          <ReturnText>Вернуться на главную</ReturnText>
+          {/* <ReturnText>Вернуться на главную</ReturnText> */}
           </ReturnNav>
         </NavLink>
         </Container>
