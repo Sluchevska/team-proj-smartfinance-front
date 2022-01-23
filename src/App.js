@@ -10,10 +10,11 @@ import {
   getCurrentUser,
   getFetchingCurrentUser,
   getIsAuthenticated,
- 
+
 } from './redux/auth';
 
 import HeaderView from './views/HeaderView/HeaderView';
+
 
 import { HomeContainer } from './views/MainView/MainView.styled';
 
@@ -25,6 +26,9 @@ const OperationsView = lazy(() =>
 );
 const ReportsView = lazy(() =>
   import('./views/ReportsView' /*webpackChunkName: "reports-view" */),
+);
+const InputMobileView = lazy(() =>
+  import('./views/InputMobileView' /*webpackChunkName: "inputMobile-view" */),
 );
 
 function App() {
@@ -43,7 +47,7 @@ function App() {
       <HeaderView />
       <HomeContainer>
         <Suspense fallback={<Spinner />}>
-       
+
           <Routes>
             <Route path="/" element={<Navigate replace to="home" />} />
             <Route
@@ -63,10 +67,20 @@ function App() {
               path="/reports"
               element={!isLogIn ? <Navigate to="/home" /> : <ReportsView />}
             />
+            <Route
+              exact
+              path="/expenses/input"
+              element={!isLogIn ? <Navigate to="/home" /> : <InputMobileView />}
+            />
+            <Route
+              exact
+              path="/income/input"
+              element={!isLogIn ? <Navigate to="/home" /> : <InputMobileView />}
+            />
 
             {/* <Route path="*" element = {<Error/>} / > */}
           </Routes>
-      
+
         </Suspense>
       </HomeContainer>
       <ToastContainer autoClose={2500} />

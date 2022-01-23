@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import initState from './balance.initstate';
+// import initState from './balance.initstate';
 import actions from './balance-actions';
 import {
   getCurrentUserSuccess,
@@ -7,32 +7,50 @@ import {
   logoutSuccess,
 } from '../auth/auth-actions';
 
-const initialBalance = { initBalance: null };
+const initialBalance = { balance: null, isGetBalance: false };
 
-// const balanceReducer = createReducer(initialBalance, {
-//   [actions.setBalanceSuccess]: (state, { payload }) => {
-//     return { ...state, balance: payload.updatedBalance };
-//   },
+const balance = createReducer(initialBalance, {
+  [actions.getUserBalanceSuccess]: (_, { payload }) => ({
+    ...initialBalance,
+    ...payload,
+  }),
+  [actions.setUserBalanceSuccess]: (_, { payload }) => ({
+    ...initialBalance,
+    ...payload,
+  }),
+  [actions.updateUserBalanceSuccess]: (state, { payload }) => {
+    state.balance = payload;
+  },
 
-//   [loginSuccess]: (_, { payload }) => ({
-//     balance: payload.balance,
-//   }),
+  [actions.getUserBalanceRequest]: (state, _) => {
+    state.isGetBalance = true;
+  },
+  [actions.setUserBalanceRequest]: (state, _) => {
+    state.isGetBalance = true;
+  },
 
-//   [getCurrentUserSuccess]: (state, { payload }) => {
-//     return { ...state, balance: payload.balance };
-//   },
+  [logoutSuccess]: (_, __) => initialBalance,
+  // [actions.setUserBalanceError]: (_, { payload }) => {
+  //   console.log('payload error', payload);
+  // },
 
-//   [logoutSuccess]: (_, __) => initialBalance,
-// });
+  // [loginSuccess]: (_, { payload }) => ({
+  //   balance: payload.balance,
+  // }),
 
-const balanceReducer = (state = initialBalance, { type, payload }) => {
-  switch (type) {
-    case 'balance/set':
-      return { initBalance: payload.sum };
+  // [getCurrentUserSuccess]: (state, { payload }) => {
+  //   return { ...state, balance: payload.balance };
+  // },
+});
 
-    default:
-      return state;
-  }
-};
+// const balanceReducer = (state = initialBalance, { type, payload }) => {
+//   switch (type) {
+//     case 'balance/set':
+//       return { initBalance: payload.sum };
 
-export default balanceReducer;
+//     default:
+//       return state;
+//   }
+// };
+
+export default balance;

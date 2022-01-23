@@ -24,6 +24,7 @@ import { selectStyles } from './selectStyles';
 import * as actions  from '../../../redux/transoperations/operations-action';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+import { NavLink } from 'react-router-dom';
 
 function Transaction({ categories, isIncome, placeholder, type }) {
   const selectedDate = useSelector(getSelectedDate);
@@ -32,7 +33,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
   );
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
-  const [sum, setSum] = useState(0);
+  const [sum, setSum] = useState([]);
   const dispatch = useDispatch();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('tablet'));
@@ -101,7 +102,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
     setDate(new Date());
     setDescription('');
     setCategory('');
-    setSum(0);
+    setSum([]);
   };
 
   const handleChangeDate = data => {
@@ -138,9 +139,10 @@ function Transaction({ categories, isIncome, placeholder, type }) {
           name="description"
           value={description}
           onChange={handleChange}
-          placeholder={placeholder}
+            placeholder={placeholder}
+            required
         />
-        <FormControl>
+          <FormControl >
           <InputLabel sx={{ fontSize: '12px' }}>Категория</InputLabel>
           <Select
             sx={
@@ -151,6 +153,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
                     borderRadius: '0 0 16px 0',
                     border: '2px solid #FFF',
                     fontSize: '12px',
+                    
                   }
                 : isTablet
                 ? {
@@ -187,7 +190,9 @@ function Transaction({ categories, isIncome, placeholder, type }) {
             name="sum"
             value={sum}
             onChange={handleChange}
-            placeholder="0,00"
+            placeholder="0.00"
+            min='0.01'
+            step='0.01'
             pattern="^\d{1,3}(\s\d{3})*(\.\d+)?$"
             required
           />
@@ -202,6 +207,16 @@ function Transaction({ categories, isIncome, placeholder, type }) {
         </Button>
       </ButtonGroup>
       </form>
+      <div className={s.buttons}>
+        <ButtonGroup color="secondary" variant="outlined" sx={buttonGroupStyles}>
+          <NavLink to="/expenses/input">
+            <Button type="submit">Внести расход</Button>
+        </NavLink>
+          <NavLink to="/income/input">
+            <Button type="submit">Внести доход</Button>
+          </NavLink>
+      </ButtonGroup>
+      </div>
     </div>
   );
 }

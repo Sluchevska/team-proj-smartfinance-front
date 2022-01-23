@@ -25,6 +25,7 @@ export default function ReportsView() {
   const [year, setYear] = useState(selectedYear);
 
   useEffect(() => {
+    console.log("загрузка репортсвью")
     dispatch(
       transactionsOperations.fetchAllTransactionsByMonth({ month, year }),
     );
