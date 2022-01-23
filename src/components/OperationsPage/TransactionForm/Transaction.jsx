@@ -138,7 +138,8 @@ function Transaction({ categories, isIncome, placeholder, type }) {
           name="description"
           value={description}
           onChange={handleChange}
-          placeholder={placeholder}
+            placeholder={placeholder}
+            required
         />
         <FormControl>
           <InputLabel sx={{ fontSize: '12px' }}>Категория</InputLabel>
