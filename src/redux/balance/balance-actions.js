@@ -1,21 +1,20 @@
 import { createAction } from '@reduxjs/toolkit';
 
-const setBalanceRequest = createAction('balance/setBalanceRequest');
-const setBalanceSuccess = createAction('balance/setBalanceSuccess');
-const setBalanceError = createAction('balance/setBalanceError');
+const getUserBalanceRequest = createAction('balance/getUserBalanceRequest');
+const getUserBalanceSuccess = createAction('balance/getUserBalanceSuccess');
+const getUserBalanceError = createAction('balance/getUserBalanceError');
 
-const setBalanceSum = sum => {
-  return {
-    type: 'balance/set',
-    payload: { sum },
-  };
-};
+const setUserBalanceRequest = createAction('balance/setUserBalanceRequest');
+const setUserBalanceSuccess = createAction('balance/setUserBalanceSuccess');
+const setUserBalanceError = createAction('balance/setUserBalanceError');
 
 const balanceActions = {
-  setBalanceRequest,
-  setBalanceSuccess,
-  setBalanceError,
-  setBalanceSum,
+  getUserBalanceRequest,
+  getUserBalanceSuccess,
+  getUserBalanceError,
+  setUserBalanceRequest,
+  setUserBalanceSuccess,
+  setUserBalanceError,
 };
 
 export default balanceActions;
