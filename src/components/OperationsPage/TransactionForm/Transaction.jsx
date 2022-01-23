@@ -190,7 +190,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
             name="sum"
             value={sum}
             onChange={handleChange}
-            placeholder="0.00"
+            placeholder="0,00"
             min='0.01'
             step='0.01'
             pattern="^\d{1,3}(\s\d{3})*(\.\d+)?$"

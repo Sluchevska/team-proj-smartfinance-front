@@ -94,10 +94,11 @@
     border-top-right-radius: 0;
   }
   .sumWrap {
-    width: 128px;
+    width: 104px;
   }
   .sum {
-    width: 128px;
+    padding: 12px 30px;
+    width: 104px;
     border: 2px solid #f5f6fb;
     border-radius: 0px 16px 16px 0px;
   }
