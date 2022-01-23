@@ -16,7 +16,7 @@ export default function Icon({ category, sum, id }) {
         className={s.button}
         onClick={() => dispatch(changeCategory(category))}
       >
-        <Icon className={s.icon} width="56" height="56" />
+        <Icon className={s.icon} width="56" height="56"></Icon>
       </button>
       <p className={s.category}>{category}</p>
     </div>

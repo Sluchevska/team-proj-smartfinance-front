@@ -11,6 +11,7 @@ import SwitchMonthArrow from '../components/ExpensesReports/SwitchMonthArrow/Swi
 import TotalExpence from '../components/ExpensesReports/TotalExpense/TotalExpense';
 import Charts from '../components/Charts/Charts';
 import ReportsList from '../components/ExpensesReports/ReportsList/ReportsList';
+import { ReportsContainer } from '../components/ExpensesReports/ReportsView.styled';
 
 export default function ReportsView() {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ export default function ReportsView() {
   const [year, setYear] = useState(selectedYear);
 
   useEffect(() => {
-    console.log("загрузка репортсвью")
+    console.log('загрузка репортсвью');
     dispatch(
       transactionsOperations.fetchAllTransactionsByMonth({ month, year }),
     );
@@ -51,14 +52,16 @@ export default function ReportsView() {
     <>
       {!isFetching && (
         <>
-          <ReturnHome />
-          <Balance />
-          <SwitchMonthArrow
-            year={year}
-            month={month}
-            onHandleClickLeft={onHandleClickLeft}
-            onHandleClickRight={onHandleClickRight}
-          />
+          <ReportsContainer>
+            <ReturnHome />
+            <Balance />
+            <SwitchMonthArrow
+              year={year}
+              month={month}
+              onHandleClickLeft={onHandleClickLeft}
+              onHandleClickRight={onHandleClickRight}
+            />
+          </ReportsContainer>
           <TotalExpence />
           <ReportsList />
           <Charts />

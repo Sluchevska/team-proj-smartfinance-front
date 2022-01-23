@@ -15,11 +15,11 @@ const TotalExpence = () => {
     <Container>
       <ContainerMain>
         <Title>Расходы:</Title>
-        <Income> - {totalExpense.totalIncome}грн</Income>
+        <Income> - {totalExpense.totalExpenses} грн</Income>
       </ContainerMain>
       <ContainerMain>
         <Title>Доходы:</Title>
-        <Expense> + {totalExpense.totalExpenses} грн</Expense>
+        <Expense> + {totalExpense.totalIncome} грн</Expense>
       </ContainerMain>
     </Container>
   );

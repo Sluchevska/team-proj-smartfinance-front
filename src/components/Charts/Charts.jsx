@@ -1,4 +1,4 @@
-import s from './Charts.module.css';
+import { Container, ContainerMain } from './Charts.styled';
 import MobileCharts from './MobileCharts';
 import VerticalCharts from './VerticalCharts';
 import { useSelector } from 'react-redux';
@@ -34,13 +34,15 @@ const Charts = () => {
 
   const screenIsMobile = window.screen.width <= 320;
   return (
-    <div className={s.container}>
-      {screenIsMobile ? (
-        <MobileCharts data={chartsData} />
-      ) : (
-        <VerticalCharts data={chartsData} />
-      )}
-    </div>
+    <ContainerMain>
+      <Container>
+        {screenIsMobile ? (
+          <MobileCharts data={chartsData} />
+        ) : (
+          <VerticalCharts data={chartsData} />
+        )}
+      </Container>
+    </ContainerMain>
   );
 };
 
