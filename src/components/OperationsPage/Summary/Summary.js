@@ -10,8 +10,10 @@ import {
     Wrapper,
     Title,
     List,
-    ListItem
+    ListItem,
+    BottomKapusta
 } from './Summary.styled';
+
 
 function Summary() {
     const dispatch = useDispatch();
@@ -37,6 +39,7 @@ function Summary() {
     
     if (matches === true) {
         return (
+            <>
             <Wrapper>
                 <Title>СВОДКА</Title>
                 <List>
@@ -47,7 +50,10 @@ function Summary() {
                     </ListItem>
                     ))}
                 </List>
+               
             </Wrapper>
+             <BottomKapusta/>
+            </>
         )
     }
     return null;
