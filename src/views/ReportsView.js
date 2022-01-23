@@ -11,7 +11,7 @@ import SwitchMonthArrow from '../components/ExpensesReports/SwitchMonthArrow/Swi
 import TotalExpence from '../components/ExpensesReports/TotalExpense/TotalExpense';
 import Charts from '../components/Charts/Charts';
 import ReportsList from '../components/ExpensesReports/ReportsList/ReportsList';
-import { ReportsContainer } from '../components/ExpensesReports/ReportsView.styled';
+import { MainContainer, ReportsContainer,} from '../components/ExpensesReports/ReportsView.styled';
 import { BottomKapusta } from '../components/Charts/Charts.styled';
 
 export default function ReportsView() {
@@ -63,9 +63,11 @@ export default function ReportsView() {
               onHandleClickRight={onHandleClickRight}
             />
           </ReportsContainer>
+          <MainContainer>
           <TotalExpence />
           <ReportsList />
-          <Charts />
+            <Charts />
+            </MainContainer>
            <BottomKapusta/>
          
         </>
