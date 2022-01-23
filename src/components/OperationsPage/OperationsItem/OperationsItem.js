@@ -46,7 +46,7 @@ function OperationsItem({ operations }) {
                     </NameInfo>
                 </WrapperInfo>
                 <WrapperSum>
-                    {location.pathname === '/income' ? <MinusSum>-{operations.sum} грн</MinusSum> :<PlusSum>{operations.sum} грн</PlusSum>}
+                {location.pathname === '/income' ? <PlusSum>{operations.sum} грн</PlusSum> : <MinusSum>-{operations.sum} грн</MinusSum>}
                     <IconButton onClick={() => console.log('Pressed')}>
                         {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(deleteOperation(operations._id))} />}
                     </IconButton>
