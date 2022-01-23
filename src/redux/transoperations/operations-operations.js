@@ -13,7 +13,7 @@ import {
 } from './operations-action';
 
 export const fetchOperations = (year, month, day, type) => async dispatch => {
-  console.log('fetch запрос на операции с бэка');
+  
   dispatch(fetchOperationRequest());
 
   try {
