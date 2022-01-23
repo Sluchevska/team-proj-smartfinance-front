@@ -1,33 +1,28 @@
-import {Container, ContainerMain,Expense, Income, Title } from "./TotalExpense.styled";
+import {
+  Container,
+  ContainerMain,
+  Expense,
+  Income,
+  Title,
+} from './TotalExpense.styled';
+import { transactionsSelectors } from '../../../redux/transactions-month';
+import { useSelector } from 'react-redux';
 
-const TotalExpence = ({totalExpense})=> {
-   console.log("totalExpense", totalExpense) 
+const TotalExpence = () => {
+  const totalExpense = useSelector(transactionsSelectors.getTotalExpense);
 
-const income = totalExpense.find(item => {
-    if(item.type === "income"){
-        return item;
-    }
-})
-
-const expenses = totalExpense.find(item => {
-    if (item.type === "expenses") {
-        return item;
-    }
-})
-
-
-return (
+  return (
     <Container>
-        <ContainerMain>
-            <Title>Расходы:</Title>
-            <Income> - {income.total}грн</Income>
-        </ContainerMain>
-        <ContainerMain>
-            <Title>Доходы:</Title>
-            <Expense> + {expenses.total} грн</Expense>
-        </ContainerMain>
+      <ContainerMain>
+        <Title>Расходы:</Title>
+        <Income> - {totalExpense.totalExpenses} грн</Income>
+      </ContainerMain>
+      <ContainerMain>
+        <Title>Доходы:</Title>
+        <Expense> + {totalExpense.totalIncome} грн</Expense>
+      </ContainerMain>
     </Container>
-)
-}
+  );
+};
 
 export default TotalExpence;
