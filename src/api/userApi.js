@@ -11,10 +11,9 @@ export const token = {
   },
 };
 
-
 export async function fetchSignUp(credentials) {
-       const data = await axios.post(`/api/users/register`, credentials);
-       return data;
+  const data = await axios.post(`/api/users/register`, credentials);
+  return data;
 }
 
 // export async function fetchGoogleAuth() {
@@ -28,49 +27,44 @@ export async function fetchSignUp(credentials) {
 // }
 
 export async function fetchLogIn(credentials) {
-    const data = await axios.post(`/api/users/login`, credentials);
-    return data;
+  const data = await axios.post(`/api/users/login`, credentials);
+  return data;
 }
 
 export async function fetchGetCurrentUser() {
   const data = await axios.get(`/api/users/current`);
 
-    return data;
+  return data;
 }
 
 export async function fetchLogOut() {
-    const data = await axios.get(`/api/users/logout`);
-      return data;
+  const data = await axios.get(`/api/users/logout`);
+  return data;
 }
-
 
 export async function fetchUploadAvatar() {
-    const data = await axios.patch(`/api/users/avatars`, FormData);
-    return data;
+  const data = await axios.patch(`/api/users/avatars`, FormData);
+  return data;
 }
 
-
-
-
-export async function fetchMonthReports({month, year}){
+export async function fetchMonthReports({ month, year }) {
   const monthApi = pad(month);
   function pad(n) {
     if (n < 10) return '0' + n;
     return n;
   }
-const {data} = await axios.get(`/api/operations/info?year=${year}&month=${monthApi}`)
-    return data;
+  const { data } = await axios.get(
+    `/api/operations/info?year=${year}&month=${monthApi}`,
+  );
+  return data;
 }
 
-
-
-export const setBalanceApi = (balance) => {
-  return axios
-  .post(`/api/users/balance`, { balance: balance })
-  .then(({ data }) => data)
-  .catch((error) => {
-    throw error;
-  });
+export const setBalanceApi = async balance => {
+  const { data } = await axios.post(`/api/operations/balance`, { balance });
+  return data;
 };
 
-
+export const getBalanceApi = async () => {
+  const { data } = await axios.get(`/api/operations/balance`);
+  return data;
+};

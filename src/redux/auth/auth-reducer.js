@@ -59,7 +59,7 @@ const error = createReducer(null, {
 const isLogin = createReducer(false, {
   [loginSuccess]: () => true,
   [getCurrentUserSuccess]: () => true,
-[getCurrentUserRequest]: ()=> true,
+  [getCurrentUserRequest]: () => true,
   [fetchGoogleUser.fulfilled]: () => true,
   // [fetchRedirectGoogle.fulfilled]: () => true,
 

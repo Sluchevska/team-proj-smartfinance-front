@@ -1,9 +1,10 @@
 import { useSelector } from 'react-redux';
+import balanceSelectors from '../../../redux/balance/balance-selectors';
 import { ModalWindow, ModalTitle, ModalText } from './ModalGetBalance.styled';
 
 function ModalGetBalance() {
-  const isBalans = useSelector(state => state.auth.user.balance);
-  const showModalBalance = isBalans === null ? true : false;
+  const balanceFromStore = useSelector(balanceSelectors.getBalanceFromState);
+  const showModalBalance = balanceFromStore === null ? true : false;
   return (
     showModalBalance && (
       <ModalWindow>
