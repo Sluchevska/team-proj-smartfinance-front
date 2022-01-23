@@ -15,7 +15,7 @@ import { authReducer } from './auth';
 import operationsReducer from './transactions-month/transaction-reducers';
 // import { transactionsReducer } from './transaction';
 import { summaryReducer } from './summary';
-import balanceReducer from './balance/balance-reducer';
+import balance from './balance/balance-reducer';
 import { transOperationsReducer } from './transoperations';
 
 const authPersistConfig = {
@@ -35,11 +35,11 @@ export const store = configureStore({
 
     summary: summaryReducer,
 
-    balance: balanceReducer,
+    balance,
   },
 
   devTools: process.env.NODE_ENV !== 'production',
-  
+
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: false,

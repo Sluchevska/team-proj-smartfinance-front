@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { useSelector, useDispatch, connect } from 'react-redux';
+import Modal from '../Modal/Modal';
+import { useSelector, useDispatch } from 'react-redux';
 import ModalGetBalance from '../Modal/ModalBalance/ModalGetBalance';
 import balanceOperations from '../../redux/balance/balance-operations';
 import balanceSelectors from '../../redux/balance/balance-selectors';
-import { getCurrentUser } from '../../redux/auth/auth-operations';
+// import { getCurrentUser } from '../../redux/auth/auth-operations';
 import {
   Title,
   FormInput,
@@ -12,65 +13,32 @@ import {
   BalanceContainer,
   FormContainer,
   InputContainer,
-  ViewContainer,
+  BalanceDisplay,
 } from './Balance.styled';
-import GoToReportsBtn from '../GoToReportsBtn/GoToReportsBtn';
-import balanceActions from '../../redux/balance/balance-actions';
 
-const Balance = ({ balanceFromStore }) => {
+const Balance = () => {
   const dispatch = useDispatch();
 
-  const [balanceToSet, setBalanceToSet] = useState(0);
-  const [firstVisit, setFirstVisit] = useState(false);
-
   useEffect(() => {
-    dispatch(getCurrentUser());
+    dispatch(balanceOperations.getUserBalance());
   }, [dispatch]);
 
-  const handleInputBalance = evt => {
-    evt.preventDefault();
+  const balanceFromStore = useSelector(balanceSelectors.getBalanceFromState);
+  const isGetBalance = useSelector(balanceSelectors.isGetFromState);
 
-    setBalanceToSet(evt.target.value);
+  let event = null;
+  let balanceFromForm = null;
+
+  const onSubmit = e => {
+    e.preventDefault();
+    event = e;
+    balanceFromForm = e.target.balance.value.split(' ')[0];
   };
 
-  const handleUpdateBalance = evt => {
-    evt.preventDefault();
-
-    const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTU4OTVhYTEwOGY4MzVkMGVkNjE3YiIsImlhdCI6MTY0Mjg1MzgxOH0.durSFyXWdWLkb6qiBcP6mGMMjB-lrOcrkW1_mqOlpFs';
-
-    const headers = {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-      Authorization: `Bearer ${token}`,
-    };
-
-    fetch(
-      'https://team-proj-smartfinance-back.herokuapp.com/api/operations/balance',
-      {
-        method: 'POST',
-        headers,
-        body: JSON.stringify({ balance: balanceToSet }),
-      },
-    )
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(res.status);
-        }
-        // return res.json();
-
-        // setFirstVisit(false);
-
-        dispatch(balanceActions.setBalanceSum(Number(balanceToSet)));
-      })
-      // .then(data => {
-      //   console.log(data);
-      //   dispatch(balanceActions.setBalanceSum(Number(balanceToSet)));
-      // })
-      .catch(error => console.log(error.message));
-
-    // не мое - const newBalance = e.target.balance.value.split(' ')[0];
-    // не мое - dispatch(balanceOperations.setBalanceOperation(newBalance));
+  const hendelSubmit = (e, newBalance) => {
+    dispatch(balanceOperations.setUserBalance(newBalance));
+    e.target.balance.value = '';
+    toggleModal();
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -81,52 +49,43 @@ const Balance = ({ balanceFromStore }) => {
   }, [isModalOpen]);
 
   return (
-    //  <ViewContainer>
     <BalanceContainer>
-      <FormContainer onSubmit={handleUpdateBalance}>
+      <FormContainer onSubmit={onSubmit}>
         <Title>
           Баланс:
-          <InputContainer>
-            {/* {setModalClose && <Modal onClose={toggleWindow}/>} */}
-
-            {!firstVisit ? (
-              <div>1000</div>
-            ) : (
+          {!isGetBalance &&
+            (balanceFromStore === null ? (
               <>
-                <FormInput
-                  onChange={handleInputBalance}
-                  name="balance"
-                  placeholder="00.00"
-                  type="text"
-                  autoComplete="off"
-                  defaultValue={balanceFromStore}
-                  // defaultValue={
-                  //   parseFloat(
-                  //     balanceFromStore && typeof balanceFromStore === 'number'
-                  //       ? balanceFromStore
-                  //       : 0,
-                  //   ).toFixed(2) + 'UAH'
-                  // }
-                ></FormInput>
-
-                <Button type="submit">ПОДТВЕРДИТЬ</Button>
+                <InputContainer>
+                  <FormInput
+                    name="balance"
+                    autocomplete="off"
+                    placeholder="00.00 UAH"
+                    type="text"
+                  ></FormInput>
+                  <Button type="submit" onClick={toggleModal}>
+                    ПОДТВЕРДИТЬ
+                  </Button>
+                </InputContainer>
+                <ModalGetBalance />
               </>
-            )}
-          </InputContainer>
-          <ModalGetBalance />
+            ) : (
+              <BalanceDisplay>{`${balanceFromStore} UAH`}</BalanceDisplay>
+            ))}
         </Title>
       </FormContainer>
+      {isModalOpen && (
+        <Modal
+          modalTitle="Вы уверены?"
+          modalButtonleft="Да"
+          modalButtonRight=" Нет"
+          handleClickLeft={() => hendelSubmit(event, balanceFromForm)}
+          handleClickRight={toggleModal}
+          onClose={toggleModal}
+        />
+      )}
     </BalanceContainer>
-
-    //    {/* <GoToReportsBtn />}
-    //  </ViewContainer> */
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    balanceFromStore: state.balance.initBalance,
-  };
-};
-
-export default connect(mapStateToProps)(Balance);
+export default Balance;

@@ -30,6 +30,7 @@ axios.defaults.baseURL = 'https://team-proj-smartfinance-back.herokuapp.com';
 // };
 
 export const fetchByCategoryPeriod = (month, year, category) => async dispatch => {
+  console.log("фетч на репортс")
   dispatch(fetchByCategoryPeriodRequest());
   try {
     const { data } = await axios.get(`/operations?year=${year}?month=${month}?category=${category}`);

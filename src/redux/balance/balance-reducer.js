@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import initState from './balance.initstate';
+// import initState from './balance.initstate';
 import actions from './balance-actions';
 import {
   getCurrentUserSuccess,
@@ -7,32 +7,46 @@ import {
   logoutSuccess,
 } from '../auth/auth-actions';
 
-const initialBalance = { initBalance: null };
+const initialBalance = { balance: null, isGetBalance: false };
 
-// const balanceReducer = createReducer(initialBalance, {
-//   [actions.setBalanceSuccess]: (state, { payload }) => {
-//     return { ...state, balance: payload.updatedBalance };
-//   },
+const balance = createReducer(initialBalance, {
+  [actions.getUserBalanceSuccess]: (_, { payload }) => ({
+    ...initialBalance,
+    ...payload,
+  }),
+  [actions.setUserBalanceSuccess]: (_, { payload }) => ({
+    ...initialBalance,
+    ...payload,
+  }),
+  [actions.getUserBalanceRequest]: (state, _) => {
+    state.isGetBalance = true;
+  },
+  [actions.setUserBalanceRequest]: (state, _) => {
+    state.isGetBalance = true;
+  },
 
-//   [loginSuccess]: (_, { payload }) => ({
-//     balance: payload.balance,
-//   }),
+  [logoutSuccess]: (_, __) => initialBalance,
+  // [actions.setUserBalanceError]: (_, { payload }) => {
+  //   console.log('payload error', payload);
+  // },
 
-//   [getCurrentUserSuccess]: (state, { payload }) => {
-//     return { ...state, balance: payload.balance };
-//   },
+  // [loginSuccess]: (_, { payload }) => ({
+  //   balance: payload.balance,
+  // }),
 
-//   [logoutSuccess]: (_, __) => initialBalance,
-// });
+  // [getCurrentUserSuccess]: (state, { payload }) => {
+  //   return { ...state, balance: payload.balance };
+  // },
+});
 
-const balanceReducer = (state = initialBalance, { type, payload }) => {
-  switch (type) {
-    case 'balance/set':
-      return { initBalance: payload.sum };
+// const balanceReducer = (state = initialBalance, { type, payload }) => {
+//   switch (type) {
+//     case 'balance/set':
+//       return { initBalance: payload.sum };
 
-    default:
-      return state;
-  }
-};
+//     default:
+//       return state;
+//   }
+// };
 
-export default balanceReducer;
+export default balance;

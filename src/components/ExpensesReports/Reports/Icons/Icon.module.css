@@ -1,0 +1,54 @@
+.sum {
+    font-size: 12px;
+    line-height: 1.17;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Roboto;
+    color: #52555F;
+    margin: 0;
+    padding: 0;
+  }
+.icon {
+    display: block;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    fill: #071F41;
+  }
+  .icon:hover{
+    fill: #FF751D;
+  }
+  .icon:focus {
+  fill: #FF751D;
+}
+.category {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.17;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Roboto;
+    color: #52555F;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .item{
+    height: 107px;
+    font-size: 12px;
+    line-height: 1.17;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Roboto;
+    color: #52555F;
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    max-width: 98px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.button {
+border: none;
+}

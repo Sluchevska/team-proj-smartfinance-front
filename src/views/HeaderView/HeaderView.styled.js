@@ -15,7 +15,7 @@ export const ContainerHeader = styled.header`
     padding: 0 26px;
   }
   @media screen and (max-width: 767px) {
-    position: absolute;
+    /* position: absolute; */
     top: 0;
   }
 `;
