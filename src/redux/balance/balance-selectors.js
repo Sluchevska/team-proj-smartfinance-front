@@ -1,7 +1,6 @@
-const getBalance = (state) => state.balance;
+const getBalanceFromState = state => state.balance.balance;
+const isGetFromState = state => state.balance.isGetBalance;
 
-
-const selectors = { getBalance }
+const selectors = { getBalanceFromState, isGetFromState };
 
 export default selectors;
- 
