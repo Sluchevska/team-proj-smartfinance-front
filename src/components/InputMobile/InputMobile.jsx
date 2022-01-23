@@ -4,28 +4,38 @@ import './datePickerStyles.css';
 import {
   Button,
   ButtonGroup,
+  Container,
   FormControl,
   InputLabel,
   MenuItem,
   Select,
 } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import DatePicker from 'react-datepicker';
 import { buttonGroupStyles } from './buttonStyles';
-import calc from '../../../icons/calculator.svg';
-import calendar from '../../../icons/calendar.svg';
+import calc from '../../icons/calculator.svg';
+import calendar from '../../icons/calendar.svg';
 import expenseCategories from './expenseCategories.json';
-import { addOperation } from '../../../redux/transoperations/operations-operations';
-import { getSelectedDate } from '../../../redux/transoperations/operations-selectors';
-import s from './Transaction.module.css';
+import { addOperation } from '../../redux/transoperations/operations-operations';
+import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
+import s from '../InputMobile/InputMobile.module.css';
 import { selectStyles } from './selectStyles';
-import * as actions  from '../../../redux/transoperations/operations-action';
+import * as actions  from '../../redux/transoperations/operations-action';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
-function InputMobile({ categories, placeholder, type }) {
+import { NavLink } from 'react-router-dom';
+
+import { ReturnSvg,  ReturnNav } from './returnHomeMobile.styled';
+
+function InputMobile({ categories, placeholder }) {
+
+  
+  const location = useLocation();
+  
   const selectedDate = useSelector(getSelectedDate);
   const [date, setDate] = useState(
     new Date(selectedDate.year, selectedDate.month - 1, selectedDate.day),
@@ -33,10 +43,24 @@ function InputMobile({ categories, placeholder, type }) {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [sum, setSum] = useState(0);
+  const [type, setType] = useState('');
   const dispatch = useDispatch();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('tablet'));
   const isTablet = useMediaQuery(theme.breakpoints.only('tablet'));
+
+  //добавила зависимость отрисовки от того какой путь вверху прописан
+  //тогда оно в локальный стейт заносит тип операции и передает в фетч
+  useEffect(() => {
+    if (location.pathname === '/expenses/input') {
+    setType('expenses');
+  }
+  if (location.pathname === '/income/input') {
+    setType('income');
+  }
+  },[])
+  
+  
   const handleChange = e => {
     const { name, value } = e.target;
 
@@ -106,8 +130,23 @@ function InputMobile({ categories, placeholder, type }) {
   };
 
   return (
+   
+
     <div className={s.container}>
-    <form onSubmit={handleSubmit} className={s.form}>
+      
+  
+    
+      <form onSubmit={handleSubmit} className={s.form}>
+         <Container>
+       <NavLink to="/expenses">
+          <ReturnNav>
+          <ReturnSvg/>
+    
+          </ReturnNav>
+        </NavLink>
+        </Container>
+
+
       <div className={s.wrapInputs}>
         <label className={s.label}>
           <img src={calendar} style={{ marginRight: '10px' }} alt="calendar" />

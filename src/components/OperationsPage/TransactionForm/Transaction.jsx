@@ -24,6 +24,7 @@ import { selectStyles } from './selectStyles';
 import * as actions  from '../../../redux/transoperations/operations-action';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+import { NavLink } from 'react-router-dom';
 
 function Transaction({ categories, isIncome, placeholder, type }) {
   const selectedDate = useSelector(getSelectedDate);
@@ -141,7 +142,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
             placeholder={placeholder}
             required
         />
-        <FormControl>
+          <FormControl >
           <InputLabel sx={{ fontSize: '12px' }}>Категория</InputLabel>
           <Select
             sx={
@@ -152,6 +153,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
                     borderRadius: '0 0 16px 0',
                     border: '2px solid #FFF',
                     fontSize: '12px',
+                    
                   }
                 : isTablet
                 ? {
@@ -205,6 +207,16 @@ function Transaction({ categories, isIncome, placeholder, type }) {
         </Button>
       </ButtonGroup>
       </form>
+      <div className={s.buttons}>
+        <ButtonGroup color="secondary" variant="outlined" sx={buttonGroupStyles}>
+          <NavLink to="/expenses/input">
+            <Button type="submit">Внести расход</Button>
+        </NavLink>
+          <NavLink to="/income/input">
+            <Button type="submit">Внести доход</Button>
+          </NavLink>
+      </ButtonGroup>
+      </div>
     </div>
   );
 }
