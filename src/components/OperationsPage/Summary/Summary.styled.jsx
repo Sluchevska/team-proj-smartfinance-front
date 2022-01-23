@@ -76,10 +76,10 @@ export const ListItem = styled.li`
        @media screen and (min-width: 768px){
         position: absolute;
     z-index: 3;
-    width: 88px;
-    height: 64px;
-    bottom: 98px;
-    left: 186px;
+    width: 183px;
+    height: 142px;
+    top: 1033px;
+    right: 88px;
     background-image: url(${twoKap});
     }
 
