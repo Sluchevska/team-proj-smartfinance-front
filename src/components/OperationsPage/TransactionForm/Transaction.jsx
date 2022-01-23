@@ -143,8 +143,15 @@ function Transaction({ categories, isIncome, placeholder, type }) {
             // required
         />
           <FormControl >
-          <InputLabel sx={{ fontSize: '12px' }}>Категория</InputLabel>
-          <Select
+          <InputLabel  sx={{ fontSize: '12px' }} style={{
+           
+            }}
+              
+            >Категория</InputLabel>
+            <Select className={s.select}  style={{
+              
+            }}
+              
             sx={
               isMobile
                 ? {
