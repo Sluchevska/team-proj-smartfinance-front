@@ -4,6 +4,7 @@ import './datePickerStyles.css';
 import {
   Button,
   ButtonGroup,
+  Container,
   FormControl,
   InputLabel,
   MenuItem,
@@ -24,6 +25,10 @@ import { selectStyles } from './selectStyles';
 import * as actions  from '../../redux/transoperations/operations-action';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+
+import { NavLink } from 'react-router-dom';
+
+import { ReturnSvg, ReturnText, ReturnNav } from './returnHomeMobile.styled';
 
 function InputMobile({ categories, placeholder, type }) {
   const selectedDate = useSelector(getSelectedDate);
@@ -106,8 +111,23 @@ function InputMobile({ categories, placeholder, type }) {
   };
 
   return (
+   
+
     <div className={s.container}>
-    <form onSubmit={handleSubmit} className={s.form}>
+      
+  
+    
+      <form onSubmit={handleSubmit} className={s.form}>
+         <Container>
+       <NavLink to="/expenses">
+          <ReturnNav>
+          <ReturnSvg/>
+          <ReturnText>Вернуться на главную</ReturnText>
+          </ReturnNav>
+        </NavLink>
+        </Container>
+
+
       <div className={s.wrapInputs}>
         <label className={s.label}>
           <img src={calendar} style={{ marginRight: '10px' }} alt="calendar" />
