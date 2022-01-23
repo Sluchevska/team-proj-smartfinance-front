@@ -15,9 +15,13 @@ function OperationsList() {
     const operations = useSelector(getOperations);
     return (
         <SimpleBar
-            style={{ maxHeight: 320}}
-            
-            autoHide={false}>
+            style={{
+                maxHeight: 346,
+                scrollbarMinSize: 130,
+                
+            }}
+            autoHide={false}
+            scrollbarMinSize={130}>
         <List>
             {operations.map((operations)=> (
                 <ListItem key={operations._id}  >

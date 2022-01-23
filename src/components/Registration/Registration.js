@@ -1,13 +1,13 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { fetchSignUp } from '../../api/userApi';
+// import { fetchSignUp } from '../../api/userApi';
 import { register,
   } from '../../redux/auth/auth-operations';
 import { 
   getUserName,
-  getUserEmail,
+  // getUserEmail,
   } from '../../redux/auth/auth-selectors';
 
 
@@ -144,7 +144,12 @@ export default function Registration({ onClickComeBack }) {
       <Fragment>
         <Title>Вы можете авторизоваться с помощью Google Account:</Title>
         <GoogleContainer>
-          <Google href='https://team-proj-smartfinance-back.herokuapp.com/'>Google</Google>
+        <Google
+          href='https://team-proj-smartfinance-back.herokuapp.com/api/users/google'
+          rel="noreferrer"
+          target="_blank">
+          Google
+        </Google>
         </GoogleContainer>
       <Title>
         Или зайти с помощью e-mail и пароля, предварительно зарегистрировавшись:

@@ -16,15 +16,15 @@ export async function fetchSignUp(credentials) {
   return data;
 }
 
-export async function fetchGoogleAuth() {
-  const { data } = await axios.get(`/auth/google`);
-  return data;
-}
+// export async function fetchGoogleAuth() {
+//   const { data } = await axios.get(`/api/users/google`);
+//   return data;
+// }
 
-export async function fetchGoogleRedirect() {
-  const { data } = await axios.get(`/auth/google-redirect`);
-  return data;
-}
+// export async function fetchGoogleRedirect() {
+//   const { data } = await axios.get(`/api/users/google-redirect`);
+//   return data;
+// }
 
 export async function fetchLogIn(credentials) {
   const data = await axios.post(`/api/users/login`, credentials);
@@ -48,8 +48,13 @@ export async function fetchUploadAvatar() {
 }
 
 export async function fetchMonthReports({ month, year }) {
+  const monthApi = pad(month);
+  function pad(n) {
+    if (n < 10) return '0' + n;
+    return n;
+  }
   const { data } = await axios.get(
-    `/api/operations/info?year=${year}&month=${month}`,
+    `/api/operations/info?year=${year}&month=${monthApi}`,
   );
   return data;
 }

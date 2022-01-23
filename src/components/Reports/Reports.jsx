@@ -14,7 +14,7 @@ const operationsList = operations.filter(operation => operation.type === type);
 
 
 const Reports = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 //   const operations = useSelector(getOperations);
 const onButton = (month, year, category) => dispatch(fetchByCategoryPeriod(month, year, category));
 

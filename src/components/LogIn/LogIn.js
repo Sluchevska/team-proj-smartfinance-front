@@ -107,7 +107,10 @@ export default function LogIn({ onClickRegister}) {
     <Fragment>
       <Title>Вы можете авторизоваться с помощью Google Account:</Title>
       <GoogleContainer>
-        <Google href="https://team-proj-smartfinance-back.herokuapp.com/auth/google">
+        <Google
+          href="https://team-proj-smartfinance-back.herokuapp.com/api/users/google"
+              rel="noreferrer"
+              target="_blank">
           Google
         </Google>
       </GoogleContainer>
