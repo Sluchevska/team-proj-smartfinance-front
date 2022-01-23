@@ -3,6 +3,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deleteOperation } from '../../../redux/transoperations/operations-operations';
+import formatSum from '../../../utils/formatSum';
 
 import {
     Container,
@@ -29,7 +30,7 @@ function OperationsItem({ operations }) {
                 <Date >{operations.date}</Date>
                 <Description >{operations.description}</Description>
                 <Category >{operations.category}</Category>
-                {location.pathname === '/expenses' ? <MinusSum>-{operations.sum.toFixed(2)} грн</MinusSum> :<PlusSum>{operations.sum.toFixed(2)} грн</PlusSum>}
+                {location.pathname === '/expenses' ? <MinusSum>-{formatSum(operations.sum)} грн</MinusSum> :<PlusSum>{formatSum(operations.sum)} грн</PlusSum>}
                 <IconButton>
                     {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(deleteOperation(operations._id))} />}
                 </IconButton>
@@ -46,7 +47,7 @@ function OperationsItem({ operations }) {
                     </NameInfo>
                 </WrapperInfo>
                 <WrapperSum>
-                {location.pathname === '/income' ? <PlusSum>{operations.sum.toFixed(2)} грн</PlusSum> : <MinusSum>-{operations.sum.toFixed(2)} грн</MinusSum>}
+                {location.pathname === '/income' ? <PlusSum>{formatSum(operations.sum)} грн</PlusSum> : <MinusSum>-{formatSum(operations.sum)} грн</MinusSum>}
                     <IconButton>
                         {<DeleteIcon width="18" height="18" fill="black" onClick={() => dispatch(deleteOperation(operations._id))} />}
                     </IconButton>
@@ -57,4 +58,3 @@ function OperationsItem({ operations }) {
 
 export default OperationsItem;
 
-//parseInt(sum, 10).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')

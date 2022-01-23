@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { fetchSummary } from '../../../redux/summary/summary-operations';
 import { getOperationsByMonth } from '../../../redux/summary/summary-selectors';
-import { getOperations} from '../../../redux/transoperations/operations-selectors';
+import { getOperations } from '../../../redux/transoperations/operations-selectors';
+import formatSum from '../../../utils/formatSum';
+
 import {
     Wrapper,
     Title,
@@ -46,7 +48,7 @@ function Summary() {
                     {data.map((data)=> (
                     <ListItem key={data.month}  >
                         <p>{monthToName(data.month)}</p>
-                        <p>{data.total.toFixed(2)}</p>
+                        <p>{formatSum(data.total)}</p>
                     </ListItem>
                     ))}
                 </List>
