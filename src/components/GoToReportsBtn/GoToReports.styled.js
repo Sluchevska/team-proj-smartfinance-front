@@ -4,7 +4,7 @@ import gotobtn from '../../icons/gotoreportbtn.svg';
 export const GoToSvg = styled.svg`
   background-image: url(${gotobtn});
   width: 24px;
-  height: 24px;
+  height: 16px;
   margin-left: 15px;
   display: flex;
   &:hover,
@@ -18,6 +18,7 @@ export const GoToText = styled.p`
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.04em;
+  align-items: center;
   color: rgba(82, 85, 95, 0.7);
   padding: 0;
   margin: 0;
@@ -39,7 +40,7 @@ export const Container = styled.div`
     margin-left: 111px; */
   }
   @media screen and (min-width: 1280px) {
-    /* margin-left: 205px; */
+    margin-left: 205px;
   }
 `;
 

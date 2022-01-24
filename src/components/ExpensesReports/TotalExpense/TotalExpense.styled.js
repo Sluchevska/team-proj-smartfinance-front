@@ -9,8 +9,13 @@ export const Container = styled.div`
   border-radius: 30px;
   margin: 20px;
   height: 85px;
+
   @media (min-width: 768px) {
     height: 50px;
+    margin: 40px 50px 0;
+  }
+  @media (min-width: 1280px) {
+    margin: 40px 0 20px;
   }
 `;
 
