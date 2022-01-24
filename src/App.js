@@ -3,7 +3,7 @@ import { useHistory, useParams } from 'react-router';
 import React, { lazy, Suspense, useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { toast } from 'react-toastify';
 import Spinner from './components/Spinner/Spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -30,6 +30,7 @@ const InputMobileView = lazy(() =>
   import('./views/InputMobileView' /*webpackChunkName: "inputMobile-view" */),
 );
 
+
 function App() {
   const dispatch = useDispatch();
 
@@ -40,6 +41,8 @@ function App() {
   console.log('verify', verify);
 
   if (verify) {
+
+    toast.success(`Ваш e-mail подтвержден, теперь вы можете перейти на сайт`);
     //тут пишешь код на всплытие уведомления о благополучной верификации
     // и что пользователь может войти  на сайт
   }

@@ -208,9 +208,7 @@ export default function Registration({ onClickComeBack }) {
                                 {emailError}{' '}
                             </div>
             )}
-          {/* <NoticeText>
-            We'll never share your email with anyone else.
-          </NoticeText> */}
+   
         </Label>
 
         <Label>
@@ -237,16 +235,13 @@ export default function Registration({ onClickComeBack }) {
                                 {passwordError}{' '}
                             </div>
             )}
-          {/* <NoticeText>
-            Your password must be 8-20 characters long and must not contain
-            spaces, special characters, or emoji.
-          </NoticeText> */}
+      
         </Label>
         <BtnContainer>
           <Button
                 type="button"
                 onClick={onClickComeBack}
-          >  ВЕРНУТЬСЯ</Button>
+          >  ВОЙТИ</Button>
            <Button
                 type="submit"
               
