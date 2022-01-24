@@ -1,4 +1,4 @@
-import { Container, ContainerMain } from './Charts.styled';
+import { Container, ContainerMain, Empty } from './Charts.styled';
 import MobileCharts from './MobileCharts';
 import VerticalCharts from './VerticalCharts';
 import { useSelector } from 'react-redux';
@@ -31,10 +31,17 @@ const Charts = () => {
   const dataFiltered = data.find(el => el.category === category);
 
   const chartsData = [...dataFiltered.descriptionData];
-
+const isEmpty = chartsData.length === 0;
   const screenIsMobile = window.screen.width <= 320;
   return (
-    <ContainerMain>
+    <>
+    {isEmpty ?(
+    <>
+    <Empty></Empty>
+    </>
+    ):(
+      <>
+      <ContainerMain>
       <Container>
         {screenIsMobile ? (
           <MobileCharts data={chartsData} />
@@ -43,6 +50,10 @@ const Charts = () => {
         )}
       </Container>
     </ContainerMain>
+    </>
+    )
+    }
+    </>
   );
 };
 
