@@ -5,9 +5,14 @@ export const BalanceContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  order: 3;
 
   @media (min-width: 768px) {
     flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    order: 0;
   }
 `;
 
@@ -26,7 +31,6 @@ export const FormContainer = styled.form`
   color: rgba(82, 85, 95, 0.7);
 
   @media (min-width: 768px) {
-    margin-right: 90px;
     margin-bottom: 0;
   }
 `;
@@ -34,11 +38,12 @@ export const FormContainer = styled.form`
 export const Title = styled.label`
   position: relative;
   display: block;
+  text-align: center;
 
   /* margin-left: auto;
   margin-right: auto; */
-  margin-bottom: 30px;
-  margin-top: 30px;
+  // margin-bottom: 30px; - спрятала Марина
+  // margin-top: 30px; - спрятала Марина
   /* font-weight: 500; */
 
   font-weight: 500;
@@ -153,7 +158,6 @@ export const BalanceDisplay = styled.div`
   border: 2px solid #ffffff;
   background-color: transparent;
   border-radius: 16px;
-
   @media (min-width: 768px) {
     margin-top: 0px;
     margin-left: 21px;
@@ -161,11 +165,13 @@ export const BalanceDisplay = styled.div`
 `;
 
 export const ViewContainer = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
+  display: grid;
+  padding: 20px;
+  // flex-direction: column-reverse;
   text-align: center;
   align-items: center;
   justify-content: center;
+  // order: 3;
 
   @media (min-width: 768px) {
     display: flex;

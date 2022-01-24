@@ -4,13 +4,16 @@ import arrowL from '../../../icons/arrow-left.svg';
 
 export const Container = styled.div`
   display: grid;
-  justify-content: end;
+  margin-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
 
-  // @media (min-width: 320px) {
-  //     display: block;
-  //     margin-right: auto;
-  //     margin-left: auto;
-  //   }
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    display: block;
+    margin-right: 0;
+    margin-left: 0;
+  }
 `;
 
 export const Title = styled.p`
