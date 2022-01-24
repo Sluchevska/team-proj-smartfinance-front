@@ -22,13 +22,15 @@
 }
 .icon:hover {
   fill: #ff751d;
-  background-image: url('../../../icons/Rectangle-orange.svg');
 }
-.icon:focus {
+.button:focus svg{
   fill: #ff751d;
   background-image: url('../../../icons/Rectangle-orange.svg');
 }
-
+.icon:active {
+  fill: #ff751d;
+  background-image: url('../../../icons/Rectangle-orange.svg');
+}
 .category {
   margin: 0;
   padding: 0;

@@ -15,15 +15,16 @@ export const Container = styled.div`
 `;
 
 export const BottomKapusta = styled.div`
-  
- 
     @media screen and (min-width: 1280px){
-      position: absolute;
-        z-index: -1;
+      // position: absolute;
+      //   z-index: -1;
    background-image: url(${mnogoKup});
     background-repeat: repeat;
     width: 100%;
-    height: 232px;
-    top: 719px;
+    height: 100px;
+    // top: 719px;
     }
+`;
+export const Empty = styled.div`
+  height: 0;
 `;
