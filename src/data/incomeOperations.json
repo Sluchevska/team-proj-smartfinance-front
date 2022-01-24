@@ -1,0 +1,162 @@
+[
+  {
+    "id": "id-1",
+    "date": "07.01.21",
+    "category": "ЗП",
+    "description": "Аванс",
+    "sum": "28000",
+    "type": "income"
+  },
+  {
+    "id": "id-2",
+    "date": "15.01.21",
+    "category": "Доп. доход",
+    "description": "Кредит",
+    "sum": "50000",
+    "type": "income"
+  },
+  {
+    "id": "id-3",
+    "date": "15.01.21",
+    "category": "Доп. доход",
+    "description": "Кредит",
+    "sum": "50000",
+    "type": "income"
+  },
+  {
+    "id": "id-4",
+    "date": "15.01.21",
+    "category": "Доп. доход",
+    "description": "Кредит",
+    "sum": "50000",
+    "type": "income"
+  },
+  {
+    "id": "id-5",
+    "date": "15.01.21",
+    "category": "ЗП",
+    "description": "Аванс",
+    "sum": "28000",
+    "type": "income"
+  },
+  {
+    "id": "id-6",
+    "date": "15.01.21",
+    "category": "ЗП",
+    "description": "Аванс",
+    "sum": "28000",
+    "type": "income"
+  },
+  {
+    "id": "id-7",
+    "date": "15.01.21",
+    "category": "ЗП",
+    "description": "Аванс",
+    "sum": "28000",
+    "type": "income"
+  },
+  {
+    "id": "id-8",
+    "date": "15.01.21",
+    "category": "ЗП",
+    "description": "Аванс",
+    "sum": "28000",
+    "type": "income"
+  },
+  {
+    "id": "id-9",
+    "date": "15.01.21",
+    "category": "ЗП",
+    "description": "Аванс",
+    "sum": "28000",
+    "type": "income"
+  },
+  {
+    "id": "id-10",
+    "date": "15.01.21",
+    "category": "Доп. доход",
+    "description": "Кредит",
+    "sum": "50000",
+    "type": "income"
+  },
+  {
+    "id": "id-1",
+    "date": "15.01.21",
+    "category": "Транспорт",
+    "description": "Метро",
+    "sum": "15",
+    "type": "expenses"
+  },
+  {
+    "id": "id-2",
+    "date": "15.01.21",
+    "category": "Продукты",
+    "description": "Вода",
+    "sum": "25",
+    "type": "expenses"
+  },
+  {
+    "id": "id-3",
+    "date": "15.01.21",
+    "category": "Здоровье",
+    "description": "Витамины",
+    "sum": "450",
+    "type": "expenses"
+  },
+  {
+    "id": "id-4",
+    "date": "15.01.21",
+    "category": "Алкоголь",
+    "description": "Вино",
+    "sum": "180",
+    "type": "expenses"
+  },
+  {
+    "id": "id-5",
+    "date": "15.01.21",
+    "category": "Развлечения",
+    "description": "Кино",
+    "sum": "250",
+    "type": "expenses"
+  },
+  {
+    "id": "id-6",
+    "date": "15.01.21",
+    "category": "Все для дома",
+    "description": "Веник",
+    "sum": "75",
+    "type": "expenses"
+  },
+  {
+    "id": "id-7",
+    "date": "15.01.21",
+    "category": "Техника",
+    "description": "Ноутбук",
+    "sum": "28000",
+    "type": "expenses"
+  },
+  {
+    "id": "id-8",
+    "date": "15.01.21",
+    "category": "Спорт, хобби",
+    "description": "Шейпинг",
+    "sum": "1000",
+    "type": "expenses"
+  },
+  {
+    "id": "id-9",
+    "date": "15.01.21",
+    "category": "Образование",
+    "description": "Курсы английского",
+    "sum": "10500",
+    "type": "expenses"
+  },
+  {
+    "id": "id-10",
+    "date": "15.01.21",
+    "category": "Прочее",
+    "description": "Игрушки",
+    "sum": "2500",
+    "type": "expenses"
+  }
+]
