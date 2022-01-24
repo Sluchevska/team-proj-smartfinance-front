@@ -76,6 +76,7 @@
   .form {
     display: none;
   }
+
  
 }
 
@@ -105,4 +106,16 @@ margin-top: 60px;
 .sum {
   margin-top: 20px;
 }
+
+.select {
+    width: 280px;
+    height: 44px;
+    margin-bottom: 30px;
+    border-radius: 0 0 16px 0;
+    border: 2px solid #FFF;
+    font-size: 12px;
+    
+}
+
+
 }
