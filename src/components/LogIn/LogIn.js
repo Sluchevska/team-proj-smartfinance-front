@@ -146,9 +146,7 @@ export default function LogIn({ onClickRegister}) {
               {emailError}{' '}
             </div>
           )}
-          {/* <NoticeText>
-            We'll never share your email with anyone else.
-          </NoticeText> */}
+        
         </Label>
 
         <Label>
@@ -175,10 +173,7 @@ export default function LogIn({ onClickRegister}) {
               {passwordError}{' '}
             </div>
           )}
-          {/* <NoticeText>
-            Your password must be 8-20 characters long and must not contain
-            spaces, special characters, or emoji.
-          </NoticeText> */}
+        
         </Label>
         <BtnContainer>
           <Button type="submit">

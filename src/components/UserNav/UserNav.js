@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logOut } from '../../redux/auth/auth-operations.js';
 import logoutSvg from '../../icons/logout.svg';
 import { getUserName } from '../../redux/auth/auth-selectors.js';
+
 import {
   UserInfo,
   UserName,
