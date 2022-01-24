@@ -1,10 +1,13 @@
 import styled from '@emotion/styled'
+import twoKap from "../../../icons/2kapustaHPD.svg";
+import mnogoKup from '../../../icons/mnogoKapDesk.svg';
 
 export const Wrapper = styled.div`
     
   @media screen and (min-width: 768px) {
     margin-top:90px;
     margin-left:30px;
+    /* position: relative; */
   }
 
   @media screen and (min-width: 1280px) {
@@ -69,6 +72,28 @@ export const ListItem = styled.li`
     }
   }
   `
+  export const BottomKapusta = styled.div`
+  
+       @media screen and (min-width: 768px){
+        position: absolute;
+  
+    width: 183px;
+    height: 142px;
+    top: 1033px;
+    right: 88px;
+    background-image: url(${twoKap});
+    }
+
+    @media screen and (min-width: 1280px){
+        z-index: -1;
+   background-image: url(${mnogoKup});
+    background-repeat: repeat;
+    width: 100%;
+    height: 232px;
+    top: 719px;
+    }
+`;
+
  
 
   

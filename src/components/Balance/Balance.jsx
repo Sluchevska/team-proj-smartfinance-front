@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+import formatSum from '../../utils/formatSum';
 import Modal from '../Modal/Modal';
 import { useSelector, useDispatch } from 'react-redux';
 import ModalGetBalance from '../Modal/ModalBalance/ModalGetBalance';
@@ -70,7 +70,9 @@ const Balance = () => {
                 <ModalGetBalance />
               </>
             ) : (
-              <BalanceDisplay>{`${balanceFromStore} UAH`}</BalanceDisplay>
+              <BalanceDisplay>{`${formatSum(
+                balanceFromStore,
+              )} UAH`}</BalanceDisplay>
             ))}
         </Title>
       </FormContainer>
