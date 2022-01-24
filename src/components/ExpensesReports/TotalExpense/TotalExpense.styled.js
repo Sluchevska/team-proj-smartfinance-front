@@ -1,50 +1,61 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-display:flex;
-justify-content: center;
-align-items: center;
-background: #FFFFFF;
-box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
-border-radius: 30px;
-margin: 20px;
-height: 50px;
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  border-radius: 30px;
+  margin: 20px;
+  height: 85px;
+  @media (min-width: 768px) {
+    height: 50px;
+  }
+`;
 
-export const ContainerMain =styled.div`
-display: flex;
+export const ContainerMain = styled.div`
+display: block;  
+text-align: center;
 padding: 10px;
-text-align: end;
-margin-left: 20px;
-&:first-of-type{
-    border-right: 1px solid #E0E5EB;
+&:first-of-type {
+  border-right: 1px solid #e0e5eb;
 }
-`
+
+@media (min-width: 768px) {
+  display: flex;
+  text-align: end;
+  margin-left: 20px;
+`;
 
 export const Title = styled.p`
-font-weight: bold;
-font-size: 14px;
-line-height: 16px;
-margin-right: 20px;
-color: #52555F;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #52555f;
+  margin-bottom: 5px;
 
-`
-
+  @media (min-width: 768px) {
+    margin-right: 20px;
+  }
+`;
 
 export const Income = styled.p`
-font-size: 14px;
-line-height: 16px;
-font-weight: bold;
-color: #E53935;
-letter-spacing: 0.04em;
-margin-right: 20px
-`
-
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  color: #407946;
+  letter-spacing: 0.04em;
+`;
 
 export const Expense = styled.p`
-font-size: 14px;
-line-height: 16px;
-font-weight: bold;  
-color: #407946;
-letter-spacing: 0.04em;
-`
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  color: #e53935;
+  letter-spacing: 0.04em;
+
+  @media (min-width: 768px) {
+    margin-right: 20px;
+  }
+`;
