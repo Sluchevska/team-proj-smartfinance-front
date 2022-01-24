@@ -21,6 +21,19 @@ export const ListItem = styled.li`
     
   }
   `
+  export const EmptyRow = styled.li`
+  
+    @media screen and (max-width: 767px) {
+      display:none;
+    }
+
+  @media screen and (min-width: 768px) {
+    height: 47px;
+    border: solid 1px #F5F6FB
+  }
+  `
+
+  
 
 
   

@@ -7,6 +7,7 @@ import {
 } from './TotalExpense.styled';
 import { transactionsSelectors } from '../../../redux/transactions-month';
 import { useSelector } from 'react-redux';
+import formatSum from '../../../utils/formatSum';
 
 const TotalExpence = () => {
   const totalExpense = useSelector(transactionsSelectors.getTotalExpense);
@@ -15,11 +16,20 @@ const TotalExpence = () => {
     <Container>
       <ContainerMain>
         <Title>Расходы:</Title>
-        <Income> - {totalExpense.totalExpenses} грн</Income>
+        {totalExpense.totalExpenses === null ? (
+          <Expense> 0.00 грн </Expense>
+        ) : (
+          <Expense> - {formatSum(totalExpense.totalExpenses)} грн</Expense>
+        )}
       </ContainerMain>
       <ContainerMain>
         <Title>Доходы:</Title>
-        <Expense> + {totalExpense.totalIncome} грн</Expense>
+
+        {totalExpense.totalIncome === null ? (
+          <Income> 0.00 грн </Income>
+        ) : (
+          <Income> + {formatSum(totalExpense.totalIncome)} грн</Income>
+        )}
       </ContainerMain>
     </Container>
   );

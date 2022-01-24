@@ -1,6 +1,5 @@
 import { BarChart, Bar, Cell, LabelList, XAxis, ResponsiveContainer } from 'recharts';
 export default function MobileCharts ({data}) {
-  console.log("MobileCharts", data)
     return (
         <div>
           <ResponsiveContainer width="100%" height={300} margin={{
@@ -16,9 +15,9 @@ export default function MobileCharts ({data}) {
                 barCategoryGap="10"
             >
             <XAxis hide axisline={false} type="number"/>
-              <Bar dataKey="sum" barSize={20} radius={[0, 10, 10, 0]} label={{fill: '#52555F', fontSize: 10, fontFamily: 'Roboto', position: 'right' }}>
+              <Bar dataKey="total" barSize={20} radius={[0, 10, 10, 0]} label={{fill: '#52555F', fontSize: 10, fontFamily: 'Roboto', position: 'right' }}>
               {data
-               .sort((a, b) => (b.sum > a.sum ? 1 : -1))
+               .sort((a, b) => (b.total > a.total ? 1 : -1))
                .map((el, index) => (
               <Cell
                 key={`cell-${index}`}

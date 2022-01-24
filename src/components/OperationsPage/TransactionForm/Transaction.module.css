@@ -25,7 +25,7 @@
 .iconCalc {
   position: absolute;
   top: 50%;
-  right: 20px;
+  right: 10px;
 
   transform: translateY(-50%);
 }
@@ -72,6 +72,15 @@
   border: 2px solid #ff751d;
 }
 
+   .select {
+  border: none;
+  appearance: none;
+
+  }
+ 
+
+
+
 @media screen and (min-width: 768px) {
   .form {
     padding-top: 28px;
@@ -94,16 +103,19 @@
     border-top-right-radius: 0;
   }
   .sumWrap {
-    width: 128px;
+    width: 104px;
   }
   .sum {
-    width: 128px;
+    padding: 12px 30px;
+    width: 104px;
     border: 2px solid #f5f6fb;
     border-radius: 0px 16px 16px 0px;
   }
    .buttons {
     display: none;
   }
+
+ 
 
 
 }
@@ -132,13 +144,12 @@
 }
 
 .buttons {
-  margin-top: 150px;
+  margin-top: 50px;
   margin-bottom: 100px;
   margin-right: auto;
-  margin-left: -20px;
+  margin-left: -25px;
   
-
- 
+  
 }
 }
   

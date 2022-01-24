@@ -2,33 +2,33 @@ import {
   BarChart,
   Bar,
   Cell,
-  LabelList,
+  CartesianGrid,
   XAxis,
   ResponsiveContainer,
 } from 'recharts';
-import autoMergeLevel1 from 'redux-persist/es/stateReconciler/autoMergeLevel1';
 
 const VerticalCharts = ({ data }) => {
-  console.log('charts', data);
   return (
     <div>
       <ResponsiveContainer
         height={400}
-        margin={{ top: 0, right: 40, bottom: 0, left: 40 }}
+        margin={{ top: 0, right: 40, bottom: 10, left: 40 }}
       >
         <BarChart
           data={data}
-          barCategoryGap={20}
+          barCategoryGap={4}
+          justify-content='center'
+          align-items='center'
           margin={{
-            top: 50,
-            right: 20,
+            top: 20,
+            right: 2,
             bottom: 9,
-            left: 20,
+            left: 2,
           }}
         >
+          <CartesianGrid horizontal={true} vertical={false}/>
           <XAxis
             dataKey="description"
-            // dataKey="sum"
             axisLine={false}
             tickLine={false}
             label={{
@@ -41,8 +41,7 @@ const VerticalCharts = ({ data }) => {
           грн
           <Bar
             dataKey="total"
-            // dataKey="description"
-            barSize={38}
+            maxBarSize={38}
             radius={[10, 10, 0, 0]}
             label={{
               position: 'top',
