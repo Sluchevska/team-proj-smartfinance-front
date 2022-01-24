@@ -25,7 +25,7 @@
 .iconCalc {
   position: absolute;
   top: 50%;
-  right: 20px;
+  right: 10px;
 
   transform: translateY(-50%);
 }
@@ -144,14 +144,12 @@
 }
 
 .buttons {
-  margin-top: 130px;
+  margin-top: 50px;
   margin-bottom: 100px;
   margin-right: auto;
   margin-left: -25px;
   
   
-
- 
 }
 }
   
