@@ -8,7 +8,6 @@ import {
   fetchSignUp,
   fetchLogIn,
   fetchLogOut,
-
   fetchGetCurrentUser,
   // fetchGoogleAuth,
   // fetchGoogleRedirect,
@@ -17,7 +16,6 @@ import {
   registerRequest,
   registerSuccess,
   registerError,
-  
   logoutRequest,
   logoutSuccess,
   loginRequest,
@@ -41,42 +39,6 @@ const register = credentials => async dispatch => {
     toast.warn(`${response.data.message}`);
   }
 };
-
-// export const fetchAuthGoogle = createAsyncThunk(
-//   'auth/fetchGoogleAuth',
-//   async (_, { rejectWithValue }) => {
-//     try {
-//       const data = await fetchGoogleAuth();
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error.response.data);
-//     }
-//   },
-// );
-
-// export const fetchRedirectGoogle = createAsyncThunk(
-//   'auth/fetchGoogleRedirect',
-//   async (_, { rejectWithValue }) => {
-//     try {
-//       const data = await fetchGoogleRedirect();
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   },
-// );
-const fetchGoogleUser = createAsyncThunk(
-  'auth/fetchGoogleUser',
-  async (googleToken, { rejectWithValue }) => {
-    token.set(googleToken);
-    try {
-      const { data } = await fetchGetCurrentUser();
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  },
-);
 
 const logIn = credentials => async dispatch => {
   dispatch(loginRequest());
@@ -104,22 +66,35 @@ const logOut = () => async dispatch => {
   }
 };
 
-const getCurrentUser = () => async (dispatch, getState) => {
-  const {
-    auth: { token: persistedToken },
-  } = getState();
+const getCurrentUser = tokenFromApp => async (dispatch, getState) => {
+  console.log('tokenFromApp getCurrentUser', tokenFromApp);
 
-  if (!persistedToken) {
-    return;
+  if (tokenFromApp) {
+    token.set(tokenFromApp);
   }
-  token.set(persistedToken);
+
+  if (!tokenFromApp) {
+    const {
+      auth: { token: persistedToken },
+    } = getState();
+
+    if (!persistedToken) {
+      return;
+    }
+
+    token.set(persistedToken);
+  }
+
   dispatch(getCurrentUserRequest());
   try {
     const response = await fetchGetCurrentUser();
+    console.log('response', response);
     dispatch(getCurrentUserSuccess(response.data.data.user));
+    console.log('response.data.data>>>>', response.data.data);
+    dispatch(loginSuccess(response.data.data));
   } catch ({ response }) {
     dispatch(getCurrentUserError(response.data.message));
   }
 };
 
-export { register, logOut, logIn, getCurrentUser, fetchGoogleUser };
+export { register, logOut, logIn, getCurrentUser };

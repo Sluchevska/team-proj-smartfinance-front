@@ -1,4 +1,5 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useSearchParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router';
 import React, { lazy, Suspense, useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,11 +11,9 @@ import {
   getCurrentUser,
   getFetchingCurrentUser,
   getIsAuthenticated,
-
 } from './redux/auth';
 
 import HeaderView from './views/HeaderView/HeaderView';
-
 
 import { HomeContainer } from './views/MainView/MainView.styled';
 
@@ -34,20 +33,28 @@ const InputMobileView = lazy(() =>
 function App() {
   const dispatch = useDispatch();
 
+  const [searchParams] = useSearchParams();
+  const tokenFromApp = searchParams.get('access_token');
+  console.log('tokenFromApp', tokenFromApp);
+  const verify = searchParams.get('verify');
+  console.log('verify', verify);
+
+  if (verify) {
+    //тут пишешь код на всплытие уведомления о благополучной верификации
+    // и что пользователь может войти  на сайт
+  }
+
   useEffect(() => {
-    dispatch(getCurrentUser());
-  }, [dispatch]);
+    dispatch(getCurrentUser(tokenFromApp));
+  }, [dispatch, tokenFromApp]);
 
   const isLogIn = useSelector(getIsAuthenticated);
-
-
 
   return (
     <div>
       <HeaderView />
       <HomeContainer>
         <Suspense fallback={<Spinner />}>
-
           <Routes>
             <Route path="/" element={<Navigate replace to="home" />} />
             <Route
@@ -80,7 +87,6 @@ function App() {
 
             {/* <Route path="*" element = {<Error/>} / > */}
           </Routes>
-
         </Suspense>
       </HomeContainer>
       <ToastContainer autoClose={2500} />
@@ -89,4 +95,3 @@ function App() {
 }
 
 export default App;
-
