@@ -61,3 +61,13 @@
   border: none;
   background-color: transparent;
 }
+.active svg{
+  fill: #ff751d;
+  background-image: url('../../../icons/Rectangle-orange.svg');
+  border: none;
+  background-color: transparent;
+}
+.active{
+  border: none;
+  background-color: transparent;
+}
