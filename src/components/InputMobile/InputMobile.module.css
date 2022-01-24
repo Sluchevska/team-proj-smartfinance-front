@@ -42,7 +42,7 @@
 
   background-color: transparent;
   border: 2px solid #fff;
-  border-bottom: none;
+  /* border-bottom: none; */
   border-radius: 16px 16px 0 0;
 }
 
@@ -89,7 +89,7 @@
 
 @media screen and (max-width: 768px) {
   .form {
-margin-top: 60px;
+margin-top: 0px;
 }
 
 .container {
@@ -104,7 +104,7 @@ margin-top: 60px;
   margin-top: 20px;
 }
 .sum {
-  margin-top: 20px;
+  margin-top:15px;
 }
 
 .select {
@@ -115,6 +115,9 @@ margin-top: 60px;
     border: 2px solid #FFF;
     font-size: 12px;
     
+}
+.formcontrol{
+  margin-top: 10px;
 }
 
 
