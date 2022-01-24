@@ -27,7 +27,8 @@
   fill: #ff751d;
   background-image: url('../../../icons/Rectangle-orange.svg');
 }
-.icon:active {
+
+.button:active svg{
   fill: #ff751d;
   background-image: url('../../../icons/Rectangle-orange.svg');
 }
@@ -58,6 +59,14 @@
   padding-right: 10px;
 }
 .button {
+  border: none;
+  background-color: transparent;
+}
+.active svg{
+  fill: #ff751d;
+  background-image: url('../../../icons/Rectangle-orange.svg');
+}
+.active {
   border: none;
   background-color: transparent;
 }

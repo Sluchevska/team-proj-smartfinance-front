@@ -40,5 +40,5 @@ export default combineReducers({
   category,
   type,
   loading,
-  error,
+  error
 });

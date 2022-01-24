@@ -15,7 +15,6 @@ import 'simplebar/dist/simplebar.min.css';
 
 function OperationsList() {
     const operations = useSelector(getOperations);
-    console.log(operations)
     const lengthOperations = operations.length;
     
 

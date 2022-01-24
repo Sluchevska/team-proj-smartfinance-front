@@ -2,24 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './Icon.module.css';
 import icons from './Icons';
-import { useDispatch } from 'react-redux';
-import { changeCategory } from '../../../redux/transactions-month/transaction-actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeCategory, changeActive } from '../../../redux/transactions-month/transaction-actions';
+import { getCategory } from '../../../redux/transactions-month/transaction-selectors';
 
 export default function Icon({ category, sum, id }) {
   const dispatch = useDispatch();
   const Icon = icons[id];
-
+  const active = useSelector(getCategory);
+  const isActive = active === category;
 const onIconClick = (category) => {
   dispatch(changeCategory(category));
-  // s.button.style.setProperty('#ff751d', active);
-  // s.icon.style.setProperty('#ff751d', fill);
 }
 
   return (
     <div className={s.item}>
       <p className={s.sum}>{sum}</p>
       <button
-        className={s.button}
+        className={isActive ? s.active: s.button}
         onClick={() => onIconClick(category)}
       >
         <Icon className={s.icon} width="56" height="56"></Icon>
