@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { getOperations} from '../../../redux/transoperations/operations-selectors';
 import OperationsItem from '../OperationsItem';
 import {
@@ -14,11 +15,10 @@ import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
 
 function OperationsList() {
+    const matches = useMediaQuery('(min-width:768px)');
     const operations = useSelector(getOperations);
-    console.log(operations)
     const lengthOperations = operations.length;
     
-
     function createArrayForEmptyRows() {
         const num = 9 - lengthOperations
         let emptyArray = [];
@@ -32,10 +32,13 @@ function OperationsList() {
 
     return (
         <SimpleBar
-            style={{
-                maxHeight: 346,
-                scrollbarMinSize: 130,
-            }}
+            style={
+                matches === true ?
+                    {maxHeight: 346,
+                    scrollbarMinSize: 130,} :
+                    {maxHeight: 160,
+                    scrollbarMinSize: 130,}
+            }
             autoHide={false}
             scrollbarMinSize={130}>
             
