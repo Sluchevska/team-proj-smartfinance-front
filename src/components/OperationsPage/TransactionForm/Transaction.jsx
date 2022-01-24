@@ -144,7 +144,7 @@ function Transaction({ categories, isIncome, placeholder, type }) {
         />
           <FormControl >
           <InputLabel  sx={{ fontSize: '12px' }} style={{
-           
+          
             }}
               
             >Категория</InputLabel>
