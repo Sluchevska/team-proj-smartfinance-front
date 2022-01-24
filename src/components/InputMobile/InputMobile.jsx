@@ -23,10 +23,10 @@ import incomeCategories from './incomeCategories.json';
 import { addOperation } from '../../redux/transoperations/operations-operations';
 import { getSelectedDate } from '../../redux/transoperations/operations-selectors';
 import s from '../InputMobile/InputMobile.module.css';
-// import { selectStyles } from './selectStyles';
+import { selectStyles } from './selectStyles';
 import * as actions  from '../../redux/transoperations/operations-action';
-// import useMediaQuery from '@mui/material/useMediaQuery';
-// import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 import { NavLink } from 'react-router-dom';
 
@@ -50,6 +50,9 @@ function InputMobile() {
   const [placeholder, setPlaceholder] = useState('Описание расхода');
   const [categories, setCategories] = useState(expenseCategories);
   const dispatch = useDispatch();
+    const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('tablet'));
+  const isTablet = useMediaQuery(theme.breakpoints.only('tablet'));
  
   useEffect(() => {
     if (location.pathname === '/expenses/input') {
@@ -182,7 +185,27 @@ function InputMobile() {
               
             }}
               
-           
+              sx={
+                isMobile
+                  ? {
+                    width: '280px',
+                    marginBottom: '30px',
+                    borderRadius: '0 0 16px 0',
+                    border: '2px solid #FFF',
+                    fontSize: '12px',
+                    
+                  }
+                  : isTablet
+                    ? {
+                      width: '168px',
+                      marginBottom: 0,
+                      borderRight: 'none',
+                      borderRadius: '0',
+                      fontSize: '12px',
+                    }
+                    : selectStyles
+              
+              }
             id="select"
             name="category"
             value={category}

@@ -110,6 +110,7 @@
     width: 104px;
     border: 2px solid #f5f6fb;
     border-radius: 0px 16px 16px 0px;
+    border-left: none;
   }
    .buttons {
     display: none;
@@ -134,6 +135,9 @@
 
   .buttons {
     display: none;
+  }
+  .sum {
+    border-left: none;
   }
 }
 
