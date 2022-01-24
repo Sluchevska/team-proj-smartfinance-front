@@ -15,14 +15,10 @@ import {
   loginRequest,
 } from './auth-actions';
 
-import { fetchGoogleUser } from './auth-operations';
-
 const initialUserState = { name: null, email: null };
 
 const user = createReducer(initialUserState, {
   [registerSuccess]: (_, { payload }) => payload.user,
-  [fetchGoogleUser.fulfilled]: (_, { payload }) => payload.user,
-  // [fetchRedirectGoogle.fulfilled]: (_, { payload }) => payload.user,
   [loginSuccess]: (_, { payload }) => payload.user,
 
   [logoutSuccess]: () => initialUserState,
@@ -41,9 +37,6 @@ const error = createReducer(null, {
   [registerSuccess]: () => null,
   [registerRequest]: () => null,
 
-  [fetchGoogleUser.fulfilled]: setError,
-  // [fetchRedirectGoogle.fulfilled]: setError,
-
   [loginError]: setError,
   [loginSuccess]: () => null,
   [loginRequest]: () => null,
@@ -60,14 +53,9 @@ const isLogin = createReducer(false, {
   [loginSuccess]: () => true,
   [getCurrentUserSuccess]: () => true,
   [getCurrentUserRequest]: () => true,
-  [fetchGoogleUser.fulfilled]: () => true,
-  // [fetchRedirectGoogle.fulfilled]: () => true,
 
   [registerError]: () => false,
   [loginError]: () => false,
-
-  [fetchGoogleUser.fulfilled]: () => false,
-  // [fetchRedirectGoogle.fulfilled]: () => false,
 
   [getCurrentUserError]: () => false,
   [logoutSuccess]: () => false,
