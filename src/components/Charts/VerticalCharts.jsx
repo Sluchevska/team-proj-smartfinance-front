@@ -9,7 +9,6 @@ import {
 import autoMergeLevel1 from 'redux-persist/es/stateReconciler/autoMergeLevel1';
 
 const VerticalCharts = ({ data }) => {
-  console.log('charts', data);
   return (
     <div>
       <ResponsiveContainer
