@@ -9,6 +9,7 @@ import {
   IconList,
   Title,
   ContainerMain,
+  IconBorder,
 } from './ReportsList.styled';
 
 import {
@@ -72,9 +73,9 @@ function ReportsList() {
         </IconContainer>
         <IconList>
           {categoriesList.map(({ category, sum, id }) => (
-            <li key={id}>
+            <IconBorder key={id}>
               <Icon id={id} category={category} sum={sum} />
-            </li>
+            </IconBorder>
           ))}
         </IconList>
       </ContainerMain>
