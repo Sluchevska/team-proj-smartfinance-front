@@ -186,7 +186,7 @@ export const ViewContainer = styled.div`
       justify-content: flex-end;
       align-items: baseline;
 
-      width: 1060px;
+      width: 1200px;
     }
   }
 `;
