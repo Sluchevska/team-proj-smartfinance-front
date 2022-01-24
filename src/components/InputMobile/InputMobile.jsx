@@ -50,13 +50,7 @@ function InputMobile() {
   const [placeholder, setPlaceholder] = useState('Описание расхода');
   const [categories, setCategories] = useState(expenseCategories);
   const dispatch = useDispatch();
-  // const theme = useTheme();
-  // const isMobile = useMediaQuery(theme.breakpoints.down('tablet'));
-  // const isTablet = useMediaQuery(theme.breakpoints.only('tablet'));
  
-
-  //добавила зависимость отрисовки от того какой путь вверху прописан
-  //тогда оно в локальный стейт заносит тип операции и передает в фетч
   useEffect(() => {
     if (location.pathname === '/expenses/input') {
       setType('expenses');
@@ -188,27 +182,7 @@ function InputMobile() {
               
             }}
               
-            // sx={
-            //   isMobile
-            //     ? {
-            //         width: '280px',
-            //         marginBottom: '30px',
-            //         borderRadius: '0 0 16px 0',
-            //         border: '2px solid #FFF',
-            //       fontSize: '22px',
-                    
-            //       }
-            //     : isTablet
-            //     ? {
-            //         width: '168px',
-            //         marginBottom: 0,
-            //         borderRight: 'none',
-            //         borderRadius: '0',
-            //         fontSize: '12px',
-                    
-            //       }
-            //     : selectStyles
-            // }
+           
             id="select"
             name="category"
             value={category}
