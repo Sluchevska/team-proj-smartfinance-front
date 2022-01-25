@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import {
   token,
   fetchSignUp,
@@ -67,8 +67,6 @@ const logOut = () => async dispatch => {
 };
 
 const getCurrentUser = tokenFromApp => async (dispatch, getState) => {
-  console.log('tokenFromApp getCurrentUser', tokenFromApp);
-
   if (tokenFromApp) {
     token.set(tokenFromApp);
   }
@@ -88,9 +86,9 @@ const getCurrentUser = tokenFromApp => async (dispatch, getState) => {
   dispatch(getCurrentUserRequest());
   try {
     const response = await fetchGetCurrentUser();
-    console.log('response', response);
+
     dispatch(getCurrentUserSuccess(response.data.data.user));
-    console.log('response.data.data>>>>', response.data.data);
+
     dispatch(loginSuccess(response.data.data));
   } catch ({ response }) {
     dispatch(getCurrentUserError(response.data.message));

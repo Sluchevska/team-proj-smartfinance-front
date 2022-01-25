@@ -2,18 +2,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
+  
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import { authReducer } from './auth';
 import reportsReducer from './reports/reports-reducers';
-// import { transactionsReducer } from './transaction';
+
 import { summaryReducer } from './summary';
 import balance from './balance/balance-reducer';
 import { transOperationsReducer } from './transoperations';
@@ -31,7 +26,6 @@ export const store = configureStore({
     reports: reportsReducer,
 
     transOperations: transOperationsReducer,
-    // transactions: transactionsReducer,
 
     summary: summaryReducer,
 

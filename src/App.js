@@ -1,17 +1,12 @@
 import { Routes, Route, Navigate, useSearchParams } from 'react-router-dom';
-import { useHistory, useParams } from 'react-router';
+
 import React, { lazy, Suspense, useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import Spinner from './components/Spinner/Spinner';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  getCurrentToken,
-  getCurrentUser,
-  getFetchingCurrentUser,
-  getIsAuthenticated,
-} from './redux/auth';
+import { getCurrentUser, getIsAuthenticated } from './redux/auth';
 
 import HeaderView from './views/HeaderView/HeaderView';
 
@@ -30,20 +25,17 @@ const InputMobileView = lazy(() =>
   import('./views/InputMobileView' /*webpackChunkName: "inputMobile-view" */),
 );
 
-
 function App() {
   const dispatch = useDispatch();
 
   const [searchParams] = useSearchParams();
   const tokenFromApp = searchParams.get('access_token');
-  console.log('tokenFromApp', tokenFromApp);
-  const verify = searchParams.get('verify');
-  console.log('verify', verify);
+
+  let verify = searchParams.get('verify');
 
   if (verify) {
-
     toast.success(`Ваш e-mail подтвержден, теперь вы можете перейти на сайт`);
-   
+    verify = null;
   }
 
   useEffect(() => {
