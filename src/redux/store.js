@@ -12,7 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import { authReducer } from './auth';
-import operationsReducer from './transactions-month/transaction-reducers';
+import reportsReducer from './reports/reports-reducers';
 // import { transactionsReducer } from './transaction';
 import { summaryReducer } from './summary';
 import balance from './balance/balance-reducer';
@@ -28,7 +28,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
 
-    operations: operationsReducer,
+    reports: reportsReducer,
 
     transOperations: transOperationsReducer,
     // transactions: transactionsReducer,

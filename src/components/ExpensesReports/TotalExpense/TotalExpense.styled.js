@@ -23,6 +23,8 @@ export const ContainerMain = styled.div`
 display: block;  
 text-align: center;
 padding: 10px;
+width: 150px;
+
 &:first-of-type {
   border-right: 1px solid #e0e5eb;
 }
@@ -31,6 +33,7 @@ padding: 10px;
   display: flex;
   text-align: end;
   margin-left: 20px;
+  width: auto;
 `;
 
 export const Title = styled.p`

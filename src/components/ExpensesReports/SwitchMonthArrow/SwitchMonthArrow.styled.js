@@ -22,6 +22,7 @@ export const Title = styled.p`
   line-height: 14px;
   text-align: center;
   letter-spacing: 0.04em;
+  margin-bottom: 10px;
   color: rgba(82, 85, 95, 0.7);
 `;
 
@@ -31,6 +32,8 @@ export const Month = styled.p`
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
+  width: 150px;
+  text-align: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #000000;

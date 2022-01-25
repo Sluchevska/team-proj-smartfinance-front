@@ -12,19 +12,16 @@ import {
   IconBorder,
 } from './ReportsList.styled';
 
-import {
-  transactionsSelectors,
-  transactionsActions,
-} from '../../../redux/transactions-month';
+import { reportsSelectors, reportsActions } from '../../../redux/reports';
 import categories from '../../../data/categories.json';
 
 function ReportsList() {
   const dispatch = useDispatch();
-  const expenses = useSelector(transactionsSelectors.getCategoryExpenses);
-  const income = useSelector(transactionsSelectors.getCategoryIncome);
+  const expenses = useSelector(reportsSelectors.getCategoryExpenses);
+  const income = useSelector(reportsSelectors.getCategoryIncome);
 
   const [title, setTitle] = useState('Расходы');
-  const type = useSelector(transactionsSelectors.getType);
+  const type = useSelector(reportsSelectors.getType);
 
   function dataFilteredType(type) {
     if (type === 'expenses') {
@@ -53,13 +50,13 @@ function ReportsList() {
   const onHandleChangeTypeClick = () => {
     if (type === 'expenses') {
       setTitle('Доходы');
-      dispatch(transactionsActions.changeType('income'));
-      dispatch(transactionsActions.changeCategory('ЗП'));
+      dispatch(reportsActions.changeType('income'));
+      dispatch(reportsActions.changeCategory('ЗП'));
     }
     if (type === 'income') {
       setTitle('Расходы');
-      dispatch(transactionsActions.changeType('expenses'));
-      dispatch(transactionsActions.changeCategory('Продукты'));
+      dispatch(reportsActions.changeType('expenses'));
+      dispatch(reportsActions.changeCategory('Продукты'));
     }
   };
 
