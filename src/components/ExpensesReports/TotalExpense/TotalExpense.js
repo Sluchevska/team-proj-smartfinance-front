@@ -5,12 +5,12 @@ import {
   Income,
   Title,
 } from './TotalExpense.styled';
-import { transactionsSelectors } from '../../../redux/transactions-month';
+import { reportsSelectors } from '../../../redux/reports';
 import { useSelector } from 'react-redux';
 import formatSum from '../../../utils/formatSum';
 
 const TotalExpence = () => {
-  const totalExpense = useSelector(transactionsSelectors.getTotalExpense);
+  const totalExpense = useSelector(reportsSelectors.getTotalExpense);
 
   return (
     <Container>

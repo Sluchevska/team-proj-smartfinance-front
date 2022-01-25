@@ -8,7 +8,7 @@ import {
   getType,
   getDescriptionExpenses,
   getDescriptionIncome,
-} from '../../redux/transactions-month/transaction-selectors';
+} from '../../redux/reports/reports-selectors';
 
 const Charts = () => {
   const category = useSelector(getCategory);
@@ -31,28 +31,27 @@ const Charts = () => {
   const dataFiltered = data.find(el => el.category === category);
 
   const chartsData = [...dataFiltered.descriptionData];
-const isEmpty = chartsData.length === 0;
+  const isEmpty = chartsData.length === 0;
   const screenIsMobile = window.screen.width <= 320;
   return (
     <>
-    {isEmpty ?(
-    <>
-    <Empty></Empty>
-    </>
-    ):(
-      <>
-      <ContainerMain>
-      <Container>
-        {screenIsMobile ? (
-          <MobileCharts data={chartsData} />
-        ) : (
-          <VerticalCharts data={chartsData} />
-        )}
-      </Container>
-    </ContainerMain>
-    </>
-    )
-    }
+      {isEmpty ? (
+        <>
+          <Empty></Empty>
+        </>
+      ) : (
+        <>
+          <ContainerMain>
+            <Container>
+              {screenIsMobile ? (
+                <MobileCharts data={chartsData} />
+              ) : (
+                <VerticalCharts data={chartsData} />
+              )}
+            </Container>
+          </ContainerMain>
+        </>
+      )}
     </>
   );
 };

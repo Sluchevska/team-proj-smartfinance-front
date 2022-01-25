@@ -5,10 +5,7 @@ import {
   Container,
   HolderStyle,
 } from './GoToReports.styled';
-import {
-  transactionsOperations,
-  transactionsSelectors,
-} from '../../redux/transactions-month';
+import { reportsOperations, reportsSelectors } from '../../redux/reports';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { useEffect } from 'react';
 
@@ -16,14 +13,12 @@ const GoToReportsBtn = () => {
   const dispatch = useDispatch();
 
   const { year, month } = useSelector(
-    transactionsSelectors.getSelectedDate,
+    reportsSelectors.getSelectedDate,
     shallowEqual,
   );
 
   useEffect(() => {
-    dispatch(
-      transactionsOperations.fetchAllTransactionsByMonth({ month, year }),
-    );
+    dispatch(reportsOperations.fetchAllReportsByMonth({ month, year }));
   }, [dispatch, month, year]);
 
   return (
