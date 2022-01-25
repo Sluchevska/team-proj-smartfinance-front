@@ -31,18 +31,19 @@ function App() {
   const [searchParams] = useSearchParams();
   const tokenFromApp = searchParams.get('access_token');
 
-  let verify = searchParams.get('verify');
-
-  if (verify) {
-    toast.success(`Ваш e-mail подтвержден, теперь вы можете перейти на сайт`);
-    verify = null;
-  }
+  const verify = searchParams.get('verify');
+   
 
   useEffect(() => {
     dispatch(getCurrentUser(tokenFromApp));
   }, [dispatch, tokenFromApp]);
 
   const isLogIn = useSelector(getIsAuthenticated);
+
+   if (verify && isLogIn) {
+    toast.success(`Ваш e-mail подтвержден`);
+    
+  }
 
   return (
     <div>
@@ -79,7 +80,6 @@ function App() {
               element={!isLogIn ? <Navigate to="/home" /> : <InputMobileView />}
             />
 
-            {/* <Route path="*" element = {<Error/>} / > */}
           </Routes>
         </Suspense>
       </HomeContainer>

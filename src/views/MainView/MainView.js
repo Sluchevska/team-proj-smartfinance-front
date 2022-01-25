@@ -9,8 +9,9 @@ import Registration from '../../components/Registration/Registration';
 import { BottomContainer, BottomKapusta, Container } from './MainView.styled';
 import LogIn from '../../components/LogIn/LogIn';
 
-export default function HomeView({ location }) {
+export default function MainView() {
   const [login, setLogin] = useState(true);
+
   const onRegisterClick = () => {
     setLogin(false);
   };
@@ -20,9 +21,8 @@ export default function HomeView({ location }) {
   };
   return (
     <Container>
-     
       <HomeTitle />
-      
+
       <FormContainer>
         {login ? (
           <LogIn onClickRegister={onRegisterClick} />
