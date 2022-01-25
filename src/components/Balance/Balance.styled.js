@@ -179,7 +179,7 @@ export const ViewContainer = styled.div`
     align-items: baseline;
     flex-direction: row;
     padding-top: 40px;
-    width: 100%;
+    width: 100%;}
 
     @media screen and (min-width: 1280px) {
       display: flex;
@@ -192,6 +192,6 @@ export const ViewContainer = styled.div`
       width: 1200px;
   }
 
-    }
-  }
+    
+  
 `;
