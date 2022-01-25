@@ -7,7 +7,7 @@ import twoKap from "../../icons/2kapustaHPD.svg";
 
 export const Container = styled.div`
   min-width: 320px;
-  /* position: relative; */
+
 `;
 
 export const HomeContainer = styled.div`
