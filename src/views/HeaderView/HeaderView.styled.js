@@ -3,7 +3,7 @@ import logout from '../../icons/logout.svg';
 import logo from '../../icons/logoHPD.svg';
 
 export const ContainerHeader = styled.header`
-  /* position: fixed; */
+
   width: 100%;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@ export const ContainerHeader = styled.header`
     padding: 0 26px;
   }
   @media screen and (max-width: 767px) {
-    /* position: absolute; */
+
     top: 0;
   }
 `;
@@ -72,7 +72,7 @@ export const LogoutP = styled.p`
   display: none;
   @media screen and (min-width: 768px) {
     display: flex;
-    /* justify-content: space-between; */
+  
     color: #52555f;
 
     &:hover {
@@ -85,7 +85,7 @@ export const LogoutP = styled.p`
 `;
 
 export const LogoutSvg = styled.img`
-  /* background-image: url(${logout}); */
+
   width: 16px;
   height: 16px;
 
