@@ -185,8 +185,13 @@ export const ViewContainer = styled.div`
       display: flex;
       justify-content: flex-end;
       align-items: baseline;
-
+      padding-right: 110px;
+      padding-left: 110px;
+      margin-left: auto;
+      margin-right: auto;
       width: 1200px;
+  }
+
     }
   }
 `;
