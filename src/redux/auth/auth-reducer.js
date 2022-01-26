@@ -22,12 +22,13 @@ const user = createReducer(initialUserState, {
   [loginSuccess]: (_, { payload }) => payload.user,
 
   [logoutSuccess]: () => initialUserState,
-  [getCurrentUserSuccess]: (_, { payload }) => payload,
+  [getCurrentUserSuccess]: (_, { payload }) => payload.user,
 });
 
 const token = createReducer(null, {
   [loginSuccess]: (_, { payload }) => payload.token,
-
+  [getCurrentUserRequest]: () => null,
+  [getCurrentUserSuccess]: (_, { payload }) => payload.token,
   [logoutSuccess]: () => null,
 });
 const setError = (_, { payload }) => payload;

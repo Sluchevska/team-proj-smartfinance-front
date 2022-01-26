@@ -79,17 +79,13 @@ const getCurrentUser = tokenFromApp => async (dispatch, getState) => {
     if (!persistedToken) {
       return;
     }
-
     token.set(persistedToken);
   }
 
   dispatch(getCurrentUserRequest());
   try {
     const response = await fetchGetCurrentUser();
-
-    dispatch(getCurrentUserSuccess(response.data.data.user));
-
-    dispatch(loginSuccess(response.data.data));
+    dispatch(getCurrentUserSuccess(response.data.data));
   } catch ({ response }) {
     dispatch(getCurrentUserError(response.data.message));
   }
